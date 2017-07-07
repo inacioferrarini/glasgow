@@ -1,0 +1,6 @@
+use_frameworks!
+target 'Glasgow_Tests' do
+  pod 'Glasgow', :path => '../'
+  
+  
+end
