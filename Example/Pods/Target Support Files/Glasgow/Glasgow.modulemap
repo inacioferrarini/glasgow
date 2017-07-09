@@ -1,0 +1,6 @@
+framework module Glasgow {
+  umbrella header "Glasgow-umbrella.h"
+
+  export *
+  module * { export * }
+}

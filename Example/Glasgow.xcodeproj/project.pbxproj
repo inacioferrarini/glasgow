@@ -7,20 +7,62 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		760A31D11F100BBE001FCC80 /* ApiRequestResponseFixture.json in Resources */ = {isa = PBXBuildFile; fileRef = 760A31D01F100BBE001FCC80 /* ApiRequestResponseFixture.json */; };
+		76824C0F1F0FF94800FB5A22 /* ArrowArrayTransformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76824BED1F0FF94800FB5A22 /* ArrowArrayTransformerSpec.swift */; };
+		76824C101F0FF94800FB5A22 /* ArrowTransformerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76824BEE1F0FF94800FB5A22 /* ArrowTransformerSpec.swift */; };
+		76824C111F0FF94800FB5A22 /* ArrayDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76824BF21F0FF94800FB5A22 /* ArrayDataSourceSpec.swift */; };
+		76824C121F0FF94800FB5A22 /* NSObjectExtensionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76824BF41F0FF94800FB5A22 /* NSObjectExtensionsSpec.swift */; };
+		76824C131F0FF94800FB5A22 /* FixtureHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76824BF61F0FF94800FB5A22 /* FixtureHelper.swift */; };
+		76824C1B1F0FF94800FB5A22 /* BaseTableViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76824C0A1F0FF94800FB5A22 /* BaseTableViewControllerSpec.swift */; };
+		76824C1C1F0FF94800FB5A22 /* DataBasedViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76824C0B1F0FF94800FB5A22 /* DataBasedViewControllerSpec.swift */; };
+		76824C1D1F0FF94800FB5A22 /* TableViewArrayDataSourceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76824C0E1F0FF94800FB5A22 /* TableViewArrayDataSourceSpec.swift */; };
+		76824C211F10043500FB5A22 /* AppBaseApiSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76824C201F10043500FB5A22 /* AppBaseApiSpec.swift */; };
+		76E71F111F1010A20032EA08 /* NumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F0D1F1010A20032EA08 /* NumberTableViewCell.swift */; };
+		76E71F121F1010A20032EA08 /* TestTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F0E1F1010A20032EA08 /* TestTableView.swift */; };
+		76E71F141F1010FF0032EA08 /* ApiResponseToPersonArrayTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F131F1010FF0032EA08 /* ApiResponseToPersonArrayTransformer.swift */; };
+		76E71F161F1011410032EA08 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F151F1011410032EA08 /* Person.swift */; };
+		76E71F1E1F1014450032EA08 /* ComposedPersonFixture.json in Resources */ = {isa = PBXBuildFile; fileRef = 76E71F1A1F1014450032EA08 /* ComposedPersonFixture.json */; };
+		76E71F1F1F1014450032EA08 /* ComposedPersonsFixture.json in Resources */ = {isa = PBXBuildFile; fileRef = 76E71F1B1F1014450032EA08 /* ComposedPersonsFixture.json */; };
+		76E71F201F1014450032EA08 /* PersonFixture.json in Resources */ = {isa = PBXBuildFile; fileRef = 76E71F1C1F1014450032EA08 /* PersonFixture.json */; };
+		76E71F211F1014450032EA08 /* PersonsFixture.json in Resources */ = {isa = PBXBuildFile; fileRef = 76E71F1D1F1014450032EA08 /* PersonsFixture.json */; };
+		76E71F231F1285E70032EA08 /* TestDataBasedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F221F1285E70032EA08 /* TestDataBasedViewController.swift */; };
+		76E71F251F1286180032EA08 /* TestBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F241F1286180032EA08 /* TestBaseTableViewController.swift */; };
+		76E71F281F1286C40032EA08 /* TestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F271F1286C40032EA08 /* TestContext.swift */; };
+		76E71F2A1F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F291F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift */; };
 		E187375D161591384BAF3AAF /* Pods_Glasgow_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25EFB2553011649CFC11B185 /* Pods_Glasgow_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		06448416A82E5AA7BB3BA31A /* Pods-Glasgow_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glasgow_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Glasgow_Tests/Pods-Glasgow_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		0C9E045232E46595EEDAF777 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		0C9E045232E46595EEDAF777 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		149764148B1AF37556B87962 /* Pods-Glasgow_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glasgow_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Glasgow_Tests/Pods-Glasgow_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		21563A1409E51BCC709F924A /* Glasgow.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Glasgow.podspec; path = ../Glasgow.podspec; sourceTree = "<group>"; };
+		21563A1409E51BCC709F924A /* Glasgow.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Glasgow.podspec; path = ../Glasgow.podspec; sourceTree = "<group>"; };
 		25EFB2553011649CFC11B185 /* Pods_Glasgow_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Glasgow_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		59684A7DBF78F4E27B437BB2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		59684A7DBF78F4E27B437BB2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACE51AFB9204008FA782 /* Glasgow_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Glasgow_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		760A31D01F100BBE001FCC80 /* ApiRequestResponseFixture.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ApiRequestResponseFixture.json; sourceTree = "<group>"; };
+		76824BED1F0FF94800FB5A22 /* ArrowArrayTransformerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowArrayTransformerSpec.swift; sourceTree = "<group>"; };
+		76824BEE1F0FF94800FB5A22 /* ArrowTransformerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrowTransformerSpec.swift; sourceTree = "<group>"; };
+		76824BF21F0FF94800FB5A22 /* ArrayDataSourceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataSourceSpec.swift; sourceTree = "<group>"; };
+		76824BF41F0FF94800FB5A22 /* NSObjectExtensionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSObjectExtensionsSpec.swift; sourceTree = "<group>"; };
+		76824BF61F0FF94800FB5A22 /* FixtureHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FixtureHelper.swift; sourceTree = "<group>"; };
+		76824C0A1F0FF94800FB5A22 /* BaseTableViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewControllerSpec.swift; sourceTree = "<group>"; };
+		76824C0B1F0FF94800FB5A22 /* DataBasedViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataBasedViewControllerSpec.swift; sourceTree = "<group>"; };
+		76824C0E1F0FF94800FB5A22 /* TableViewArrayDataSourceSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewArrayDataSourceSpec.swift; sourceTree = "<group>"; };
+		76824C201F10043500FB5A22 /* AppBaseApiSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppBaseApiSpec.swift; sourceTree = "<group>"; };
+		76E71F0D1F1010A20032EA08 /* NumberTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberTableViewCell.swift; sourceTree = "<group>"; };
+		76E71F0E1F1010A20032EA08 /* TestTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTableView.swift; sourceTree = "<group>"; };
+		76E71F131F1010FF0032EA08 /* ApiResponseToPersonArrayTransformer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiResponseToPersonArrayTransformer.swift; sourceTree = "<group>"; };
+		76E71F151F1011410032EA08 /* Person.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		76E71F1A1F1014450032EA08 /* ComposedPersonFixture.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComposedPersonFixture.json; sourceTree = "<group>"; };
+		76E71F1B1F1014450032EA08 /* ComposedPersonsFixture.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ComposedPersonsFixture.json; sourceTree = "<group>"; };
+		76E71F1C1F1014450032EA08 /* PersonFixture.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PersonFixture.json; sourceTree = "<group>"; };
+		76E71F1D1F1014450032EA08 /* PersonsFixture.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = PersonsFixture.json; sourceTree = "<group>"; };
+		76E71F221F1285E70032EA08 /* TestDataBasedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDataBasedViewController.swift; sourceTree = "<group>"; };
+		76E71F241F1286180032EA08 /* TestBaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseTableViewController.swift; sourceTree = "<group>"; };
+		76E71F271F1286C40032EA08 /* TestContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestContext.swift; sourceTree = "<group>"; };
+		76E71F291F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseTableViewControllerWithDelegates.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +107,13 @@
 		607FACE81AFB9204008FA782 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				607FACEB1AFB9204008FA782 /* Tests.swift */,
+				76824BEB1F0FF94800FB5A22 /* Arrow */,
+				76824BEF1F0FF94800FB5A22 /* Core */,
+				76824BF51F0FF94800FB5A22 /* Helpers */,
+				76824BF91F0FF94800FB5A22 /* Networking */,
+				76824BFA1F0FF94800FB5A22 /* Resources */,
+				76824C051F0FF94800FB5A22 /* Transformer */,
+				76824C061F0FF94800FB5A22 /* UIKit */,
 				607FACE91AFB9204008FA782 /* Supporting Files */,
 			);
 			path = Tests;
@@ -96,6 +144,197 @@
 				149764148B1AF37556B87962 /* Pods-Glasgow_Tests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		760A31CE1F100BBE001FCC80 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				76E71F171F1013850032EA08 /* Transformer */,
+				760A31CF1F100BBE001FCC80 /* Networking */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
+		760A31CF1F100BBE001FCC80 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				760A31D01F100BBE001FCC80 /* ApiRequestResponseFixture.json */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		76824BEB1F0FF94800FB5A22 /* Arrow */ = {
+			isa = PBXGroup;
+			children = (
+				76824BEC1F0FF94800FB5A22 /* Transformer */,
+			);
+			path = Arrow;
+			sourceTree = "<group>";
+		};
+		76824BEC1F0FF94800FB5A22 /* Transformer */ = {
+			isa = PBXGroup;
+			children = (
+				76824BED1F0FF94800FB5A22 /* ArrowArrayTransformerSpec.swift */,
+				76824BEE1F0FF94800FB5A22 /* ArrowTransformerSpec.swift */,
+			);
+			path = Transformer;
+			sourceTree = "<group>";
+		};
+		76824BEF1F0FF94800FB5A22 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				76824BF01F0FF94800FB5A22 /* DataSource */,
+				76824BF31F0FF94800FB5A22 /* Extensions */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		76824BF01F0FF94800FB5A22 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				76824BF11F0FF94800FB5A22 /* Arrays */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		76824BF11F0FF94800FB5A22 /* Arrays */ = {
+			isa = PBXGroup;
+			children = (
+				76824BF21F0FF94800FB5A22 /* ArrayDataSourceSpec.swift */,
+			);
+			path = Arrays;
+			sourceTree = "<group>";
+		};
+		76824BF31F0FF94800FB5A22 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				76824BF41F0FF94800FB5A22 /* NSObjectExtensionsSpec.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		76824BF51F0FF94800FB5A22 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				76824BF61F0FF94800FB5A22 /* FixtureHelper.swift */,
+				76E71F071F1010A20032EA08 /* SupportClasses */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		76824BF91F0FF94800FB5A22 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				76824C201F10043500FB5A22 /* AppBaseApiSpec.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		76824BFA1F0FF94800FB5A22 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				760A31CE1F100BBE001FCC80 /* Fixtures */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		76824C051F0FF94800FB5A22 /* Transformer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Transformer;
+			sourceTree = "<group>";
+		};
+		76824C061F0FF94800FB5A22 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				76824C091F0FF94800FB5A22 /* Controller */,
+				76824C0C1F0FF94800FB5A22 /* DataSource */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		76824C091F0FF94800FB5A22 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				76824C0A1F0FF94800FB5A22 /* BaseTableViewControllerSpec.swift */,
+				76824C0B1F0FF94800FB5A22 /* DataBasedViewControllerSpec.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		76824C0C1F0FF94800FB5A22 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				76824C0D1F0FF94800FB5A22 /* Arrays */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		76824C0D1F0FF94800FB5A22 /* Arrays */ = {
+			isa = PBXGroup;
+			children = (
+				76824C0E1F0FF94800FB5A22 /* TableViewArrayDataSourceSpec.swift */,
+			);
+			path = Arrays;
+			sourceTree = "<group>";
+		};
+		76E71F071F1010A20032EA08 /* SupportClasses */ = {
+			isa = PBXGroup;
+			children = (
+				76E71F261F1286B90032EA08 /* Context */,
+				76E71F081F1010A20032EA08 /* Model */,
+				76E71F0A1F1010A20032EA08 /* Transformer */,
+				76E71F0C1F1010A20032EA08 /* UIKit */,
+			);
+			path = SupportClasses;
+			sourceTree = "<group>";
+		};
+		76E71F081F1010A20032EA08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				76E71F151F1011410032EA08 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		76E71F0A1F1010A20032EA08 /* Transformer */ = {
+			isa = PBXGroup;
+			children = (
+				76E71F131F1010FF0032EA08 /* ApiResponseToPersonArrayTransformer.swift */,
+			);
+			path = Transformer;
+			sourceTree = "<group>";
+		};
+		76E71F0C1F1010A20032EA08 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				76E71F0D1F1010A20032EA08 /* NumberTableViewCell.swift */,
+				76E71F0E1F1010A20032EA08 /* TestTableView.swift */,
+				76E71F221F1285E70032EA08 /* TestDataBasedViewController.swift */,
+				76E71F241F1286180032EA08 /* TestBaseTableViewController.swift */,
+				76E71F291F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		76E71F171F1013850032EA08 /* Transformer */ = {
+			isa = PBXGroup;
+			children = (
+				76E71F1A1F1014450032EA08 /* ComposedPersonFixture.json */,
+				76E71F1B1F1014450032EA08 /* ComposedPersonsFixture.json */,
+				76E71F1C1F1014450032EA08 /* PersonFixture.json */,
+				76E71F1D1F1014450032EA08 /* PersonsFixture.json */,
+			);
+			path = Transformer;
+			sourceTree = "<group>";
+		};
+		76E71F261F1286B90032EA08 /* Context */ = {
+			isa = PBXGroup;
+			children = (
+				76E71F271F1286C40032EA08 /* TestContext.swift */,
+			);
+			path = Context;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,13 +370,9 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
-					607FACCF1AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0820;
-					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0830;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -165,6 +400,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76E71F201F1014450032EA08 /* PersonFixture.json in Resources */,
+				76E71F211F1014450032EA08 /* PersonsFixture.json in Resources */,
+				76E71F1F1F1014450032EA08 /* ComposedPersonsFixture.json in Resources */,
+				76E71F1E1F1014450032EA08 /* ComposedPersonFixture.json in Resources */,
+				760A31D11F100BBE001FCC80 /* ApiRequestResponseFixture.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,7 +463,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				76E71F231F1285E70032EA08 /* TestDataBasedViewController.swift in Sources */,
+				76E71F121F1010A20032EA08 /* TestTableView.swift in Sources */,
+				76E71F111F1010A20032EA08 /* NumberTableViewCell.swift in Sources */,
+				76E71F2A1F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift in Sources */,
+				76E71F251F1286180032EA08 /* TestBaseTableViewController.swift in Sources */,
+				76824C101F0FF94800FB5A22 /* ArrowTransformerSpec.swift in Sources */,
+				76E71F281F1286C40032EA08 /* TestContext.swift in Sources */,
+				76824C1C1F0FF94800FB5A22 /* DataBasedViewControllerSpec.swift in Sources */,
+				76E71F161F1011410032EA08 /* Person.swift in Sources */,
+				76824C1D1F0FF94800FB5A22 /* TableViewArrayDataSourceSpec.swift in Sources */,
+				76824C131F0FF94800FB5A22 /* FixtureHelper.swift in Sources */,
+				76824C1B1F0FF94800FB5A22 /* BaseTableViewControllerSpec.swift in Sources */,
+				76824C111F0FF94800FB5A22 /* ArrayDataSourceSpec.swift in Sources */,
+				76824C211F10043500FB5A22 /* AppBaseApiSpec.swift in Sources */,
+				76824C121F0FF94800FB5A22 /* NSObjectExtensionsSpec.swift in Sources */,
+				76824C0F1F0FF94800FB5A22 /* ArrowArrayTransformerSpec.swift in Sources */,
+				76E71F141F1010FF0032EA08 /* ApiResponseToPersonArrayTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +577,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 06448416A82E5AA7BB3BA31A /* Pods-Glasgow_Tests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -333,6 +590,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +599,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 149764148B1AF37556B87962 /* Pods-Glasgow_Tests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

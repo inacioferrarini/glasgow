@@ -1,6 +1,10 @@
 use_frameworks!
+
+inhibit_all_warnings!
+
 target 'Glasgow_Tests' do
   pod 'Glasgow', :path => '../'
-  
-  
+  pod 'Quick', '~> 1.1.0'
+  pod 'Nimble', '~> 6.0.0'
+  pod 'OHHTTPStubs/Swift', '~> 6.0.0'
 end

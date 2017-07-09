@@ -1,0 +1,144 @@
+//    The MIT License (MIT)
+//
+//    Copyright (c) 2017 Inácio Ferrarini
+//
+//    Permission is hereby granted, free of charge, to any person obtaining a copy
+//    of this software and associated documentation files (the "Software"), to deal
+//    in the Software without restriction, including without limitation the rights
+//    to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//    copies of the Software, and to permit persons to whom the Software is
+//    furnished to do so, subject to the following conditions:
+//
+//    The above copyright notice and this permission notice shall be included in all
+//    copies or substantial portions of the Software.
+//
+//    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//    IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+//    SOFTWARE.
+//
+
+import UIKit
+
+/**
+ Provides a basic ViewController capable of perform data synchronization operations.
+ */
+open class DataBasedViewController<AppContextType: Any>: UIViewController, AppContextAware {
+    
+    /**
+     The app's AppContext. Shared app wide data.
+     */
+    public var appContext: AppContextType?
+    
+    
+    // MARK: - Properties
+    
+    /**
+     A view to be displayed as a courting, covering entire view, when fetching data.
+     */
+    @IBOutlet open weak var courtainView: UIView?
+    
+    
+    // MARK: - Initialization
+    
+    /**
+     Prepares the ViewController to become visible.
+     Checks if any data operation must be executed.
+     
+     - parameter animated: If presentation must use animation to become visible
+     */
+    override open func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.performDataSync()
+    }
+    
+    
+    // MARK: - Data Syncrhonization
+    
+    /**
+     Performs data synchronization if `shouldSyncData()` validates.
+     
+     During data synchornization, `willSyncData()`, then `syncData()` and finally `didSyncData()` will be called.
+     
+     If not data synchronization is performed, only `didSyncData()` is called.
+     */
+    open func performDataSync() {
+        if self.shouldSyncData() {
+            let queue = DispatchQueue(label: type(of: self).simpleClassName(), attributes: [])
+            queue.async(execute: {
+                self.willSyncData()
+                self.syncData()
+                self.didSyncData()
+            })
+        } else {
+            self.didSyncData()
+        }
+    }
+    
+    /**
+     If `courtainView` is defined, makes it visible.
+     */
+    open func showCourtainView() {
+        DispatchQueue.main.async {
+            if let courtainView = self.courtainView {
+                courtainView.isHidden = false
+            }
+        }
+    }
+
+    /**
+     If `courtainView` is defined, hides it.
+     */
+    open func hideCourtainView() {
+        DispatchQueue.main.async {
+            if let courtainView = self.courtainView {
+                courtainView.isHidden = true
+            }
+        }
+    }
+    
+    
+    // MARK: - Child classes are expected to override these methods
+    
+    /**
+     Validates if data synchronization must be executed.
+     
+     By default, returns always `true`.
+     */
+    open func shouldSyncData() -> Bool {
+        return true
+    }
+    
+    /**
+     Data synchronization will be executed.
+     
+     By default, executed `showCourtainView()`
+     */
+    open func willSyncData() {
+        self.showCourtainView()
+    }
+    
+    /**
+     Executes data synchronization.
+     
+     This method is intended to be overriden by child ViewControllers in order to
+     implement proper data synchronization.
+     
+     By default, does nothing.
+     */
+    open func syncData() {
+    }
+    
+    /**
+     Data synchronization was completed.
+     
+     By default, executes `hideCourtainView()`
+     */
+    open func didSyncData() {
+        self.hideCourtainView()
+    }
+    
+}

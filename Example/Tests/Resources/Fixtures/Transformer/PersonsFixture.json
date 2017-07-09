@@ -1,0 +1,17 @@
+[
+    {
+        "name": "Fulano da Silva",
+        "age": 35,
+        "boolValue": true
+    },
+    {
+        "name": "Sincrano",
+        "age": 40,
+        "boolValue": false
+    },
+    {
+        "name": "Beltrano",
+        "age": 37,
+        "boolValue": true
+    }
+]

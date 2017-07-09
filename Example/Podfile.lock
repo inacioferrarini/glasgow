@@ -1,0 +1,53 @@
+PODS:
+  - Arrow (3.0.5)
+  - Glasgow (0.1.0):
+    - Glasgow/Arrow (= 0.1.0)
+    - Glasgow/Core (= 0.1.0)
+    - Glasgow/Networking (= 0.1.0)
+    - Glasgow/Transformer (= 0.1.0)
+    - Glasgow/UIKit (= 0.1.0)
+  - Glasgow/Arrow (0.1.0):
+    - Arrow (= 3.0.5)
+    - Glasgow/Transformer
+  - Glasgow/Core (0.1.0)
+  - Glasgow/Networking (0.1.0):
+    - Glasgow/Transformer
+  - Glasgow/Transformer (0.1.0)
+  - Glasgow/UIKit (0.1.0):
+    - Glasgow/Core
+  - Nimble (6.0.1)
+  - OHHTTPStubs/Core (6.0.0)
+  - OHHTTPStubs/Default (6.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (6.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (6.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (6.0.0)
+  - OHHTTPStubs/Swift (6.0.0):
+    - OHHTTPStubs/Default
+  - Quick (1.1.0)
+
+DEPENDENCIES:
+  - Glasgow (from `../`)
+  - Nimble (~> 6.0.0)
+  - OHHTTPStubs/Swift (~> 6.0.0)
+  - Quick (~> 1.1.0)
+
+EXTERNAL SOURCES:
+  Glasgow:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Arrow: b696d6173296da330d1a995019db42f693249cd6
+  Glasgow: 06b24f020b62ff1a40a14c216144b0bad7ef0056
+  Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
+  OHHTTPStubs: 752f9b11fd810a15162d50f11c06ff94f8e012eb
+  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
+
+PODFILE CHECKSUM: b87035316c97b9e08b1fc4f84d83974a26f9b96c
+
+COCOAPODS: 1.1.1

@@ -1,0 +1,10 @@
+
+workspace: Example/Glasgow.xcworkspace
+xcodeproj: Example/Glasgow.xcodeproj
+scheme: Glasgow-Example
+output_directory: slather-report
+source_directory: Glasgow/Classes
+coverage_service: html
+binary_basename: Glasgow
+#ignore:
+#  - Example/*
