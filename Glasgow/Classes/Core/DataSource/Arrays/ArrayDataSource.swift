@@ -60,9 +60,7 @@ open class ArrayDataSource<Type: Equatable>: NSObject {
      Propagates through `onRefresh` a refresh for interested objects.
      */
     open func refresh() {
-        if let onRefresh = self.onRefresh {
-            onRefresh()
-        }
+        self.onRefresh?()
     }
 
     /**
