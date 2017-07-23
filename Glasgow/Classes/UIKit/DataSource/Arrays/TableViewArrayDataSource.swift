@@ -40,6 +40,7 @@ open class TableViewArrayDataSource<CellType: ConfigurableTableViewCell<Type>, T
      Returns the Reuse Identifier for a Cell at the given `IndexPath`.
      */
     let reuseIdentifier: ((IndexPath) -> (String))
+
     
     // MARK: - Initialization
 

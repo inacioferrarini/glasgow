@@ -1,6 +1,19 @@
 {
   "warnings": [
-
+    {
+      "file": "/Users/inacioferrarini/Developer/Lab/Glasgow/Glasgow/Classes/UIKit/Delegate/TableView/PageLoaderTableViewDelegate.swift",
+      "line": 73,
+      "symbol": "PageLoaderTableViewDelegate.scrollViewDidEndDecelerating(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacioferrarini/Developer/Lab/Glasgow/Glasgow/Classes/UIKit/Delegate/TableView/PageLoaderTableViewDelegate.swift",
+      "line": 73,
+      "symbol": "PageLoaderTableViewDelegate.scrollViewDidEndDecelerating(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
   ],
   "source_directory": "/Users/inacioferrarini/Developer/Lab/Glasgow"
 }

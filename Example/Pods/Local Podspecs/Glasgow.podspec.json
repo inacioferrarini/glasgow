@@ -1,8 +1,8 @@
 {
   "name": "Glasgow",
-  "version": "0.1.0",
-  "summary": "A short description of Glasgow.",
-  "homepage": "https://github.com/inacio.ferrarini@gmail.com/Glasgow",
+  "version": "0.1.2",
+  "summary": "Foundation classes used to eliminate boiler-plate code and provide an accelerated startup time.",
+  "homepage": "https://github.com/inacioferrarini/glasgow",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -11,8 +11,8 @@
     "Inácio Ferrarini": "inacio.ferrarini@gmail.com"
   },
   "source": {
-    "git": "https://github.com/inacio.ferrarini@gmail.com/Glasgow.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/inacioferrarini/glasgow.git",
+    "tag": "0.1.2"
   },
   "platforms": {
     "ios": "8.0"

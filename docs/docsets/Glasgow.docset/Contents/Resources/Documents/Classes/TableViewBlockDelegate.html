@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ArrowTransformer Class Reference</title>
+    <title>TableViewBlockDelegate Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/ArrowTransformer" class="dashAnchor"></a>
-    <a title="ArrowTransformer Class Reference"></a>
+    <a name="//apple_ref/swift/Class/TableViewBlockDelegate" class="dashAnchor"></a>
+    <a title="TableViewBlockDelegate Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Glasgow Docs</a> (100% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Glasgow Reference</a>
         <img id="carat" src="../img/carat.png" />
-        ArrowTransformer Class Reference
+        TableViewBlockDelegate Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -92,25 +92,32 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ArrowTransformer</h1>
+            <h1>TableViewBlockDelegate</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">ArrowTransformer</span><span class="o">&lt;</span><span class="k">Type</span><span class="p">:</span> <span class="kt">ArrowParsable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/KeyPathTransformer.html">KeyPathTransformer</a></span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">TableViewBlockDelegate</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="../Classes/ConfigurableTableViewCell.html">ConfigurableTableViewCell</a></span><span class="o">&lt;</span><span class="k">Type</span><span class="o">&gt;</span><span class="p">,</span> <span class="k">Type</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span></code></pre>
 
                 </div>
               </div>
-            <p>Uses <code>Arrow</code> to transform a given object of type AnyObject? into an object of target type, <code>Type</code>.</p>
+            <p>Basic UITableViewDelegate abstracting value selection, having elements of type <code>Type</code> and using <code><a href="../Classes/ConfigurableTableViewCell.html">ConfigurableTableViewCell</a></code></p>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initialization"></a>
+                <a name="//apple_ref/swift/Section/Initialization" class="dashAnchor"></a>
+                <a href="#/Initialization">
+                  <h3 class="section-name">Initialization</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow16ArrowTransformercFT_GS0_x_"></a>
-                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow16ArrowTransformercFT_GS0_x_">init()</a>
+                    <a name="/s:FC7Glasgow22TableViewBlockDelegatecFT4withGCS_24TableViewArrayDataSourcexq__10onSelectedFq_T__GS0_xq__"></a>
+                    <a name="//apple_ref/swift/Method/init(with:onSelected:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow22TableViewBlockDelegatecFT4withGCS_24TableViewArrayDataSourcexq__10onSelectedFq_T__GS0_xq__">init(with:onSelected:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -118,41 +125,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Default Initialization.</p>
+                        <p>Inits the Delegate.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:FC7Glasgow16ArrowTransformer9transformFGSqPs9AnyObject__GSqx_"></a>
-                    <a name="//apple_ref/swift/Method/transform(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow16ArrowTransformer9transformFGSqPs9AnyObject__GSqx_">transform(_:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Transforms the input type AnyObject? and returns <code>Type</code> as output.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transform</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">U</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">with</span> <span class="nv">dataSource</span><span class="p">:</span> <span class="kt"><a href="../Classes/TableViewArrayDataSource.html">TableViewArrayDataSource</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="k">Type</span><span class="o">&gt;</span><span class="p">,</span>
+                         <span class="nv">onSelected</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">()))</span></code></pre>
 
                         </div>
                       </div>
@@ -163,31 +144,50 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>input</em>
+                                <em>dataSource</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The object to be transformed.</p>
+                                  <p>DataSource backing the TableView, where data will be extracted from.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>onSelected</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Logic to handle value selection.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p><code>Type</code></p>
-                      </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Row%20Selection"></a>
+                <a name="//apple_ref/swift/Section/Row Selection" class="dashAnchor"></a>
+                <a href="#/Row%20Selection">
+                  <h3 class="section-name">Row Selection</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow16ArrowTransformer9transformFTGSqPs9AnyObject__7keyPathGSqSS__GSqx_"></a>
-                    <a name="//apple_ref/swift/Method/transform(_:keyPath:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow16ArrowTransformer9transformFTGSqPs9AnyObject__7keyPathGSqSS__GSqx_">transform(_:keyPath:)</a>
+                    <a name="/s:FC7Glasgow22TableViewBlockDelegate9tableViewFTCSo11UITableView14didSelectRowAtV10Foundation9IndexPath_T_"></a>
+                    <a name="//apple_ref/swift/Method/tableView(_:didSelectRowAt:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow22TableViewBlockDelegate9tableViewFTCSo11UITableView14didSelectRowAtV10Foundation9IndexPath_T_">tableView(_:didSelectRowAt:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -195,14 +195,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Transforms the input type AnyObject? and returns <code>Type</code> as output.</p>
+                        <p>TableView selection method.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">transform</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="k">Type</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">tableView</span><span class="p">(</span><span class="n">_</span> <span class="nv">tableView</span><span class="p">:</span> <span class="kt">UITableView</span><span class="p">,</span> <span class="n">didSelectRowAt</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -213,33 +213,29 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>input</em>
+                                <em>tableView</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The object to be transformed.</p>
+                                  <p>Where the value was selected.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>keyPath</em>
+                                <em>indexPath</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>If input type allows, use the given key path as the root object.</p>
+                                  <p>The selected row to be related to the selected value.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p><code>Type</code></p>
                       </div>
                     </section>
                   </div>
