@@ -30,6 +30,11 @@ import Arrow
 open class ArrowArrayTransformer<Type: ArrowParsable>: Transformer, KeyPathTransformer {
     
     /**
+     Default Initialization.
+    */
+    public init() {}
+    
+    /**
      Transforms the input type AnyObject? and returns [`Type`] as output.
      
      - parameter input: The object to be transformed.
