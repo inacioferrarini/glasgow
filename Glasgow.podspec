@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Glasgow'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'Foundation classes used to eliminate boiler-plate code and provide an accelerated startup time.'
   s.homepage         = 'https://github.com/inacioferrarini/glasgow'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
