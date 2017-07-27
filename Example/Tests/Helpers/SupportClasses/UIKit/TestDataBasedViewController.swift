@@ -9,7 +9,7 @@
 import UIKit
 @testable import Glasgow
 
-class TestDataBasedViewController: DataBasedViewController<TestContext> {
+class TestDataBasedViewController: DataBasedViewController {
 
     var onPerformDataSync: (() -> ())?
     var onShouldSyncData: (() -> Bool)?

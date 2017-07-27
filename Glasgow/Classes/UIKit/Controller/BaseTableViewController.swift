@@ -26,7 +26,7 @@ import UIKit
 /**
  Provides a basic TableViewController capable of perform data synchronization operations.
  */
-open class BaseTableViewController<AppContextType: Any>: DataBasedViewController<AppContextType> {
+open class BaseTableViewController: DataBasedViewController {
     
     
     // MARK: - Properties

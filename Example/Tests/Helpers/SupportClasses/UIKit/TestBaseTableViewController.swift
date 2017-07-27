@@ -9,7 +9,7 @@
 import UIKit
 @testable import Glasgow
 
-class TestBaseTableViewController: BaseTableViewController<TestContext> {
+class TestBaseTableViewController: BaseTableViewController {
 
     var onSetupTableView: (() -> ())?
     var onCreateDataSource: (() -> ())?

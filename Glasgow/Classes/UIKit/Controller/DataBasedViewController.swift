@@ -26,12 +26,7 @@ import UIKit
 /**
  Provides a basic ViewController capable of perform data synchronization operations.
  */
-open class DataBasedViewController<AppContextType: Any>: UIViewController, AppContextAware {
-    
-    /**
-     The app's AppContext. Shared app wide data.
-     */
-    public var appContext: AppContextType?
+open class DataBasedViewController: UIViewController {
     
     
     // MARK: - Properties
