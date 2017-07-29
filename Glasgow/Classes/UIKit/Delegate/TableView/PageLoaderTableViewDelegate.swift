@@ -27,7 +27,8 @@ import UIKit
  Basic UITableViewDelegate abstracting paging.
  When the TableView is scrolled to the bottom, will check if should fetch the next page.
  */
-open class PageLoaderTableViewDelegate<CellType: ConfigurableTableViewCell<Type>, Type: Equatable>: TableViewBlockDelegate<CellType, Type> {
+open class PageLoaderTableViewDelegate<CellType: UITableViewCell, Type: Equatable>: TableViewBlockDelegate<CellType, Type>
+    where CellType: Configurable {
     
     
     // MARK: - Properties

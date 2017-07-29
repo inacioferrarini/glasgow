@@ -28,13 +28,13 @@ import Foundation
  */
 public protocol Configurable {
     
-    associatedtype `Type`
+    associatedtype ValueType
     
     /**
      Setups the object with the given value.
      
      - parameter with: The value to setup with.
      */
-    mutating func setup(with value: Type)
+    mutating func setup(with value: ValueType)
     
 }

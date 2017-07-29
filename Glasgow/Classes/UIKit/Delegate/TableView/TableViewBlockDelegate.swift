@@ -11,11 +11,12 @@ import UIKit
 /**
  Basic UITableViewDelegate abstracting value selection, having elements of type `Type` and using `ConfigurableTableViewCell`
  */
-open class TableViewBlockDelegate<CellType: ConfigurableTableViewCell<Type>, Type: Equatable>: NSObject, UITableViewDelegate {
+open class TableViewBlockDelegate<CellType: UITableViewCell, Type: Equatable>: NSObject, UITableViewDelegate
+    where CellType: Configurable {
     
     
     // MARK: - Properties
-
+    
     /**
      DataSource providing objects.
      */

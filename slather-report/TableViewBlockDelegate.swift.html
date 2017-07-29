@@ -79,12 +79,12 @@
 </tr>
 <tr class="never">
 <td class="num">14</td>
-<td class="src"><pre><code class="objc">open class TableViewBlockDelegate&lt;CellType: ConfigurableTableViewCell&lt;Type&gt;, Type: Equatable&gt;: NSObject, UITableViewDelegate {</code></pre></td>
+<td class="src"><pre><code class="objc">open class TableViewBlockDelegate&lt;CellType: UITableViewCell, Type: Equatable&gt;: NSObject, UITableViewDelegate</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">15</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="src"><pre><code class="objc">    where CellType: Configurable {</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -94,62 +94,62 @@
 </tr>
 <tr class="never">
 <td class="num">17</td>
-<td class="src"><pre><code class="objc">    // MARK: - Properties</code></pre></td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">18</td>
-<td class="src"><pre><code class="objc"></code></pre></td>
+<td class="src"><pre><code class="objc">    // MARK: - Properties</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">19</td>
-<td class="src"><pre><code class="objc">    /**</code></pre></td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">20</td>
-<td class="src"><pre><code class="objc">     DataSource providing objects.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">21</td>
-<td class="src"><pre><code class="objc">     */</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">22</td>
-<td class="src"><pre><code class="objc">    let dataSource: TableViewArrayDataSource&lt;CellType, Type&gt;</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">23</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">24</td>
 <td class="src"><pre><code class="objc">    /**</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">25</td>
-<td class="src"><pre><code class="objc">     When a row is selected, its related model will be supplied.</code></pre></td>
+<td class="num">21</td>
+<td class="src"><pre><code class="objc">     DataSource providing objects.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">26</td>
+<td class="num">22</td>
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
+<td class="num">23</td>
+<td class="src"><pre><code class="objc">    let dataSource: TableViewArrayDataSource&lt;CellType, Type&gt;</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">24</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">25</td>
+<td class="src"><pre><code class="objc">    /**</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">26</td>
+<td class="src"><pre><code class="objc">     When a row is selected, its related model will be supplied.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
 <td class="num">27</td>
-<td class="src"><pre><code class="objc">    let onSelected: ((Type) -&gt; ())</code></pre></td>
+<td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">28</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="src"><pre><code class="objc">    let onSelected: ((Type) -&gt; ())</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -159,83 +159,83 @@
 </tr>
 <tr class="never">
 <td class="num">30</td>
-<td class="src"><pre><code class="objc">    // MARK: - Initialization</code></pre></td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">31</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="src"><pre><code class="objc">    // MARK: - Initialization</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">32</td>
-<td class="src"><pre><code class="objc">    /**</code></pre></td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">33</td>
-<td class="src"><pre><code class="objc">     Inits the Delegate.</code></pre></td>
+<td class="src"><pre><code class="objc">    /**</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">34</td>
-<td class="src"><pre><code class="objc">     </code></pre></td>
+<td class="src"><pre><code class="objc">     Inits the Delegate.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">35</td>
-<td class="src"><pre><code class="objc">     - parameter dataSource: DataSource backing the TableView, where data will be extracted from.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">36</td>
 <td class="src"><pre><code class="objc">     </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
+<td class="num">36</td>
+<td class="src"><pre><code class="objc">     - parameter dataSource: DataSource backing the TableView, where data will be extracted from.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
 <td class="num">37</td>
-<td class="src"><pre><code class="objc">     - parameter onSelected: Logic to handle value selection.</code></pre></td>
+<td class="src"><pre><code class="objc">     </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">38</td>
-<td class="src"><pre><code class="objc">     */</code></pre></td>
+<td class="src"><pre><code class="objc">     - parameter onSelected: Logic to handle value selection.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">39</td>
+<td class="src"><pre><code class="objc">     */</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">40</td>
 <td class="src"><pre><code class="objc">    public init(with dataSource: TableViewArrayDataSource&lt;CellType, Type&gt;,</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="missed">
-<td class="num">40</td>
+<td class="num">41</td>
 <td class="src"><pre><code class="objc">                         onSelected: @escaping ((Type) -&gt; ())) {</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">41</td>
+<td class="num">42</td>
 <td class="src"><pre><code class="objc">        self.dataSource = dataSource</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">42</td>
+<td class="num">43</td>
 <td class="src"><pre><code class="objc">        self.onSelected = onSelected</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">43</td>
+<td class="num">44</td>
 <td class="src"><pre><code class="objc">        super.init()</code></pre></td>
 <td class="coverage">!</td>
 </tr>
 <tr class="missed">
-<td class="num">44</td>
+<td class="num">45</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
 <td class="coverage">!</td>
-</tr>
-<tr class="never">
-<td class="num">45</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
-<td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">46</td>
@@ -244,76 +244,81 @@
 </tr>
 <tr class="never">
 <td class="num">47</td>
-<td class="src"><pre><code class="objc">    // MARK: - Row Selection</code></pre></td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">48</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="src"><pre><code class="objc">    // MARK: - Row Selection</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">49</td>
-<td class="src"><pre><code class="objc">    /**</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">50</td>
-<td class="src"><pre><code class="objc">     TableView selection method.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">51</td>
-<td class="src"><pre><code class="objc">     </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">52</td>
-<td class="src"><pre><code class="objc">     - parameter tableView: Where the value was selected.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">53</td>
-<td class="src"><pre><code class="objc">     </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">54</td>
-<td class="src"><pre><code class="objc">     - parameter indexPath: The selected row to be related to the selected value.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">55</td>
-<td class="src"><pre><code class="objc">     */</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="missed">
-<td class="num">56</td>
-<td class="src"><pre><code class="objc">    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">57</td>
-<td class="src"><pre><code class="objc">        guard let selectedRowObject = self.dataSource.object(at: indexPath) else { return }</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">58</td>
-<td class="src"><pre><code class="objc">        self.onSelected(selectedRowObject)</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">59</td>
-<td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="never">
-<td class="num">60</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
+<td class="num">50</td>
+<td class="src"><pre><code class="objc">    /**</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">51</td>
+<td class="src"><pre><code class="objc">     TableView selection method.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">52</td>
+<td class="src"><pre><code class="objc">     </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">53</td>
+<td class="src"><pre><code class="objc">     - parameter tableView: Where the value was selected.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">54</td>
+<td class="src"><pre><code class="objc">     </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">55</td>
+<td class="src"><pre><code class="objc">     - parameter indexPath: The selected row to be related to the selected value.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">56</td>
+<td class="src"><pre><code class="objc">     */</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="missed">
+<td class="num">57</td>
+<td class="src"><pre><code class="objc">    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">58</td>
+<td class="src"><pre><code class="objc">        guard let selectedRowObject = self.dataSource.object(at: indexPath) else { return }</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">59</td>
+<td class="src"><pre><code class="objc">        self.onSelected(selectedRowObject)</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="missed">
+<td class="num">60</td>
+<td class="src"><pre><code class="objc">    }</code></pre></td>
+<td class="coverage">!</td>
+</tr>
+<tr class="never">
 <td class="num">61</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">62</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

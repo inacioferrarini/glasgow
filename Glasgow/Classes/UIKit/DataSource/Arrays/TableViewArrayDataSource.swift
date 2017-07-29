@@ -26,7 +26,8 @@ import UIKit
 /**
  Array-based UITableView data source having elements of type `Type` and using `ConfigurableTableViewCell`.
  */
-open class TableViewArrayDataSource<CellType: ConfigurableTableViewCell<Type>, Type: Equatable>: ArrayDataSource<Type>, UITableViewDataSource {
+open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>: ArrayDataSource<Type>, UITableViewDataSource
+    where CellType: Configurable {
 
 
     // MARK: - Properties
@@ -118,9 +119,9 @@ open class TableViewArrayDataSource<CellType: ConfigurableTableViewCell<Type>, T
      */
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reuseIdentifier = self.reuseIdentifier(indexPath)
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? CellType else { return UITableViewCell() }
+        guard var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? CellType else { return UITableViewCell() }
         
-        if let value = self.object(at: indexPath) {
+        if let value = self.object(at: indexPath) as? CellType.ValueType {
             cell.setup(with: value)
         }
         return cell

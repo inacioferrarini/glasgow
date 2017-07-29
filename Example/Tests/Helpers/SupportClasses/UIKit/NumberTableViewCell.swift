@@ -24,12 +24,11 @@
 import UIKit
 @testable import Glasgow
 
-class NumberTableViewCell: ConfigurableTableViewCell<Int> {
-
+class NumberTableViewCell: UITableViewCell, Configurable {
+    
     var setup: ((Int) -> Void)?
     
-    override func setup(with value: Int) {
-        super.setup(with: value)
+    func setup(with value: Int) {
         if let setup = self.setup {
             setup(value)
         }
