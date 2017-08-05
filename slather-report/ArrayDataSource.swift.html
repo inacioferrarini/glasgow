@@ -194,7 +194,7 @@
 </tr>
 <tr class="never">
 <td class="num">37</td>
-<td class="src"><pre><code class="objc">    open var objects: [Type]</code></pre></td>
+<td class="src"><pre><code class="objc">    open var dataProvider: ArrayDataProvider&lt;Type&gt;</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -259,7 +259,7 @@
 </tr>
 <tr class="never">
 <td class="num">50</td>
-<td class="src"><pre><code class="objc">     - parameter objects: The objects to be contained.</code></pre></td>
+<td class="src"><pre><code class="objc">     - parameter dataProvider: Data provider.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -269,12 +269,12 @@
 </tr>
 <tr class="covered">
 <td class="num">52</td>
-<td class="src"><pre><code class="objc">    public init(objects: [Type]) {</code></pre></td>
+<td class="src"><pre><code class="objc">    public init(with dataProvider: ArrayDataProvider&lt;Type&gt;) {</code></pre></td>
 <td class="coverage">13x</td>
 </tr>
 <tr class="covered">
 <td class="num">53</td>
-<td class="src"><pre><code class="objc">        self.objects = objects</code></pre></td>
+<td class="src"><pre><code class="objc">        self.dataProvider = dataProvider</code></pre></td>
 <td class="coverage">13x</td>
 </tr>
 <tr class="covered">
@@ -384,12 +384,12 @@
 </tr>
 <tr class="covered">
 <td class="num">75</td>
-<td class="src"><pre><code class="objc">        guard indexPath.row &lt; self.objects.count else { return nil }</code></pre></td>
+<td class="src"><pre><code class="objc">        guard indexPath.row &lt; self.dataProvider.count else { return nil }</code></pre></td>
 <td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">76</td>
-<td class="src"><pre><code class="objc">        return objects[indexPath.row]</code></pre></td>
+<td class="src"><pre><code class="objc">        return dataProvider[indexPath.row]</code></pre></td>
 <td class="coverage">3x</td>
 </tr>
 <tr class="covered">
@@ -449,8 +449,8 @@
 </tr>
 <tr class="covered">
 <td class="num">88</td>
-<td class="src"><pre><code class="objc">        if let index = self.objects.index(where: {$0 == object}) {</code></pre></td>
-<td class="coverage">4x</td>
+<td class="src"><pre><code class="objc">        if let index = self.dataProvider.index(of: object) {</code></pre></td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">89</td>

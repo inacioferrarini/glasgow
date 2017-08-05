@@ -34,19 +34,21 @@ class ArrayDataSourceSpec: QuickSpec {
         describe("Array Data Source") {
             
             var items = [Int]()
-            var dataSource = ArrayDataSource<Int>(objects: [])
+            let dataProvider = ArrayDataProvider<Int>(with: items)
+            var dataSource = ArrayDataSource<Int>(with: dataProvider)
             
             beforeEach {
                 // Given
                 items = [10, 20, 30]
-                dataSource = ArrayDataSource<Int>(objects: items)
+                let dataProvider = ArrayDataProvider<Int>(with: items)
+                dataSource = ArrayDataSource<Int>(with: dataProvider)
                 dataSource.onRefresh = nil
             }
             
             it("Initialization must have given objects") {
                 // Then
-                expect(dataSource.objects).toNot(beNil())
-                expect(dataSource.objects.count).to(equal(3))
+                expect(dataSource.dataProvider).toNot(beNil())
+                expect(dataSource.dataProvider.count).to(equal(3))
             }
             
             describe("objectAtIndexPath") {

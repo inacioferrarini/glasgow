@@ -53,13 +53,13 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
      
      - parameter objects: Contained objects.
      */
-    public convenience init(for tableView: UITableView, objects: [Type]) {
+    public convenience init(for tableView: UITableView, with dataProvider: ArrayDataProvider<Type>) {
         let reuseIdentifier = { (indexPath: IndexPath) -> String in
             return CellType.simpleClassName()
         }
         self.init(for: tableView,
                   reuseIdentifier: reuseIdentifier,
-                  objects: objects)
+                  with: dataProvider)
     }
     
     /**
@@ -69,14 +69,14 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
      
      - parameter reuseIdentifier: Block used to define the Ruse Identifier based on the given IndexPath.
      
-     - parameter objects: Contained objects.
+     - parameter dataProvider: Data provider.
      */
     public required init(for tableView: UITableView,
-                reuseIdentifier: @escaping ((IndexPath) -> (String)),
-                objects: [Type]) {
+                         reuseIdentifier: @escaping ((IndexPath) -> (String)),
+                         with dataProvider: ArrayDataProvider<Type>) {
         self.tableView = tableView
         self.reuseIdentifier = reuseIdentifier
-        super.init(objects: objects)
+        super.init(with: dataProvider)
     }
 
 
@@ -105,7 +105,7 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
      */
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard section == 0 else { return 0 }
-        return self.objects.count
+        return self.dataProvider.objects.count
     }
     
     /**

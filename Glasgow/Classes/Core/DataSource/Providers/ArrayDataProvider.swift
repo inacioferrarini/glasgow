@@ -21,6 +21,15 @@ open class ArrayDataProvider<Type: Equatable>: DataProvider {
      */
     public var objects: [Type]
     
+    /**
+     Returns the amount of stored objects.
+     */
+    public var count: Int {
+        get {
+            return self.objects.count
+        }
+    }
+    
     
     // MARK: - Initialization
     
@@ -31,6 +40,22 @@ open class ArrayDataProvider<Type: Equatable>: DataProvider {
      */
     public init(with objects: [Type]) {
         self.objects = objects
+    }
+    
+    
+    // MARK: - Indexing
+    
+    public func index(of element: Type) -> Int? {
+        return self.objects.index(of: element)
+    }
+
+    
+    // MARK: - Subscript
+    
+    subscript(index: Int) -> Type {
+        get {
+            return self.objects[index]
+        }
     }
     
 }

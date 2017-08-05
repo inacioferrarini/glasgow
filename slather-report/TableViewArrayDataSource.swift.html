@@ -289,7 +289,7 @@
 </tr>
 <tr class="covered">
 <td class="num">56</td>
-<td class="src"><pre><code class="objc">    public convenience init(for tableView: UITableView, objects: [Type]) {</code></pre></td>
+<td class="src"><pre><code class="objc">    public convenience init(for tableView: UITableView, with dataProvider: ArrayDataProvider&lt;Type&gt;) {</code></pre></td>
 <td class="coverage">5x</td>
 </tr>
 <tr class="covered">
@@ -319,7 +319,7 @@
 </tr>
 <tr class="covered">
 <td class="num">62</td>
-<td class="src"><pre><code class="objc">                  objects: objects)</code></pre></td>
+<td class="src"><pre><code class="objc">                  with: dataProvider)</code></pre></td>
 <td class="coverage">5x</td>
 </tr>
 <tr class="covered">
@@ -369,7 +369,7 @@
 </tr>
 <tr class="never">
 <td class="num">72</td>
-<td class="src"><pre><code class="objc">     - parameter objects: Contained objects.</code></pre></td>
+<td class="src"><pre><code class="objc">     - parameter dataProvider: Data provider.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -384,12 +384,12 @@
 </tr>
 <tr class="never">
 <td class="num">75</td>
-<td class="src"><pre><code class="objc">                reuseIdentifier: @escaping ((IndexPath) -&gt; (String)),</code></pre></td>
+<td class="src"><pre><code class="objc">                         reuseIdentifier: @escaping ((IndexPath) -&gt; (String)),</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="covered">
 <td class="num">76</td>
-<td class="src"><pre><code class="objc">                objects: [Type]) {</code></pre></td>
+<td class="src"><pre><code class="objc">                         with dataProvider: ArrayDataProvider&lt;Type&gt;) {</code></pre></td>
 <td class="coverage">6x</td>
 </tr>
 <tr class="covered">
@@ -404,7 +404,7 @@
 </tr>
 <tr class="covered">
 <td class="num">79</td>
-<td class="src"><pre><code class="objc">        super.init(objects: objects)</code></pre></td>
+<td class="src"><pre><code class="objc">        super.init(with: dataProvider)</code></pre></td>
 <td class="coverage">6x</td>
 </tr>
 <tr class="covered">
@@ -549,7 +549,7 @@
 </tr>
 <tr class="covered">
 <td class="num">108</td>
-<td class="src"><pre><code class="objc">        return self.objects.count</code></pre></td>
+<td class="src"><pre><code class="objc">        return self.dataProvider.objects.count</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">

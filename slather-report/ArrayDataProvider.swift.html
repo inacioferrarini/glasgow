@@ -9,7 +9,7 @@
 <h2 class="cov_title">
 <span>Coverage for "ArrayDataProvider.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(3 of 3 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(12 of 12 relevant lines covered)</h4>
 <h4 class="cov_filepath">Glasgow/Classes/Core/DataSource/Providers/ArrayDataProvider.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -129,58 +129,58 @@
 </tr>
 <tr class="never">
 <td class="num">24</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">25</td>
-<td class="src"><pre><code class="objc">    // MARK: - Initialization</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">26</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">27</td>
 <td class="src"><pre><code class="objc">    /**</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">28</td>
-<td class="src"><pre><code class="objc">     Inits with given objects.</code></pre></td>
+<td class="num">25</td>
+<td class="src"><pre><code class="objc">     Returns the amount of stored objects.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">29</td>
-<td class="src"><pre><code class="objc">     </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">30</td>
-<td class="src"><pre><code class="objc">     - parameter objects: The objects to be contained.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">31</td>
+<td class="num">26</td>
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="covered">
-<td class="num">32</td>
-<td class="src"><pre><code class="objc">    public init(with objects: [Type]) {</code></pre></td>
-<td class="coverage">2x</td>
+<tr class="never">
+<td class="num">27</td>
+<td class="src"><pre><code class="objc">    public var count: Int {</code></pre></td>
+<td class="coverage"></td>
 </tr>
 <tr class="covered">
-<td class="num">33</td>
-<td class="src"><pre><code class="objc">        self.objects = objects</code></pre></td>
-<td class="coverage">2x</td>
+<td class="num">28</td>
+<td class="src"><pre><code class="objc">        get {</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
-<td class="num">34</td>
+<td class="num">29</td>
+<td class="src"><pre><code class="objc">            return self.objects.count</code></pre></td>
+<td class="coverage">7x</td>
+</tr>
+<tr class="covered">
+<td class="num">30</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">7x</td>
+</tr>
+<tr class="never">
+<td class="num">31</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">2x</td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">32</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">33</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">34</td>
+<td class="src"><pre><code class="objc">    // MARK: - Initialization</code></pre></td>
+<td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">35</td>
@@ -189,6 +189,131 @@
 </tr>
 <tr class="never">
 <td class="num">36</td>
+<td class="src"><pre><code class="objc">    /**</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">37</td>
+<td class="src"><pre><code class="objc">     Inits with given objects.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">38</td>
+<td class="src"><pre><code class="objc">     </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">39</td>
+<td class="src"><pre><code class="objc">     - parameter objects: The objects to be contained.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">40</td>
+<td class="src"><pre><code class="objc">     */</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="covered">
+<td class="num">41</td>
+<td class="src"><pre><code class="objc">    public init(with objects: [Type]) {</code></pre></td>
+<td class="coverage">18x</td>
+</tr>
+<tr class="covered">
+<td class="num">42</td>
+<td class="src"><pre><code class="objc">        self.objects = objects</code></pre></td>
+<td class="coverage">18x</td>
+</tr>
+<tr class="covered">
+<td class="num">43</td>
+<td class="src"><pre><code class="objc">    }</code></pre></td>
+<td class="coverage">18x</td>
+</tr>
+<tr class="never">
+<td class="num">44</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">45</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">46</td>
+<td class="src"><pre><code class="objc">    // MARK: - Indexing</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">47</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="covered">
+<td class="num">48</td>
+<td class="src"><pre><code class="objc">    public func index(of element: Type) -&gt; Int? {</code></pre></td>
+<td class="coverage">3x</td>
+</tr>
+<tr class="covered">
+<td class="num">49</td>
+<td class="src"><pre><code class="objc">        return self.objects.index(of: element)</code></pre></td>
+<td class="coverage">3x</td>
+</tr>
+<tr class="covered">
+<td class="num">50</td>
+<td class="src"><pre><code class="objc">    }</code></pre></td>
+<td class="coverage">3x</td>
+</tr>
+<tr class="never">
+<td class="num">51</td>
+<td class="src"><pre><code class="objc"></code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">52</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">53</td>
+<td class="src"><pre><code class="objc">    // MARK: - Subscript</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">54</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">55</td>
+<td class="src"><pre><code class="objc">    subscript(index: Int) -&gt; Type {</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="covered">
+<td class="num">56</td>
+<td class="src"><pre><code class="objc">        get {</code></pre></td>
+<td class="coverage">4x</td>
+</tr>
+<tr class="covered">
+<td class="num">57</td>
+<td class="src"><pre><code class="objc">            return self.objects[index]</code></pre></td>
+<td class="coverage">4x</td>
+</tr>
+<tr class="covered">
+<td class="num">58</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">4x</td>
+</tr>
+<tr class="never">
+<td class="num">59</td>
+<td class="src"><pre><code class="objc">    }</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">60</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">61</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

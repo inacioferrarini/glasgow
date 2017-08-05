@@ -34,7 +34,7 @@ open class ArrayDataSource<Type: Equatable>: NSObject {
     /**
      Objects contained by this DataSource.
      */
-    open var objects: [Type]
+    open var dataProvider: ArrayDataProvider<Type>
     
     /**
      Block to be called whenever `refresh()` method is called.
@@ -47,10 +47,10 @@ open class ArrayDataSource<Type: Equatable>: NSObject {
     /**
      Inits with given objects.
      
-     - parameter objects: The objects to be contained.
+     - parameter dataProvider: Data provider.
      */
-    public init(objects: [Type]) {
-        self.objects = objects
+    public init(with dataProvider: ArrayDataProvider<Type>) {
+        self.dataProvider = dataProvider
     }
 
 
@@ -72,8 +72,8 @@ open class ArrayDataSource<Type: Equatable>: NSObject {
      */
     open func object(at indexPath: IndexPath) -> Type? {
         guard indexPath.section == 0 else { return nil }
-        guard indexPath.row < self.objects.count else { return nil }
-        return objects[indexPath.row]
+        guard indexPath.row < self.dataProvider.count else { return nil }
+        return dataProvider[indexPath.row]
     }
 
     /**
@@ -85,7 +85,7 @@ open class ArrayDataSource<Type: Equatable>: NSObject {
      */
     open func indexPath(for object: Type) -> IndexPath? {
         var indexPath: IndexPath?
-        if let index = self.objects.index(where: {$0 == object}) {
+        if let index = self.dataProvider.index(of: object) {
             indexPath = IndexPath(row: index, section: 0)
         }
         return indexPath

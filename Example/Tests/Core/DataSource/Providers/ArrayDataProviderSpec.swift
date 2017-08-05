@@ -33,8 +33,23 @@ class ArrayDataProviderSpec: QuickSpec {
                 expect(dataProvider.objects.count).to(equal(3))
             }
             
+            it("Count must return the amount of store objects") {
+                // Then
+                expect(dataProvider.count).to(equal(3))
+            }
+
+            it("index must return the correct index") {
+                // Then
+                expect(dataProvider.index(of: 20)).to(equal(1))
+            }
+            
+            it("subscript must return the correct object for given index") {
+                // Then
+                expect(dataProvider[0]).to(equal(10))
+            }
+            
         }
         
     }
+    
 }
-

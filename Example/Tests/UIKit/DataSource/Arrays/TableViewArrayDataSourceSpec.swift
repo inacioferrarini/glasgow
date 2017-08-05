@@ -39,15 +39,16 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                     // Given
                     let items = [10]
                     let tableView = TestTableView()
-                    let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, objects: items)
+                    let dataProvider = ArrayDataProvider<Int>(with: items)
+                    let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
 
                     // When
                     let indexPath = IndexPath(row: 0, section: 0)
                     let className = dataSource.reuseIdentifier(indexPath)
                     
                     // Then
-                    expect(dataSource.objects).toNot(beNil())
-                    expect(dataSource.objects.count).to(equal(1))
+                    expect(dataSource.dataProvider).toNot(beNil())
+                    expect(dataSource.dataProvider.count).to(equal(1))
                     expect(dataSource.reuseIdentifier).toNot(beNil())
                     expect(className).to(equal("NumberTableViewCell"))
                 }
@@ -59,17 +60,18 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                     let reuseIdentifier = { (indexPath: IndexPath) -> String in
                         return ""
                     }
+                    let dataProvider = ArrayDataProvider<Int>(with: items)
                     let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView,
                                                                                         reuseIdentifier: reuseIdentifier,
-                                                                                        objects: items)
+                                                                                        with: dataProvider)
                     
                     // When
                     let indexPath = IndexPath(row: 0, section: 0)
                     let className = dataSource.reuseIdentifier(indexPath)
                     
                     // Then
-                    expect(dataSource.objects).toNot(beNil())
-                    expect(dataSource.objects.count).to(equal(1))
+                    expect(dataSource.dataProvider).toNot(beNil())
+                    expect(dataSource.dataProvider.count).to(equal(1))
                     expect(dataSource.reuseIdentifier).toNot(beNil())
                     expect(className).to(equal(""))
                 }
@@ -89,7 +91,8 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                 tableView.onReloadData = { _ in
                     blockWasCalled = true
                 }
-                let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, objects: items)
+                let dataProvider = ArrayDataProvider<Int>(with: items)
+                let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
                 tableView.dataSource = dataSource
                 
                 // When
@@ -105,7 +108,8 @@ class TableViewArrayDataSourceSpec: QuickSpec {
             // Given
             let items = [10, 20, 30]
             let tableView = TestTableView()
-            let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, objects: items)
+            let dataProvider = ArrayDataProvider<Int>(with: items)
+            let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
 
             // When
             let rows = dataSource.tableView(tableView, numberOfRowsInSection: 0)
@@ -122,9 +126,10 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                 let items = [10]
                 let tableView = TestTableView()
                 tableView.register(NumberTableViewCell.self, forCellReuseIdentifier: "NumberTableViewCell")
+                let dataProvider = ArrayDataProvider<Int>(with: items)
                 let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(
                     for: tableView,
-                    objects: items)
+                    with: dataProvider)
                 tableView.dataSource = dataSource
                 
                 let indexPath = IndexPath(row: 0, section: 0)
