@@ -29,6 +29,7 @@
 		76E71F251F1286180032EA08 /* TestBaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F241F1286180032EA08 /* TestBaseTableViewController.swift */; };
 		76E71F281F1286C40032EA08 /* TestContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F271F1286C40032EA08 /* TestContext.swift */; };
 		76E71F2A1F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F291F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift */; };
+		BBAD2B9B1F36421900CFE30B /* ArrayDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */; };
 		E649C4D33977630E2DCE1732 /* Pods_Glasgow_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB862BD32528441553DD219A /* Pods_Glasgow_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +63,7 @@
 		76E71F271F1286C40032EA08 /* TestContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestContext.swift; sourceTree = "<group>"; };
 		76E71F291F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseTableViewControllerWithDelegates.swift; sourceTree = "<group>"; };
 		BB862BD32528441553DD219A /* Pods_Glasgow_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Glasgow_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataProviderSpec.swift; sourceTree = "<group>"; };
 		F609D5511A761F7F0AD043D0 /* Pods-Glasgow_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glasgow_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Glasgow_Tests/Pods-Glasgow_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				76824BF11F0FF94800FB5A22 /* Arrays */,
+				BBAD2B991F3641F300CFE30B /* Providers */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -329,6 +332,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BBAD2B991F3641F300CFE30B /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -471,6 +482,7 @@
 				76824C111F0FF94800FB5A22 /* ArrayDataSourceSpec.swift in Sources */,
 				76824C211F10043500FB5A22 /* AppBaseApiSpec.swift in Sources */,
 				76824C121F0FF94800FB5A22 /* NSObjectExtensionsSpec.swift in Sources */,
+				BBAD2B9B1F36421900CFE30B /* ArrayDataProviderSpec.swift in Sources */,
 				76824C0F1F0FF94800FB5A22 /* ArrowArrayTransformerSpec.swift in Sources */,
 				76E71F141F1010FF0032EA08 /* ApiResponseToPersonArrayTransformer.swift in Sources */,
 			);
