@@ -55,6 +55,15 @@
           "3.0.5"
         ]
       }
+    },
+    {
+      "name": "CoreData",
+      "source_files": "Glasgow/Classes/CoreData/**/*.swift",
+      "dependencies": {
+        "Glasgow/Core": [
+
+        ]
+      }
     }
   ]
 }

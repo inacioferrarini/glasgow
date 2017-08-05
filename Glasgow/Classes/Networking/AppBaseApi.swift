@@ -21,7 +21,7 @@
 //    SOFTWARE.
 //
 
-import UIKit
+import Foundation
 
 /**
  Basic Api class.

@@ -3,6 +3,7 @@ PODS:
   - Glasgow (0.1.2):
     - Glasgow/Arrow (= 0.1.2)
     - Glasgow/Core (= 0.1.2)
+    - Glasgow/CoreData (= 0.1.2)
     - Glasgow/Networking (= 0.1.2)
     - Glasgow/Transformer (= 0.1.2)
     - Glasgow/UIKit (= 0.1.2)
@@ -10,6 +11,8 @@ PODS:
     - Arrow (= 3.0.5)
     - Glasgow/Transformer
   - Glasgow/Core (0.1.2)
+  - Glasgow/CoreData (0.1.2):
+    - Glasgow/Core
   - Glasgow/Networking (0.1.2):
     - Glasgow/Transformer
   - Glasgow/Transformer (0.1.2)
@@ -43,7 +46,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Arrow: b696d6173296da330d1a995019db42f693249cd6
-  Glasgow: 545a610d22fe9d1f9fe09e9576c4a74c2a836c9f
+  Glasgow: 668a113f861b3db5481c7f9b7c0ff5ce39ccd5cb
   Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
   OHHTTPStubs: 752f9b11fd810a15162d50f11c06ff94f8e012eb
   Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d

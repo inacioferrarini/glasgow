@@ -112,6 +112,7 @@
 			children = (
 				76824BEB1F0FF94800FB5A22 /* Arrow */,
 				76824BEF1F0FF94800FB5A22 /* Core */,
+				BBAD2B9C1F36635000CFE30B /* CoreData */,
 				76824BF51F0FF94800FB5A22 /* Helpers */,
 				76824BF91F0FF94800FB5A22 /* Networking */,
 				76824BFA1F0FF94800FB5A22 /* Resources */,
@@ -336,6 +337,29 @@
 			isa = PBXGroup;
 			children = (
 				BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		BBAD2B9C1F36635000CFE30B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BBAD2B9D1F36635000CFE30B /* DataSource */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		BBAD2B9D1F36635000CFE30B /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				BBAD2B9E1F36635000CFE30B /* Providers */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		BBAD2B9E1F36635000CFE30B /* Providers */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Providers;
 			sourceTree = "<group>";

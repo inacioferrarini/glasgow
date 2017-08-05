@@ -32,4 +32,9 @@ Pod::Spec.new do |s|
     arrow.dependency 'Arrow' , '3.0.5'
   end
 
+  s.subspec "CoreData" do |cd|
+    cd.source_files = "Glasgow/Classes/CoreData/**/*.swift"
+    cd.dependency 'Glasgow/Core'
+  end
+
 end
