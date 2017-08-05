@@ -46,14 +46,14 @@ open class CoreDataStack {
     
     // MARK: - Initialization
     
+    public convenience init(modelFileName: String, databaseFileName: String) {
+        self.init(modelFileName: modelFileName, databaseFileName: databaseFileName, bundle: nil)
+    }
+    
     public init(modelFileName: String, databaseFileName: String, bundle: Bundle?) {
         self.modelFileName = modelFileName
         self.databaseFileName = databaseFileName
         self.bundle = bundle
-    }
-    
-    public convenience init(modelFileName: String, databaseFileName: String) {
-        self.init(modelFileName: modelFileName, databaseFileName: databaseFileName, bundle: nil)
     }
     
     
