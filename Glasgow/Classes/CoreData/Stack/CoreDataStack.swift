@@ -100,7 +100,7 @@ open class CoreDataStack {
         var failureReason = "There was an error creating or loading the application's saved data."
         let isRunningUnitTests = NSClassFromString("XCTest") != nil
         let storeType = isRunningUnitTests ? NSInMemoryStoreType : NSSQLiteStoreType
-        try? coordinator.addPersistentStore(ofType: storeType, configurationName: nil, at: url, options: nil)
+        _ = try? coordinator.addPersistentStore(ofType: storeType, configurationName: nil, at: url, options: nil)
         return coordinator
     }()
     
