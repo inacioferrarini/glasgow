@@ -1,19 +1,33 @@
 {
   "warnings": [
     {
-      "file": "/Users/inacioferrarini/Developer/Lab/Glasgow/Glasgow/Classes/UIKit/Delegate/TableView/PageLoaderTableViewDelegate.swift",
-      "line": 73,
-      "symbol": "PageLoaderTableViewDelegate.scrollViewDidEndDecelerating(_:)",
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Core/DataSource/Providers/ArrayDataProvider.swift",
+      "line": 63,
+      "symbol": "ArrayDataProvider.index(of:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
-      "file": "/Users/inacioferrarini/Developer/Lab/Glasgow/Glasgow/Classes/UIKit/Delegate/TableView/PageLoaderTableViewDelegate.swift",
-      "line": 73,
-      "symbol": "PageLoaderTableViewDelegate.scrollViewDidEndDecelerating(_:)",
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Core/DataSource/Providers/ArrayDataProvider.swift",
+      "line": 63,
+      "symbol": "ArrayDataProvider.index(of:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Core/DataSource/Providers/ArrayDataProvider.swift",
+      "line": 63,
+      "symbol": "ArrayDataProvider.index(of:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Core/DataSource/Providers/ArrayDataProvider.swift",
+      "line": 63,
+      "symbol": "ArrayDataProvider.index(of:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],
-  "source_directory": "/Users/inacioferrarini/Developer/Lab/Glasgow"
+  "source_directory": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow"
 }

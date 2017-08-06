@@ -13,7 +13,7 @@
     <a title="Classes  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">Glasgow Docs</a> (100% documented)</p>
+        <p><a href="index.html">Glasgow Docs</a> (98% documented)</p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -33,6 +33,9 @@
                 <a href="Classes/AppBaseApi.html">AppBaseApi</a>
               </li>
               <li class="nav-group-task">
+                <a href="Classes/ArrayDataProvider.html">ArrayDataProvider</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="Classes/ArrayDataSource.html">ArrayDataSource</a>
               </li>
               <li class="nav-group-task">
@@ -45,7 +48,10 @@
                 <a href="Classes/BaseTableViewController.html">BaseTableViewController</a>
               </li>
               <li class="nav-group-task">
-                <a href="Classes/ConfigurableTableViewCell.html">ConfigurableTableViewCell</a>
+                <a href="Classes/CoreDataProvider.html">CoreDataProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/CoreDataStack.html">CoreDataStack</a>
               </li>
               <li class="nav-group-task">
                 <a href="Classes/DataBasedViewController.html">DataBasedViewController</a>
@@ -77,6 +83,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/Configurable.html">Configurable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/DataProvider.html">DataProvider</a>
               </li>
               <li class="nav-group-task">
                 <a href="Protocols/KeyPathTransformer.html">KeyPathTransformer</a>
@@ -122,6 +131,38 @@
                         <div class="language">
                           <p class="aside-title">Swift</p>
                           <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">AppBaseApi</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C7Glasgow17ArrayDataProvider"></a>
+                    <a name="//apple_ref/swift/Class/ArrayDataProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C7Glasgow17ArrayDataProvider">ArrayDataProvider</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Array-based generic data provider having elements of type <code>Type</code>.</p>
+
+                        <a href="Classes/ArrayDataProvider.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">ArrayDataProvider</span><span class="o">&lt;</span><span class="k">Type</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt"><a href="Protocols/DataProvider.html">DataProvider</a></span></code></pre>
 
                         </div>
                       </div>
@@ -249,7 +290,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BaseTableViewController</span><span class="o">&lt;</span><span class="kt">AppContextType</span><span class="p">:</span> <span class="kt">Any</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Classes/DataBasedViewController.html">DataBasedViewController</a></span><span class="o">&lt;</span><span class="kt">AppContextType</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">BaseTableViewController</span><span class="p">:</span> <span class="kt"><a href="Classes/DataBasedViewController.html">DataBasedViewController</a></span></code></pre>
 
                         </div>
                       </div>
@@ -263,9 +304,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:C7Glasgow25ConfigurableTableViewCell"></a>
-                    <a name="//apple_ref/swift/Class/ConfigurableTableViewCell" class="dashAnchor"></a>
-                    <a class="token" href="#/s:C7Glasgow25ConfigurableTableViewCell">ConfigurableTableViewCell</a>
+                    <a name="/s:C7Glasgow16CoreDataProvider"></a>
+                    <a name="//apple_ref/swift/Class/CoreDataProvider" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C7Glasgow16CoreDataProvider">CoreDataProvider</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -273,15 +314,47 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A <code><a href="Protocols/Configurable.html">Configurable</a></code> UITableViewCell.</p>
+                        <p>A <code>Core Data</code> <code><a href="Protocols/DataProvider.html">DataProvider</a></code>.</p>
 
-                        <a href="Classes/ConfigurableTableViewCell.html" class="slightly-smaller">See more</a>
+                        <a href="Classes/CoreDataProvider.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">ConfigurableTableViewCell</span><span class="o">&lt;</span><span class="k">Type</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="p">,</span> <span class="kt"><a href="Protocols/Configurable.html">Configurable</a></span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">CoreDataProvider</span><span class="o">&lt;</span><span class="kt">Entity</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Classes/ArrayDataProvider.html">ArrayDataProvider</a></span><span class="o">&lt;</span><span class="kt">Entity</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">NSFetchedResultsControllerDelegate</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:C7Glasgow13CoreDataStack"></a>
+                    <a name="//apple_ref/swift/Class/CoreDataStack" class="dashAnchor"></a>
+                    <a class="token" href="#/s:C7Glasgow13CoreDataStack">CoreDataStack</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code>Core Data</code> stack.</p>
+
+                        <a href="Classes/CoreDataStack.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">CoreDataStack</span></code></pre>
 
                         </div>
                       </div>
@@ -313,7 +386,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">DataBasedViewController</span><span class="o">&lt;</span><span class="kt">AppContextType</span><span class="p">:</span> <span class="kt">Any</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span> <span class="kt"><a href="Protocols/AppContextAware.html">AppContextAware</a></span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">DataBasedViewController</span><span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
 
                         </div>
                       </div>
@@ -346,7 +419,8 @@ When the TableView is scrolled to the bottom, will check if should fetch the nex
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">PageLoaderTableViewDelegate</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Classes/ConfigurableTableViewCell.html">ConfigurableTableViewCell</a></span><span class="o">&lt;</span><span class="k">Type</span><span class="o">&gt;</span><span class="p">,</span> <span class="k">Type</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Classes/TableViewBlockDelegate.html">TableViewBlockDelegate</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="k">Type</span><span class="o">&gt;</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">PageLoaderTableViewDelegate</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="p">,</span> <span class="k">Type</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Classes/TableViewBlockDelegate.html">TableViewBlockDelegate</a></span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">,</span> <span class="k">Type</span><span class="o">&gt;</span>
+    <span class="k">where</span> <span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Protocols/Configurable.html">Configurable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -370,7 +444,7 @@ When the TableView is scrolled to the bottom, will check if should fetch the nex
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Array-based UITableView data source having elements of type <code>Type</code> and using <code><a href="Classes/ConfigurableTableViewCell.html">ConfigurableTableViewCell</a></code>.</p>
+                        <p>Array-based UITableView data source having elements of type <code>Type</code> and using <code>ConfigurableTableViewCell</code>.</p>
 
                         <a href="Classes/TableViewArrayDataSource.html" class="slightly-smaller">See more</a>
                       </div>
@@ -378,7 +452,8 @@ When the TableView is scrolled to the bottom, will check if should fetch the nex
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">TableViewArrayDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Classes/ConfigurableTableViewCell.html">ConfigurableTableViewCell</a></span><span class="o">&lt;</span><span class="k">Type</span><span class="o">&gt;</span><span class="p">,</span> <span class="k">Type</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Classes/ArrayDataSource.html">ArrayDataSource</a></span><span class="o">&lt;</span><span class="k">Type</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">TableViewArrayDataSource</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="p">,</span> <span class="k">Type</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="Classes/ArrayDataSource.html">ArrayDataSource</a></span><span class="o">&lt;</span><span class="k">Type</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">UITableViewDataSource</span>
+    <span class="k">where</span> <span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Protocols/Configurable.html">Configurable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -402,7 +477,7 @@ When the TableView is scrolled to the bottom, will check if should fetch the nex
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Basic UITableViewDelegate abstracting value selection, having elements of type <code>Type</code> and using <code><a href="Classes/ConfigurableTableViewCell.html">ConfigurableTableViewCell</a></code></p>
+                        <p>Basic UITableViewDelegate abstracting value selection, having elements of type <code>Type</code> and using <code>ConfigurableTableViewCell</code></p>
 
                         <a href="Classes/TableViewBlockDelegate.html" class="slightly-smaller">See more</a>
                       </div>
@@ -410,7 +485,8 @@ When the TableView is scrolled to the bottom, will check if should fetch the nex
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">TableViewBlockDelegate</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Classes/ConfigurableTableViewCell.html">ConfigurableTableViewCell</a></span><span class="o">&lt;</span><span class="k">Type</span><span class="o">&gt;</span><span class="p">,</span> <span class="k">Type</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">TableViewBlockDelegate</span><span class="o">&lt;</span><span class="kt">CellType</span><span class="p">:</span> <span class="kt">UITableViewCell</span><span class="p">,</span> <span class="k">Type</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt">UITableViewDelegate</span>
+    <span class="k">where</span> <span class="kt">CellType</span><span class="p">:</span> <span class="kt"><a href="Protocols/Configurable.html">Configurable</a></span></code></pre>
 
                         </div>
                       </div>
@@ -422,7 +498,7 @@ When the TableView is scrolled to the bottom, will check if should fetch the nex
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio Ferrarini</a>. All rights reserved. (Last updated: 2017-07-23)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio Ferrarini</a>. All rights reserved. (Last updated: 2017-08-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -23,6 +23,9 @@
 
 import CoreData
 
+/**
+ The `Core Data` stack.
+ */
 open class CoreDataStack {
     
     
@@ -46,10 +49,26 @@ open class CoreDataStack {
     
     // MARK: - Initialization
     
+    /**
+     Convenience init.
+     
+     - parameter modelFileName: `Core Data` model file name.
+     
+     - parameter databaseFileName: `Core Data` database file name.
+     */
     public convenience init(modelFileName: String, databaseFileName: String) {
         self.init(modelFileName: modelFileName, databaseFileName: databaseFileName, bundle: nil)
     }
-    
+
+    /**
+     Inits the `Core Data` stack.
+     
+     - parameter modelFileName: `Core Data` model file name.
+     
+     - parameter databaseFileName: `Core Data` database file name.
+     
+     - parameter bundle: Bundle where `Core Data` `model file` is located.
+     */
     public init(modelFileName: String, databaseFileName: String, bundle: Bundle?) {
         self.modelFileName = modelFileName
         self.databaseFileName = databaseFileName
@@ -95,6 +114,9 @@ open class CoreDataStack {
     
     // MARK: - Core Data Saving support
     
+    /**
+     Saves the `Core Data` context, if there is changes to be saved.
+     */
     open func saveContext() throws {
         guard let managedObjectContext = self.managedObjectContext else { return }
         if managedObjectContext.hasChanges {

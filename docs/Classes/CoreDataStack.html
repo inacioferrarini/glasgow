@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ArrowArrayTransformer Class Reference</title>
+    <title>CoreDataStack Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/ArrowArrayTransformer" class="dashAnchor"></a>
-    <a title="ArrowArrayTransformer Class Reference"></a>
+    <a name="//apple_ref/swift/Class/CoreDataStack" class="dashAnchor"></a>
+    <a title="CoreDataStack Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Glasgow Docs</a> (98% documented)</p>
@@ -21,7 +21,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Glasgow Reference</a>
         <img id="carat" src="../img/carat.png" />
-        ArrowArrayTransformer Class Reference
+        CoreDataStack Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -101,25 +101,32 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>ArrowArrayTransformer</h1>
+            <h1>CoreDataStack</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">ArrowArrayTransformer</span><span class="o">&lt;</span><span class="k">Type</span><span class="p">:</span> <span class="kt">ArrowParsable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/KeyPathTransformer.html">KeyPathTransformer</a></span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">CoreDataStack</span></code></pre>
 
                 </div>
               </div>
-            <p>Uses <code>Arrow</code> to transform a given object of type AnyObject? into an array of target type, <code>Type</code>.</p>
+            <p>The <code>Core Data</code> stack.</p>
 
           </section>
           <section class="section task-group-section">
             <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow21ArrowArrayTransformercFT_GS0_x_"></a>
-                    <a name="//apple_ref/swift/Method/init()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow21ArrowArrayTransformercFT_GS0_x_">init()</a>
+                    <a name="/s:vC7Glasgow13CoreDataStack13modelFileNameSS"></a>
+                    <a name="//apple_ref/swift/Property/modelFileName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7Glasgow13CoreDataStack13modelFileNameSS">modelFileName</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -127,14 +134,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Default Initialization.</p>
+                        <p>Name of Core Data model file.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">let</span> <span class="nv">modelFileName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -144,9 +151,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow21ArrowArrayTransformer9transformFGSqPs9AnyObject__GSqGSax__"></a>
-                    <a name="//apple_ref/swift/Method/transform(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow21ArrowArrayTransformer9transformFGSqPs9AnyObject__GSqGSax__">transform(_:)</a>
+                    <a name="/s:vC7Glasgow13CoreDataStack16databaseFileNameSS"></a>
+                    <a name="//apple_ref/swift/Property/databaseFileName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7Glasgow13CoreDataStack16databaseFileNameSS">databaseFileName</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -154,14 +161,79 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Transforms the input type AnyObject? and returns [<code>Type</code>] as output.</p>
+                        <p>Name of Data Base file.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">transform</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">U</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">let</span> <span class="nv">databaseFileName</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7Glasgow13CoreDataStack6bundleGSqCSo6Bundle_"></a>
+                    <a name="//apple_ref/swift/Property/bundle" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7Glasgow13CoreDataStack6bundleGSqCSo6Bundle_">bundle</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Bundle where the model is located.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">let</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initialization"></a>
+                <a name="//apple_ref/swift/Section/Initialization" class="dashAnchor"></a>
+                <a href="#/Initialization">
+                  <h3 class="section-name">Initialization</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow13CoreDataStackcFT13modelFileNameSS16databaseFileNameSS_S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(modelFileName:databaseFileName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow13CoreDataStackcFT13modelFileNameSS16databaseFileNameSS_S0_">init(modelFileName:databaseFileName:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Convenience init.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">modelFileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">databaseFileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -172,21 +244,29 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>input</em>
+                                <em>modelFileName</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The object to be transformed.</p>
+                                  <p><code>Core Data</code> model file name.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>databaseFileName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Core Data</code> database file name.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p><code>Type</code></p>
                       </div>
                     </section>
                   </div>
@@ -194,9 +274,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow21ArrowArrayTransformer9transformFTGSqPs9AnyObject__7keyPathGSqSS__GSqGSax__"></a>
-                    <a name="//apple_ref/swift/Method/transform(_:keyPath:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow21ArrowArrayTransformer9transformFTGSqPs9AnyObject__7keyPathGSqSS__GSqGSax__">transform(_:keyPath:)</a>
+                    <a name="/s:FC7Glasgow13CoreDataStackcFT13modelFileNameSS16databaseFileNameSS6bundleGSqCSo6Bundle__S0_"></a>
+                    <a name="//apple_ref/swift/Method/init(modelFileName:databaseFileName:bundle:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow13CoreDataStackcFT13modelFileNameSS16databaseFileNameSS6bundleGSqCSo6Bundle__S0_">init(modelFileName:databaseFileName:bundle:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -204,14 +284,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Transforms the input type AnyObject? and returns [<code>Type</code>] as output.</p>
+                        <p>Inits the <code>Core Data</code> stack.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">transform</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="k">Type</span><span class="p">]?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">modelFileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">databaseFileName</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">bundle</span><span class="p">:</span> <span class="kt">Bundle</span><span class="p">?)</span></code></pre>
 
                         </div>
                       </div>
@@ -222,43 +302,62 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>input</em>
+                                <em>modelFileName</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The object to be transformed.</p>
+                                  <p><code>Core Data</code> model file name.</p>
                                 </div>
                               </td>
                             </tr>
                             <tr>
                               <td>
                                 <code>
-                                <em>keyPath</em>
+                                <em>databaseFileName</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>If input type allows, use the given key path as the root object.</p>
+                                  <p><code>Core Data</code> database file name.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>bundle</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Bundle where <code>Core Data</code> <code>model file</code> is located.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>[<code>Type</code>]</p>
-                      </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Core%20Data%20Saving%20support"></a>
+                <a name="//apple_ref/swift/Section/Core Data Saving support" class="dashAnchor"></a>
+                <a href="#/Core%20Data%20Saving%20support">
+                  <h3 class="section-name">Core Data Saving support</h3>
+                </a>
+              </div>
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow21ArrowArrayTransformer14transformArrayFC5Arrow4JSONGSax_"></a>
-                    <a name="//apple_ref/swift/Method/transformArray(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow21ArrowArrayTransformer14transformArrayFC5Arrow4JSONGSax_">transformArray(_:)</a>
+                    <a name="/s:FC7Glasgow13CoreDataStack11saveContextFzT_T_"></a>
+                    <a name="//apple_ref/swift/Method/saveContext()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow13CoreDataStack11saveContextFzT_T_">saveContext()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -266,39 +365,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Transforms <code>json</code> into [<code>U</code>].</p>
+                        <p>Saves the <code>Core Data</code> context, if there is changes to be saved.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">transformArray</span><span class="p">(</span><span class="n">_</span> <span class="nv">json</span><span class="p">:</span> <span class="kt">JSON</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="k">Type</span><span class="p">]</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">saveContext</span><span class="p">()</span> <span class="k">throws</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>json</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>The <code>JSON</code> object to be transformed.</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>[<code>Type</code>]</p>
                       </div>
                     </section>
                   </div>

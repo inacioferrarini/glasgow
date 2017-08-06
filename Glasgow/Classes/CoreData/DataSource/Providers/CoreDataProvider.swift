@@ -24,6 +24,10 @@
 import Foundation
 import CoreData
 
+
+/**
+ A `Core Data` `DataProvider`.
+ */
 open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>, NSFetchedResultsControllerDelegate {
     
     
@@ -31,6 +35,7 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     
     /**
      Objects from this provider.
+     As it is based on `CoreData`, the data must be fetched, using `refresh()`.
      */
     override public var objects: [Entity] {
         get {
@@ -39,7 +44,7 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     }
 
     /**
-     The predicate to be applyed to every data fetch operation
+     The predicate to be applied to every data fetch operation
      */
     open var predicate: NSPredicate? {
         didSet {
@@ -68,14 +73,14 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     }
     
     /**
-     A Key Path for categorization.
+     A Key Path used for categorization and group data using the given `keypath`.
      */
-    open var sectionNameKeyPath: String?
+    open var sectionNameKeyPath: String?    // TODO: update fetchedResultsController
     
     /**
-     Name for Core Data Cache.
+     Name for `Core Data` cache.
      */
-    open var cacheName: String?
+    open var cacheName: String?             // TODO: update fetchedResultsController
     
     /**
      The Core Data Managed Object Context.
@@ -92,6 +97,15 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     
     // MARK: - Initialization
     
+    /**
+     Inits the `Core Data Provider`.
+     The data will not be fetched after created.
+     To fetch data, call `refresh()`.
+     
+     - parameter sortDescriptors: Data sort.
+ 
+     - parameter context: `Core Data` Managed Object Context.
+     */
     public convenience init(sortDescriptors: [NSSortDescriptor],
                             managedObjectContext context: NSManagedObjectContext) {
         
@@ -102,7 +116,25 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
                   sectionNameKeyPath: nil,
                   cacheName: nil)
     }
-    
+
+    /**
+     Inits the `Core Data Provider`.
+     The data will not be fetched after created.
+     To fetch data, call `refresh()`.
+     
+     - parameter sortDescriptors: Data sort.
+     
+     - parameter context: `Core Data` Managed Object Context.
+     
+     - parameter predicate: `Core Data` predicate used to filter results.
+     
+     - parameter fetchLimit: Used to limit the amount of returned values.
+     
+     - parameter sectionNameKeyPath: A Key Path used for categorization
+            and group data using the given `keypath`.
+     
+     - cacheName: Name for `Core Data` cache.
+     */
     public init(sortDescriptors: [NSSortDescriptor],
                 managedObjectContext context: NSManagedObjectContext,
                 predicate: NSPredicate?,
@@ -122,6 +154,14 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     
     // MARK: - Public Methods
     
+    /**
+     Fetchs data from `Core Data` storage.
+     By default, it is not called by default when the `CoreDataProvider` is created.
+     
+     Also, this method must be called whenever `predicate`, `fetchLimit`, `sectionNameKeyPath` or `cacheName` changes.
+     
+     Once executed, `objects` will return the fetched objects.
+     */
     open func refresh() {
         try? self.fetchedResultsController.performFetch()
     }
@@ -129,6 +169,9 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     
     // MARK: - Fetched results controller
     
+    /**
+     The `NSFetchedResultsController<Entity>` used to back the `CoreDataProvider`.
+     */
     open lazy var fetchedResultsController: NSFetchedResultsController<Entity> = {
         let fetchRequest = NSFetchRequest<Entity>()
         let entity = NSEntityDescription.entity(forEntityName: self.entityName, in: self.managedObjectContext)
@@ -154,6 +197,17 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     }()
     
     
+    /**
+     Instantiates a new `NSFetchedResultsController<Entity>`.
+     
+     - parameter fetchRequest: NSFetchRequest<Entity> used to request data.
+     
+     - parameter managedObjectContext: `Core Data` context.
+     
+     - parameter sectionNameKeyPath: `keypath` for section categorization.
+     
+     - parameter cacheName: `Core Data` cache name.
+     */
     open func instantiateFetchedResultsController(_ fetchRequest: NSFetchRequest<Entity>,
                                                   managedObjectContext: NSManagedObjectContext,
                                                   sectionNameKeyPath: String?,

@@ -51,7 +51,7 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
      
      - parameter for: The target UITableView.
      
-     - parameter objects: Contained objects.
+     - parameter dataProvider: The array-based Data provider.
      */
     public convenience init(for tableView: UITableView, with dataProvider: ArrayDataProvider<Type>) {
         let reuseIdentifier = { (indexPath: IndexPath) -> String in
@@ -69,7 +69,7 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
      
      - parameter reuseIdentifier: Block used to define the Ruse Identifier based on the given IndexPath.
      
-     - parameter dataProvider: Data provider.
+     - parameter dataProvider: The array-based Data provider.
      */
     public required init(for tableView: UITableView,
                          reuseIdentifier: @escaping ((IndexPath) -> (String)),

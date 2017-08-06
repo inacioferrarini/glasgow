@@ -32,7 +32,8 @@ open class ArrayDataSource<Type: Equatable>: NSObject {
     // MARK: - Properties
 
     /**
-     Objects contained by this DataSource.
+     `DataProvider` for this object.
+     As ArrayDataSource is array-based, the data provider is array-based as well.
      */
     open var dataProvider: ArrayDataProvider<Type>
     
@@ -45,9 +46,9 @@ open class ArrayDataSource<Type: Equatable>: NSObject {
     // MARK: - Initialization
 
     /**
-     Inits with given objects.
+     Inits with given `DataProvider`.
      
-     - parameter dataProvider: Data provider.
+     - parameter dataProvider: The array-based Data provider.
      */
     public init(with dataProvider: ArrayDataProvider<Type>) {
         self.dataProvider = dataProvider

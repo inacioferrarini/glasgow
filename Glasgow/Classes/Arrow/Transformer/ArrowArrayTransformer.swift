@@ -39,7 +39,7 @@ open class ArrowArrayTransformer<Type: ArrowParsable>: Transformer, KeyPathTrans
      
      - parameter input: The object to be transformed.
      
-     - returns: [`Type`]
+     - returns: `Type`
      */
     public func transform(_ input: T) -> U {
         return self.transform(input, keyPath: nil)
