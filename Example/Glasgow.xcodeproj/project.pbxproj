@@ -33,7 +33,7 @@
 		BB761D351F36A64B003D283B /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D341F36A64B003D283B /* TestEntity+CoreDataProperties.swift */; };
 		BBAD2B9B1F36421900CFE30B /* ArrayDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */; };
 		BBAD2BA11F368B6B00CFE30B /* CoreDataStackSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA01F368B6B00CFE30B /* CoreDataStackSpec.swift */; };
-		BBAD2BA31F368B8400CFE30B /* CoreDataDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA21F368B8400CFE30B /* CoreDataDataProviderSpec.swift */; };
+		BBAD2BA31F368B8400CFE30B /* CoreDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA21F368B8400CFE30B /* CoreDataProviderSpec.swift */; };
 		BBAD2BA71F368E0800CFE30B /* GlasgowTests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA51F368E0800CFE30B /* GlasgowTests.xcdatamodeld */; };
 		E649C4D33977630E2DCE1732 /* Pods_Glasgow_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB862BD32528441553DD219A /* Pods_Glasgow_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -72,7 +72,7 @@
 		BB862BD32528441553DD219A /* Pods_Glasgow_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Glasgow_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataProviderSpec.swift; sourceTree = "<group>"; };
 		BBAD2BA01F368B6B00CFE30B /* CoreDataStackSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackSpec.swift; sourceTree = "<group>"; };
-		BBAD2BA21F368B8400CFE30B /* CoreDataDataProviderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataDataProviderSpec.swift; sourceTree = "<group>"; };
+		BBAD2BA21F368B8400CFE30B /* CoreDataProviderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataProviderSpec.swift; sourceTree = "<group>"; };
 		BBAD2BA61F368E0800CFE30B /* GlasgowTests.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GlasgowTests.xcdatamodel; sourceTree = "<group>"; };
 		F609D5511A761F7F0AD043D0 /* Pods-Glasgow_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glasgow_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Glasgow_Tests/Pods-Glasgow_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -382,7 +382,7 @@
 		BBAD2B9E1F36635000CFE30B /* Providers */ = {
 			isa = PBXGroup;
 			children = (
-				BBAD2BA21F368B8400CFE30B /* CoreDataDataProviderSpec.swift */,
+				BBAD2BA21F368B8400CFE30B /* CoreDataProviderSpec.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -547,7 +547,7 @@
 				76824C101F0FF94800FB5A22 /* ArrowTransformerSpec.swift in Sources */,
 				76E71F281F1286C40032EA08 /* TestContext.swift in Sources */,
 				76824C1C1F0FF94800FB5A22 /* DataBasedViewControllerSpec.swift in Sources */,
-				BBAD2BA31F368B8400CFE30B /* CoreDataDataProviderSpec.swift in Sources */,
+				BBAD2BA31F368B8400CFE30B /* CoreDataProviderSpec.swift in Sources */,
 				76E71F161F1011410032EA08 /* Person.swift in Sources */,
 				76824C1D1F0FF94800FB5A22 /* TableViewArrayDataSourceSpec.swift in Sources */,
 				BB761D331F36A62B003D283B /* TestEntity+CoreDataClass.swift in Sources */,

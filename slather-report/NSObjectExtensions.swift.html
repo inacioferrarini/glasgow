@@ -225,27 +225,27 @@
 <tr class="covered">
 <td class="num">43</td>
 <td class="src"><pre><code class="objc">    open class func simpleClassName() -&gt; String {</code></pre></td>
-<td class="coverage">6x</td>
+<td class="coverage">32x</td>
 </tr>
 <tr class="covered">
 <td class="num">44</td>
 <td class="src"><pre><code class="objc">        let fullClassName: String = NSStringFromClass(object_getClass(self))</code></pre></td>
-<td class="coverage">6x</td>
+<td class="coverage">32x</td>
 </tr>
 <tr class="covered">
 <td class="num">45</td>
 <td class="src"><pre><code class="objc">        let classNameComponents = fullClassName.characters.split {$0 == "."}.map(String.init)</code></pre></td>
-<td class="coverage">135x</td>
+<td class="coverage">395x</td>
 </tr>
 <tr class="covered">
 <td class="num">46</td>
 <td class="src"><pre><code class="objc">        return classNameComponents.last!</code></pre></td>
-<td class="coverage">6x</td>
+<td class="coverage">32x</td>
 </tr>
 <tr class="covered">
 <td class="num">47</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">6x</td>
+<td class="coverage">32x</td>
 </tr>
 <tr class="never">
 <td class="num">48</td>

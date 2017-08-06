@@ -50,7 +50,13 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     /**
     Limit to the amount of fetched objects
     */
-    open var fetchLimit: NSInteger?
+    open var fetchLimit: NSInteger? {
+        didSet {
+            if let fetchLimit = fetchLimit {
+                self.fetchedResultsController.fetchRequest.fetchLimit = fetchLimit
+            }
+        }
+    }
     
     /**
      Result sorting
@@ -79,7 +85,7 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     /**
      The Entity name.
      */
-    dynamic var entityName: String = {
+    dynamic lazy var entityName: String = {
         return Entity.simpleClassName()
     }()
     
@@ -116,7 +122,7 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     
     // MARK: - Public Methods
     
-    open func refreshData() {
+    open func refresh() {
         try? self.fetchedResultsController.performFetch()
     }
     
