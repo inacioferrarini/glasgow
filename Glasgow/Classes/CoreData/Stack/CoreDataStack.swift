@@ -104,7 +104,7 @@ open class CoreDataStack {
         return coordinator
     }()
     
-    lazy var managedObjectContext: NSManagedObjectContext? = {
+    open lazy var managedObjectContext: NSManagedObjectContext? = {
         guard let coordinator = self.persistentStoreCoordinator else { return nil }
         var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)
         managedObjectContext.persistentStoreCoordinator = coordinator
