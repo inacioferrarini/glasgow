@@ -27,45 +27,65 @@ import Nimble
 import OHHTTPStubs
 @testable import Glasgow
 
-class TableViewBlockDelegateSpec: QuickSpec {
+class PageLoaderTableViewDelegateSpec: QuickSpec {
     
     override func spec() {
         
-        describe("Table View Block Delegate") {
+        describe("Page Loader Table View Delegate") {
             // Given
             let items = [10]
             let tableView = TestTableView()
             let dataProvider = ArrayDataProvider<Int>(with: items)
             let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
-            var delegate: TableViewBlockDelegate<NumberTableViewCell, Int>?
+            var delegate: PageLoaderTableViewDelegate<NumberTableViewCell, Int>?
             
             it("Initialization must create object") {
                 // When
-                let onSelected:((Int) -> Void) = { _ in
+                let onSelected: ((Int) -> Void) = { _ in
                 }
-                delegate = TableViewBlockDelegate<NumberTableViewCell, Int>(with: dataSource, onSelected: onSelected)
+                let shouldLoadNextPage: (() -> Bool) = { _ in
+                    return true
+                }
+                let loadNextPage: (() -> ()) = { _ in
+                }
+                
+                delegate = PageLoaderTableViewDelegate<NumberTableViewCell, Int>(with: dataSource,
+                                                                                 onSelected: onSelected,
+                                                                                 shouldLoadNextPage: shouldLoadNextPage,
+                                                                                 loadNextPage: loadNextPage)
                 
                 // Then
                 expect(delegate).toNot(beNil())
             }
             
-            it("Selection must call onSelected block") {
+            it("scrollViewDidEndDecelerating must call block") {
                 // Given
                 var blockWasCalled = false
                 
                 // When
-                let onSelected:((Int) -> Void) = { _ in
+                let onSelected: ((Int) -> Void) = { _ in
+                }
+                let shouldLoadNextPage: (() -> Bool) = { _ in
+                    return true
+                }
+                let loadNextPage: (() -> ()) = { _ in
                     blockWasCalled = true
                 }
-                delegate = TableViewBlockDelegate<NumberTableViewCell, Int>(with: dataSource, onSelected: onSelected)
+                
+                delegate = PageLoaderTableViewDelegate<NumberTableViewCell, Int>(with: dataSource,
+                                                                                 onSelected: onSelected,
+                                                                                 shouldLoadNextPage: shouldLoadNextPage,
+                                                                                 loadNextPage: loadNextPage)
                 
                 // Then
                 expect(delegate).toNot(beNil())
                 
-                let indexPath = IndexPath(row: 0, section: 0)
-                delegate?.tableView(tableView, didSelectRowAt: indexPath)
+                let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 200, height: 300))
+                scrollView.contentOffset.y = 350
                 
-                expect(blockWasCalled).to(equal(true))
+                delegate?.scrollViewDidEndDecelerating(scrollView)
+                
+                expect(blockWasCalled).toEventually(beTruthy())
             }
             
         }
@@ -73,8 +93,3 @@ class TableViewBlockDelegateSpec: QuickSpec {
     }
     
 }
-
-
-
-
-

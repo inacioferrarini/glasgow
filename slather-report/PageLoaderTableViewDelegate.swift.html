@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "PageLoaderTableViewDelegate.swift" : </span><span class="cov_low">0.00%</span>
+<span>Coverage for "PageLoaderTableViewDelegate.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(0 of 16 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(16 of 16 relevant lines covered)</h4>
 <h4 class="cov_filepath">Glasgow/Classes/UIKit/Delegate/TableView/PageLoaderTableViewDelegate.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -322,35 +322,35 @@
 <td class="src"><pre><code class="objc">                         shouldLoadNextPage: @escaping (() -&gt; Bool),</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">63</td>
 <td class="src"><pre><code class="objc">                         loadNextPage: @escaping (() -&gt; ())) {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">64</td>
 <td class="src"><pre><code class="objc">        self.shouldLoadNextPage = shouldLoadNextPage</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">65</td>
 <td class="src"><pre><code class="objc">        self.loadNextPage = loadNextPage</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">66</td>
 <td class="src"><pre><code class="objc">        super.init(with: dataSource,</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">67</td>
 <td class="src"><pre><code class="objc">                   onSelected: onSelected)</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">68</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="never">
 <td class="num">69</td>
@@ -397,55 +397,55 @@
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">78</td>
 <td class="src"><pre><code class="objc">    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">79</td>
 <td class="src"><pre><code class="objc">        if self.shouldLoadNextPage() {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">80</td>
 <td class="src"><pre><code class="objc">            let endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">81</td>
 <td class="src"><pre><code class="objc">            if endScrolling &gt;= scrollView.contentSize.height {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">82</td>
 <td class="src"><pre><code class="objc">                DispatchQueue.main.async { [weak self] in</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">83</td>
 <td class="src"><pre><code class="objc">                    self?.loadNextPage()</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">84</td>
 <td class="src"><pre><code class="objc">                }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">85</td>
 <td class="src"><pre><code class="objc">            }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">86</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">87</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="never">
 <td class="num">88</td>

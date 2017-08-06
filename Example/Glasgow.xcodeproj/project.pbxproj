@@ -32,6 +32,7 @@
 		BB761D331F36A62B003D283B /* TestEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D321F36A62B003D283B /* TestEntity+CoreDataClass.swift */; };
 		BB761D351F36A64B003D283B /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D341F36A64B003D283B /* TestEntity+CoreDataProperties.swift */; };
 		BB761D391F36C612003D283B /* TableViewBlockDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D381F36C612003D283B /* TableViewBlockDelegateSpec.swift */; };
+		BB761D3B1F36CCCC003D283B /* PageLoaderTableViewDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D3A1F36CCCC003D283B /* PageLoaderTableViewDelegateSpec.swift */; };
 		BBAD2B9B1F36421900CFE30B /* ArrayDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */; };
 		BBAD2BA11F368B6B00CFE30B /* CoreDataStackSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA01F368B6B00CFE30B /* CoreDataStackSpec.swift */; };
 		BBAD2BA31F368B8400CFE30B /* CoreDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA21F368B8400CFE30B /* CoreDataProviderSpec.swift */; };
@@ -71,6 +72,7 @@
 		BB761D321F36A62B003D283B /* TestEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BB761D341F36A64B003D283B /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BB761D381F36C612003D283B /* TableViewBlockDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBlockDelegateSpec.swift; sourceTree = "<group>"; };
+		BB761D3A1F36CCCC003D283B /* PageLoaderTableViewDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageLoaderTableViewDelegateSpec.swift; sourceTree = "<group>"; };
 		BB862BD32528441553DD219A /* Pods_Glasgow_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Glasgow_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataProviderSpec.swift; sourceTree = "<group>"; };
 		BBAD2BA01F368B6B00CFE30B /* CoreDataStackSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackSpec.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			isa = PBXGroup;
 			children = (
 				BB761D381F36C612003D283B /* TableViewBlockDelegateSpec.swift */,
+				BB761D3A1F36CCCC003D283B /* PageLoaderTableViewDelegateSpec.swift */,
 			);
 			path = TableView;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				76824C121F0FF94800FB5A22 /* NSObjectExtensionsSpec.swift in Sources */,
 				BBAD2B9B1F36421900CFE30B /* ArrayDataProviderSpec.swift in Sources */,
 				76824C0F1F0FF94800FB5A22 /* ArrowArrayTransformerSpec.swift in Sources */,
+				BB761D3B1F36CCCC003D283B /* PageLoaderTableViewDelegateSpec.swift in Sources */,
 				BBAD2BA11F368B6B00CFE30B /* CoreDataStackSpec.swift in Sources */,
 				BB761D391F36C612003D283B /* TableViewBlockDelegateSpec.swift in Sources */,
 				76E71F141F1010FF0032EA08 /* ApiResponseToPersonArrayTransformer.swift in Sources */,
