@@ -95,10 +95,10 @@ open class CoreDataStack {
     
     // MARK: - Core Data Saving support
     
-    open func saveContext () {
+    open func saveContext() throws {
         guard let managedObjectContext = self.managedObjectContext else { return }
         if managedObjectContext.hasChanges {
-            try? managedObjectContext.save()
+            try managedObjectContext.save()
         }
     }
     

@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "CoreDataStack.swift" : </span><span class="cov_low">0.00%</span>
+<span>Coverage for "CoreDataStack.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(0 of 14 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(14 of 14 relevant lines covered)</h4>
 <h4 class="cov_filepath">Glasgow/Classes/CoreData/Stack/CoreDataStack.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -252,50 +252,50 @@
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">49</td>
-<td class="src"><pre><code class="objc">    public init(modelFileName: String, databaseFileName: String, bundle: Bundle?) {</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">    public convenience init(modelFileName: String, databaseFileName: String) {</code></pre></td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">50</td>
-<td class="src"><pre><code class="objc">        self.modelFileName = modelFileName</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        self.init(modelFileName: modelFileName, databaseFileName: databaseFileName, bundle: nil)</code></pre></td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">51</td>
-<td class="src"><pre><code class="objc">        self.databaseFileName = databaseFileName</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">52</td>
-<td class="src"><pre><code class="objc">        self.bundle = bundle</code></pre></td>
-<td class="coverage">!</td>
-</tr>
-<tr class="missed">
-<td class="num">53</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="never">
-<td class="num">54</td>
+<td class="num">52</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
+<td class="num">53</td>
+<td class="src"><pre><code class="objc">    public init(modelFileName: String, databaseFileName: String, bundle: Bundle?) {</code></pre></td>
+<td class="coverage">4x</td>
+</tr>
+<tr class="covered">
+<td class="num">54</td>
+<td class="src"><pre><code class="objc">        self.modelFileName = modelFileName</code></pre></td>
+<td class="coverage">4x</td>
+</tr>
+<tr class="covered">
 <td class="num">55</td>
-<td class="src"><pre><code class="objc">    public convenience init(modelFileName: String, databaseFileName: String) {</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        self.databaseFileName = databaseFileName</code></pre></td>
+<td class="coverage">4x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">56</td>
-<td class="src"><pre><code class="objc">        self.init(modelFileName: modelFileName, databaseFileName: databaseFileName, bundle: nil)</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        self.bundle = bundle</code></pre></td>
+<td class="coverage">4x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">57</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="never">
 <td class="num">58</td>
@@ -497,35 +497,35 @@
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">98</td>
-<td class="src"><pre><code class="objc">    open func saveContext () {</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">    open func saveContext() throws {</code></pre></td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">99</td>
 <td class="src"><pre><code class="objc">        guard let managedObjectContext = self.managedObjectContext else { return }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">100</td>
 <td class="src"><pre><code class="objc">        if managedObjectContext.hasChanges {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">101</td>
-<td class="src"><pre><code class="objc">            try? managedObjectContext.save()</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">            try managedObjectContext.save()</code></pre></td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">102</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">103</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="never">
 <td class="num">104</td>
