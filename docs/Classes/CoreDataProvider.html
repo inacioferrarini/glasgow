@@ -14,7 +14,8 @@
     <a title="CoreDataProvider Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">Glasgow Docs</a> (98% documented)</p>
+        <p><a href="../index.html">Glasgow Docs</a> (100% documented)</p>
+        <p class="header-right"><a href="https://github.com/inacioferrarini/glasgow"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
     <div class="content-wrapper">
@@ -162,7 +163,8 @@ As it is based on <code>CoreData</code>, the data must be fetched, using <code><
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>The predicate to be applied to every data fetch operation</p>
+                        <p>The predicate to be applied to every data fetch operation.
+After changing the value, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFT_T_">refresh()</a></code> method.</p>
 
                       </div>
                       <div class="declaration">
@@ -189,7 +191,8 @@ As it is based on <code>CoreData</code>, the data must be fetched, using <code><
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Limit to the amount of fetched objects</p>
+                        <p>Limit to the amount of fetched objects.
+After changing the value, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFT_T_">refresh()</a></code> method.</p>
 
                       </div>
                       <div class="declaration">
@@ -216,7 +219,8 @@ As it is based on <code>CoreData</code>, the data must be fetched, using <code><
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Result sorting</p>
+                        <p>Result sorting.
+After changing the value, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFT_T_">refresh()</a></code> method.</p>
 
                       </div>
                       <div class="declaration">
@@ -243,31 +247,21 @@ As it is based on <code>CoreData</code>, the data must be fetched, using <code><
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>A Key Path used for categorization and group data using the given <code>keypath</code>.</p>
+                        <p>A Key Path used for categorization and group data using the given <code>keypath</code>.
+This value cannot be changed.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">sectionNameKeyPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>    <span class="c1">// TODO: update fetchedResultsController</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">private(set)</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">sectionNameKeyPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/TODO:%20update%20fetchedResultsController"></a>
-                <a name="//apple_ref/swift/Section/TODO: update fetchedResultsController" class="dashAnchor"></a>
-                <a href="#/TODO:%20update%20fetchedResultsController">
-                  <h3 class="section-name">TODO: update fetchedResultsController</h3>
-                </a>
-              </div>
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -281,31 +275,21 @@ As it is based on <code>CoreData</code>, the data must be fetched, using <code><
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Name for <code>Core Data</code> cache.</p>
+                        <p>Name for <code>Core Data</code> cache.
+This value cannot be changed.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">cacheName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span>             <span class="c1">// TODO: update fetchedResultsController</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">private(set)</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">cacheName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
-              </ul>
-            </div>
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/TODO:%20update%20fetchedResultsController2"></a>
-                <a name="//apple_ref/swift/Section/TODO: update fetchedResultsController" class="dashAnchor"></a>
-                <a href="#/TODO:%20update%20fetchedResultsController2">
-                  <h3 class="section-name">TODO: update fetchedResultsController</h3>
-                </a>
-              </div>
-              <ul>
                 <li class="item">
                   <div>
                     <code>
@@ -682,7 +666,7 @@ By default, it is not called by default when the <code>CoreDataProvider</code> i
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio Ferrarini</a>. All rights reserved. (Last updated: 2017-08-06)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio</a>. All rights reserved. (Last updated: 2017-08-06)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -44,7 +44,8 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     }
 
     /**
-     The predicate to be applied to every data fetch operation
+     The predicate to be applied to every data fetch operation.
+     After changing the value, the data must be fetched again, execute `refresh()` method.
      */
     open var predicate: NSPredicate? {
         didSet {
@@ -53,7 +54,8 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     }
     
     /**
-    Limit to the amount of fetched objects
+     Limit to the amount of fetched objects.
+     After changing the value, the data must be fetched again, execute `refresh()` method.
     */
     open var fetchLimit: NSInteger? {
         didSet {
@@ -64,7 +66,8 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     }
     
     /**
-     Result sorting
+     Result sorting.
+     After changing the value, the data must be fetched again, execute `refresh()` method.
      */
     open var sortDescriptors: [NSSortDescriptor] {
         didSet {
@@ -74,13 +77,15 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     
     /**
      A Key Path used for categorization and group data using the given `keypath`.
+     This value cannot be changed.
      */
-    open var sectionNameKeyPath: String?    // TODO: update fetchedResultsController
+    private(set) open var sectionNameKeyPath: String?
     
     /**
      Name for `Core Data` cache.
+     This value cannot be changed.
      */
-    open var cacheName: String?             // TODO: update fetchedResultsController
+    private(set) open var cacheName: String?
     
     /**
      The Core Data Managed Object Context.

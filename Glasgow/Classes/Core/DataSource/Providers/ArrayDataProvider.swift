@@ -60,6 +60,13 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
     
     // MARK: - Indexing
     
+    /**
+     Returns the index of given object, if found.
+     
+     - parameter element: The object to search its index.
+     
+     - returns: Int?
+     */
     public func index(of element: Type) -> Int? {
         return self.objects.index(of: element)
     }

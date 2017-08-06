@@ -1,33 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Core/DataSource/Providers/ArrayDataProvider.swift",
-      "line": 63,
-      "symbol": "ArrayDataProvider.index(of:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Core/DataSource/Providers/ArrayDataProvider.swift",
-      "line": 63,
-      "symbol": "ArrayDataProvider.index(of:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Core/DataSource/Providers/ArrayDataProvider.swift",
-      "line": 63,
-      "symbol": "ArrayDataProvider.index(of:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Core/DataSource/Providers/ArrayDataProvider.swift",
-      "line": 63,
-      "symbol": "ArrayDataProvider.index(of:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow"
 }

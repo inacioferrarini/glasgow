@@ -21,7 +21,7 @@ end
 
 desc "Generates Jazzy Report"
 task :jazzy do
-sh "jazzy --podspec Glasgow.podspec --swift-version 3.1"
+sh "jazzy --podspec Glasgow.podspec --swift-version 3.1 --author Inácio Ferrarini --github_url https://github.com/inacioferrarini/glasgow  --download-badge"
 end
 
 desc "Generates Code Style Report."
