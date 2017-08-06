@@ -31,6 +31,7 @@
 		76E71F2A1F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76E71F291F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift */; };
 		BB761D331F36A62B003D283B /* TestEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D321F36A62B003D283B /* TestEntity+CoreDataClass.swift */; };
 		BB761D351F36A64B003D283B /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D341F36A64B003D283B /* TestEntity+CoreDataProperties.swift */; };
+		BB761D391F36C612003D283B /* TableViewBlockDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D381F36C612003D283B /* TableViewBlockDelegateSpec.swift */; };
 		BBAD2B9B1F36421900CFE30B /* ArrayDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */; };
 		BBAD2BA11F368B6B00CFE30B /* CoreDataStackSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA01F368B6B00CFE30B /* CoreDataStackSpec.swift */; };
 		BBAD2BA31F368B8400CFE30B /* CoreDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA21F368B8400CFE30B /* CoreDataProviderSpec.swift */; };
@@ -69,6 +70,7 @@
 		76E71F291F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestBaseTableViewControllerWithDelegates.swift; sourceTree = "<group>"; };
 		BB761D321F36A62B003D283B /* TestEntity+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BB761D341F36A64B003D283B /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		BB761D381F36C612003D283B /* TableViewBlockDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBlockDelegateSpec.swift; sourceTree = "<group>"; };
 		BB862BD32528441553DD219A /* Pods_Glasgow_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Glasgow_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataProviderSpec.swift; sourceTree = "<group>"; };
 		BBAD2BA01F368B6B00CFE30B /* CoreDataStackSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackSpec.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			children = (
 				76824C091F0FF94800FB5A22 /* Controller */,
 				76824C0C1F0FF94800FB5A22 /* DataSource */,
+				BB761D361F36C549003D283B /* Delegate */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -352,6 +355,22 @@
 				BB761D321F36A62B003D283B /* TestEntity+CoreDataClass.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		BB761D361F36C549003D283B /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				BB761D371F36C5E7003D283B /* TableView */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		BB761D371F36C5E7003D283B /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				BB761D381F36C612003D283B /* TableViewBlockDelegateSpec.swift */,
+			);
+			path = TableView;
 			sourceTree = "<group>";
 		};
 		BBAD2B991F3641F300CFE30B /* Providers */ = {
@@ -560,6 +579,7 @@
 				BBAD2B9B1F36421900CFE30B /* ArrayDataProviderSpec.swift in Sources */,
 				76824C0F1F0FF94800FB5A22 /* ArrowArrayTransformerSpec.swift in Sources */,
 				BBAD2BA11F368B6B00CFE30B /* CoreDataStackSpec.swift in Sources */,
+				BB761D391F36C612003D283B /* TableViewBlockDelegateSpec.swift in Sources */,
 				76E71F141F1010FF0032EA08 /* ApiResponseToPersonArrayTransformer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

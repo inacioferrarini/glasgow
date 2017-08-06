@@ -53,7 +53,7 @@ open class TableViewBlockDelegate<CellType: UITableViewCell, Type: Equatable>: N
      - parameter onSelected: Logic to handle value selection.
      */
     public init(with dataSource: TableViewArrayDataSource<CellType, Type>,
-                         onSelected: @escaping ((Type) -> ())) {
+                onSelected: @escaping ((Type) -> ())) {
         self.dataSource = dataSource
         self.onSelected = onSelected
         super.init()
