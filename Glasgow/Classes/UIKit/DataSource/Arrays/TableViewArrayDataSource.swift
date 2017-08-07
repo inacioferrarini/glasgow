@@ -88,6 +88,9 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
      */
     open override func refresh() {
         super.refresh()
+        if let dataProvider = self.dataProvider as? Refreshable {
+            dataProvider.refresh()
+        }
         self.tableView.reloadData()
     }
 

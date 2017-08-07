@@ -28,7 +28,7 @@ import CoreData
 /**
  A `Core Data` `DataProvider`.
  */
-open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>, NSFetchedResultsControllerDelegate {
+open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>, NSFetchedResultsControllerDelegate, Refreshable {
     
     
     // MARK: - Properties
