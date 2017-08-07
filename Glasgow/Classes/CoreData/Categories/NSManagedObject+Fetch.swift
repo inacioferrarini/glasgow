@@ -24,16 +24,37 @@
 import Foundation
 import CoreData
 
+/**
+ NSManagedObject extension that adds useful generic methods.
+ */
 public extension NSManagedObject {
-    
-    public class func lastObjectFromRequest<T>(_ request: NSFetchRequest<T>, inManagedObjectContext context: NSManagedObjectContext) -> T? where T: NSManagedObject {
+   
+    /**
+     Returns the last object from given `NSFetchRequest`.
+     
+     - parameter request: The request where the last object will be fetched.
+     
+     - parameter context: `NSManagedObjectContext` where the fetch will be executed.
+     
+     - returns `T`
+     */
+    public class func lastObjectFromRequest<T>(_ request: NSFetchRequest<T>, in context: NSManagedObjectContext) -> T? where T: NSManagedObject {
         if let searchResults = try? context.fetch(request), searchResults.count > 0 {
             return searchResults.last
         }
         return nil
     }
-    
-    public class func allObjectsFromRequest<T>(_ request: NSFetchRequest<T>, inManagedObjectContext context: NSManagedObjectContext) -> [T] where T: NSManagedObject {
+
+    /**
+     Returns all objects from given `NSFetchRequest`.
+     
+     - parameter request: The request where all objects will be fetched.
+     
+     - parameter context: `NSManagedObjectContext` where the fetch will be executed.
+     
+     - returns [`T`]
+     */
+    public class func allObjectsFromRequest<T>(_ request: NSFetchRequest<T>, in context: NSManagedObjectContext) -> [T] where T: NSManagedObject {
         var results = [T]()
         if let searchResults = try? context.fetch(request) {
             results = searchResults
