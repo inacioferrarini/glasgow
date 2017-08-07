@@ -1,6 +1,6 @@
 {
   "name": "Glasgow",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "summary": "Foundation classes used to eliminate boiler-plate code and provide an accelerated startup time.",
   "homepage": "https://github.com/inacioferrarini/glasgow",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/inacioferrarini/glasgow.git",
-    "tag": "0.1.2"
+    "tag": "0.1.3"
   },
   "platforms": {
     "ios": "8.0"

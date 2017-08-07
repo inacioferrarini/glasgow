@@ -28,11 +28,11 @@ import Foundation
  */
 public protocol AppContextAware {
     
-    associatedtype `Type`
+    associatedtype AppContextType
     
     /**
      The app's AppContext. Shared app wide data.
      */
-    var appContext: Type? { get set }
+    var appContext: AppContextType? { get set }
     
 }
