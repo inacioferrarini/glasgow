@@ -24,12 +24,12 @@
 import Foundation
 
 /**
- The capability some Objects have to be refreshable.
+ The capability some `DataProviders` has to be refreshable.
  */
 public protocol Refreshable {
     
     /**
-     Refreshes the object.
+     Refreshes the `DataProvider` object.
      */
     func refresh()
     
