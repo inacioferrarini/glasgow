@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Transformer Protocol Reference</title>
+    <title>NSManagedObject Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/Transformer" class="dashAnchor"></a>
-    <a title="Transformer Protocol Reference"></a>
+    <a name="//apple_ref/swift/Extension/NSManagedObject" class="dashAnchor"></a>
+    <a title="NSManagedObject Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Glasgow Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Glasgow Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Transformer Protocol Reference
+        NSManagedObject Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -108,15 +108,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Transformer</h1>
-              <div class="declaration">
-                <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Transformer</span></code></pre>
-
-                </div>
-              </div>
-            <p>Adds the capability to transform a given object of type T into an
-object of target type, U.</p>
+            <h1>NSManagedObject</h1>
+            <p>NSManagedObject extension that adds useful generic methods.</p>
 
           </section>
           <section class="section task-group-section">
@@ -125,9 +118,9 @@ object of target type, U.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7Glasgow11Transformer9transformFwx1Twx1U"></a>
-                    <a name="//apple_ref/swift/Method/transform(_:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7Glasgow11Transformer9transformFwx1Twx1U">transform(_:)</a>
+                    <a name="/s:ZFE7GlasgowCSo15NSManagedObject21lastObjectFromRequestuRxS0_rFTGCSo14NSFetchRequestx_2inCSo22NSManagedObjectContext_GSqx_"></a>
+                    <a name="//apple_ref/swift/Method/lastObjectFromRequest(_:in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFE7GlasgowCSo15NSManagedObject21lastObjectFromRequestuRxS0_rFTGCSo14NSFetchRequestx_2inCSo22NSManagedObjectContext_GSqx_">lastObjectFromRequest(_:in:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -135,14 +128,14 @@ object of target type, U.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Transforms the input type T and returns U as output.</p>
+                        <p>Returns the last object from given <code>NSFetchRequest</code>.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">transform</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">T</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">U</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="n">lastObjectFromRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">NSFetchRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="k">in</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">T</span><span class="p">?</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt">NSManagedObject</span></code></pre>
 
                         </div>
                       </div>
@@ -153,21 +146,87 @@ object of target type, U.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>input</em>
+                                <em>request</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The object to be transformed.</p>
+                                  <p>The request where the last object will be fetched.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>context</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>NSManagedObjectContext</code> where the fetch will be executed.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:ZFE7GlasgowCSo15NSManagedObject21allObjectsFromRequestuRxS0_rFTGCSo14NSFetchRequestx_2inCSo22NSManagedObjectContext_GSax_"></a>
+                    <a name="//apple_ref/swift/Method/allObjectsFromRequest(_:in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:ZFE7GlasgowCSo15NSManagedObject21allObjectsFromRequestuRxS0_rFTGCSo14NSFetchRequestx_2inCSo22NSManagedObjectContext_GSax_">allObjectsFromRequest(_:in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns all objects from given <code>NSFetchRequest</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="n">allObjectsFromRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">(</span><span class="n">_</span> <span class="nv">request</span><span class="p">:</span> <span class="kt">NSFetchRequest</span><span class="o">&lt;</span><span class="kt">T</span><span class="o">&gt;</span><span class="p">,</span> <span class="k">in</span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">T</span><span class="p">]</span> <span class="k">where</span> <span class="kt">T</span><span class="p">:</span> <span class="kt">NSManagedObject</span></code></pre>
+
+                        </div>
+                      </div>
                       <div>
-                        <h4>Return Value</h4>
-                        <p>Object of type U</p>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>request</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The request where all objects will be fetched.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>context</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>NSManagedObjectContext</code> where the fetch will be executed.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                     </section>
                   </div>

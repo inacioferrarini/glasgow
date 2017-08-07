@@ -524,7 +524,7 @@
 </tr>
 <tr class="never">
 <td class="num">103</td>
-<td class="src"><pre><code class="objc">        try? coordinator.addPersistentStore(ofType: storeType, configurationName: nil, at: url, options: nil)</code></pre></td>
+<td class="src"><pre><code class="objc">        _ = try? coordinator.addPersistentStore(ofType: storeType, configurationName: nil, at: url, options: nil)</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -544,47 +544,47 @@
 </tr>
 <tr class="never">
 <td class="num">107</td>
-<td class="src"><pre><code class="objc">    lazy var managedObjectContext: NSManagedObjectContext? = {</code></pre></td>
+<td class="src"><pre><code class="objc">    /**</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">108</td>
-<td class="src"><pre><code class="objc">        guard let coordinator = self.persistentStoreCoordinator else { return nil }</code></pre></td>
+<td class="src"><pre><code class="objc">     The `Core Data` `ManagedObjectContext`. </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">109</td>
-<td class="src"><pre><code class="objc">        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)</code></pre></td>
+<td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">110</td>
-<td class="src"><pre><code class="objc">        managedObjectContext.persistentStoreCoordinator = coordinator</code></pre></td>
+<td class="src"><pre><code class="objc">    open lazy var managedObjectContext: NSManagedObjectContext? = {</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">111</td>
-<td class="src"><pre><code class="objc">        return managedObjectContext</code></pre></td>
+<td class="src"><pre><code class="objc">        guard let coordinator = self.persistentStoreCoordinator else { return nil }</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">112</td>
-<td class="src"><pre><code class="objc">    }()</code></pre></td>
+<td class="src"><pre><code class="objc">        var managedObjectContext = NSManagedObjectContext(concurrencyType: .mainQueueConcurrencyType)</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">113</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="src"><pre><code class="objc">        managedObjectContext.persistentStoreCoordinator = coordinator</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">114</td>
-<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="src"><pre><code class="objc">        return managedObjectContext</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">115</td>
-<td class="src"><pre><code class="objc">    // MARK: - Core Data Saving support</code></pre></td>
+<td class="src"><pre><code class="objc">    }()</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -594,56 +594,71 @@
 </tr>
 <tr class="never">
 <td class="num">117</td>
-<td class="src"><pre><code class="objc">    /**</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">118</td>
-<td class="src"><pre><code class="objc">     Saves the `Core Data` context, if there is changes to be saved.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">119</td>
-<td class="src"><pre><code class="objc">     */</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="covered">
-<td class="num">120</td>
-<td class="src"><pre><code class="objc">    open func saveContext() throws {</code></pre></td>
-<td class="coverage">6x</td>
-</tr>
-<tr class="covered">
-<td class="num">121</td>
-<td class="src"><pre><code class="objc">        guard let managedObjectContext = self.managedObjectContext else { return }</code></pre></td>
-<td class="coverage">6x</td>
-</tr>
-<tr class="covered">
-<td class="num">122</td>
-<td class="src"><pre><code class="objc">        if managedObjectContext.hasChanges {</code></pre></td>
-<td class="coverage">6x</td>
-</tr>
-<tr class="covered">
-<td class="num">123</td>
-<td class="src"><pre><code class="objc">            try managedObjectContext.save()</code></pre></td>
-<td class="coverage">6x</td>
-</tr>
-<tr class="covered">
-<td class="num">124</td>
-<td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">6x</td>
-</tr>
-<tr class="covered">
-<td class="num">125</td>
-<td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">6x</td>
-</tr>
-<tr class="never">
-<td class="num">126</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
+<td class="num">118</td>
+<td class="src"><pre><code class="objc">    // MARK: - Core Data Saving support</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">119</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">120</td>
+<td class="src"><pre><code class="objc">    /**</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">121</td>
+<td class="src"><pre><code class="objc">     Saves the `Core Data` context, if there is changes to be saved.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">122</td>
+<td class="src"><pre><code class="objc">     */</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="covered">
+<td class="num">123</td>
+<td class="src"><pre><code class="objc">    open func saveContext() throws {</code></pre></td>
+<td class="coverage">6x</td>
+</tr>
+<tr class="covered">
+<td class="num">124</td>
+<td class="src"><pre><code class="objc">        guard let managedObjectContext = self.managedObjectContext else { return }</code></pre></td>
+<td class="coverage">6x</td>
+</tr>
+<tr class="covered">
+<td class="num">125</td>
+<td class="src"><pre><code class="objc">        if managedObjectContext.hasChanges {</code></pre></td>
+<td class="coverage">6x</td>
+</tr>
+<tr class="covered">
+<td class="num">126</td>
+<td class="src"><pre><code class="objc">            try managedObjectContext.save()</code></pre></td>
+<td class="coverage">6x</td>
+</tr>
+<tr class="covered">
 <td class="num">127</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">6x</td>
+</tr>
+<tr class="covered">
+<td class="num">128</td>
+<td class="src"><pre><code class="objc">    }</code></pre></td>
+<td class="coverage">6x</td>
+</tr>
+<tr class="never">
+<td class="num">129</td>
+<td class="src"><pre><code class="objc">    </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">130</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>
