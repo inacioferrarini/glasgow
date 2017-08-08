@@ -1,19 +1,6 @@
 {
   "warnings": [
-    {
-      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/CoreData/Stack/CoreDataStack.swift",
-      "line": 107,
-      "symbol": "CoreDataStack.managedObjectContext",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/CoreData/Stack/CoreDataStack.swift",
-      "line": 107,
-      "symbol": "CoreDataStack.managedObjectContext",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    }
+
   ],
   "source_directory": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow"
 }

@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "ArrayDataSource.swift" : </span><span class="cov_high">90.48%</span>
+<span>Coverage for "ArrayDataSource.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(19 of 21 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(21 of 21 relevant lines covered)</h4>
 <h4 class="cov_filepath">Glasgow/Classes/Core/DataSource/Arrays/ArrayDataSource.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -329,22 +329,22 @@
 </tr>
 <tr class="covered">
 <td class="num">64</td>
-<td class="src"><pre><code class="objc">        self.onRefresh?()</code></pre></td>
-<td class="coverage">2x</td>
-</tr>
-<tr class="missed">
-<td class="num">65</td>
 <td class="src"><pre><code class="objc">        if let dataProvider = self.dataProvider as? Refreshable {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
-<td class="num">66</td>
+<tr class="covered">
+<td class="num">65</td>
 <td class="src"><pre><code class="objc">            dataProvider.refresh()</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
+</tr>
+<tr class="covered">
+<td class="num">66</td>
+<td class="src"><pre><code class="objc">        }</code></pre></td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">67</td>
-<td class="src"><pre><code class="objc">        }        </code></pre></td>
+<td class="src"><pre><code class="objc">        self.onRefresh?()</code></pre></td>
 <td class="coverage">2x</td>
 </tr>
 <tr class="covered">

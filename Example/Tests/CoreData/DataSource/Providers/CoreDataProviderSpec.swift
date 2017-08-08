@@ -40,7 +40,7 @@ class CoreDataProviderSpec: QuickSpec {
             
             beforeEach {
                 if let context = stack.managedObjectContext {
-                    TestEntity.removeAll(inManagedObjectContext: context)
+                    TestEntity.removeAll(in: context)
                 }
             }
             
@@ -93,8 +93,8 @@ class CoreDataProviderSpec: QuickSpec {
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 1", inManagedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 2", inManagedObjectContext: context)
+                        _ = TestEntity.testEntity(with: "test value 1", in: context)
+                        _ = TestEntity.testEntity(with: "test value 2", in: context)
                         try? stack.saveContext()
                     }
                 }
@@ -122,10 +122,10 @@ class CoreDataProviderSpec: QuickSpec {
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 1", inManagedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 2", inManagedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 3", inManagedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 4", inManagedObjectContext: context)
+                        _ = TestEntity.testEntity(with: "test value 1", in: context)
+                        _ = TestEntity.testEntity(with: "test value 2", in: context)
+                        _ = TestEntity.testEntity(with: "test value 3", in: context)
+                        _ = TestEntity.testEntity(with: "test value 4", in: context)
                         try? stack.saveContext()
                     }
                 }
@@ -153,10 +153,10 @@ class CoreDataProviderSpec: QuickSpec {
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 1", inManagedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 2", inManagedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 3", inManagedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 4", inManagedObjectContext: context)
+                        _ = TestEntity.testEntity(with: "test value 1", in: context)
+                        _ = TestEntity.testEntity(with: "test value 2", in: context)
+                        _ = TestEntity.testEntity(with: "test value 3", in: context)
+                        _ = TestEntity.testEntity(with: "test value 4", in: context)
                         try? stack.saveContext()
                     }
                 }
@@ -184,10 +184,10 @@ class CoreDataProviderSpec: QuickSpec {
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 1", inManagedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 2", inManagedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 3", inManagedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 4", inManagedObjectContext: context)
+                        _ = TestEntity.testEntity(with: "test value 1", in: context)
+                        _ = TestEntity.testEntity(with: "test value 2", in: context)
+                        _ = TestEntity.testEntity(with: "test value 3", in: context)
+                        _ = TestEntity.testEntity(with: "test value 4", in: context)
                         try? stack.saveContext()
                     }
                 }

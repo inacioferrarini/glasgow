@@ -27,7 +27,7 @@ import CoreData
 @objc(TestEntity)
 public class TestEntity: NSManagedObject {
 
-    open class func testEntity(with name: String?, inManagedObjectContext context: NSManagedObjectContext) -> TestEntity? {
+    open class func testEntity(with name: String?, in context: NSManagedObjectContext) -> TestEntity? {
         let newTestEntity = NSEntityDescription.insertNewObject(forEntityName: self.simpleClassName(), into: context) as? TestEntity
         if let entity = newTestEntity {
             entity.name = name
@@ -35,7 +35,7 @@ public class TestEntity: NSManagedObject {
         return newTestEntity
     }
     
-    open class func removeAll(inManagedObjectContext context: NSManagedObjectContext) {
+    open class func removeAll(in context: NSManagedObjectContext) {
         let request: NSFetchRequest = NSFetchRequest<TestEntity>(entityName: self.simpleClassName())
         if let searchResults = try? context.fetch(request) {
             for entity in searchResults {

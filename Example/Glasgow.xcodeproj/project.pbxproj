@@ -33,6 +33,8 @@
 		BB761D351F36A64B003D283B /* TestEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D341F36A64B003D283B /* TestEntity+CoreDataProperties.swift */; };
 		BB761D391F36C612003D283B /* TableViewBlockDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D381F36C612003D283B /* TableViewBlockDelegateSpec.swift */; };
 		BB761D3B1F36CCCC003D283B /* PageLoaderTableViewDelegateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D3A1F36CCCC003D283B /* PageLoaderTableViewDelegateSpec.swift */; };
+		BB761D741F383BCF003D283B /* RefreshableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D731F383BCF003D283B /* RefreshableDataProvider.swift */; };
+		BB761D771F38403C003D283B /* NSManagedObject+FetchSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB761D761F38403C003D283B /* NSManagedObject+FetchSpec.swift */; };
 		BBAD2B9B1F36421900CFE30B /* ArrayDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */; };
 		BBAD2BA11F368B6B00CFE30B /* CoreDataStackSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA01F368B6B00CFE30B /* CoreDataStackSpec.swift */; };
 		BBAD2BA31F368B8400CFE30B /* CoreDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA21F368B8400CFE30B /* CoreDataProviderSpec.swift */; };
@@ -73,6 +75,8 @@
 		BB761D341F36A64B003D283B /* TestEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TestEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		BB761D381F36C612003D283B /* TableViewBlockDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewBlockDelegateSpec.swift; sourceTree = "<group>"; };
 		BB761D3A1F36CCCC003D283B /* PageLoaderTableViewDelegateSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageLoaderTableViewDelegateSpec.swift; sourceTree = "<group>"; };
+		BB761D731F383BCF003D283B /* RefreshableDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RefreshableDataProvider.swift; sourceTree = "<group>"; };
+		BB761D761F38403C003D283B /* NSManagedObject+FetchSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSManagedObject+FetchSpec.swift"; sourceTree = "<group>"; };
 		BB862BD32528441553DD219A /* Pods_Glasgow_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Glasgow_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBAD2B9A1F36421900CFE30B /* ArrayDataProviderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayDataProviderSpec.swift; sourceTree = "<group>"; };
 		BBAD2BA01F368B6B00CFE30B /* CoreDataStackSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackSpec.swift; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 				76E71F261F1286B90032EA08 /* Context */,
 				BBAD2BA81F368E6F00CFE30B /* CoreData */,
 				76E71F081F1010A20032EA08 /* Model */,
+				BB761D721F383BAB003D283B /* Providers */,
 				76E71F0A1F1010A20032EA08 /* Transformer */,
 				76E71F0C1F1010A20032EA08 /* UIKit */,
 			);
@@ -376,6 +381,22 @@
 			path = TableView;
 			sourceTree = "<group>";
 		};
+		BB761D721F383BAB003D283B /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				BB761D731F383BCF003D283B /* RefreshableDataProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		BB761D751F38401B003D283B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				BB761D761F38403C003D283B /* NSManagedObject+FetchSpec.swift */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 		BBAD2B991F3641F300CFE30B /* Providers */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +408,7 @@
 		BBAD2B9C1F36635000CFE30B /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				BB761D751F38401B003D283B /* Categories */,
 				BBAD2B9D1F36635000CFE30B /* DataSource */,
 				BBAD2B9F1F368B5A00CFE30B /* Stack */,
 			);
@@ -567,6 +589,7 @@
 				76E71F2A1F12BBFE0032EA08 /* TestBaseTableViewControllerWithDelegates.swift in Sources */,
 				76E71F251F1286180032EA08 /* TestBaseTableViewController.swift in Sources */,
 				76824C101F0FF94800FB5A22 /* ArrowTransformerSpec.swift in Sources */,
+				BB761D771F38403C003D283B /* NSManagedObject+FetchSpec.swift in Sources */,
 				76E71F281F1286C40032EA08 /* TestContext.swift in Sources */,
 				76824C1C1F0FF94800FB5A22 /* DataBasedViewControllerSpec.swift in Sources */,
 				BBAD2BA31F368B8400CFE30B /* CoreDataProviderSpec.swift in Sources */,
@@ -582,6 +605,7 @@
 				BBAD2B9B1F36421900CFE30B /* ArrayDataProviderSpec.swift in Sources */,
 				76824C0F1F0FF94800FB5A22 /* ArrowArrayTransformerSpec.swift in Sources */,
 				BB761D3B1F36CCCC003D283B /* PageLoaderTableViewDelegateSpec.swift in Sources */,
+				BB761D741F383BCF003D283B /* RefreshableDataProvider.swift in Sources */,
 				BBAD2BA11F368B6B00CFE30B /* CoreDataStackSpec.swift in Sources */,
 				BB761D391F36C612003D283B /* TableViewBlockDelegateSpec.swift in Sources */,
 				76E71F141F1010FF0032EA08 /* ApiResponseToPersonArrayTransformer.swift in Sources */,
