@@ -26,8 +26,8 @@ import Foundation
 /**
  Provides data for a DataSource. Its provided objects will be of type `ValueType`.
  
- Its elements shall not be accessed directly, granting its usage throught its methods,
- allowing better compatibility com different kinds of data providers.
+ Its objects shall not be accessed directly, granting its usage throught its methods,
+ allowing better compatibility among different kinds of data providers.
  */
 public protocol DataProvider {
     
@@ -38,13 +38,19 @@ public protocol DataProvider {
     
     /**
      Returns the object of given `ValueType` at given `indexPath`, if exists.
+     
+     - parameter indexPath: IndexPath to get object.
+     
+     - return `ValueType`.
      */
     subscript(at indexPath: IndexPath) -> ValueType? { get }
     
     /**
-     Returns the IndexPath for the given value, if found.
+     Returns the IndexPath for the given object, if found.
      
-     - returns: IndexPath or nil.
+     - parameter value: Object to search.
+     
+     - returns: IndexPath.
      */
     func indexPath(for value: ValueType) -> IndexPath?
     
@@ -52,16 +58,16 @@ public protocol DataProvider {
     /**
      Returns the numbers of provided sections.
      
-     For one-dimention arrays, will return 1.
+     For one-dimentional arrays, will return 1.
      
      - returns: Int
      */
     func numberOfSections() -> Int
     
     /**
-     Returns the number of provided itens for the given section.
+     Returns the number of objects in the given section.
      
-     If requested section does not exists, returns 0.
+     If given section does not exists, returns 0.
      
      - parameter section: The section to be inquired about how much provided objects it has.
      */
