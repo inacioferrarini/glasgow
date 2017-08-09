@@ -41,7 +41,7 @@ public protocol DataProvider {
      
      - parameter indexPath: IndexPath to get object.
      
-     - return `ValueType`.
+     - returns `ValueType`.
      */
     subscript(at indexPath: IndexPath) -> ValueType? { get }
     
@@ -60,7 +60,7 @@ public protocol DataProvider {
      
      For one-dimentional arrays, will return 1.
      
-     - returns: Int
+     - returns: Int.
      */
     func numberOfSections() -> Int
     
@@ -70,6 +70,8 @@ public protocol DataProvider {
      If given section does not exists, returns 0.
      
      - parameter section: The section to be inquired about how much provided objects it has.
+     
+     - returns: Int.
      */
     func numberOfItems(in section: Int) -> Int
     
