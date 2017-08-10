@@ -44,23 +44,19 @@ class ArrayDataProviderSpec: QuickSpec {
             
             it("Initialization must have given objects") {
                 // Then
-                expect(dataProvider.objects).toNot(beNil())
-                expect(dataProvider.objects.count).to(equal(3))
+                expect(dataProvider.numberOfSections()).to(equal(1))
+                expect(dataProvider.numberOfItems(in: 0)).to(equal(3))
             }
             
-            it("Count must return the amount of store objects") {
-                // Then
-                expect(dataProvider.count).to(equal(3))
-            }
-
             it("index must return the correct index") {
                 // Then
-                expect(dataProvider.index(of: 20)).to(equal(1))
+                expect(dataProvider.indexPath(for: 20)?.row).to(equal(1))
             }
             
             it("subscript must return the correct object for given index") {
                 // Then
-                expect(dataProvider[0]).to(equal(10))
+                let indexPath = IndexPath(row: 0, section: 0)
+                expect(dataProvider[indexPath]).to(equal(10))
             }
             
         }
