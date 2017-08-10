@@ -75,24 +75,7 @@ open class ArrayDataSource<Type: Equatable>: NSObject {
      - returns: The object of type `Type` at given `indexPath` row, or `nil` if not found.
      */
     open func object(at indexPath: IndexPath) -> Type? {
-        guard indexPath.section == 0 else { return nil }
-        guard indexPath.row < self.dataProvider.count else { return nil }
-        return dataProvider[indexPath.row]
-    }
-
-    /**
-     Returns the indexPath for the given object, if found.
-     
-     - parameter for: The object.
-     
-     - returns: The indexPath for the given object, or `nil` if not found.
-     */
-    open func indexPath(for object: Type) -> IndexPath? {
-        var indexPath: IndexPath?
-        if let index = self.dataProvider.index(of: object) {
-            indexPath = IndexPath(row: index, section: 0)
-        }
-        return indexPath
+        return dataProvider[indexPath]
     }
 
 }

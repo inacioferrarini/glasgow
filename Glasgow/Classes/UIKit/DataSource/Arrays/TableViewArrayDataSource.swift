@@ -104,8 +104,7 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
      - returns: number of objects.
      */
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard section == 0 else { return 0 }
-        return self.dataProvider.objects.count
+        return self.dataProvider.numberOfItems(in: section)
     }
     
     /**
@@ -121,9 +120,10 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
         let reuseIdentifier = self.reuseIdentifier(indexPath)
         guard var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? CellType else { return UITableViewCell() }
         
-        if let value = self.object(at: indexPath) as? CellType.ValueType {
+        if let value = self.dataProvider[indexPath] as? CellType.ValueType {
             cell.setup(with: value)
         }
+        
         return cell
     }
     
