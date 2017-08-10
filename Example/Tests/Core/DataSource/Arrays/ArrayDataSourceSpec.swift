@@ -32,7 +32,7 @@ class ArrayDataSourceSpec: QuickSpec {
     override func spec() {
         
         describe("Array Data Source") {
-            
+
             var items = [Int]()
             let dataProvider = RefreshableDataProvider<Int>(with: items)
             var dataSource = ArrayDataSource<Int>(with: dataProvider)
@@ -48,9 +48,8 @@ class ArrayDataSourceSpec: QuickSpec {
             it("Initialization must have given objects") {
                 // Then
                 expect(dataSource.dataProvider).toNot(beNil())
-                expect(dataSource.dataProvider.count).to(equal(3))
             }
-            
+
             describe("objectAtIndexPath") {
                 
                 it("must return object at given path") {
@@ -69,29 +68,6 @@ class ArrayDataSourceSpec: QuickSpec {
                     
                     // Then
                     expect(value).to(equal(30))
-                }
-                
-            }
-            
-            describe("indexPathForObject") {
-                
-                it("must return indexPath for given object") {
-                    // When
-                    let indexPath = dataSource.indexPath(for: 10)
-                    
-                    // Then
-                    expect(indexPath).toNot(beNil())
-                    expect(indexPath?.row).to(equal(0))
-                }
-                
-                it("must return indexPath for given object again") {
-                    // When
-                    let indexPath = dataSource.indexPath(for: 30)
-                    
-                    // Then
-                    expect(indexPath).toNot(beNil())
-                    expect(indexPath?.row).to(equal(2))
-                    
                 }
                 
             }
@@ -119,7 +95,7 @@ class ArrayDataSourceSpec: QuickSpec {
             }
             
         }
-        
+    
     }
 
 }

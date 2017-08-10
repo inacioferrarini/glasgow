@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "ArrayDataSource.swift" : </span><span class="cov_medium">83.33%</span>
+<span>Coverage for "ArrayDataSource.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(10 of 12 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(12 of 12 relevant lines covered)</h4>
 <h4 class="cov_filepath">Glasgow/Classes/Core/DataSource/Arrays/ArrayDataSource.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -275,17 +275,17 @@
 <tr class="covered">
 <td class="num">53</td>
 <td class="src"><pre><code class="objc">    public init(with dataProvider: ArrayDataProvider&lt;Type&gt;) {</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">13x</td>
 </tr>
 <tr class="covered">
 <td class="num">54</td>
 <td class="src"><pre><code class="objc">        self.dataProvider = dataProvider</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">13x</td>
 </tr>
 <tr class="covered">
 <td class="num">55</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">8x</td>
+<td class="coverage">13x</td>
 </tr>
 <tr class="never">
 <td class="num">56</td>
@@ -325,32 +325,32 @@
 <tr class="covered">
 <td class="num">63</td>
 <td class="src"><pre><code class="objc">    open func refresh() {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">64</td>
 <td class="src"><pre><code class="objc">        if let dataProvider = self.dataProvider as? Refreshable {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">65</td>
 <td class="src"><pre><code class="objc">            dataProvider.refresh()</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="covered">
 <td class="num">66</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">67</td>
 <td class="src"><pre><code class="objc">        self.onRefresh?()</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">68</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="never">
 <td class="num">69</td>
@@ -395,17 +395,17 @@
 <tr class="covered">
 <td class="num">77</td>
 <td class="src"><pre><code class="objc">    open func object(at indexPath: IndexPath) -&gt; Type? {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">78</td>
 <td class="src"><pre><code class="objc">        return dataProvider[indexPath]</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">79</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="never">
 <td class="num">80</td>
@@ -414,61 +414,6 @@
 </tr>
 <tr class="never">
 <td class="num">81</td>
-<td class="src"><pre><code class="objc">//    /**</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">82</td>
-<td class="src"><pre><code class="objc">//     Returns the indexPath for the given object, if found.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">83</td>
-<td class="src"><pre><code class="objc">//     </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">84</td>
-<td class="src"><pre><code class="objc">//     - parameter for: The object.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">85</td>
-<td class="src"><pre><code class="objc">//     </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">86</td>
-<td class="src"><pre><code class="objc">//     - returns: The indexPath for the given object, or `nil` if not found.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">87</td>
-<td class="src"><pre><code class="objc">//     */</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">88</td>
-<td class="src"><pre><code class="objc">//    open func indexPath(for object: Type) -&gt; IndexPath? {</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">89</td>
-<td class="src"><pre><code class="objc">//        return dataProvider.indexPath(for: object)</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">90</td>
-<td class="src"><pre><code class="objc">//    }</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">91</td>
-<td class="src"><pre><code class="objc"></code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">92</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>
