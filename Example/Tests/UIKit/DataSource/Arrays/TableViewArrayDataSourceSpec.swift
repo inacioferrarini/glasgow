@@ -48,7 +48,8 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                     
                     // Then
                     expect(dataSource.dataProvider).toNot(beNil())
-//                    expect(dataSource.dataProvider.count).to(equal(1))
+                    expect(dataSource.dataProvider.numberOfSections()).to(equal(1))
+                    expect(dataSource.dataProvider.numberOfItems(in: 0)).to(equal(1))
                     expect(dataSource.reuseIdentifier).toNot(beNil())
                     expect(className).to(equal("NumberTableViewCell"))
                 }
