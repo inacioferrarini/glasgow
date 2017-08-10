@@ -34,16 +34,6 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     // MARK: - Properties
     
     /**
-     Objects from this provider.
-     As it is based on `CoreData`, the data must be fetched, using `refresh()`.
-     */
-    override public var objects: [Entity] {
-        get {
-            return self.fetchedResultsController.fetchedObjects ?? []
-        }
-    }
-
-    /**
      The predicate to be applied to every data fetch operation.
      After changing the value, the data must be fetched again, execute `refresh()` method.
      */
@@ -222,6 +212,58 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
                                           managedObjectContext: self.managedObjectContext,
                                           sectionNameKeyPath: self.sectionNameKeyPath,
                                           cacheName: self.cacheName)
+    }
+    
+    
+    // MARK: - Data Provider Implementation
+    
+    /**
+     Returns the object of given `ValueType` at given `indexPath`, if exists.
+     
+     - parameter indexPath: IndexPath to get object.
+     
+     - returns `ValueType`.
+     */
+    override public subscript(indexPath: IndexPath) -> Entity? {
+        get {
+            return self.fetchedResultsController.object(at: indexPath)
+        }
+    }
+    
+    /**
+     Returns the IndexPath for the given object, if found.
+
+     - parameter value: Object to search.
+
+     - returns: IndexPath.
+     */
+    override public func indexPath(for value: Entity) -> IndexPath? {
+        return self.fetchedResultsController.indexPath(forObject: value)
+    }
+    
+    /**
+     Returns the numbers of provided sections.
+     
+     For one-dimentional arrays, will return 1.
+     
+     - returns: Int.
+     */
+    override public func numberOfSections() -> Int {
+        return self.fetchedResultsController.sections?.count ?? 0
+    }
+    
+    /**
+     Returns the number of objects in the given section.
+     
+     If given section does not exists, returns 0.
+     
+     - parameter section: The section to be inquired about how much provided objects it has.
+     
+     - returns: Int.
+     */
+    override public func numberOfItems(in section: Int) -> Int {
+        guard section < self.numberOfSections() else { return 0 }
+        return self.fetchedResultsController.sections?[section].numberOfObjects ?? 0
     }
     
 }

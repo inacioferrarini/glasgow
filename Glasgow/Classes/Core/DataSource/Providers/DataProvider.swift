@@ -45,6 +45,7 @@ public protocol DataProvider {
      */
     subscript(indexPath: IndexPath) -> ValueType? { get }
     
+    
     /**
      Returns the IndexPath for the given object, if found.
      
@@ -53,7 +54,6 @@ public protocol DataProvider {
      - returns: IndexPath.
      */
     func indexPath(for value: ValueType) -> IndexPath?
-    
     
     /**
      Returns the numbers of provided sections.
