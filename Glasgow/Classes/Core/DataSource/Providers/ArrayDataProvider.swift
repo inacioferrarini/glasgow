@@ -34,16 +34,7 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
     /**
      Objects from this provider.
      */
-    private(set) public var objects: [Type]
-    
-    /**
-     Returns the amount of stored objects.
-     */
-    public var count: Int {
-        get {
-            return self.objects.count
-        }
-    }
+    private let objects: [Type]
     
     
     // MARK: - Initialization
@@ -58,26 +49,56 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
     }
     
     
-    // MARK: - Indexing
+    // MARK: - Data Provider Implementation
     
     /**
-     Returns the index of given object, if found.
+     Returns the object of given `ValueType` at given `indexPath`, if exists.
      
-     - parameter element: The object to search its index.
+     - parameter indexPath: IndexPath to get object.
      
-     - returns: Int?
+     - returns `ValueType`.
      */
-    public func index(of element: Type) -> Int? {
-        return self.objects.index(of: element)
-    }
-
-    
-    // MARK: - Subscript
-    
-    subscript(index: Int) -> Type {
+    public subscript(at indexPath: IndexPath) -> Type? {
         get {
-            return self.objects[index]
+            return self.objects[indexPath.row]
         }
+    }
+    
+    /**
+     Returns the IndexPath for the given object, if found.
+     
+     - parameter value: Object to search.
+     
+     - returns: IndexPath.
+     */
+    public func indexPath(for value: ValueType) -> IndexPath? {
+        guard let row = self.objects.index(of: value) else { return nil }
+        return IndexPath(row: row, section: 0)
+    }
+    
+    /**
+     Returns the numbers of provided sections.
+     
+     For one-dimentional arrays, will return 1.
+     
+     - returns: Int.
+     */
+    public func numberOfSections() -> Int {
+        return 1
+    }
+    
+    /**
+     Returns the number of objects in the given section.
+     
+     If given section does not exists, returns 0.
+     
+     - parameter section: The section to be inquired about how much provided objects it has.
+     
+     - returns: Int.
+     */
+    public func numberOfItems(in section: Int) -> Int {
+        guard section == 0 else { return 0 }
+        return self.objects.count
     }
     
 }
