@@ -7,9 +7,9 @@
 <body>
 <header><div class="row"><a href="index.html"><img src="logo.jpg" alt="Slather logo"></a></div></header><div class="row"><div id="reports">
 <h2 class="cov_title">
-<span>Coverage for "CoreDataProvider.swift" : </span><span class="cov_low">0.00%</span>
+<span>Coverage for "CoreDataProvider.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(0 of 53 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(54 of 54 relevant lines covered)</h4>
 <h4 class="cov_filepath">Glasgow/Classes/CoreData/DataSource/Providers/CoreDataProvider.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -212,20 +212,20 @@
 <td class="src"><pre><code class="objc">    open var predicate: NSPredicate? {</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">41</td>
 <td class="src"><pre><code class="objc">        didSet {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">42</td>
 <td class="src"><pre><code class="objc">            self.fetchedResultsController.fetchRequest.predicate = predicate</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">43</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="never">
 <td class="num">44</td>
@@ -262,30 +262,30 @@
 <td class="src"><pre><code class="objc">    open var fetchLimit: NSInteger? {</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">51</td>
 <td class="src"><pre><code class="objc">        didSet {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">52</td>
 <td class="src"><pre><code class="objc">            if let fetchLimit = fetchLimit {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">53</td>
 <td class="src"><pre><code class="objc">                self.fetchedResultsController.fetchRequest.fetchLimit = fetchLimit</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">54</td>
 <td class="src"><pre><code class="objc">            }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">55</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="never">
 <td class="num">56</td>
@@ -322,20 +322,20 @@
 <td class="src"><pre><code class="objc">    open var sortDescriptors: [NSSortDescriptor] {</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">63</td>
 <td class="src"><pre><code class="objc">        didSet {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">64</td>
 <td class="src"><pre><code class="objc">            self.fetchedResultsController.fetchRequest.sortDescriptors = sortDescriptors</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">65</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="never">
 <td class="num">66</td>
@@ -532,50 +532,50 @@
 <td class="src"><pre><code class="objc">    public convenience init(sortDescriptors: [NSSortDescriptor],</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">105</td>
 <td class="src"><pre><code class="objc">                            managedObjectContext context: NSManagedObjectContext) {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">106</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">107</td>
 <td class="src"><pre><code class="objc">        self.init(sortDescriptors: sortDescriptors,</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">108</td>
 <td class="src"><pre><code class="objc">                  managedObjectContext: context,</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">109</td>
 <td class="src"><pre><code class="objc">                  predicate: nil,</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">110</td>
 <td class="src"><pre><code class="objc">                  fetchLimit: nil,</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">111</td>
 <td class="src"><pre><code class="objc">                  sectionNameKeyPath: nil,</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">112</td>
 <td class="src"><pre><code class="objc">                  cacheName: nil)</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">113</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">9x</td>
 </tr>
 <tr class="never">
 <td class="num">114</td>
@@ -697,55 +697,55 @@
 <td class="src"><pre><code class="objc">                sectionNameKeyPath: String?,</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">138</td>
 <td class="src"><pre><code class="objc">                cacheName: String?) {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">139</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">140</td>
 <td class="src"><pre><code class="objc">        self.sortDescriptors = sortDescriptors</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">141</td>
 <td class="src"><pre><code class="objc">        self.managedObjectContext = context</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">142</td>
 <td class="src"><pre><code class="objc">        self.predicate = predicate</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">143</td>
 <td class="src"><pre><code class="objc">        self.fetchLimit = fetchLimit</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">144</td>
 <td class="src"><pre><code class="objc">        self.sectionNameKeyPath = sectionNameKeyPath</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">145</td>
 <td class="src"><pre><code class="objc">        self.cacheName = cacheName</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">146</td>
 <td class="src"><pre><code class="objc">        super.init(with: [])</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">147</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">10x</td>
 </tr>
 <tr class="never">
 <td class="num">148</td>
@@ -807,20 +807,20 @@
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">160</td>
 <td class="src"><pre><code class="objc">    open func refresh() {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">161</td>
 <td class="src"><pre><code class="objc">        try? self.fetchedResultsController.performFetch()</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">162</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="never">
 <td class="num">163</td>
@@ -1052,40 +1052,40 @@
 <td class="src"><pre><code class="objc">                                                  sectionNameKeyPath: String?,</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">209</td>
 <td class="src"><pre><code class="objc">                                                  cacheName: String?) -&gt; NSFetchedResultsController&lt;Entity&gt; {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">210</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">211</td>
 <td class="src"><pre><code class="objc">        return NSFetchedResultsController(fetchRequest: fetchRequest,</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">212</td>
 <td class="src"><pre><code class="objc">                                          managedObjectContext: self.managedObjectContext,</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">213</td>
 <td class="src"><pre><code class="objc">                                          sectionNameKeyPath: self.sectionNameKeyPath,</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">214</td>
 <td class="src"><pre><code class="objc">                                          cacheName: self.cacheName)</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">215</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="never">
 <td class="num">216</td>
@@ -1147,20 +1147,20 @@
 <td class="src"><pre><code class="objc">    override public subscript(indexPath: IndexPath) -&gt; Entity? {</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">228</td>
 <td class="src"><pre><code class="objc">        get {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">4x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">229</td>
 <td class="src"><pre><code class="objc">            return self.fetchedResultsController.object(at: indexPath)</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">4x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">230</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="never">
 <td class="num">231</td>
@@ -1207,20 +1207,20 @@
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">240</td>
 <td class="src"><pre><code class="objc">    override public func indexPath(for value: Entity) -&gt; IndexPath? {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">241</td>
 <td class="src"><pre><code class="objc">        return self.fetchedResultsController.indexPath(forObject: value)</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">242</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">1x</td>
 </tr>
 <tr class="never">
 <td class="num">243</td>
@@ -1262,20 +1262,20 @@
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">251</td>
 <td class="src"><pre><code class="objc">    override public func numberOfSections() -&gt; Int {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">12x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">252</td>
 <td class="src"><pre><code class="objc">        return self.fetchedResultsController.sections?.count ?? 0</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">2x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">253</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">12x</td>
 </tr>
 <tr class="never">
 <td class="num">254</td>
@@ -1327,33 +1327,38 @@
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">264</td>
 <td class="src"><pre><code class="objc">    override public func numberOfItems(in section: Int) -&gt; Int {</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">7x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">265</td>
 <td class="src"><pre><code class="objc">        guard section &lt; self.numberOfSections() else { return 0 }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">5x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">266</td>
-<td class="src"><pre><code class="objc">        return self.fetchedResultsController.sections?[section].numberOfObjects ?? 0</code></pre></td>
-<td class="coverage">!</td>
+<td class="src"><pre><code class="objc">        guard let sections = self.fetchedResultsController.sections else { return 0 }</code></pre></td>
+<td class="coverage">5x</td>
 </tr>
-<tr class="missed">
+<tr class="covered">
 <td class="num">267</td>
+<td class="src"><pre><code class="objc">        return sections[section].numberOfObjects</code></pre></td>
+<td class="coverage">5x</td>
+</tr>
+<tr class="covered">
+<td class="num">268</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">!</td>
+<td class="coverage">5x</td>
 </tr>
 <tr class="never">
-<td class="num">268</td>
+<td class="num">269</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">269</td>
+<td class="num">270</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

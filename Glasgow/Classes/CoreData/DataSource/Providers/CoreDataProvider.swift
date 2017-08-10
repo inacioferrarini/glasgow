@@ -263,7 +263,8 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
      */
     override public func numberOfItems(in section: Int) -> Int {
         guard section < self.numberOfSections() else { return 0 }
-        return self.fetchedResultsController.sections?[section].numberOfObjects ?? 0
+        guard let sections = self.fetchedResultsController.sections else { return 0 }
+        return sections[section].numberOfObjects
     }
     
 }

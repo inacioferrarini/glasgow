@@ -87,8 +87,6 @@ class CoreDataProviderSpec: QuickSpec {
             }
             
             context("Refresh method") {
-
-                var objects: [TestEntity]?
                 
                 beforeEach {
                     if let context = stack.managedObjectContext {
@@ -101,23 +99,47 @@ class CoreDataProviderSpec: QuickSpec {
                 
                 it("refresh must load objects") {
                     // Given
-                    objects = provider?.objects
-                    expect(objects).toNot(beNil())
-                    expect(objects?.count).to(equal(0))
+                    expect(provider?.numberOfSections()).to(equal(0))
+                    expect(provider?.numberOfItems(in: 0)).to(equal(0))
                     
                     // When
                     provider?.refresh()
                     
                     // Then
-                    objects = provider?.objects
-                    expect(objects?.count).to(equal(2))
+                    expect(provider?.numberOfSections()).to(equal(1))
+                    expect(provider?.numberOfItems(in: 0)).to(equal(2))
                 }
                 
             }
-
-            context("fetchLimit must limit amount of returned objects") {
+            
+            context("indexPath method") {
                 
-                var objects: [TestEntity]?
+                var testEntity: TestEntity?
+                
+                beforeEach {
+                    if let context = stack.managedObjectContext {
+                        provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
+                        testEntity = TestEntity.testEntity(with: "test value 1", in: context)
+                        
+                        try? stack.saveContext()
+                        
+                        provider?.refresh()
+                    }
+                }
+                
+                it("Must return indexPath for object") {
+                    guard let testEntity = testEntity else {
+                        fail("testEntity is nil")
+                        return
+                    }
+                    let indexPath = provider?.indexPath(for: testEntity)
+                    expect(indexPath?.section).to(equal(0))
+                    expect(indexPath?.row).to(equal(0))
+                }
+                
+            }
+            
+            context("fetchLimit must limit amount of returned objects") {
                 
                 beforeEach {
                     if let context = stack.managedObjectContext {
@@ -131,25 +153,19 @@ class CoreDataProviderSpec: QuickSpec {
                 }
                 
                 it("Refresh must apply fetchLimit value") {
-                    // Given
-                    objects = provider?.objects
-                    expect(objects).toNot(beNil())
-                    
                     // When
                     provider?.fetchLimit = 3
                     provider?.refresh()
                     
                     // Then
-                    objects = provider?.objects
-                    expect(objects?.count).to(equal(3))
+                    expect(provider?.numberOfSections()).to(equal(1))
+                    expect(provider?.numberOfItems(in: 0)).to(equal(3))
                 }
                 
             }
             
             context("predicate must limit amount of returned objects") {
                 
-                var objects: [TestEntity]?
-                
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
@@ -162,25 +178,19 @@ class CoreDataProviderSpec: QuickSpec {
                 }
                 
                 it("Refresh must apply new predicate") {
-                    // Given
-                    objects = provider?.objects
-                    expect(objects).toNot(beNil())
-                    
                     // When
                     provider?.predicate = NSPredicate(format: "name == %@", "test value 4")
                     provider?.refresh()
                     
                     // Then
-                    objects = provider?.objects
-                    expect(objects?.count).to(equal(1))
+                    expect(provider?.numberOfSections()).to(equal(1))
+                    expect(provider?.numberOfItems(in: 0)).to(equal(1))
                 }
                 
             }
             
             context("sortDescriptors must change order") {
                 
-                var objects: [TestEntity]?
-                
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
@@ -193,35 +203,45 @@ class CoreDataProviderSpec: QuickSpec {
                 }
                 
                 it("Refresh must apply new predicate") {
-                    // Given
-                    objects = provider?.objects
-                    expect(objects).toNot(beNil())
-                    
                     // When
                     provider?.sortDescriptors = [NSSortDescriptor(key: "name", ascending: false)]
                     provider?.refresh()
                     
                     // Then
-                    objects = provider?.objects
-                    expect(objects?.count).to(equal(4))
-                    expect(objects?[0].name).to(equal("test value 4"))
-                    expect(objects?[1].name).to(equal("test value 3"))
-                    expect(objects?[2].name).to(equal("test value 2"))
-                    expect(objects?[3].name).to(equal("test value 1"))
+                    expect(provider?.numberOfSections()).to(equal(1))
+                    expect(provider?.numberOfItems(in: 0)).to(equal(4))
+                    expect(provider?[IndexPath(row: 0, section: 0)]?.name).to(equal("test value 4"))
+                    expect(provider?[IndexPath(row: 1, section: 0)]?.name).to(equal("test value 3"))
+                    expect(provider?[IndexPath(row: 2, section: 0)]?.name).to(equal("test value 2"))
+                    expect(provider?[IndexPath(row: 3, section: 0)]?.name).to(equal("test value 1"))
                 }
                 
             }
             
-            
-            
-            
-            
-            
-            
-            
+            context("method numberOfItems") {
+                
+                beforeEach {
+                    if let context = stack.managedObjectContext {
+                        provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
+                        _ = TestEntity.testEntity(with: "test value 1", in: context)
+                        try? stack.saveContext()
+                    }
+                }
+                
+                it("when section is greater than amount of sections, must return 0") {
+                    provider?.refresh()
+                    expect(provider?.numberOfItems(in: 0)).to(equal(1))
+                }
+                
+                it("when section is lower than amount of sections, must return the amount of items") {
+                    provider?.refresh()
+                    expect(provider?.numberOfItems(in: 1)).to(equal(0))
+                }
+                
+            }
             
         }
-        
+    
     }
     
 }
