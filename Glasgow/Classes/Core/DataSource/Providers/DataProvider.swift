@@ -43,7 +43,7 @@ public protocol DataProvider {
      
      - returns `ValueType`.
      */
-    subscript(at indexPath: IndexPath) -> ValueType? { get }
+    subscript(indexPath: IndexPath) -> ValueType? { get }
     
     /**
      Returns the IndexPath for the given object, if found.

@@ -58,7 +58,7 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
      
      - returns `ValueType`.
      */
-    public subscript(at indexPath: IndexPath) -> Type? {
+    public subscript(indexPath: IndexPath) -> Type? {
         get {
             return self.objects[indexPath.row]
         }
