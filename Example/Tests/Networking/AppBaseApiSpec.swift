@@ -33,83 +33,222 @@ class AppBaseApiSpec: QuickSpec {
         
         describe("Base Api Request") {
             
-            it("if request succeeds, must return valid object") {
-                // Given
-                stub(condition: isHost("www.apiurl.com")) { request in
-                    let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
-                    let error = OHHTTPStubsResponse(error:notConnectedError)
-                    guard let fixtureFile = OHPathForFile("ApiRequestResponseFixture.json", type(of: self)) else { return error }
+            context("GET", {
+
+                it("if request succeeds, must return valid object") {
+                    // Given
+                    stub(condition: isHost("www.apiurl.com")) { request in
+                        let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
+                        let error = OHHTTPStubsResponse(error:notConnectedError)
+                        guard let fixtureFile = OHPathForFile("ApiRequestResponseFixture.json", type(of: self)) else { return error }
+                        
+                        return OHHTTPStubsResponse(
+                            fileAtPath: fixtureFile,
+                            statusCode: 200,
+                            headers: ["Content-Type" : "application/json"]
+                        )
+                    }
                     
-                    return OHHTTPStubsResponse(
-                        fileAtPath: fixtureFile,
-                        statusCode: 200,
-                        headers: ["Content-Type" : "application/json"]
-                    )
+                    
+                    var returnedPersonList: [Person]?
+                    let api = AppBaseApi("https://www.apiurl.com")
+                    let targetUrl = "/path"
+                    let transformer = ApiResponseToPersonArrayTransformer()
+                    
+                    // When
+                    waitUntil { done in
+                        api.get(targetUrl,
+                                responseTransformer: transformer,
+                                success: { (persons) in
+                                    returnedPersonList = persons
+                                    done()
+                        }, failure: { (error) in
+                            fail("Mocked response returned error")
+                            done()
+                        }, retryAttempts: 30)
+                    }
+                    
+                    // Then
+                    expect(returnedPersonList?.count).to(equal(3))
+                    
+                    expect(returnedPersonList?[0].name).to(equal("Fulano da Silva"))
+                    expect(returnedPersonList?[0].age).to(equal(35))
+                    expect(returnedPersonList?[0].boolValue).to(equal(true))
+                    
+                    expect(returnedPersonList?[1].name).to(equal("Sincrano"))
+                    expect(returnedPersonList?[1].age).to(equal(40))
+                    expect(returnedPersonList?[1].boolValue).to(equal(false))
+                    
+                    expect(returnedPersonList?[2].name).to(equal("Beltrano"))
+                    expect(returnedPersonList?[2].age).to(equal(37))
+                    expect(returnedPersonList?[2].boolValue).to(equal(true))
                 }
                 
-                
-                var returnedPersonList: [Person]?
-                let api = AppBaseApi("https://www.apiurl.com")
-                let targetUrl = "/path"
-                let transformer = ApiResponseToPersonArrayTransformer()
-                
-                // When
-                waitUntil { done in
-                    api.get(targetUrl,
-                            responseTransformer: transformer,
-                            success: { (persons) in
-                        returnedPersonList = persons
-                        done()
-                    }, failure: { (error) in
-                        fail("Mocked response returned error")
-                        done()
-                    }, retryAttempts: 30)
+                it("if request fails, must execute failure block") {
+                    // Given
+                    stub(condition: isHost("www.apiurl.com")) { request in
+                        let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
+                        return OHHTTPStubsResponse(error: notConnectedError)
+                    }
+                    
+                    var returnedPlaylists: [Person]?
+                    let api = AppBaseApi("https://www.apiurl.com")
+                    let targetUrl = "/path"
+                    let transformer = ApiResponseToPersonArrayTransformer()
+                    
+                    // When
+                    waitUntil { done in
+                        api.get(targetUrl,
+                                responseTransformer: transformer,
+                                success: { (playlists) in
+                                    fail("Mocked response returned success")
+                                    returnedPlaylists = playlists
+                                    done()
+                        }, failure: { (error) in
+                            done()
+                        }, retryAttempts: 30)
+                    }
+                    
+                    // Then
+                    expect(returnedPlaylists).to(beNil())
                 }
                 
-                // Then
-                expect(returnedPersonList?.count).to(equal(3))
-                
-                expect(returnedPersonList?[0].name).to(equal("Fulano da Silva"))
-                expect(returnedPersonList?[0].age).to(equal(35))
-                expect(returnedPersonList?[0].boolValue).to(equal(true))
-
-                expect(returnedPersonList?[1].name).to(equal("Sincrano"))
-                expect(returnedPersonList?[1].age).to(equal(40))
-                expect(returnedPersonList?[1].boolValue).to(equal(false))
-
-                expect(returnedPersonList?[2].name).to(equal("Beltrano"))
-                expect(returnedPersonList?[2].age).to(equal(37))
-                expect(returnedPersonList?[2].boolValue).to(equal(true))
-            }
+            })
             
-            it("if request fails, must execute failure block") {
-                // Given
-                stub(condition: isHost("www.apiurl.com")) { request in
-                    let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
-                    return OHHTTPStubsResponse(error: notConnectedError)
+            
+            
+            context("POST", {
+                
+                it("if request succeeds, must return valid object") {
+                    // Given
+                    stub(condition: isHost("www.apiurl.com")) { request in
+                        let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
+                        let error = OHHTTPStubsResponse(error:notConnectedError)
+                        guard let fixtureFile = OHPathForFile("ApiRequestResponseFixture.json", type(of: self)) else { return error }
+                        
+                        return OHHTTPStubsResponse(
+                            fileAtPath: fixtureFile,
+                            statusCode: 200,
+                            headers: ["Content-Type" : "application/json"]
+                        )
+                    }
+                    
+                    
+                    var returnedPersonList: [Person]?
+                    let api = AppBaseApi("https://www.apiurl.com")
+                    let targetUrl = "/path"
+                    let transformer = ApiResponseToPersonArrayTransformer()
+                    
+                    // When
+                    waitUntil { done in
+                        api.post(targetUrl,
+                                 responseTransformer: transformer,
+                                 success: { (persons) in
+                            returnedPersonList = persons
+                            done()
+                        }, failure: { (error) in
+                            fail("Mocked response returned error")
+                            done()
+                        }, retryAttempts: 30)
+                    }
+                    
+                    // Then
+                    expect(returnedPersonList?.count).to(equal(3))
+                    
+                    expect(returnedPersonList?[0].name).to(equal("Fulano da Silva"))
+                    expect(returnedPersonList?[0].age).to(equal(35))
+                    expect(returnedPersonList?[0].boolValue).to(equal(true))
+                    
+                    expect(returnedPersonList?[1].name).to(equal("Sincrano"))
+                    expect(returnedPersonList?[1].age).to(equal(40))
+                    expect(returnedPersonList?[1].boolValue).to(equal(false))
+                    
+                    expect(returnedPersonList?[2].name).to(equal("Beltrano"))
+                    expect(returnedPersonList?[2].age).to(equal(37))
+                    expect(returnedPersonList?[2].boolValue).to(equal(true))
                 }
                 
-                var returnedPlaylists: [Person]?
-                let api = AppBaseApi("https://www.apiurl.com")
-                let targetUrl = "/path"
-                let transformer = ApiResponseToPersonArrayTransformer()
-                
-                // When
-                waitUntil { done in
-                    api.get(targetUrl,
-                            responseTransformer: transformer,
-                            success: { (playlists) in
-                        fail("Mocked response returned success")
-                        returnedPlaylists = playlists
-                        done()
-                    }, failure: { (error) in
-                        done()
-                    }, retryAttempts: 30)
+                it("if request succeeds, must return valid object") {
+                    // Given
+                    stub(condition: isHost("www.apiurl.com")) { request in
+                        let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
+                        let error = OHHTTPStubsResponse(error:notConnectedError)
+                        guard let fixtureFile = OHPathForFile("ApiRequestResponseFixture.json", type(of: self)) else { return error }
+                        
+                        return OHHTTPStubsResponse(
+                            fileAtPath: fixtureFile,
+                            statusCode: 200,
+                            headers: ["Content-Type" : "application/json"]
+                        )
+                    }
+                    
+                    
+                    var returnedPersonList: [Person]?
+                    let api = AppBaseApi("https://www.apiurl.com")
+                    let targetUrl = "/path"
+                    let transformer = ApiResponseToPersonArrayTransformer()
+                    
+                    // When
+                    waitUntil { done in
+                        let params: [String : AnyObject] = ["token" : "value" as AnyObject]
+                        api.post(targetUrl,
+                                 responseTransformer: transformer,
+                                 parameters: params,
+                                 success: { (persons) in
+                                    returnedPersonList = persons
+                                    done()
+                        }, failure: { (error) in
+                            fail("Mocked response returned error")
+                            done()
+                        }, retryAttempts: 30)
+                    }
+                    
+                    // Then
+                    expect(returnedPersonList?.count).to(equal(3))
+                    
+                    expect(returnedPersonList?[0].name).to(equal("Fulano da Silva"))
+                    expect(returnedPersonList?[0].age).to(equal(35))
+                    expect(returnedPersonList?[0].boolValue).to(equal(true))
+                    
+                    expect(returnedPersonList?[1].name).to(equal("Sincrano"))
+                    expect(returnedPersonList?[1].age).to(equal(40))
+                    expect(returnedPersonList?[1].boolValue).to(equal(false))
+                    
+                    expect(returnedPersonList?[2].name).to(equal("Beltrano"))
+                    expect(returnedPersonList?[2].age).to(equal(37))
+                    expect(returnedPersonList?[2].boolValue).to(equal(true))
                 }
                 
-                // Then
-                expect(returnedPlaylists).to(beNil())
-            }
+                it("if request fails, must execute failure block") {
+                    // Given
+                    stub(condition: isHost("www.apiurl.com")) { request in
+                        let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
+                        return OHHTTPStubsResponse(error: notConnectedError)
+                    }
+                    
+                    var returnedPlaylists: [Person]?
+                    let api = AppBaseApi("https://www.apiurl.com")
+                    let targetUrl = "/path"
+                    let transformer = ApiResponseToPersonArrayTransformer()
+                    
+                    // When
+                    waitUntil { done in
+                        api.post(targetUrl,
+                                responseTransformer: transformer,
+                                success: { (playlists) in
+                            fail("Mocked response returned success")
+                            returnedPlaylists = playlists
+                            done()
+                        }, failure: { (error) in
+                            done()
+                        }, retryAttempts: 30)
+                    }
+                    
+                    // Then
+                    expect(returnedPlaylists).to(beNil())
+                }
+                
+            })
             
         }
         
