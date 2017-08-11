@@ -149,35 +149,14 @@ open class AppBaseApi {
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
         
-        let urlString = endpointUrl + targetUrl
-        let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
-        guard let url = URL(string: urlString) else { return }
-        let dataTask = defaultSession.dataTask(with: url) { (data, response, error) in
-            if let error = error {
-                if retryAttempts <= 1 {
-                    failure(error)
-                }
-                else {
-                    self.get(endpointUrl,
-                             targetUrl: targetUrl,
-                             responseTransformer: responseTransformer,
-                             parameters: parameters,
-                             success: success,
-                             failure: failure,
-                             retryAttempts: retryAttempts - 1)
-                }
-            }
-            else if let httpResponse = response as? HTTPURLResponse {
-                guard httpResponse.statusCode >= 200 && httpResponse.statusCode < 300 else { return }
-                guard let data = data else { return }
-                guard let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as AnyObject else { return }
-                
-                let transformedObject = responseTransformer.transform(jsonData)
-                success(transformedObject)
-            }
-        }
-        
-        dataTask.resume()
+        self.operation(httpMethod: "GET",
+                       endpointUrl,
+                       targetUrl: targetUrl,
+                       responseTransformer: responseTransformer,
+                       parameters: parameters,
+                       success: success,
+                       failure: failure,
+                       retryAttempts: retryAttempts)
     }
 
 

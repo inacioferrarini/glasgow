@@ -185,7 +185,7 @@
 <tr class="covered">
 <td class="num">35</td>
 <td class="src"><pre><code class="objc">    public init() {}</code></pre></td>
-<td class="coverage">6x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="never">
 <td class="num">36</td>
@@ -295,27 +295,27 @@
 <tr class="covered">
 <td class="num">57</td>
 <td class="src"><pre><code class="objc">    open func transform(_ input: AnyObject?, keyPath: String?) -&gt; [Type]? {</code></pre></td>
-<td class="coverage">6x</td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">58</td>
 <td class="src"><pre><code class="objc">        guard let json = JSON(input) else { return nil }</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">59</td>
 <td class="src"><pre><code class="objc">        </code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">60</td>
 <td class="src"><pre><code class="objc">        if let keyPath = keyPath, keyPath.characters.count &gt; 0, let json = json[keyPath] {</code></pre></td>
-<td class="coverage">4x</td>
+<td class="coverage">5x</td>
 </tr>
 <tr class="covered">
 <td class="num">61</td>
 <td class="src"><pre><code class="objc">            return self.transformArray(json)</code></pre></td>
-<td class="coverage">4x</td>
+<td class="coverage">5x</td>
 </tr>
 <tr class="covered">
 <td class="num">62</td>
@@ -335,7 +335,7 @@
 <tr class="covered">
 <td class="num">65</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="never">
 <td class="num">66</td>
@@ -380,57 +380,57 @@
 <tr class="covered">
 <td class="num">74</td>
 <td class="src"><pre><code class="objc">    open func transformArray(_ json: JSON) -&gt; [Type] {</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">75</td>
 <td class="src"><pre><code class="objc">        var items = [Type]()</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">76</td>
 <td class="src"><pre><code class="objc">        if let collection = json.collection {</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">77</td>
 <td class="src"><pre><code class="objc">            for jsonEntry in collection {</code></pre></td>
-<td class="coverage">15x</td>
+<td class="coverage">18x</td>
 </tr>
 <tr class="covered">
 <td class="num">78</td>
 <td class="src"><pre><code class="objc">                var item = Type.init()</code></pre></td>
-<td class="coverage">15x</td>
+<td class="coverage">18x</td>
 </tr>
 <tr class="covered">
 <td class="num">79</td>
 <td class="src"><pre><code class="objc">                item.deserialize(jsonEntry)</code></pre></td>
-<td class="coverage">15x</td>
+<td class="coverage">18x</td>
 </tr>
 <tr class="covered">
 <td class="num">80</td>
 <td class="src"><pre><code class="objc">                items.append(item)</code></pre></td>
-<td class="coverage">15x</td>
+<td class="coverage">18x</td>
 </tr>
 <tr class="covered">
 <td class="num">81</td>
 <td class="src"><pre><code class="objc">            }</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">82</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">83</td>
 <td class="src"><pre><code class="objc">        return items</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">84</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="never">
 <td class="num">85</td>
