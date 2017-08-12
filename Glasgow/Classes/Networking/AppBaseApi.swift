@@ -62,7 +62,7 @@ open class AppBaseApi {
     // MARK: - Helper methods
     
     /**
-     Performs a GET request to the given path.
+     Performs a `HTTP GET` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
      using the given transformer.
      If the request fails, the 'errorHandler' block will be called instead.
@@ -95,7 +95,7 @@ open class AppBaseApi {
     }
     
     /**
-     Performs a GET request to the given path.
+     Performs a `HTTP GET` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
      using the given transformer.
      If the request fails, the 'errorHandler' block will be called instead.
@@ -135,7 +135,7 @@ open class AppBaseApi {
     }
     
     /**
-     Performs a GET request to the given path.
+     Performs a `HTTP GET` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
      using the given transformer.
      If the request fails, the 'errorHandler' block will be called instead.
@@ -183,7 +183,7 @@ open class AppBaseApi {
     // MARK: - POST
     
     /**
-     Performs a POST request to the given path.
+     Performs a `HTTP POST` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
      using the given transformer.
      If the request fails, the 'errorHandler' block will be called instead.
@@ -216,7 +216,7 @@ open class AppBaseApi {
     }
     
     /**
-     Performs a POST request to the given path.
+     Performs a `HTTP POST` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
      using the given transformer.
      If the request fails, the 'errorHandler' block will be called instead.
@@ -256,7 +256,7 @@ open class AppBaseApi {
     }
     
     /**
-     Performs a POST request to the given path.
+     Performs a `HTTP POST` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
      using the given transformer.
      If the request fails, the 'errorHandler' block will be called instead.
