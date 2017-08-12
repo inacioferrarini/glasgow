@@ -91,8 +91,8 @@ class CoreDataProviderSpec: QuickSpec {
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 1", in: context)
-                        _ = TestEntity.testEntity(with: "test value 2", in: context)
+                        _ = TestEntity.testEntity(with: "test value 1", group: "group", in: context)
+                        _ = TestEntity.testEntity(with: "test value 2", group: "group", in: context)
                         try? stack.saveContext()
                     }
                 }
@@ -103,7 +103,7 @@ class CoreDataProviderSpec: QuickSpec {
                     expect(provider?.numberOfItems(in: 0)).to(equal(0))
                     
                     // When
-                    provider?.refresh()
+                    try? provider?.refresh()
                     
                     // Then
                     expect(provider?.numberOfSections()).to(equal(1))
@@ -119,11 +119,10 @@ class CoreDataProviderSpec: QuickSpec {
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
-                        testEntity = TestEntity.testEntity(with: "test value 1", in: context)
+                        testEntity = TestEntity.testEntity(with: "test value 1", group: "group", in: context)
                         
                         try? stack.saveContext()
-                        
-                        provider?.refresh()
+                        try? provider?.refresh()
                     }
                 }
                 
@@ -144,10 +143,10 @@ class CoreDataProviderSpec: QuickSpec {
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 1", in: context)
-                        _ = TestEntity.testEntity(with: "test value 2", in: context)
-                        _ = TestEntity.testEntity(with: "test value 3", in: context)
-                        _ = TestEntity.testEntity(with: "test value 4", in: context)
+                        _ = TestEntity.testEntity(with: "test value 1", group: "group", in: context)
+                        _ = TestEntity.testEntity(with: "test value 2", group: "group", in: context)
+                        _ = TestEntity.testEntity(with: "test value 3", group: "group", in: context)
+                        _ = TestEntity.testEntity(with: "test value 4", group: "group", in: context)
                         try? stack.saveContext()
                     }
                 }
@@ -155,7 +154,7 @@ class CoreDataProviderSpec: QuickSpec {
                 it("Refresh must apply fetchLimit value") {
                     // When
                     provider?.fetchLimit = 3
-                    provider?.refresh()
+                    try? provider?.refresh()
                     
                     // Then
                     expect(provider?.numberOfSections()).to(equal(1))
@@ -169,10 +168,10 @@ class CoreDataProviderSpec: QuickSpec {
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 1", in: context)
-                        _ = TestEntity.testEntity(with: "test value 2", in: context)
-                        _ = TestEntity.testEntity(with: "test value 3", in: context)
-                        _ = TestEntity.testEntity(with: "test value 4", in: context)
+                        _ = TestEntity.testEntity(with: "test value 1", group: "group", in: context)
+                        _ = TestEntity.testEntity(with: "test value 2", group: "group", in: context)
+                        _ = TestEntity.testEntity(with: "test value 3", group: "group", in: context)
+                        _ = TestEntity.testEntity(with: "test value 4", group: "group", in: context)
                         try? stack.saveContext()
                     }
                 }
@@ -180,7 +179,7 @@ class CoreDataProviderSpec: QuickSpec {
                 it("Refresh must apply new predicate") {
                     // When
                     provider?.predicate = NSPredicate(format: "name == %@", "test value 4")
-                    provider?.refresh()
+                    try? provider?.refresh()
                     
                     // Then
                     expect(provider?.numberOfSections()).to(equal(1))
@@ -194,10 +193,10 @@ class CoreDataProviderSpec: QuickSpec {
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 1", in: context)
-                        _ = TestEntity.testEntity(with: "test value 2", in: context)
-                        _ = TestEntity.testEntity(with: "test value 3", in: context)
-                        _ = TestEntity.testEntity(with: "test value 4", in: context)
+                        _ = TestEntity.testEntity(with: "test value 1", group: "group", in: context)
+                        _ = TestEntity.testEntity(with: "test value 2", group: "group", in: context)
+                        _ = TestEntity.testEntity(with: "test value 3", group: "group", in: context)
+                        _ = TestEntity.testEntity(with: "test value 4", group: "group", in: context)
                         try? stack.saveContext()
                     }
                 }
@@ -205,7 +204,7 @@ class CoreDataProviderSpec: QuickSpec {
                 it("Refresh must apply new predicate") {
                     // When
                     provider?.sortDescriptors = [NSSortDescriptor(key: "name", ascending: false)]
-                    provider?.refresh()
+                    try? provider?.refresh()
                     
                     // Then
                     expect(provider?.numberOfSections()).to(equal(1))
@@ -223,21 +222,66 @@ class CoreDataProviderSpec: QuickSpec {
                 beforeEach {
                     if let context = stack.managedObjectContext {
                         provider = CoreDataProvider<TestEntity>(sortDescriptors: [], managedObjectContext: context)
-                        _ = TestEntity.testEntity(with: "test value 1", in: context)
+                        _ = TestEntity.testEntity(with: "test value 1", group: "group", in: context)
                         try? stack.saveContext()
                     }
                 }
                 
                 it("when section is greater than amount of sections, must return 0") {
-                    provider?.refresh()
+                    try? provider?.refresh()
                     expect(provider?.numberOfItems(in: 0)).to(equal(1))
                 }
                 
                 it("when section is lower than amount of sections, must return the amount of items") {
-                    provider?.refresh()
+                    try? provider?.refresh()
                     expect(provider?.numberOfItems(in: 1)).to(equal(0))
                 }
                 
+            }
+            
+            context("Multiple Sections") {
+            
+                beforeEach {
+                    // Given
+                    if let context = stack.managedObjectContext {
+                        let sortDescriptor = [
+                            NSSortDescriptor(key: "group", ascending: true),
+                            NSSortDescriptor(key: "name", ascending: true)
+                        ]
+                        provider = CoreDataProvider<TestEntity>(sortDescriptors: sortDescriptor,
+                                                                managedObjectContext: context,
+                                                                predicate: nil,
+                                                                fetchLimit: nil,
+                                                                sectionNameKeyPath: "group",
+                                                                cacheName: nil)
+                        if let context = stack.managedObjectContext {
+                            _ = TestEntity.testEntity(with: "test value 1", group: "group 1", in: context)
+                            _ = TestEntity.testEntity(with: "test value 2", group: "group 1", in: context)
+                            _ = TestEntity.testEntity(with: "test value 3", group: "group 1", in: context)
+                            _ = TestEntity.testEntity(with: "test value 4", group: "group 2", in: context)
+                            _ = TestEntity.testEntity(with: "test value 5", group: "group 2", in: context)
+                            _ = TestEntity.testEntity(with: "test value 6", group: "group 3", in: context)
+                            _ = TestEntity.testEntity(with: "test value 7", group: "group 4", in: context)
+                            _ = TestEntity.testEntity(with: "test value 8", group: "group 4", in: context)
+                            _ = TestEntity.testEntity(with: "test value 9", group: "group 1", in: context)
+                            _ = TestEntity.testEntity(with: "test value 10", group: "group 3", in: context)
+                            
+                            try? stack.saveContext()
+                            try? provider?.refresh()
+                        }
+                    }
+                }
+                
+                it("must have correct number of sections") {
+                    expect(provider?.numberOfSections()).to(equal(4))
+                }
+                
+                it("must have correct number of rows in each section") {
+                    expect(provider?.numberOfItems(in: 0)).to(equal(4))
+                    expect(provider?.numberOfItems(in: 1)).to(equal(2))
+                    expect(provider?.numberOfItems(in: 2)).to(equal(2))
+                    expect(provider?.numberOfItems(in: 3)).to(equal(2))
+                }
             }
             
         }

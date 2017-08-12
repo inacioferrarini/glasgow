@@ -153,7 +153,7 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>The predicate to be applied to every data fetch operation.
-After changing the value, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFT_T_">refresh()</a></code> method.</p>
+After changing the value, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a></code> method.</p>
 
                       </div>
                       <div class="declaration">
@@ -181,7 +181,7 @@ After changing the value, the data must be fetched again, execute <code><a href=
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Limit to the amount of fetched objects.
-After changing the value, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFT_T_">refresh()</a></code> method.</p>
+After changing the value, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a></code> method.</p>
 
                       </div>
                       <div class="declaration">
@@ -209,7 +209,7 @@ After changing the value, the data must be fetched again, execute <code><a href=
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Result sorting.
-After changing the value, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFT_T_">refresh()</a></code> method.</p>
+After changing the value, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a></code> method.</p>
 
                       </div>
                       <div class="declaration">
@@ -332,7 +332,7 @@ This value cannot be changed.</p>
                       <div class="abstract">
                         <p>Inits the <code>Core Data Provider</code>.
 The data will not be fetched after created.
-To fetch data, call <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFT_T_">refresh()</a></code>.</p>
+To fetch data, call <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a></code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -393,7 +393,7 @@ To fetch data, call <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgo
                       <div class="abstract">
                         <p>Inits the <code>Core Data Provider</code>.
 The data will not be fetched after created.
-To fetch data, call <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFT_T_">refresh()</a></code>.</p>
+To fetch data, call <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a></code>.</p>
 
 <ul>
 <li><p>cacheName: Name for <code>Core Data</code> cache.</p></li>
@@ -498,9 +498,9 @@ To fetch data, call <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgo
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow16CoreDataProvider7refreshFT_T_"></a>
+                    <a name="/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_"></a>
                     <a name="//apple_ref/swift/Method/refresh()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow16CoreDataProvider7refreshFT_T_">refresh()</a>
+                    <a class="token" href="#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -514,13 +514,23 @@ By default, it is not called by default when the <code>CoreDataProvider</code> i
 <p>Also, this method must be called whenever <code><a href="../Classes/CoreDataProvider.html#/s:vC7Glasgow16CoreDataProvider9predicateGSqCSo11NSPredicate_">predicate</a></code>, <code><a href="../Classes/CoreDataProvider.html#/s:vC7Glasgow16CoreDataProvider10fetchLimitGSqSi_">fetchLimit</a></code>, <code><a href="../Classes/CoreDataProvider.html#/s:vC7Glasgow16CoreDataProvider18sectionNameKeyPathGSqSS_">sectionNameKeyPath</a></code> or <code><a href="../Classes/CoreDataProvider.html#/s:vC7Glasgow16CoreDataProvider9cacheNameGSqSS_">cacheName</a></code> changes.</p>
 
 <p>Once executed, <code>objects</code> will return the fetched objects.</p>
+<h3 id='if-you-do-not-want-to-handle-any-exception-that-may-happen-you-can-use' class='heading'>If you do not want to handle any exception that may happen, you can use:</h3>
+<pre class="highlight plaintext"><code>try? coreDataProvider.refresh()
+</code></pre>
+<h3 id='if-you-want-to-handle-any-exception-that-may-happen-you-can-use' class='heading'>If you want to handle any exception that may happen, you can use:</h3>
+<pre class="highlight plaintext"><code>do {
+   try coreDataProvider.refresh()
+} catch let error as NSError {
+   print("Error: \(error)")
+}
+</code></pre>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">refresh</span><span class="p">()</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">refresh</span><span class="p">()</span> <span class="k">throws</span></code></pre>
 
                         </div>
                       </div>

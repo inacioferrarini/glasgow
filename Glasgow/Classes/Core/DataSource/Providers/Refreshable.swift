@@ -31,6 +31,6 @@ public protocol Refreshable {
     /**
      Refreshes the `DataProvider` object.
      */
-    func refresh()
+    func refresh() throws
     
 }

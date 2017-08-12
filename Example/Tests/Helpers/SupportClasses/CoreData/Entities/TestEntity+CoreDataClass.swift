@@ -27,10 +27,11 @@ import CoreData
 @objc(TestEntity)
 public class TestEntity: NSManagedObject {
 
-    open class func testEntity(with name: String?, in context: NSManagedObjectContext) -> TestEntity? {
+    open class func testEntity(with name: String?, group: String?, in context: NSManagedObjectContext) -> TestEntity? {
         let newTestEntity = NSEntityDescription.insertNewObject(forEntityName: self.simpleClassName(), into: context) as? TestEntity
         if let entity = newTestEntity {
             entity.name = name
+            entity.group = group
         }
         return newTestEntity
     }

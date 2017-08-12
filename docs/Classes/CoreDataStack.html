@@ -422,6 +422,16 @@
                       <div class="pointer"></div>
                       <div class="abstract">
                         <p>Saves the <code>Core Data</code> context, if there is changes to be saved.</p>
+<h3 id='if-you-do-not-want-to-handle-any-exception-that-may-happen-you-can-use' class='heading'>If you do not want to handle any exception that may happen, you can use:</h3>
+<pre class="highlight plaintext"><code>try? coreDataStack.saveContext()
+</code></pre>
+<h3 id='if-you-want-to-handle-any-exception-that-may-happen-you-can-use' class='heading'>If you want to handle any exception that may happen, you can use:</h3>
+<pre class="highlight plaintext"><code>do {
+   try coreDataStack.saveContext()
+} catch let error as NSError {
+   print("Error: \(error)")
+}
+</code></pre>
 
                       </div>
                       <div class="declaration">

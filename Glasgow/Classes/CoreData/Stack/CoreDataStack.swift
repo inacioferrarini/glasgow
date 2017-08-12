@@ -119,6 +119,22 @@ open class CoreDataStack {
     
     /**
      Saves the `Core Data` context, if there is changes to be saved.
+     
+     
+     ### If you do not want to handle any exception that may happen, you can use: ###
+     ````
+     try? coreDataStack.saveContext()
+     ````
+     
+     
+     ### If you want to handle any exception that may happen, you can use: ###
+     ````
+     do {
+        try coreDataStack.saveContext()
+     } catch let error as NSError {
+        print("Error: \(error)")
+     }
+     ````
      */
     open func saveContext() throws {
         guard let managedObjectContext = self.managedObjectContext else { return }

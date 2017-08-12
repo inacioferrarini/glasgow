@@ -41,8 +41,8 @@ class NSManagedObjectFetchSpec: QuickSpec {
             beforeEach {
                 if let context = managedContext {
                     TestEntity.removeAll(in: context)
-                    _ = TestEntity.testEntity(with: "test value 1", in: context)
-                    _ = TestEntity.testEntity(with: "test value 2", in: context)
+                    _ = TestEntity.testEntity(with: "test value 1", group: "group", in: context)
+                    _ = TestEntity.testEntity(with: "test value 2", group: "group", in: context)
                     try? stack.saveContext()
                 }
             }

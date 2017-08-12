@@ -72,7 +72,7 @@ class CoreDataStackSpec: QuickSpec {
                     
                     do {
                         if let context = stack?.managedObjectContext {
-                            _ = TestEntity.testEntity(with: "test value", in: context)
+                            _ = TestEntity.testEntity(with: "test value", group: "group", in: context)
                         }
                         try stack?.saveContext()
                         doCompleted = true
@@ -92,7 +92,7 @@ class CoreDataStackSpec: QuickSpec {
                     
                     do {
                         if let context = stack?.managedObjectContext {
-                            _ = TestEntity.testEntity(with: nil, in: context)
+                            _ = TestEntity.testEntity(with: nil, group: "group", in: context)
                         }
                         try stack?.saveContext()
                         doCompleted = true

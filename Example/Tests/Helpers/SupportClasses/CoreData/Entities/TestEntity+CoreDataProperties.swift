@@ -32,5 +32,6 @@ extension TestEntity {
     }
 
     @NSManaged public var name: String?
+    @NSManaged public var group: String?
 
 }

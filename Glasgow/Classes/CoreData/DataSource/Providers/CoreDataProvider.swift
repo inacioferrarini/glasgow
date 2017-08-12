@@ -156,9 +156,25 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
      Also, this method must be called whenever `predicate`, `fetchLimit`, `sectionNameKeyPath` or `cacheName` changes.
      
      Once executed, `objects` will return the fetched objects.
+     
+     
+     ### If you do not want to handle any exception that may happen, you can use: ###
+     ````
+     try? coreDataProvider.refresh()
+     ````
+     
+     
+     ### If you want to handle any exception that may happen, you can use: ###
+     ````
+     do {
+        try coreDataProvider.refresh()
+     } catch let error as NSError {
+        print("Error: \(error)")
+     }
+     ````
      */
-    open func refresh() {
-        try? self.fetchedResultsController.performFetch()
+    open func refresh() throws {
+        try self.fetchedResultsController.performFetch()
     }
     
     

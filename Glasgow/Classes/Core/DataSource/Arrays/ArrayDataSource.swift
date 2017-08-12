@@ -62,7 +62,7 @@ open class ArrayDataSource<Type: Equatable>: NSObject {
      */
     open func refresh() {
         if let dataProvider = self.dataProvider as? Refreshable {
-            dataProvider.refresh()
+            try? dataProvider.refresh()
         }
         self.onRefresh?()
     }
