@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>KeyPathTransformer Protocol Reference</title>
+    <title>Data Extension Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Protocol/KeyPathTransformer" class="dashAnchor"></a>
-    <a title="KeyPathTransformer Protocol Reference"></a>
+    <a name="//apple_ref/swift/Extension/Data" class="dashAnchor"></a>
+    <a title="Data Extension Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Glasgow Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Glasgow Reference</a>
         <img id="carat" src="../img/carat.png" />
-        KeyPathTransformer Protocol Reference
+        Data Extension Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -111,16 +111,8 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>KeyPathTransformer</h1>
-              <div class="declaration">
-                <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">KeyPathTransformer</span></code></pre>
-
-                </div>
-              </div>
-            <p>Adds the capability to transform a given object of type T into an
-object of target type, U, using a <code>KeyPath</code>.</p>
-
+            <h1>Data</h1>
+            
           </section>
           <section class="section task-group-section">
             <div class="task-group">
@@ -128,9 +120,9 @@ object of target type, U, using a <code>KeyPath</code>.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FP7Glasgow18KeyPathTransformer9transformFTwx1T7keyPathGSqSS__wx1U"></a>
-                    <a name="//apple_ref/swift/Method/transform(_:keyPath:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FP7Glasgow18KeyPathTransformer9transformFTwx1T7keyPathGSqSS__wx1U">transform(_:keyPath:)</a>
+                    <a name="/s:FE7GlasgowV10Foundation4DatacFT7readingCSo11InputStream_S1_"></a>
+                    <a name="//apple_ref/swift/Method/init(reading:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FE7GlasgowV10Foundation4DatacFT7readingCSo11InputStream_S1_">init(reading:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -138,14 +130,14 @@ object of target type, U, using a <code>KeyPath</code>.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Transforms the input type T and returns U as output.</p>
+                        <p>Adds a new Init capable of reading a InputStream.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">func</span> <span class="nf">transform</span><span class="p">(</span><span class="n">_</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">T</span><span class="p">,</span> <span class="nv">keyPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">U</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">reading</span> <span class="nv">input</span><span class="p">:</span> <span class="kt">InputStream</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -161,28 +153,12 @@ object of target type, U, using a <code>KeyPath</code>.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The object to be transformed.</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>keyPath</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>If input type allows, use the given key path as the root object.</p>
+                                  <p><code>InputStream</code> to read data from.</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
-                      </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>Object of type U</p>
                       </div>
                     </section>
                   </div>

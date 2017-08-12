@@ -84,12 +84,16 @@ class AppBaseApiSpec: QuickSpec {
                     expect(returnedPersonList?[2].boolValue).to(equal(true))
                 }
                 
-                it("if request succeeds, must return valid object") {
+                it("if request with body succeeds, must return valid object") {
                     // Given
                     stub(condition: isHost("www.apiurl.com")) { request in
                         let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
                         let error = OHHTTPStubsResponse(error:notConnectedError)
                         guard let fixtureFile = OHPathForFile("ApiRequestResponseFixture.json", type(of: self)) else { return error }
+                        guard let bodyInputStream = request.httpBodyStream else { return error }
+                        let bodyData = Data(reading: bodyInputStream)
+                        guard let body = try? JSONSerialization.jsonObject(with: bodyData, options: []) as? [String : String] else { return error }
+                        guard body?["token"] == "value" else { return error }
                         
                         return OHHTTPStubsResponse(
                             fileAtPath: fixtureFile,
@@ -106,7 +110,7 @@ class AppBaseApiSpec: QuickSpec {
                     
                     // When
                     waitUntil { done in
-                        let params: [String : AnyObject] = ["token" : "value" as AnyObject]
+                        let params = ["token" : "value"]
                         api.get(targetUrl,
                                 responseTransformer: transformer,
                                 parameters: params,
@@ -219,12 +223,16 @@ class AppBaseApiSpec: QuickSpec {
                     expect(returnedPersonList?[2].boolValue).to(equal(true))
                 }
                 
-                it("if request succeeds, must return valid object") {
+                it("if request with body succeeds, must return valid object") {
                     // Given
                     stub(condition: isHost("www.apiurl.com")) { request in
                         let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
                         let error = OHHTTPStubsResponse(error:notConnectedError)
                         guard let fixtureFile = OHPathForFile("ApiRequestResponseFixture.json", type(of: self)) else { return error }
+                        guard let bodyInputStream = request.httpBodyStream else { return error }
+                        let bodyData = Data(reading: bodyInputStream)
+                        guard let body = try? JSONSerialization.jsonObject(with: bodyData, options: []) as? [String : String] else { return error }
+                        guard body?["token"] == "value" else { return error }
                         
                         return OHHTTPStubsResponse(
                             fileAtPath: fixtureFile,
@@ -241,7 +249,7 @@ class AppBaseApiSpec: QuickSpec {
                     
                     // When
                     waitUntil { done in
-                        let params: [String : AnyObject] = ["token" : "value" as AnyObject]
+                        let params = ["token" : "value"]
                         api.post(targetUrl,
                                  responseTransformer: transformer,
                                  parameters: params,

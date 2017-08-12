@@ -104,7 +104,7 @@ open class AppBaseApi {
     open func get<Type, TransformerType>(
         _ targetUrl: String,
         responseTransformer: TransformerType,
-        parameters: [String : AnyObject]?,
+        parameters: [String : Any]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
@@ -144,7 +144,7 @@ open class AppBaseApi {
         _ endpointUrl: String,
         targetUrl: String,
         responseTransformer: TransformerType,
-        parameters: [String : AnyObject]?,
+        parameters: [String : Any]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
@@ -216,7 +216,7 @@ open class AppBaseApi {
     open func post<Type, TransformerType>(
         _ targetUrl: String,
         responseTransformer: TransformerType,
-        parameters: [String : AnyObject]?,
+        parameters: [String : Any]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
@@ -256,7 +256,7 @@ open class AppBaseApi {
         _ endpointUrl: String,
         targetUrl: String,
         responseTransformer: TransformerType,
-        parameters: [String : AnyObject]?,
+        parameters: [String : Any]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
@@ -303,7 +303,7 @@ open class AppBaseApi {
         _ endpointUrl: String,
         targetUrl: String,
         responseTransformer: TransformerType,
-        parameters: [String : AnyObject]?,
+        parameters: [String : Any]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
@@ -345,7 +345,7 @@ open class AppBaseApi {
     
     func requestBody(httpMethod: String,
                      url: URL,
-                     parameters: [String : AnyObject]?) -> URLRequest {
+                     parameters: [String : Any]?) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod
         if let parameters = parameters {

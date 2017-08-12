@@ -73,6 +73,9 @@
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/NSManagedObject.html">NSManagedObject</a>
               </li>
               <li class="nav-group-task">
@@ -293,9 +296,9 @@ from the request into the object the <code>completion</code> expects.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSPS3____7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
                     <a name="//apple_ref/swift/Method/get(_:responseTransformer:parameters:success:failure:retryAttempts:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSPS3____7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">get(_:responseTransformer:parameters:success:failure:retryAttempts:)</a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">get(_:responseTransformer:parameters:success:failure:retryAttempts:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -316,7 +319,7 @@ If the request fails, the &lsquo;errorHandler&rsquo; block will be called instea
                           <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="k">get</span><span class="o">&lt;</span><span class="k">Type</span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">&gt;</span><span class="p">(</span>
         <span class="n">_</span> <span class="nv">targetUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
         <span class="nv">responseTransformer</span><span class="p">:</span> <span class="kt">TransformerType</span><span class="p">,</span>
-        <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]?,</span>
+        <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span>
         <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
         <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
         <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
@@ -409,9 +412,9 @@ from the request into the object the <code>completion</code> expects.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSPS3____7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
                     <a name="//apple_ref/swift/Method/get(_:targetUrl:responseTransformer:parameters:success:failure:retryAttempts:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSPS3____7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">get(_:targetUrl:responseTransformer:parameters:success:failure:retryAttempts:)</a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">get(_:targetUrl:responseTransformer:parameters:success:failure:retryAttempts:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -433,7 +436,7 @@ If the request fails, the &lsquo;errorHandler&rsquo; block will be called instea
         <span class="n">_</span> <span class="nv">endpointUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
         <span class="nv">targetUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
         <span class="nv">responseTransformer</span><span class="p">:</span> <span class="kt">TransformerType</span><span class="p">,</span>
-        <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">AnyObject</span><span class="p">]?,</span>
+        <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span>
         <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
         <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
         <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
@@ -525,10 +528,498 @@ from the request into the object the <code>completion</code> expects.</p>
                 </li>
               </ul>
             </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/POST"></a>
+                <a name="//apple_ref/swift/Section/POST" class="dashAnchor"></a>
+                <a href="#/POST">
+                  <h3 class="section-name">POST</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/post(_:responseTransformer:success:failure:retryAttempts:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">post(_:responseTransformer:success:failure:retryAttempts:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a POST request to the given path.
+If the requests succeeds, the <code>completion</code> block will be called after converting the result
+using the given transformer.
+If the request fails, the &lsquo;errorHandler&rsquo; block will be called instead.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="n">post</span><span class="o">&lt;</span><span class="k">Type</span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">_</span> <span class="nv">targetUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+        <span class="nv">responseTransformer</span><span class="p">:</span> <span class="kt">TransformerType</span><span class="p">,</span>
+        <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
+        <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
+        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>targetUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The request path.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>responseTransformer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the <code>Transformer</code> that will be used to transform the returned value
+from the request into the object the <code>completion</code> expects.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The block to be called if request succeeds.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The block to be called if request fails.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>retryAttempts</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>How many tries before calling <code>error</code> block.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/post(_:responseTransformer:parameters:success:failure:retryAttempts:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">post(_:responseTransformer:parameters:success:failure:retryAttempts:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a POST request to the given path.
+If the requests succeeds, the <code>completion</code> block will be called after converting the result
+using the given transformer.
+If the request fails, the &lsquo;errorHandler&rsquo; block will be called instead.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="n">post</span><span class="o">&lt;</span><span class="k">Type</span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">_</span> <span class="nv">targetUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+        <span class="nv">responseTransformer</span><span class="p">:</span> <span class="kt">TransformerType</span><span class="p">,</span>
+        <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span>
+        <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
+        <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
+        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>targetUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The request path.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>responseTransformer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the <code>Transformer</code> that will be used to transform the returned value
+from the request into the object the <code>completion</code> expects.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Parameters to be sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The block to be called if request succeeds.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The block to be called if request fails.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>retryAttempts</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>How many tries before calling <code>errorHandler</code> block.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/post(_:targetUrl:responseTransformer:parameters:success:failure:retryAttempts:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">post(_:targetUrl:responseTransformer:parameters:success:failure:retryAttempts:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a POST request to the given path.
+If the requests succeeds, the <code>completion</code> block will be called after converting the result
+using the given transformer.
+If the request fails, the &lsquo;errorHandler&rsquo; block will be called instead.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="n">post</span><span class="o">&lt;</span><span class="k">Type</span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="n">_</span> <span class="nv">endpointUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+        <span class="nv">targetUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+        <span class="nv">responseTransformer</span><span class="p">:</span> <span class="kt">TransformerType</span><span class="p">,</span>
+        <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span>
+        <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
+        <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
+        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>targetUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The request path.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>responseTransformer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the <code>Transformer</code> that will be used to transform the returned value
+from the request into the object the <code>completion</code> expects.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Parameters to be sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The block to be called if request succeeds.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The block to be called if request fails.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>retryAttempts</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>How many tries before calling <code>errorHandler</code> block.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Helper%20methods2"></a>
+                <a name="//apple_ref/swift/Section/Helper methods" class="dashAnchor"></a>
+                <a href="#/Helper%20methods2">
+                  <h3 class="section-name">Helper methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow10AppBaseApi9operationu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFT10httpMethodSSSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="//apple_ref/swift/Method/operation(httpMethod:_:targetUrl:responseTransformer:parameters:success:failure:retryAttempts:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi9operationu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFT10httpMethodSSSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">operation(httpMethod:_:targetUrl:responseTransformer:parameters:success:failure:retryAttempts:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Performs a httpMethod kind request to the given path.
+If the requests succeeds, the <code>completion</code> block will be called after converting the result
+using the given transformer.
+If the request fails, the &lsquo;errorHandler&rsquo; block will be called instead.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="n">operation</span><span class="o">&lt;</span><span class="k">Type</span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">&gt;</span><span class="p">(</span>
+        <span class="nv">httpMethod</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+        <span class="n">_</span> <span class="nv">endpointUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+        <span class="nv">targetUrl</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+        <span class="nv">responseTransformer</span><span class="p">:</span> <span class="kt">TransformerType</span><span class="p">,</span>
+        <span class="nv">parameters</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">Any</span><span class="p">]?,</span>
+        <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
+        <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
+        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>httpMethod</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Http method to execute.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>targetUrl</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The request path.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>responseTransformer</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>the <code>Transformer</code> that will be used to transform the returned value
+from the request into the object the <code>completion</code> expects.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>parameters</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Parameters to be sent with the request.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>success</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The block to be called if request succeeds.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>failure</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The block to be called if request fails.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>retryAttempts</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>How many tries before calling <code>errorHandler</code> block.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio</a>. All rights reserved. (Last updated: 2017-08-09)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio</a>. All rights reserved. (Last updated: 2017-08-12)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

@@ -73,6 +73,9 @@
             <a href="../Extensions.html">Extensions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Extensions/NSManagedObject.html">NSManagedObject</a>
               </li>
               <li class="nav-group-task">
@@ -119,71 +122,6 @@
 
           </section>
           <section class="section task-group-section">
-            <div class="task-group">
-              <div class="task-name-container">
-                <a name="/Properties"></a>
-                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
-                <a href="#/Properties">
-                  <h3 class="section-name">Properties</h3>
-                </a>
-              </div>
-              <ul>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC7Glasgow17ArrayDataProvider7objectsGSax_"></a>
-                    <a name="//apple_ref/swift/Property/objects" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC7Glasgow17ArrayDataProvider7objectsGSax_">objects</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Objects from this provider.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">private(set)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">objects</span><span class="p">:</span> <span class="p">[</span><span class="k">Type</span><span class="p">]</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:vC7Glasgow17ArrayDataProvider5countSi"></a>
-                    <a name="//apple_ref/swift/Property/count" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC7Glasgow17ArrayDataProvider5countSi">count</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Returns the amount of stored objects.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-              </ul>
-            </div>
             <div class="task-group">
               <div class="task-name-container">
                 <a name="/Initialization"></a>
@@ -243,19 +181,19 @@
             </div>
             <div class="task-group">
               <div class="task-name-container">
-                <a name="/Indexing"></a>
-                <a name="//apple_ref/swift/Section/Indexing" class="dashAnchor"></a>
-                <a href="#/Indexing">
-                  <h3 class="section-name">Indexing</h3>
+                <a name="/Data%20Provider%20Implementation"></a>
+                <a name="//apple_ref/swift/Section/Data Provider Implementation" class="dashAnchor"></a>
+                <a href="#/Data%20Provider%20Implementation">
+                  <h3 class="section-name">Data Provider Implementation</h3>
                 </a>
               </div>
               <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow17ArrayDataProvider5indexFT2ofx_GSqSi_"></a>
-                    <a name="//apple_ref/swift/Method/index(of:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider5indexFT2ofx_GSqSi_">index(of:)</a>
+                    <a name="/s:iC7Glasgow17ArrayDataProvider9subscriptFV10Foundation9IndexPathGSqx_"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:iC7Glasgow17ArrayDataProvider9subscriptFV10Foundation9IndexPathGSqx_">subscript(_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -263,14 +201,14 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the index of given object, if found.</p>
+                        <p>Returns the object of given <code>ValueType</code> at given <code>indexPath</code>, if exists.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">index</span><span class="p">(</span><span class="n">of</span> <span class="nv">element</span><span class="p">:</span> <span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Type</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -281,12 +219,58 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>element</em>
+                                <em>indexPath</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The object to search its index.</p>
+                                  <p>IndexPath to get object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow17ArrayDataProvider9indexPathFT3forx_GSqV10Foundation9IndexPath_"></a>
+                    <a name="//apple_ref/swift/Method/indexPath(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider9indexPathFT3forx_GSqV10Foundation9IndexPath_">indexPath(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the IndexPath for the given object, if found.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">indexPath</span><span class="p">(</span><span class="k">for</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">ValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">IndexPath</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Object to search.</p>
                                 </div>
                               </td>
                             </tr>
@@ -295,7 +279,92 @@
                       </div>
                       <div>
                         <h4>Return Value</h4>
-                        <p>Int?</p>
+                        <p>IndexPath.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow17ArrayDataProvider16numberOfSectionsFT_Si"></a>
+                    <a name="//apple_ref/swift/Method/numberOfSections()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider16numberOfSectionsFT_Si">numberOfSections()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the numbers of provided sections.</p>
+
+<p>For one-dimentional arrays, will return 1.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Int.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow17ArrayDataProvider13numberOfItemsFT2inSi_Si"></a>
+                    <a name="//apple_ref/swift/Method/numberOfItems(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider13numberOfItemsFT2inSi_Si">numberOfItems(in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the number of objects in the given section.</p>
+
+<p>If given section does not exists, returns 0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">numberOfItems</span><span class="p">(</span><span class="k">in</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>section</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The section to be inquired about how much provided objects it has.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Int.</p>
                       </div>
                     </section>
                   </div>
@@ -305,7 +374,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio</a>. All rights reserved. (Last updated: 2017-08-09)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio</a>. All rights reserved. (Last updated: 2017-08-12)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
