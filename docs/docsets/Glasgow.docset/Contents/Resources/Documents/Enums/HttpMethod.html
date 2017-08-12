@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>NSObject Extension Reference</title>
+    <title>HttpMethod Enum Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Extension/NSObject" class="dashAnchor"></a>
-    <a title="NSObject Extension Reference"></a>
+    <a name="//apple_ref/swift/Enum/HttpMethod" class="dashAnchor"></a>
+    <a title="HttpMethod Enum Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">Glasgow Docs</a> (100% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">Glasgow Reference</a>
         <img id="carat" src="../img/carat.png" />
-        NSObject Extension Reference
+        HttpMethod Enum Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -119,8 +119,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>NSObject</h1>
-            <p>Adds useful capabilities to NSObject.</p>
+            <h1>HttpMethod</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">HttpMethod</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                </div>
+              </div>
+            <p>Supported Http Methods</p>
 
           </section>
           <section class="section task-group-section">
@@ -129,9 +135,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:ZFE7GlasgowCSo8NSObject15simpleClassNameFT_SS"></a>
-                    <a name="//apple_ref/swift/Method/simpleClassName()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZFE7GlasgowCSo8NSObject15simpleClassNameFT_SS">simpleClassName()</a>
+                    <a name="/s:FO7Glasgow10HttpMethod3getFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/get" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO7Glasgow10HttpMethod3getFMS0_S0_">get</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -139,25 +145,47 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Extracts the simple class name of a given type.
-As in Swift the types names are composed with the modules they are located,
-this method extracts the type name without the module name.</p>
-<h3 id='usage-example' class='heading'>Usage Example:</h3>
-<pre class="highlight plaintext"><code>let name = "".simpleClassName() // returns "NSString"
-</code></pre>
+                        <p>HTTP GET</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">simpleClassName</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">String</span></code></pre>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="k">get</span> <span class="o">=</span> <span class="s">"GET"</span></code></pre>
 
                         </div>
                       </div>
-                      <div>
-                        <h4>Return Value</h4>
-                        <p>The simple class name of the type</p>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FO7Glasgow10HttpMethod4postFMS0_S0_"></a>
+                    <a name="//apple_ref/swift/Element/post" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FO7Glasgow10HttpMethod4postFMS0_S0_">post</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>HTTP POST</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">case</span> <span class="n">post</span> <span class="o">=</span> <span class="s">"POST"</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>

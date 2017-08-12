@@ -93,7 +93,9 @@ class AppBaseApiSpec: QuickSpec {
                         guard let bodyInputStream = request.httpBodyStream else { return error }
                         let bodyData = Data(reading: bodyInputStream)
                         guard let body = try? JSONSerialization.jsonObject(with: bodyData, options: []) as? [String : String] else { return error }
+                        
                         guard body?["token"] == "value" else { return error }
+                        guard request.allHTTPHeaderFields?["X-AUTH-TOKEN"] == "1234-ABCDEF-1234-UGH" else { return error }
                         
                         return OHHTTPStubsResponse(
                             fileAtPath: fixtureFile,
@@ -107,13 +109,16 @@ class AppBaseApiSpec: QuickSpec {
                     let api = AppBaseApi("https://www.apiurl.com")
                     let targetUrl = "/path"
                     let transformer = ApiResponseToPersonArrayTransformer()
+                    let params = ["token" : "value"]
+                    let headers = ["X-AUTH-TOKEN" : "1234-ABCDEF-1234-UGH"]
                     
                     // When
                     waitUntil { done in
-                        let params = ["token" : "value"]
+                        
                         api.get(targetUrl,
                                 responseTransformer: transformer,
                                 parameters: params,
+                                headers: headers,
                                 success: { (persons) in
                             returnedPersonList = persons
                             done()
@@ -233,6 +238,7 @@ class AppBaseApiSpec: QuickSpec {
                         let bodyData = Data(reading: bodyInputStream)
                         guard let body = try? JSONSerialization.jsonObject(with: bodyData, options: []) as? [String : String] else { return error }
                         guard body?["token"] == "value" else { return error }
+                        guard request.allHTTPHeaderFields?["X-AUTH-TOKEN"] == "1234-ABCDEF-1234-UGH" else { return error }
                         
                         return OHHTTPStubsResponse(
                             fileAtPath: fixtureFile,
@@ -246,16 +252,18 @@ class AppBaseApiSpec: QuickSpec {
                     let api = AppBaseApi("https://www.apiurl.com")
                     let targetUrl = "/path"
                     let transformer = ApiResponseToPersonArrayTransformer()
+                    let params = ["token" : "value"]
+                    let headers = ["X-AUTH-TOKEN" : "1234-ABCDEF-1234-UGH"]
                     
                     // When
                     waitUntil { done in
-                        let params = ["token" : "value"]
                         api.post(targetUrl,
                                  responseTransformer: transformer,
                                  parameters: params,
+                                 headers: headers,
                                  success: { (persons) in
-                                    returnedPersonList = persons
-                                    done()
+                            returnedPersonList = persons
+                            done()
                         }, failure: { (error) in
                             fail("Mocked response returned error")
                             done()

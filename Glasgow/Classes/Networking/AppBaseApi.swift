@@ -24,6 +24,17 @@
 import Foundation
 
 /**
+ Supported Http Methods
+ */
+public enum HttpMethod: String {
+    /** HTTP GET */
+    case get = "GET"
+    
+    /** HTTP POST */
+    case post = "POST"
+}
+
+/**
  Basic Api class.
  
  Handles remote HTTP requests using Apple APIs.
@@ -77,6 +88,7 @@ open class AppBaseApi {
         self.get(targetUrl,
                  responseTransformer: responseTransformer,
                  parameters: nil,
+                 headers: nil,
                  success: success,
                  failure: failure,
                  retryAttempts: retryAttempts)
@@ -95,6 +107,8 @@ open class AppBaseApi {
      
      - parameter parameters: Parameters to be sent with the request.
      
+     - parameter headers: Http Headers to be sent with the request.
+     
      - parameter success: The block to be called if request succeeds.
      
      - parameter failure: The block to be called if request fails.
@@ -105,6 +119,7 @@ open class AppBaseApi {
         _ targetUrl: String,
         responseTransformer: TransformerType,
         parameters: [String : Any]?,
+        headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
@@ -113,6 +128,7 @@ open class AppBaseApi {
                  targetUrl: targetUrl,
                  responseTransformer: responseTransformer,
                  parameters: parameters,
+                 headers: headers,
                  success: success,
                  failure: failure,
                  retryAttempts: retryAttempts)
@@ -134,6 +150,8 @@ open class AppBaseApi {
      
      - parameter parameters: Parameters to be sent with the request.
      
+     - parameter headers: Http Headers to be sent with the request.
+     
      - parameter success: The block to be called if request succeeds.
      
      - parameter failure: The block to be called if request fails.
@@ -145,18 +163,20 @@ open class AppBaseApi {
         targetUrl: String,
         responseTransformer: TransformerType,
         parameters: [String : Any]?,
+        headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
         
-        self.operation(httpMethod: "GET",
-                       endpointUrl,
-                       targetUrl: targetUrl,
-                       responseTransformer: responseTransformer,
-                       parameters: parameters,
-                       success: success,
-                       failure: failure,
-                       retryAttempts: retryAttempts)
+        self.executeRequest(httpMethod: .get,
+                            endpointUrl,
+                            targetUrl: targetUrl,
+                            responseTransformer: responseTransformer,
+                            parameters: parameters,
+                            headers: headers,
+                            success: success,
+                            failure: failure,
+                            retryAttempts: retryAttempts)
     }
 
 
@@ -189,6 +209,7 @@ open class AppBaseApi {
         self.post(targetUrl,
                  responseTransformer: responseTransformer,
                  parameters: nil,
+                 headers: nil,
                  success: success,
                  failure: failure,
                  retryAttempts: retryAttempts)
@@ -207,6 +228,8 @@ open class AppBaseApi {
      
      - parameter parameters: Parameters to be sent with the request.
      
+     - parameter headers: Http Headers to be sent with the request.
+     
      - parameter success: The block to be called if request succeeds.
      
      - parameter failure: The block to be called if request fails.
@@ -217,6 +240,7 @@ open class AppBaseApi {
         _ targetUrl: String,
         responseTransformer: TransformerType,
         parameters: [String : Any]?,
+        headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
@@ -225,6 +249,7 @@ open class AppBaseApi {
                  targetUrl: targetUrl,
                  responseTransformer: responseTransformer,
                  parameters: parameters,
+                 headers: headers,
                  success: success,
                  failure: failure,
                  retryAttempts: retryAttempts)
@@ -246,6 +271,8 @@ open class AppBaseApi {
      
      - parameter parameters: Parameters to be sent with the request.
      
+     - parameter headers: Http Headers to be sent with the request.
+     
      - parameter success: The block to be called if request succeeds.
      
      - parameter failure: The block to be called if request fails.
@@ -257,18 +284,20 @@ open class AppBaseApi {
         targetUrl: String,
         responseTransformer: TransformerType,
         parameters: [String : Any]?,
+        headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
         
-        self.operation(httpMethod: "POST",
-                       endpointUrl,
-                       targetUrl: targetUrl,
-                       responseTransformer: responseTransformer,
-                       parameters: parameters,
-                       success: success,
-                       failure: failure,
-                       retryAttempts: retryAttempts)
+        self.executeRequest(httpMethod: .post,
+                            endpointUrl,
+                            targetUrl: targetUrl,
+                            responseTransformer: responseTransformer,
+                            parameters: parameters,
+                            headers: headers,
+                            success: success,
+                            failure: failure,
+                            retryAttempts: retryAttempts)
     }
 
     
@@ -292,18 +321,21 @@ open class AppBaseApi {
      
      - parameter parameters: Parameters to be sent with the request.
      
+     - parameter headers: Http Headers to be sent with the request.
+     
      - parameter success: The block to be called if request succeeds.
      
      - parameter failure: The block to be called if request fails.
      
      - parameter retryAttempts: How many tries before calling `errorHandler` block.
      */
-    open func operation<Type, TransformerType>(
-        httpMethod: String,
+    open func executeRequest<Type, TransformerType>(
+        httpMethod: HttpMethod,
         _ endpointUrl: String,
         targetUrl: String,
         responseTransformer: TransformerType,
         parameters: [String : Any]?,
+        headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
@@ -312,22 +344,26 @@ open class AppBaseApi {
         let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
         guard let url = URL(string: urlString) else { return }
         
-        let request = self.requestBody(httpMethod: httpMethod, url: url, parameters: parameters)
+        let request = self.request(httpMethod: httpMethod,
+                                   url: url,
+                                   parameters: parameters,
+                                   headers: headers)
         
-        let postTask = defaultSession.dataTask(with: request) { (data, response, error) in
+        let dataTask = defaultSession.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 if retryAttempts <= 1 {
                     failure(error)
                 }
                 else {
-                    self.operation(httpMethod: httpMethod,
-                                   endpointUrl,
-                                   targetUrl: targetUrl,
-                                   responseTransformer: responseTransformer,
-                                   parameters: parameters,
-                                   success: success,
-                                   failure: failure,
-                                   retryAttempts: retryAttempts - 1)
+                    self.executeRequest(httpMethod: httpMethod,
+                                        endpointUrl,
+                                        targetUrl: targetUrl,
+                                        responseTransformer: responseTransformer,
+                                        parameters: parameters,
+                                        headers: headers,
+                                        success: success,
+                                        failure: failure,
+                                        retryAttempts: retryAttempts - 1)
                 }
             }
             else if let httpResponse = response as? HTTPURLResponse {
@@ -340,16 +376,34 @@ open class AppBaseApi {
             }
         }
         
-        postTask.resume()
+        dataTask.resume()
     }
     
-    func requestBody(httpMethod: String,
-                     url: URL,
-                     parameters: [String : Any]?) -> URLRequest {
+    /**
+     Assembles a URLRequest using given values.
+     
+     - parameter httpMethod: Http method to execute.
+     
+     - parameter url: The url request.
+     
+     - parameter parameters: Parameters to be sent with the request.
+     
+     - parameter headers: Http Headers to be sent with the request.
+     */
+    func request(httpMethod: HttpMethod,
+                 url: URL,
+                 parameters: [String : Any]?,
+                 headers: [String : String]?) -> URLRequest {
         var request = URLRequest(url: url)
-        request.httpMethod = httpMethod
+        request.httpMethod = httpMethod.rawValue
         if let parameters = parameters {
             request.httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: .prettyPrinted)
+        }
+        if let headers = headers {
+            for headerField in headers.keys {
+                guard let value = headers[headerField] else { continue }
+                request.addValue(value, forHTTPHeaderField: headerField)
+            }
         }
         return request
     }
