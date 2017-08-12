@@ -55,7 +55,7 @@ class NSManagedObjectFetchSpec: QuickSpec {
                         return
                     }
                     let request: NSFetchRequest = NSFetchRequest<NSManagedObject>(entityName: TestEntity.simpleClassName())
-                    let entity = TestEntity.lastObjectFromRequest(request, in: context)
+                    let entity = TestEntity.lastObject(from: request, in: context)
                     expect(entity).toNot(beNil())
                 }
                 
@@ -66,7 +66,7 @@ class NSManagedObjectFetchSpec: QuickSpec {
                     }
                     let request: NSFetchRequest = NSFetchRequest<NSManagedObject>(entityName: TestEntity.simpleClassName())
                     request.predicate = NSPredicate(format: "name = %@", "non-existing test value")
-                    let entity = TestEntity.lastObjectFromRequest(request, in: context)
+                    let entity = TestEntity.lastObject(from: request, in: context)
                     expect(entity).to(beNil())
                 }
                 
@@ -80,7 +80,7 @@ class NSManagedObjectFetchSpec: QuickSpec {
                         return
                     }
                     let request: NSFetchRequest = NSFetchRequest<NSManagedObject>(entityName: TestEntity.simpleClassName())
-                    let entities = TestEntity.allObjectsFromRequest(request, in: context)
+                    let entities = TestEntity.allObjects(from: request, in: context)
                     expect(entities.count).to(equal(2))
                 }
                 

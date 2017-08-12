@@ -38,7 +38,7 @@ public extension NSManagedObject {
      
      - returns `T`
      */
-    public class func lastObjectFromRequest<T>(_ request: NSFetchRequest<T>, in context: NSManagedObjectContext) -> T? where T: NSManagedObject {
+    public class func lastObject<T>(from request: NSFetchRequest<T>, in context: NSManagedObjectContext) -> T? where T: NSManagedObject {
         if let searchResults = try? context.fetch(request), searchResults.count > 0 {
             return searchResults.last
         }
@@ -54,7 +54,7 @@ public extension NSManagedObject {
      
      - returns [`T`]
      */
-    public class func allObjectsFromRequest<T>(_ request: NSFetchRequest<T>, in context: NSManagedObjectContext) -> [T] where T: NSManagedObject {
+    public class func allObjects<T>(from request: NSFetchRequest<T>, in context: NSManagedObjectContext) -> [T] where T: NSManagedObject {
         var results = [T]()
         if let searchResults = try? context.fetch(request) {
             results = searchResults
