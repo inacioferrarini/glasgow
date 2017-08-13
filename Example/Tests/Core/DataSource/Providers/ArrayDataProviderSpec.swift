@@ -58,9 +58,18 @@ class ArrayDataProviderSpec: QuickSpec {
                 let indexPath = IndexPath(row: 0, section: 0)
                 expect(dataProvider[indexPath]).to(equal(10))
             }
-            
+			
+			it("update must update the given values") {
+				// When
+				dataProvider.update(with: [10, 20])
+				
+				// Then
+				expect(dataProvider.numberOfSections()).to(equal(1))
+				expect(dataProvider.numberOfItems(in: 0)).to(equal(2))
+			}
+			
         }
-        
+		
     }
     
 }

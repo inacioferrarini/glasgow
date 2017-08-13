@@ -34,7 +34,7 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
     /**
      Objects from this provider.
      */
-    private let objects: [Type]
+    private(set) var objects: [Type]
     
     
     // MARK: - Initialization
@@ -63,7 +63,16 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
             return self.objects[indexPath.row]
         }
     }
-    
+	
+	/**
+	 Updates the contained objects.
+	
+	- parameter objects: The objects to be contained.
+	*/
+	public func update(with objects: [Type]) {
+		self.objects = objects
+	}
+	
     /**
      Returns the IndexPath for the given object, if found.
      
