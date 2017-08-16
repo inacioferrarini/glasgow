@@ -26,9 +26,9 @@ import UIKit
 /**
  Array-based generic data provider having elements of type `Type`.
  
- Supports matrices as well.
+ Although arrays are one-dimentional, internally it is stored as a matrix, allowing
+ to be used as sections and rows.
 
- Plain arrays will be handled as one level matrix.
  */
 open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
 
@@ -46,19 +46,19 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
     /**
 	 Inits with given objects.
      
-	 - parameter objects: The objects to be contained.
+	 - parameter rows: The objects to be contained.
      */
-    public convenience init(array: [Type]) {
-        self.init(matrix: [array])
+    public convenience init(rows: [Type]) {
+        self.init(sectionsAndRows: [rows])
     }
 	
 	/**
 	 Inits with given objects.
 	
-	 - parameter objects: The objects to be contained.
+	 - parameter sectionsAndRows: The Sections and Rows to be contained.
 	*/
-	public init(matrix: [[Type]]) {
-		self.objects = matrix
+	public init(sectionsAndRows: [[Type]]) {
+		self.objects = sectionsAndRows
 	}
 	
 	
@@ -82,22 +82,20 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
 	/**
 	 Updates the contained objects.
 	
-	- parameter objects: The objects to be contained.
+	 - parameter rows: The objects to be contained.
 	*/
-	public func update(array: [Type]) {
-		self.update(matrix: [array])
+	public func update(rows: [Type]) {
+		self.update(sectionsAndRows: [rows])
 	}
 	
 	/**
-	Updates the contained objects.
+	 Updates the contained objects.
 	
-	- parameter objects: The objects to be contained.
+	 - parameter sectionsAndRows: The Sections and Rows to be contained.
 	*/
-	public func update(matrix: [[Type]]) {
-		self.objects = matrix
+	public func update(sectionsAndRows: [[Type]]) {
+		self.objects = sectionsAndRows
 	}
-	
-	
 	
     /**
      Returns the IndexPath for the given object, if found.

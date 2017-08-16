@@ -154,17 +154,17 @@
 </tr>
 <tr class="never">
 <td class="num">29</td>
-<td class="src"><pre><code class="objc"> Supports matrices as well.</code></pre></td>
+<td class="src"><pre><code class="objc"> Although arrays are one-dimentional, internally it is stored as a matrix, allowing</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">30</td>
-<td class="src"><pre><code class="objc"></code></pre></td>
+<td class="src"><pre><code class="objc"> to be used as sections and rows.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">31</td>
-<td class="src"><pre><code class="objc"> Plain arrays will be handled as one level matrix.</code></pre></td>
+<td class="src"><pre><code class="objc"></code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -264,12 +264,12 @@
 </tr>
 <tr class="covered">
 <td class="num">51</td>
-<td class="src"><pre><code class="objc">    public convenience init(array: [Type]) {</code></pre></td>
+<td class="src"><pre><code class="objc">    public convenience init(rows: [Type]) {</code></pre></td>
 <td class="coverage">18x</td>
 </tr>
 <tr class="covered">
 <td class="num">52</td>
-<td class="src"><pre><code class="objc">        self.init(matrix: [array])</code></pre></td>
+<td class="src"><pre><code class="objc">        self.init(sectionsAndRows: [rows])</code></pre></td>
 <td class="coverage">18x</td>
 </tr>
 <tr class="covered">
@@ -309,12 +309,12 @@
 </tr>
 <tr class="covered">
 <td class="num">60</td>
-<td class="src"><pre><code class="objc">	public init(matrix: [[Type]]) {</code></pre></td>
+<td class="src"><pre><code class="objc">	public init(sectionsAndRows: [[Type]]) {</code></pre></td>
 <td class="coverage">30x</td>
 </tr>
 <tr class="covered">
 <td class="num">61</td>
-<td class="src"><pre><code class="objc">		self.objects = matrix</code></pre></td>
+<td class="src"><pre><code class="objc">		self.objects = sectionsAndRows</code></pre></td>
 <td class="coverage">30x</td>
 </tr>
 <tr class="covered">
@@ -444,12 +444,12 @@
 </tr>
 <tr class="covered">
 <td class="num">87</td>
-<td class="src"><pre><code class="objc">	public func update(array: [Type]) {</code></pre></td>
+<td class="src"><pre><code class="objc">	public func update(rows: [Type]) {</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
 <td class="num">88</td>
-<td class="src"><pre><code class="objc">		self.update(matrix: [array])</code></pre></td>
+<td class="src"><pre><code class="objc">		self.update(sectionsAndRows: [rows])</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
@@ -489,12 +489,12 @@
 </tr>
 <tr class="covered">
 <td class="num">96</td>
-<td class="src"><pre><code class="objc">	public func update(matrix: [[Type]]) {</code></pre></td>
+<td class="src"><pre><code class="objc">	public func update(sectionsAndRows: [[Type]]) {</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
 <td class="num">97</td>
-<td class="src"><pre><code class="objc">		self.objects = matrix</code></pre></td>
+<td class="src"><pre><code class="objc">		self.objects = sectionsAndRows</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">

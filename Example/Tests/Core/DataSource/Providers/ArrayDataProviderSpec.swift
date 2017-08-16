@@ -34,12 +34,12 @@ class ArrayDataProviderSpec: QuickSpec {
         describe("Array Data Provider") {
             
             var items = [Int]()
-            var dataProvider = ArrayDataProvider<Int>(array: [])
+            var dataProvider = ArrayDataProvider<Int>(rows: [])
             
             beforeEach {
                 // Given
                 items = [10, 20, 30]
-                dataProvider = ArrayDataProvider<Int>(array: items)
+                dataProvider = ArrayDataProvider<Int>(rows: items)
             }
             
             it("Initialization must have given objects") {
@@ -61,7 +61,7 @@ class ArrayDataProviderSpec: QuickSpec {
 			
 			it("update must update the given values") {
 				// When
-				dataProvider.update(array: [10, 20])
+				dataProvider.update(rows: [10, 20])
 				
 				// Then
 				expect(dataProvider.numberOfSections()).to(equal(1))

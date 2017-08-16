@@ -128,9 +128,8 @@
               </div>
             <p>Array-based generic data provider having elements of type <code>Type</code>.</p>
 
-<p>Supports matrices as well.</p>
-
-<p>Plain arrays will be handled as one level matrix.</p>
+<p>Although arrays are one-dimentional, internally it is stored as a matrix, allowing
+to be used as sections and rows.</p>
 
           </section>
           <section class="section task-group-section">
@@ -146,9 +145,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow17ArrayDataProvidercFT5arrayGSax__GS0_x_"></a>
-                    <a name="//apple_ref/swift/Method/init(array:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvidercFT5arrayGSax__GS0_x_">init(array:)</a>
+                    <a name="/s:FC7Glasgow17ArrayDataProvidercFT4rowsGSax__GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/init(rows:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvidercFT4rowsGSax__GS0_x_">init(rows:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -163,7 +162,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="k">Type</span><span class="p">])</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">rows</span><span class="p">:</span> <span class="p">[</span><span class="k">Type</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -174,7 +173,7 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>objects</em>
+                                <em>rows</em>
                                 </code>
                               </td>
                               <td>
@@ -192,9 +191,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow17ArrayDataProvidercFT6matrixGSaGSax___GS0_x_"></a>
-                    <a name="//apple_ref/swift/Method/init(matrix:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvidercFT6matrixGSaGSax___GS0_x_">init(matrix:)</a>
+                    <a name="/s:FC7Glasgow17ArrayDataProvidercFT15sectionsAndRowsGSaGSax___GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/init(sectionsAndRows:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvidercFT15sectionsAndRowsGSaGSax___GS0_x_">init(sectionsAndRows:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -209,7 +208,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="p">[[</span><span class="k">Type</span><span class="p">]])</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">sectionsAndRows</span><span class="p">:</span> <span class="p">[[</span><span class="k">Type</span><span class="p">]])</span></code></pre>
 
                         </div>
                       </div>
@@ -220,12 +219,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>objects</em>
+                                <em>sectionsAndRows</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The objects to be contained.</p>
+                                  <p>The Sections and Rows to be contained.</p>
                                 </div>
                               </td>
                             </tr>
@@ -295,9 +294,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow17ArrayDataProvider6updateFT5arrayGSax__T_"></a>
-                    <a name="//apple_ref/swift/Method/update(array:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider6updateFT5arrayGSax__T_">update(array:)</a>
+                    <a name="/s:FC7Glasgow17ArrayDataProvider6updateFT4rowsGSax__T_"></a>
+                    <a name="//apple_ref/swift/Method/update(rows:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider6updateFT4rowsGSax__T_">update(rows:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -312,7 +311,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">array</span><span class="p">:</span> <span class="p">[</span><span class="k">Type</span><span class="p">])</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">rows</span><span class="p">:</span> <span class="p">[</span><span class="k">Type</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -323,7 +322,7 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>objects</em>
+                                <em>rows</em>
                                 </code>
                               </td>
                               <td>
@@ -341,9 +340,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow17ArrayDataProvider6updateFT6matrixGSaGSax___T_"></a>
-                    <a name="//apple_ref/swift/Method/update(matrix:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider6updateFT6matrixGSaGSax___T_">update(matrix:)</a>
+                    <a name="/s:FC7Glasgow17ArrayDataProvider6updateFT15sectionsAndRowsGSaGSax___T_"></a>
+                    <a name="//apple_ref/swift/Method/update(sectionsAndRows:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider6updateFT15sectionsAndRowsGSaGSax___T_">update(sectionsAndRows:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -358,7 +357,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">matrix</span><span class="p">:</span> <span class="p">[[</span><span class="k">Type</span><span class="p">]])</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">sectionsAndRows</span><span class="p">:</span> <span class="p">[[</span><span class="k">Type</span><span class="p">]])</span></code></pre>
 
                         </div>
                       </div>
@@ -369,12 +368,12 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>objects</em>
+                                <em>sectionsAndRows</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The objects to be contained.</p>
+                                  <p>The Sections and Rows to be contained.</p>
                                 </div>
                               </td>
                             </tr>
