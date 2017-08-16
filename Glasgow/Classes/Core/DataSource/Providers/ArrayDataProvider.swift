@@ -25,6 +25,10 @@ import UIKit
 
 /**
  Array-based generic data provider having elements of type `Type`.
+ 
+ Supports matrices as well.
+
+ Plain arrays will be handled as one level matrix.
  */
 open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
 
@@ -34,21 +38,30 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
     /**
      Objects from this provider.
      */
-    private(set) var objects: [Type]
+    private(set) var objects: [[Type]]
     
     
     // MARK: - Initialization
     
     /**
-     Inits with given objects.
+	 Inits with given objects.
      
-     - parameter objects: The objects to be contained.
+	 - parameter objects: The objects to be contained.
      */
-    public init(with objects: [Type]) {
-        self.objects = objects
+    public convenience init(array: [Type]) {
+        self.init(matrix: [array])
     }
-    
-    
+	
+	/**
+	 Inits with given objects.
+	
+	 - parameter objects: The objects to be contained.
+	*/
+	public init(matrix: [[Type]]) {
+		self.objects = matrix
+	}
+	
+	
     // MARK: - Data Provider Implementation
     
     /**
@@ -60,7 +73,9 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
      */
     public subscript(indexPath: IndexPath) -> Type? {
         get {
-            return self.objects[indexPath.row]
+			let section = indexPath.section
+			guard section < self.numberOfSections() else { return nil }
+            return self.objects[section][indexPath.row]
         }
     }
 	
@@ -69,9 +84,20 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
 	
 	- parameter objects: The objects to be contained.
 	*/
-	public func update(with objects: [Type]) {
-		self.objects = objects
+	public func update(array: [Type]) {
+		self.update(matrix: [array])
 	}
+	
+	/**
+	Updates the contained objects.
+	
+	- parameter objects: The objects to be contained.
+	*/
+	public func update(matrix: [[Type]]) {
+		self.objects = matrix
+	}
+	
+	
 	
     /**
      Returns the IndexPath for the given object, if found.
@@ -80,20 +106,28 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
      
      - returns: IndexPath.
      */
-    public func indexPath(for value: ValueType) -> IndexPath? {
-        guard let row = self.objects.index(of: value) else { return nil }
-        return IndexPath(row: row, section: 0)
-    }
-    
+	public func indexPath(for value: ValueType) -> IndexPath? {
+		
+		var indexPath: IndexPath?
+		
+		for section in 0..<numberOfSections() {
+			guard let row = self.objects[section].index(of: value) else { continue }
+			indexPath = IndexPath(row: row, section: section)
+			break
+		}
+		
+		return indexPath
+	}
+	
     /**
      Returns the numbers of provided sections.
-     
+	
      For one-dimentional arrays, will return 1.
      
      - returns: Int.
      */
     public func numberOfSections() -> Int {
-        return 1
+        return self.objects.count
     }
     
     /**
@@ -105,9 +139,9 @@ open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
      
      - returns: Int.
      */
-    public func numberOfItems(in section: Int) -> Int {
-        guard section == 0 else { return 0 }
-        return self.objects.count
-    }
-    
+	public func numberOfItems(in section: Int) -> Int {
+		guard section < self.numberOfSections() else { return 0 }
+		return self.objects[section].count
+	}
+	
 }

@@ -35,7 +35,7 @@ class TableViewBlockDelegateSpec: QuickSpec {
             // Given
             let items = [10]
             let tableView = TestTableView()
-            let dataProvider = ArrayDataProvider<Int>(with: items)
+            let dataProvider = ArrayDataProvider<Int>(array: items)
             let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
             var delegate: TableViewBlockDelegate<NumberTableViewCell, Int>?
             

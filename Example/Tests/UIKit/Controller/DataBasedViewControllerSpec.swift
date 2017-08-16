@@ -96,7 +96,7 @@ class DataBasedViewControllerSpec: QuickSpec {
                 
                 // Then
                 expect(onPerformDataSyncBlockWasCalled).to(beTruthy())
-                expect(onWillSyncDataBlockWasCalled).to(beTruthy())
+                expect(onWillSyncDataBlockWasCalled).toEventually(beTruthy())
                 expect(onSyncDataBlockWasCalled).to(beTruthy())
                 expect(onDidSyncDataBlockWasCalled).to(beTruthy())
             }

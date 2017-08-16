@@ -143,7 +143,7 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
         self.fetchLimit = fetchLimit
         self.sectionNameKeyPath = sectionNameKeyPath
         self.cacheName = cacheName
-        super.init(with: [])
+        super.init(matrix: [[]])
     }
     
     
