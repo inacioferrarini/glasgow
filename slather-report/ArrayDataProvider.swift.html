@@ -254,7 +254,7 @@
 </tr>
 <tr class="never">
 <td class="num">49</td>
-<td class="src"><pre><code class="objc">	 - parameter objects: The objects to be contained.</code></pre></td>
+<td class="src"><pre><code class="objc">	 - parameter rows: The objects to be contained.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -299,7 +299,7 @@
 </tr>
 <tr class="never">
 <td class="num">58</td>
-<td class="src"><pre><code class="objc">	 - parameter objects: The objects to be contained.</code></pre></td>
+<td class="src"><pre><code class="objc">	 - parameter sectionsAndRows: The Sections and Rows to be contained.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -310,17 +310,17 @@
 <tr class="covered">
 <td class="num">60</td>
 <td class="src"><pre><code class="objc">	public init(sectionsAndRows: [[Type]]) {</code></pre></td>
-<td class="coverage">30x</td>
+<td class="coverage">35x</td>
 </tr>
 <tr class="covered">
 <td class="num">61</td>
 <td class="src"><pre><code class="objc">		self.objects = sectionsAndRows</code></pre></td>
-<td class="coverage">30x</td>
+<td class="coverage">35x</td>
 </tr>
 <tr class="covered">
 <td class="num">62</td>
 <td class="src"><pre><code class="objc">	}</code></pre></td>
-<td class="coverage">30x</td>
+<td class="coverage">35x</td>
 </tr>
 <tr class="never">
 <td class="num">63</td>
@@ -385,27 +385,27 @@
 <tr class="covered">
 <td class="num">75</td>
 <td class="src"><pre><code class="objc">        get {</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">76</td>
 <td class="src"><pre><code class="objc">			let section = indexPath.section</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">77</td>
 <td class="src"><pre><code class="objc">			guard section &lt; self.numberOfSections() else { return nil }</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">78</td>
 <td class="src"><pre><code class="objc">            return self.objects[section][indexPath.row]</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="covered">
 <td class="num">79</td>
 <td class="src"><pre><code class="objc">        }</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">6x</td>
 </tr>
 <tr class="never">
 <td class="num">80</td>
@@ -434,7 +434,7 @@
 </tr>
 <tr class="never">
 <td class="num">85</td>
-<td class="src"><pre><code class="objc">	- parameter objects: The objects to be contained.</code></pre></td>
+<td class="src"><pre><code class="objc">	 - parameter rows: The objects to be contained.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -469,7 +469,7 @@
 </tr>
 <tr class="never">
 <td class="num">92</td>
-<td class="src"><pre><code class="objc">	Updates the contained objects.</code></pre></td>
+<td class="src"><pre><code class="objc">	 Updates the contained objects.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -479,7 +479,7 @@
 </tr>
 <tr class="never">
 <td class="num">94</td>
-<td class="src"><pre><code class="objc">	- parameter objects: The objects to be contained.</code></pre></td>
+<td class="src"><pre><code class="objc">	 - parameter sectionsAndRows: The Sections and Rows to be contained.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -490,17 +490,17 @@
 <tr class="covered">
 <td class="num">96</td>
 <td class="src"><pre><code class="objc">	public func update(sectionsAndRows: [[Type]]) {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">97</td>
 <td class="src"><pre><code class="objc">		self.objects = sectionsAndRows</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="covered">
 <td class="num">98</td>
 <td class="src"><pre><code class="objc">	}</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">2x</td>
 </tr>
 <tr class="never">
 <td class="num">99</td>
@@ -509,22 +509,22 @@
 </tr>
 <tr class="never">
 <td class="num">100</td>
-<td class="src"><pre><code class="objc">	</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">101</td>
-<td class="src"><pre><code class="objc">	</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">102</td>
 <td class="src"><pre><code class="objc">    /**</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">103</td>
+<td class="num">101</td>
 <td class="src"><pre><code class="objc">     Returns the IndexPath for the given object, if found.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">102</td>
+<td class="src"><pre><code class="objc">     </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">103</td>
+<td class="src"><pre><code class="objc">     - parameter value: Object to search.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -534,152 +534,152 @@
 </tr>
 <tr class="never">
 <td class="num">105</td>
-<td class="src"><pre><code class="objc">     - parameter value: Object to search.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">106</td>
-<td class="src"><pre><code class="objc">     </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">107</td>
 <td class="src"><pre><code class="objc">     - returns: IndexPath.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">108</td>
+<td class="num">106</td>
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="covered">
-<td class="num">109</td>
+<td class="num">107</td>
 <td class="src"><pre><code class="objc">	public func indexPath(for value: ValueType) -&gt; IndexPath? {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">3x</td>
+</tr>
+<tr class="covered">
+<td class="num">108</td>
+<td class="src"><pre><code class="objc">		</code></pre></td>
+<td class="coverage">3x</td>
+</tr>
+<tr class="covered">
+<td class="num">109</td>
+<td class="src"><pre><code class="objc">		var indexPath: IndexPath?</code></pre></td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">110</td>
 <td class="src"><pre><code class="objc">		</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">111</td>
-<td class="src"><pre><code class="objc">		var indexPath: IndexPath?</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">		for section in 0..&lt;numberOfSections() {</code></pre></td>
+<td class="coverage">7x</td>
 </tr>
 <tr class="covered">
 <td class="num">112</td>
-<td class="src"><pre><code class="objc">		</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">			guard let row = self.objects[section].index(of: value) else { continue }</code></pre></td>
+<td class="coverage">4x</td>
 </tr>
 <tr class="covered">
 <td class="num">113</td>
-<td class="src"><pre><code class="objc">		for section in 0..&lt;numberOfSections() {</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">			indexPath = IndexPath(row: row, section: section)</code></pre></td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">114</td>
-<td class="src"><pre><code class="objc">			guard let row = self.objects[section].index(of: value) else { continue }</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">			break</code></pre></td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">115</td>
-<td class="src"><pre><code class="objc">			indexPath = IndexPath(row: row, section: section)</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">		}</code></pre></td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">116</td>
-<td class="src"><pre><code class="objc">			break</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">		</code></pre></td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">117</td>
-<td class="src"><pre><code class="objc">		}</code></pre></td>
-<td class="coverage">1x</td>
+<td class="src"><pre><code class="objc">		return indexPath</code></pre></td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="covered">
 <td class="num">118</td>
-<td class="src"><pre><code class="objc">		</code></pre></td>
-<td class="coverage">1x</td>
-</tr>
-<tr class="covered">
-<td class="num">119</td>
-<td class="src"><pre><code class="objc">		return indexPath</code></pre></td>
-<td class="coverage">1x</td>
-</tr>
-<tr class="covered">
-<td class="num">120</td>
 <td class="src"><pre><code class="objc">	}</code></pre></td>
-<td class="coverage">1x</td>
+<td class="coverage">3x</td>
 </tr>
 <tr class="never">
-<td class="num">121</td>
+<td class="num">119</td>
 <td class="src"><pre><code class="objc">	</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">122</td>
+<td class="num">120</td>
 <td class="src"><pre><code class="objc">    /**</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">123</td>
+<td class="num">121</td>
 <td class="src"><pre><code class="objc">     Returns the numbers of provided sections.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">124</td>
+<td class="num">122</td>
 <td class="src"><pre><code class="objc">	</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">125</td>
+<td class="num">123</td>
 <td class="src"><pre><code class="objc">     For one-dimentional arrays, will return 1.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">126</td>
+<td class="num">124</td>
 <td class="src"><pre><code class="objc">     </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">127</td>
+<td class="num">125</td>
 <td class="src"><pre><code class="objc">     - returns: Int.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">128</td>
+<td class="num">126</td>
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="covered">
-<td class="num">129</td>
+<td class="num">127</td>
 <td class="src"><pre><code class="objc">    public func numberOfSections() -&gt; Int {</code></pre></td>
-<td class="coverage">15x</td>
+<td class="coverage">24x</td>
 </tr>
 <tr class="covered">
-<td class="num">130</td>
+<td class="num">128</td>
 <td class="src"><pre><code class="objc">        return self.objects.count</code></pre></td>
-<td class="coverage">15x</td>
+<td class="coverage">24x</td>
 </tr>
 <tr class="covered">
-<td class="num">131</td>
+<td class="num">129</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
-<td class="coverage">15x</td>
+<td class="coverage">24x</td>
 </tr>
 <tr class="never">
-<td class="num">132</td>
+<td class="num">130</td>
 <td class="src"><pre><code class="objc">    </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">133</td>
+<td class="num">131</td>
 <td class="src"><pre><code class="objc">    /**</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">134</td>
+<td class="num">132</td>
 <td class="src"><pre><code class="objc">     Returns the number of objects in the given section.</code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">133</td>
+<td class="src"><pre><code class="objc">     </code></pre></td>
+<td class="coverage"></td>
+</tr>
+<tr class="never">
+<td class="num">134</td>
+<td class="src"><pre><code class="objc">     If given section does not exists, returns 0.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -689,7 +689,7 @@
 </tr>
 <tr class="never">
 <td class="num">136</td>
-<td class="src"><pre><code class="objc">     If given section does not exists, returns 0.</code></pre></td>
+<td class="src"><pre><code class="objc">     - parameter section: The section to be inquired about how much provided objects it has.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -699,51 +699,41 @@
 </tr>
 <tr class="never">
 <td class="num">138</td>
-<td class="src"><pre><code class="objc">     - parameter section: The section to be inquired about how much provided objects it has.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">139</td>
-<td class="src"><pre><code class="objc">     </code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">140</td>
 <td class="src"><pre><code class="objc">     - returns: Int.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">141</td>
+<td class="num">139</td>
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="covered">
-<td class="num">142</td>
+<td class="num">140</td>
 <td class="src"><pre><code class="objc">	public func numberOfItems(in section: Int) -&gt; Int {</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">9x</td>
+</tr>
+<tr class="covered">
+<td class="num">141</td>
+<td class="src"><pre><code class="objc">		guard section &lt; self.numberOfSections() else { return 0 }</code></pre></td>
+<td class="coverage">9x</td>
+</tr>
+<tr class="covered">
+<td class="num">142</td>
+<td class="src"><pre><code class="objc">		return self.objects[section].count</code></pre></td>
+<td class="coverage">9x</td>
 </tr>
 <tr class="covered">
 <td class="num">143</td>
-<td class="src"><pre><code class="objc">		guard section &lt; self.numberOfSections() else { return 0 }</code></pre></td>
-<td class="coverage">5x</td>
-</tr>
-<tr class="covered">
-<td class="num">144</td>
-<td class="src"><pre><code class="objc">		return self.objects[section].count</code></pre></td>
-<td class="coverage">5x</td>
-</tr>
-<tr class="covered">
-<td class="num">145</td>
 <td class="src"><pre><code class="objc">	}</code></pre></td>
-<td class="coverage">5x</td>
+<td class="coverage">9x</td>
 </tr>
 <tr class="never">
-<td class="num">146</td>
+<td class="num">144</td>
 <td class="src"><pre><code class="objc">	</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">147</td>
+<td class="num">145</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>

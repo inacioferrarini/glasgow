@@ -32,40 +32,87 @@ class ArrayDataProviderSpec: QuickSpec {
     override func spec() {
         
         describe("Array Data Provider") {
-            
-            var items = [Int]()
-            var dataProvider = ArrayDataProvider<Int>(rows: [])
-            
-            beforeEach {
-                // Given
-                items = [10, 20, 30]
-                dataProvider = ArrayDataProvider<Int>(rows: items)
-            }
-            
-            it("Initialization must have given objects") {
-                // Then
-                expect(dataProvider.numberOfSections()).to(equal(1))
-                expect(dataProvider.numberOfItems(in: 0)).to(equal(3))
-            }
-            
-            it("index must return the correct index") {
-                // Then
-                expect(dataProvider.indexPath(for: 20)?.row).to(equal(1))
-            }
-            
-            it("subscript must return the correct object for given index") {
-                // Then
-                let indexPath = IndexPath(row: 0, section: 0)
-                expect(dataProvider[indexPath]).to(equal(10))
-            }
 			
-			it("update must update the given values") {
-				// When
-				dataProvider.update(rows: [10, 20])
+			context("Using Rows") {
 				
-				// Then
-				expect(dataProvider.numberOfSections()).to(equal(1))
-				expect(dataProvider.numberOfItems(in: 0)).to(equal(2))
+				var items = [Int]()
+				var dataProvider = ArrayDataProvider<Int>(rows: [])
+				
+				beforeEach {
+					// Given
+					items = [10, 20, 30]
+					dataProvider = ArrayDataProvider<Int>(rows: items)
+				}
+				
+				it("Initialization must have given objects") {
+					// Then
+					expect(dataProvider.numberOfSections()).to(equal(1))
+					expect(dataProvider.numberOfItems(in: 0)).to(equal(3))
+				}
+				
+				it("index must return the correct index") {
+					// Then
+					expect(dataProvider.indexPath(for: 20)?.row).to(equal(1))
+				}
+				
+				it("subscript must return the correct object for given index") {
+					// Then
+					let indexPath = IndexPath(row: 0, section: 0)
+					expect(dataProvider[indexPath]).to(equal(10))
+				}
+				
+				it("update must update the given values") {
+					// When
+					dataProvider.update(rows: [10, 20])
+					
+					// Then
+					expect(dataProvider.numberOfSections()).to(equal(1))
+					expect(dataProvider.numberOfItems(in: 0)).to(equal(2))
+				}
+				
+			}
+			
+			
+			context("Using Sections and Rows") {
+				
+				var sectionsAndRows = [[Int]]()
+				var dataProvider = ArrayDataProvider<Int>(sectionsAndRows: [[]])
+				
+				beforeEach {
+					// Given
+					sectionsAndRows = [[10, 20, 30], [40], [100, 60]]
+					dataProvider = ArrayDataProvider<Int>(sectionsAndRows: sectionsAndRows)
+				}
+				
+				it("Initialization must have given objects") {
+					// Then
+					expect(dataProvider.numberOfSections()).to(equal(3))
+					expect(dataProvider.numberOfItems(in: 0)).to(equal(3))
+					expect(dataProvider.numberOfItems(in: 1)).to(equal(1))
+					expect(dataProvider.numberOfItems(in: 2)).to(equal(2))
+				}
+				
+				it("index must return the correct index") {
+					// Then
+					expect(dataProvider.indexPath(for: 60)?.section).to(equal(2))
+					expect(dataProvider.indexPath(for: 60)?.row).to(equal(1))
+				}
+				
+				it("subscript must return the correct object for given index") {
+					// Then
+					let indexPath = IndexPath(row: 0, section: 1)
+					expect(dataProvider[indexPath]).to(equal(40))
+				}
+				
+				it("update must update the given values") {
+					// When
+					dataProvider.update(sectionsAndRows: [[10, 20, 30]])
+					
+					// Then
+					expect(dataProvider.numberOfSections()).to(equal(1))
+					expect(dataProvider.numberOfItems(in: 0)).to(equal(3))
+				}
+				
 			}
 			
         }
