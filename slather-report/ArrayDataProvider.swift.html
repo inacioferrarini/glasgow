@@ -9,7 +9,7 @@
 <h2 class="cov_title">
 <span>Coverage for "ArrayDataProvider.swift" : </span><span class="cov_high">100.00%</span>
 </h2>
-<h4 class="cov_subtitle">(35 of 35 relevant lines covered)</h4>
+<h4 class="cov_subtitle">(29 of 29 relevant lines covered)</h4>
 <h4 class="cov_filepath">Glasgow/Classes/Core/DataSource/Providers/ArrayDataProvider.swift</h4>
 <table class="source_code">
 <tr class="never">
@@ -229,7 +229,7 @@
 </tr>
 <tr class="never">
 <td class="num">44</td>
-<td class="src"><pre><code class="objc">    private(set) var elements: [[ElementType]]</code></pre></td>
+<td class="src"><pre><code class="objc">    var elements: [[ElementType]]</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -459,296 +459,206 @@
 </tr>
 <tr class="never">
 <td class="num">90</td>
-<td class="src"><pre><code class="objc">	/**</code></pre></td>
+<td class="src"><pre><code class="objc">    /**</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">91</td>
-<td class="src"><pre><code class="objc">	 Replaces all sections and its rows with the given section and its rows.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">92</td>
-<td class="src"><pre><code class="objc">	</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">93</td>
-<td class="src"><pre><code class="objc">	 - parameter section: The section and its rows to be stored.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">94</td>
-<td class="src"><pre><code class="objc">	*/</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="covered">
-<td class="num">95</td>
-<td class="src"><pre><code class="objc">	public func update(section: [ElementType]) {</code></pre></td>
-<td class="coverage">1x</td>
-</tr>
-<tr class="covered">
-<td class="num">96</td>
-<td class="src"><pre><code class="objc">		self.update(sections: [section])</code></pre></td>
-<td class="coverage">1x</td>
-</tr>
-<tr class="covered">
-<td class="num">97</td>
-<td class="src"><pre><code class="objc">	}</code></pre></td>
-<td class="coverage">1x</td>
-</tr>
-<tr class="never">
-<td class="num">98</td>
-<td class="src"><pre><code class="objc">	</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">99</td>
-<td class="src"><pre><code class="objc">	/**</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">100</td>
-<td class="src"><pre><code class="objc">	 Replaces all sections and its rows with the given sections and its rows.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">101</td>
-<td class="src"><pre><code class="objc">	</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">102</td>
-<td class="src"><pre><code class="objc">	 - parameter sections: The section and its rows to be stored.</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">103</td>
-<td class="src"><pre><code class="objc">	*/</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="covered">
-<td class="num">104</td>
-<td class="src"><pre><code class="objc">	public func update(sections: [[ElementType]]) {</code></pre></td>
-<td class="coverage">2x</td>
-</tr>
-<tr class="covered">
-<td class="num">105</td>
-<td class="src"><pre><code class="objc">		self.elements = sections</code></pre></td>
-<td class="coverage">2x</td>
-</tr>
-<tr class="covered">
-<td class="num">106</td>
-<td class="src"><pre><code class="objc">	}</code></pre></td>
-<td class="coverage">2x</td>
-</tr>
-<tr class="never">
-<td class="num">107</td>
-<td class="src"><pre><code class="objc"></code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">108</td>
-<td class="src"><pre><code class="objc">    /**</code></pre></td>
-<td class="coverage"></td>
-</tr>
-<tr class="never">
-<td class="num">109</td>
 <td class="src"><pre><code class="objc">     Returns the IndexPath for the given element, if found.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">110</td>
+<td class="num">92</td>
 <td class="src"><pre><code class="objc">     </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">111</td>
+<td class="num">93</td>
 <td class="src"><pre><code class="objc">     - parameter element: Object to search.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">112</td>
+<td class="num">94</td>
 <td class="src"><pre><code class="objc">     </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">113</td>
+<td class="num">95</td>
 <td class="src"><pre><code class="objc">     - returns: IndexPath.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">114</td>
+<td class="num">96</td>
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="covered">
-<td class="num">115</td>
+<td class="num">97</td>
 <td class="src"><pre><code class="objc">	public func indexPath(for element: ValueType) -&gt; IndexPath? {</code></pre></td>
 <td class="coverage">3x</td>
 </tr>
 <tr class="covered">
-<td class="num">116</td>
+<td class="num">98</td>
 <td class="src"><pre><code class="objc">		var indexPath: IndexPath?</code></pre></td>
 <td class="coverage">3x</td>
 </tr>
 <tr class="covered">
-<td class="num">117</td>
+<td class="num">99</td>
 <td class="src"><pre><code class="objc">		for section in 0..&lt;numberOfSections() {</code></pre></td>
 <td class="coverage">7x</td>
 </tr>
 <tr class="covered">
-<td class="num">118</td>
+<td class="num">100</td>
 <td class="src"><pre><code class="objc">			guard let row = self.elements[section].index(of: element) else { continue }</code></pre></td>
 <td class="coverage">4x</td>
 </tr>
 <tr class="covered">
-<td class="num">119</td>
+<td class="num">101</td>
 <td class="src"><pre><code class="objc">			indexPath = IndexPath(row: row, section: section)</code></pre></td>
 <td class="coverage">3x</td>
 </tr>
 <tr class="covered">
-<td class="num">120</td>
+<td class="num">102</td>
 <td class="src"><pre><code class="objc">			break</code></pre></td>
 <td class="coverage">3x</td>
 </tr>
 <tr class="covered">
-<td class="num">121</td>
+<td class="num">103</td>
 <td class="src"><pre><code class="objc">		}</code></pre></td>
 <td class="coverage">3x</td>
 </tr>
 <tr class="covered">
-<td class="num">122</td>
+<td class="num">104</td>
 <td class="src"><pre><code class="objc">		return indexPath</code></pre></td>
 <td class="coverage">3x</td>
 </tr>
 <tr class="covered">
-<td class="num">123</td>
+<td class="num">105</td>
 <td class="src"><pre><code class="objc">	}</code></pre></td>
 <td class="coverage">3x</td>
 </tr>
 <tr class="never">
-<td class="num">124</td>
+<td class="num">106</td>
 <td class="src"><pre><code class="objc">	</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">125</td>
+<td class="num">107</td>
 <td class="src"><pre><code class="objc">    /**</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">126</td>
+<td class="num">108</td>
 <td class="src"><pre><code class="objc">     Returns the numbers of stored sections.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">127</td>
+<td class="num">109</td>
 <td class="src"><pre><code class="objc">	</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">128</td>
+<td class="num">110</td>
 <td class="src"><pre><code class="objc">     - returns: Int.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">129</td>
+<td class="num">111</td>
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="covered">
-<td class="num">130</td>
+<td class="num">112</td>
 <td class="src"><pre><code class="objc">    public func numberOfSections() -&gt; Int {</code></pre></td>
 <td class="coverage">30x</td>
 </tr>
 <tr class="covered">
-<td class="num">131</td>
+<td class="num">113</td>
 <td class="src"><pre><code class="objc">        return self.elements.count</code></pre></td>
 <td class="coverage">30x</td>
 </tr>
 <tr class="covered">
-<td class="num">132</td>
+<td class="num">114</td>
 <td class="src"><pre><code class="objc">    }</code></pre></td>
 <td class="coverage">30x</td>
 </tr>
 <tr class="never">
-<td class="num">133</td>
+<td class="num">115</td>
 <td class="src"><pre><code class="objc">	</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">134</td>
+<td class="num">116</td>
 <td class="src"><pre><code class="objc">    /**</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">135</td>
+<td class="num">117</td>
 <td class="src"><pre><code class="objc">     Returns the number of elements in the given section.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">136</td>
+<td class="num">118</td>
 <td class="src"><pre><code class="objc">     </code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">137</td>
+<td class="num">119</td>
 <td class="src"><pre><code class="objc">	 - remarks: If given section does not exists, returns 0.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">138</td>
+<td class="num">120</td>
 <td class="src"><pre><code class="objc">	</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">139</td>
+<td class="num">121</td>
 <td class="src"><pre><code class="objc">	 - parameter section: The section to be inquired about how much rows it has.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">140</td>
+<td class="num">122</td>
 <td class="src"><pre><code class="objc"></code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">141</td>
+<td class="num">123</td>
 <td class="src"><pre><code class="objc">     - returns: Int.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">142</td>
+<td class="num">124</td>
 <td class="src"><pre><code class="objc">     */</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="covered">
-<td class="num">143</td>
+<td class="num">125</td>
 <td class="src"><pre><code class="objc">	public func numberOfItems(in section: Int) -&gt; Int {</code></pre></td>
 <td class="coverage">15x</td>
 </tr>
 <tr class="covered">
-<td class="num">144</td>
+<td class="num">126</td>
 <td class="src"><pre><code class="objc">		guard section &lt; self.numberOfSections() else { return 0 }</code></pre></td>
 <td class="coverage">15x</td>
 </tr>
 <tr class="covered">
-<td class="num">145</td>
+<td class="num">127</td>
 <td class="src"><pre><code class="objc">		return self.elements[section].count</code></pre></td>
 <td class="coverage">15x</td>
 </tr>
 <tr class="covered">
-<td class="num">146</td>
+<td class="num">128</td>
 <td class="src"><pre><code class="objc">	}</code></pre></td>
 <td class="coverage">15x</td>
 </tr>
 <tr class="never">
-<td class="num">147</td>
+<td class="num">129</td>
 <td class="src"><pre><code class="objc">	</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
-<td class="num">148</td>
+<td class="num">130</td>
 <td class="src"><pre><code class="objc">}</code></pre></td>
 <td class="coverage"></td>
 </tr>
