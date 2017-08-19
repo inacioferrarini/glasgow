@@ -41,7 +41,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
     /**
      Stored sections and rows.
      */
-    private(set) var elements: [[ElementType]]
+    var elements: [[ElementType]]
     
     
     // MARK: - Initialization
@@ -87,24 +87,6 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
         }
     }
 	
-	/**
-	 Replaces all sections and its rows with the given section and its rows.
-	
-	 - parameter section: The section and its rows to be stored.
-	*/
-	public func update(section: [ElementType]) {
-		self.update(sections: [section])
-	}
-	
-	/**
-	 Replaces all sections and its rows with the given sections and its rows.
-	
-	 - parameter sections: The section and its rows to be stored.
-	*/
-	public func update(sections: [[ElementType]]) {
-		self.elements = sections
-	}
-
     /**
      Returns the IndexPath for the given element, if found.
      

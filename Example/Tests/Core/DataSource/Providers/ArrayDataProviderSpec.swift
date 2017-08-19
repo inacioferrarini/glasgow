@@ -63,7 +63,7 @@ class ArrayDataProviderSpec: QuickSpec {
 				
 				it("update must update the given values") {
 					// When
-					dataProvider.update(section: [10, 20])
+					dataProvider.elements = [[10, 20]]
 					
 					// Then
 					expect(dataProvider.numberOfSections()).to(equal(1))
@@ -106,7 +106,7 @@ class ArrayDataProviderSpec: QuickSpec {
 				
 				it("update must update the given values") {
 					// When
-					dataProvider.update(sections: [[10, 20, 30]])
+					dataProvider.elements = [[10, 20, 30]]
 					
 					// Then
 					expect(dataProvider.numberOfSections()).to(equal(1))
