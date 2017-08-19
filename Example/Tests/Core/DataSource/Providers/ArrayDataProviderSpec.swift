@@ -36,12 +36,12 @@ class ArrayDataProviderSpec: QuickSpec {
 			context("Using Rows") {
 				
 				var items = [Int]()
-				var dataProvider = ArrayDataProvider<Int>(rows: [])
+				var dataProvider = ArrayDataProvider<Int>(section: [])
 				
 				beforeEach {
 					// Given
 					items = [10, 20, 30]
-					dataProvider = ArrayDataProvider<Int>(rows: items)
+					dataProvider = ArrayDataProvider<Int>(section: items)
 				}
 				
 				it("Initialization must have given objects") {
@@ -63,7 +63,7 @@ class ArrayDataProviderSpec: QuickSpec {
 				
 				it("update must update the given values") {
 					// When
-					dataProvider.update(rows: [10, 20])
+					dataProvider.update(section: [10, 20])
 					
 					// Then
 					expect(dataProvider.numberOfSections()).to(equal(1))
@@ -76,12 +76,12 @@ class ArrayDataProviderSpec: QuickSpec {
 			context("Using Sections and Rows") {
 				
 				var sectionsAndRows = [[Int]]()
-				var dataProvider = ArrayDataProvider<Int>(sectionsAndRows: [[]])
+				var dataProvider = ArrayDataProvider<Int>(sections: [[]])
 				
 				beforeEach {
 					// Given
 					sectionsAndRows = [[10, 20, 30], [40], [100, 60]]
-					dataProvider = ArrayDataProvider<Int>(sectionsAndRows: sectionsAndRows)
+					dataProvider = ArrayDataProvider<Int>(sections: sectionsAndRows)
 				}
 				
 				it("Initialization must have given objects") {
@@ -106,7 +106,7 @@ class ArrayDataProviderSpec: QuickSpec {
 				
 				it("update must update the given values") {
 					// When
-					dataProvider.update(sectionsAndRows: [[10, 20, 30]])
+					dataProvider.update(sections: [[10, 20, 30]])
 					
 					// Then
 					expect(dataProvider.numberOfSections()).to(equal(1))

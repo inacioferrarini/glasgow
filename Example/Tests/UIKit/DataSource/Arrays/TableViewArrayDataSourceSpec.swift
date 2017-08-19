@@ -39,7 +39,7 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                     // Given
                     let items = [10]
                     let tableView = TestTableView()
-                    let dataProvider = ArrayDataProvider<Int>(rows: items)
+                    let dataProvider = ArrayDataProvider<Int>(section: items)
                     let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
 
                     // When
@@ -61,7 +61,7 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                     let reuseIdentifier = { (indexPath: IndexPath) -> String in
                         return ""
                     }
-                    let dataProvider = ArrayDataProvider<Int>(rows: items)
+                    let dataProvider = ArrayDataProvider<Int>(section: items)
                     let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView,
                                                                                         reuseIdentifier: reuseIdentifier,
                                                                                         with: dataProvider)
@@ -93,7 +93,7 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                 tableView.onReloadData = { _ in
                     blockWasCalled = true
                 }
-                let dataProvider = ArrayDataProvider<Int>(rows: items)
+                let dataProvider = ArrayDataProvider<Int>(section: items)
                 let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
                 tableView.dataSource = dataSource
                 
@@ -110,7 +110,7 @@ class TableViewArrayDataSourceSpec: QuickSpec {
             // Given
             let items = [10, 20, 30]
             let tableView = TestTableView()
-            let dataProvider = ArrayDataProvider<Int>(rows: items)
+            let dataProvider = ArrayDataProvider<Int>(section: items)
             let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
 
             // When
@@ -128,7 +128,7 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                 let items = [10]
                 let tableView = TestTableView()
                 tableView.register(NumberTableViewCell.self, forCellReuseIdentifier: "NumberTableViewCell")
-                let dataProvider = ArrayDataProvider<Int>(rows: items)
+                let dataProvider = ArrayDataProvider<Int>(section: items)
                 let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(
                     for: tableView,
                     with: dataProvider)

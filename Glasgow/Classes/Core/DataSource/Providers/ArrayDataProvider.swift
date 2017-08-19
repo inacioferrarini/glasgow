@@ -24,122 +24,125 @@
 import UIKit
 
 /**
- Array-based generic data provider having elements of type `Type`.
- 
- Although arrays are one-dimentional, internally it is stored as a matrix, allowing
- to be used as sections and rows.
+ Matrix-based generic data provider having elements of type `ElementType`.
 
+ Begin matrix-based allows this data provider to work both as single-sectioned (array)
+ and multi-sectiond (matrix) without changes.
+
+ Methods that receive a single section as parameter, will handle data as an array (rows only),
+ while methods that receive multiple sections as parameter will handle data as an matrix, begin
+ translatable as sections and rows.
  */
-open class ArrayDataProvider<Type: Equatable>: NSObject, DataProvider {
+open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
 
     
     // MARK: - Properties
     
     /**
-     Objects from this provider.
+     Stored sections and rows.
      */
-    private(set) var objects: [[Type]]
+    private(set) var elements: [[ElementType]]
     
     
     // MARK: - Initialization
     
     /**
-	 Inits with given objects.
+	 Inits with given elements.
+     Data will be handled as a single section array.
      
-	 - parameter rows: The objects to be contained.
+	 - parameter section: The section and its rows to be stored.
      */
-    public convenience init(rows: [Type]) {
-        self.init(sectionsAndRows: [rows])
+    public convenience init(section: [ElementType]) {
+        self.init(sections: [section])
     }
 	
 	/**
-	 Inits with given objects.
+	 Inits with given elements.
 	
-	 - parameter sectionsAndRows: The Sections and Rows to be contained.
+	 - parameter section: The sections and its rows to be stored.
 	*/
-	public init(sectionsAndRows: [[Type]]) {
-		self.objects = sectionsAndRows
+	public init(sections: [[ElementType]]) {
+		self.elements = sections
 	}
 	
 	
     // MARK: - Data Provider Implementation
     
     /**
-     Returns the object of given `ValueType` at given `indexPath`, if exists.
+     Returns the element of given `ValueType` at given `indexPath`, if exists.
      
-     - parameter indexPath: IndexPath to get object.
-     
-     - returns `ValueType`.
+	 - parameter indexPath: IndexPath to get object. If the given `indexPath.section`
+		is greater than the amount of stored sections, or if the given `indexPath.row`
+		is greater than the amount of rows for given section, returns nil.
+	
+	 - returns `ElementType`?.
      */
-    public subscript(indexPath: IndexPath) -> Type? {
+    public subscript(indexPath: IndexPath) -> ElementType? {
         get {
 			let section = indexPath.section
+			let row = indexPath.row
 			guard section < self.numberOfSections() else { return nil }
-            return self.objects[section][indexPath.row]
+			guard row < self.numberOfItems(in: section) else { return nil }
+            return self.elements[section][row]
         }
     }
 	
 	/**
-	 Updates the contained objects.
+	 Replaces all sections and its rows with the given section and its rows.
 	
-	 - parameter rows: The objects to be contained.
+	 - parameter section: The section and its rows to be stored.
 	*/
-	public func update(rows: [Type]) {
-		self.update(sectionsAndRows: [rows])
+	public func update(section: [ElementType]) {
+		self.update(sections: [section])
 	}
 	
 	/**
-	 Updates the contained objects.
+	 Replaces all sections and its rows with the given sections and its rows.
 	
-	 - parameter sectionsAndRows: The Sections and Rows to be contained.
+	 - parameter sections: The section and its rows to be stored.
 	*/
-	public func update(sectionsAndRows: [[Type]]) {
-		self.objects = sectionsAndRows
+	public func update(sections: [[ElementType]]) {
+		self.elements = sections
 	}
-	
+
     /**
-     Returns the IndexPath for the given object, if found.
+     Returns the IndexPath for the given element, if found.
      
-     - parameter value: Object to search.
+     - parameter element: Object to search.
      
      - returns: IndexPath.
      */
-	public func indexPath(for value: ValueType) -> IndexPath? {
-		
+	public func indexPath(for element: ValueType) -> IndexPath? {
 		var indexPath: IndexPath?
-		
 		for section in 0..<numberOfSections() {
-			guard let row = self.objects[section].index(of: value) else { continue }
+			guard let row = self.elements[section].index(of: element) else { continue }
 			indexPath = IndexPath(row: row, section: section)
 			break
 		}
-		
 		return indexPath
 	}
 	
     /**
-     Returns the numbers of provided sections.
+     Returns the numbers of stored sections.
 	
-     For one-dimentional arrays, will return 1.
-     
      - returns: Int.
      */
     public func numberOfSections() -> Int {
-        return self.objects.count
+        return self.elements.count
     }
-    
+	
     /**
-     Returns the number of objects in the given section.
+     Returns the number of elements in the given section.
      
-     If given section does not exists, returns 0.
-     
-     - parameter section: The section to be inquired about how much provided objects it has.
-     
+	 - remarks: If given section does not exists, returns 0.
+	
+	 - parameter section: The section to be inquired about how much rows it has.
+
      - returns: Int.
      */
 	public func numberOfItems(in section: Int) -> Int {
 		guard section < self.numberOfSections() else { return 0 }
-		return self.objects[section].count
+		return self.elements[section].count
 	}
 	
 }

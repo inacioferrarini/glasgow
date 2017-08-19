@@ -34,13 +34,13 @@ class ArrayDataSourceSpec: QuickSpec {
         describe("Array Data Source") {
 
             var items = [Int]()
-            let dataProvider = RefreshableDataProvider<Int>(rows: items)
+            let dataProvider = RefreshableDataProvider<Int>(section: items)
             var dataSource = ArrayDataSource<Int>(with: dataProvider)
             
             beforeEach {
                 // Given
                 items = [10, 20, 30]
-                let dataProvider = RefreshableDataProvider<Int>(rows: items)
+                let dataProvider = RefreshableDataProvider<Int>(section: items)
                 dataSource = ArrayDataSource<Int>(with: dataProvider)
                 dataSource.onRefresh = nil
             }

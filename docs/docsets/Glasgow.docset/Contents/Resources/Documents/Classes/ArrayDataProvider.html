@@ -122,14 +122,18 @@
             <h1>ArrayDataProvider</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">ArrayDataProvider</span><span class="o">&lt;</span><span class="k">Type</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt"><a href="../Protocols/DataProvider.html">DataProvider</a></span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">ArrayDataProvider</span><span class="o">&lt;</span><span class="kt">ElementType</span><span class="p">:</span> <span class="kt">Equatable</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt">NSObject</span><span class="p">,</span> <span class="kt"><a href="../Protocols/DataProvider.html">DataProvider</a></span></code></pre>
 
                 </div>
               </div>
-            <p>Array-based generic data provider having elements of type <code>Type</code>.</p>
+            <p>Matrix-based generic data provider having elements of type <code>ElementType</code>.</p>
 
-<p>Although arrays are one-dimentional, internally it is stored as a matrix, allowing
-to be used as sections and rows.</p>
+<p>Begin matrix-based allows this data provider to work both as single-sectioned (array)
+and multi-sectiond (matrix) without changes.</p>
+
+<p>Methods that receive a single section as parameter, will handle data as an array (rows only),
+while methods that receive multiple sections as parameter will handle data as an matrix, begin
+translatable as sections and rows.</p>
 
           </section>
           <section class="section task-group-section">
@@ -145,9 +149,9 @@ to be used as sections and rows.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow17ArrayDataProvidercFT4rowsGSax__GS0_x_"></a>
-                    <a name="//apple_ref/swift/Method/init(rows:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvidercFT4rowsGSax__GS0_x_">init(rows:)</a>
+                    <a name="/s:FC7Glasgow17ArrayDataProvidercFT7sectionGSax__GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/init(section:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvidercFT7sectionGSax__GS0_x_">init(section:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -155,14 +159,15 @@ to be used as sections and rows.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Inits with given objects.</p>
+                        <p>Inits with given elements.
+   Data will be handled as a single section array.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">rows</span><span class="p">:</span> <span class="p">[</span><span class="k">Type</span><span class="p">])</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">section</span><span class="p">:</span> <span class="p">[</span><span class="kt">ElementType</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -173,12 +178,12 @@ to be used as sections and rows.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>rows</em>
+                                <em>section</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The objects to be contained.</p>
+                                  <p>The section and its rows to be stored.</p>
                                 </div>
                               </td>
                             </tr>
@@ -191,9 +196,9 @@ to be used as sections and rows.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow17ArrayDataProvidercFT15sectionsAndRowsGSaGSax___GS0_x_"></a>
-                    <a name="//apple_ref/swift/Method/init(sectionsAndRows:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvidercFT15sectionsAndRowsGSaGSax___GS0_x_">init(sectionsAndRows:)</a>
+                    <a name="/s:FC7Glasgow17ArrayDataProvidercFT8sectionsGSaGSax___GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/init(sections:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvidercFT8sectionsGSaGSax___GS0_x_">init(sections:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -201,14 +206,14 @@ to be used as sections and rows.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Inits with given objects.</p>
+                        <p>Inits with given elements.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">sectionsAndRows</span><span class="p">:</span> <span class="p">[[</span><span class="k">Type</span><span class="p">]])</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">sections</span><span class="p">:</span> <span class="p">[[</span><span class="kt">ElementType</span><span class="p">]])</span></code></pre>
 
                         </div>
                       </div>
@@ -219,12 +224,12 @@ to be used as sections and rows.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>sectionsAndRows</em>
+                                <em>section</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The Sections and Rows to be contained.</p>
+                                  <p>The sections and its rows to be stored.</p>
                                 </div>
                               </td>
                             </tr>
@@ -258,14 +263,14 @@ to be used as sections and rows.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the object of given <code>ValueType</code> at given <code>indexPath</code>, if exists.</p>
+                        <p>Returns the element of given <code>ValueType</code> at given <code>indexPath</code>, if exists.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Type</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">ElementType</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -281,7 +286,9 @@ to be used as sections and rows.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>IndexPath to get object.</p>
+                                  <p>IndexPath to get object. If the given <code>indexPath.section</code>
+is greater than the amount of stored sections, or if the given <code>indexPath.row</code>
+is greater than the amount of rows for given section, returns nil.</p>
                                 </div>
                               </td>
                             </tr>
@@ -294,9 +301,9 @@ to be used as sections and rows.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow17ArrayDataProvider6updateFT4rowsGSax__T_"></a>
-                    <a name="//apple_ref/swift/Method/update(rows:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider6updateFT4rowsGSax__T_">update(rows:)</a>
+                    <a name="/s:FC7Glasgow17ArrayDataProvider6updateFT7sectionGSax__T_"></a>
+                    <a name="//apple_ref/swift/Method/update(section:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider6updateFT7sectionGSax__T_">update(section:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -304,14 +311,14 @@ to be used as sections and rows.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Updates the contained objects.</p>
+                        <p>Replaces all sections and its rows with the given section and its rows.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">rows</span><span class="p">:</span> <span class="p">[</span><span class="k">Type</span><span class="p">])</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">section</span><span class="p">:</span> <span class="p">[</span><span class="kt">ElementType</span><span class="p">])</span></code></pre>
 
                         </div>
                       </div>
@@ -322,12 +329,12 @@ to be used as sections and rows.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>rows</em>
+                                <em>section</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The objects to be contained.</p>
+                                  <p>The section and its rows to be stored.</p>
                                 </div>
                               </td>
                             </tr>
@@ -340,9 +347,9 @@ to be used as sections and rows.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow17ArrayDataProvider6updateFT15sectionsAndRowsGSaGSax___T_"></a>
-                    <a name="//apple_ref/swift/Method/update(sectionsAndRows:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider6updateFT15sectionsAndRowsGSaGSax___T_">update(sectionsAndRows:)</a>
+                    <a name="/s:FC7Glasgow17ArrayDataProvider6updateFT8sectionsGSaGSax___T_"></a>
+                    <a name="//apple_ref/swift/Method/update(sections:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow17ArrayDataProvider6updateFT8sectionsGSaGSax___T_">update(sections:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -350,14 +357,14 @@ to be used as sections and rows.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Updates the contained objects.</p>
+                        <p>Replaces all sections and its rows with the given sections and its rows.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">sectionsAndRows</span><span class="p">:</span> <span class="p">[[</span><span class="k">Type</span><span class="p">]])</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">sections</span><span class="p">:</span> <span class="p">[[</span><span class="kt">ElementType</span><span class="p">]])</span></code></pre>
 
                         </div>
                       </div>
@@ -368,12 +375,12 @@ to be used as sections and rows.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>sectionsAndRows</em>
+                                <em>sections</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>The Sections and Rows to be contained.</p>
+                                  <p>The section and its rows to be stored.</p>
                                 </div>
                               </td>
                             </tr>
@@ -396,14 +403,14 @@ to be used as sections and rows.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the IndexPath for the given object, if found.</p>
+                        <p>Returns the IndexPath for the given element, if found.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">indexPath</span><span class="p">(</span><span class="k">for</span> <span class="nv">value</span><span class="p">:</span> <span class="kt">ValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">IndexPath</span><span class="p">?</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">indexPath</span><span class="p">(</span><span class="k">for</span> <span class="nv">element</span><span class="p">:</span> <span class="kt">ValueType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">IndexPath</span><span class="p">?</span></code></pre>
 
                         </div>
                       </div>
@@ -414,7 +421,7 @@ to be used as sections and rows.</p>
                             <tr>
                               <td>
                                 <code>
-                                <em>value</em>
+                                <em>element</em>
                                 </code>
                               </td>
                               <td>
@@ -446,9 +453,7 @@ to be used as sections and rows.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the numbers of provided sections.</p>
-
-<p>For one-dimentional arrays, will return 1.</p>
+                        <p>Returns the numbers of stored sections.</p>
 
                       </div>
                       <div class="declaration">
@@ -479,9 +484,12 @@ to be used as sections and rows.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Returns the number of objects in the given section.</p>
+                        <p>Returns the number of elements in the given section.</p>
+<div class="aside aside-remarks">
+    <p class="aside-title">Remarks</p>
+    <p>If given section does not exists, returns 0.</p>
 
-<p>If given section does not exists, returns 0.</p>
+</div>
 
                       </div>
                       <div class="declaration">
@@ -504,7 +512,7 @@ to be used as sections and rows.</p>
                               </td>
                               <td>
                                 <div>
-                                  <p>The section to be inquired about how much provided objects it has.</p>
+                                  <p>The section to be inquired about how much rows it has.</p>
                                 </div>
                               </td>
                             </tr>
@@ -523,7 +531,7 @@ to be used as sections and rows.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio</a>. All rights reserved. (Last updated: 2017-08-15)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio</a>. All rights reserved. (Last updated: 2017-08-19)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

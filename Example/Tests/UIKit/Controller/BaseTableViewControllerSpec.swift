@@ -199,7 +199,7 @@ class BaseTableViewControllerSpec: QuickSpec {
                 baseTableViewViewController = TestBaseTableViewController()
                 let tableViewTest = TestTableView()
                 tableViewTest.register(NumberTableViewCell.self, forCellReuseIdentifier: "NumberTableViewCell")
-                let dataProvider = ArrayDataProvider<Int>(rows: [10])
+                let dataProvider = ArrayDataProvider<Int>(section: [10])
                 let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(
                     for: tableViewTest,
                     with: dataProvider)

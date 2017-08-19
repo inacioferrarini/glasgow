@@ -35,7 +35,7 @@ class PageLoaderTableViewDelegateSpec: QuickSpec {
             // Given
             let items = [10]
             let tableView = TestTableView()
-            let dataProvider = ArrayDataProvider<Int>(rows: items)
+            let dataProvider = ArrayDataProvider<Int>(section: items)
             let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
             var delegate: PageLoaderTableViewDelegate<NumberTableViewCell, Int>?
             
