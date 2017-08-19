@@ -154,7 +154,7 @@
 </tr>
 <tr class="never">
 <td class="num">29</td>
-<td class="src"><pre><code class="objc"> A `Core Data` `DataProvider`.</code></pre></td>
+<td class="src"><pre><code class="objc"> A `Core Data` `DataProvider` having NSManagedObjects of type `EntityType`.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -164,7 +164,7 @@
 </tr>
 <tr class="never">
 <td class="num">31</td>
-<td class="src"><pre><code class="objc">open class CoreDataProvider&lt;Entity: NSManagedObject&gt;: ArrayDataProvider&lt;Entity&gt;, NSFetchedResultsControllerDelegate, Refreshable {</code></pre></td>
+<td class="src"><pre><code class="objc">open class CoreDataProvider&lt;EntityType: NSManagedObject&gt;: ArrayDataProvider&lt;EntityType&gt;, NSFetchedResultsControllerDelegate, Refreshable {</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -199,7 +199,7 @@
 </tr>
 <tr class="never">
 <td class="num">38</td>
-<td class="src"><pre><code class="objc">     After changing the value, the data must be fetched again, execute `refresh()` method.</code></pre></td>
+<td class="src"><pre><code class="objc">     After changing the entity, the data must be fetched again, execute `refresh()` method.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -249,7 +249,7 @@
 </tr>
 <tr class="never">
 <td class="num">48</td>
-<td class="src"><pre><code class="objc">     After changing the value, the data must be fetched again, execute `refresh()` method.</code></pre></td>
+<td class="src"><pre><code class="objc">     After changing the entity, the data must be fetched again, execute `refresh()` method.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -309,7 +309,7 @@
 </tr>
 <tr class="never">
 <td class="num">60</td>
-<td class="src"><pre><code class="objc">     After changing the value, the data must be fetched again, execute `refresh()` method.</code></pre></td>
+<td class="src"><pre><code class="objc">     After changing the entity, the data must be fetched again, execute `refresh()` method.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -359,7 +359,7 @@
 </tr>
 <tr class="never">
 <td class="num">70</td>
-<td class="src"><pre><code class="objc">     This value cannot be changed.</code></pre></td>
+<td class="src"><pre><code class="objc">     This entity cannot be changed.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -389,7 +389,7 @@
 </tr>
 <tr class="never">
 <td class="num">76</td>
-<td class="src"><pre><code class="objc">     This value cannot be changed.</code></pre></td>
+<td class="src"><pre><code class="objc">     This entity cannot be changed.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -454,7 +454,7 @@
 </tr>
 <tr class="never">
 <td class="num">89</td>
-<td class="src"><pre><code class="objc">        return Entity.simpleClassName()</code></pre></td>
+<td class="src"><pre><code class="objc">        return EntityType.simpleClassName()</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -639,7 +639,7 @@
 </tr>
 <tr class="never">
 <td class="num">126</td>
-<td class="src"><pre><code class="objc">     - parameter fetchLimit: Used to limit the amount of returned values.</code></pre></td>
+<td class="src"><pre><code class="objc">     - parameter fetchLimit: Used to limit the amount of returned entities.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -784,17 +784,17 @@
 </tr>
 <tr class="never">
 <td class="num">155</td>
-<td class="src"><pre><code class="objc">     </code></pre></td>
+<td class="src"><pre><code class="objc">	</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">156</td>
-<td class="src"><pre><code class="objc">     Also, this method must be called whenever `predicate`, `fetchLimit`, `sectionNameKeyPath` or `cacheName` changes.</code></pre></td>
+<td class="src"><pre><code class="objc">     Also, this method must be called whenever `predicate`, `fetchLimit` or `sortDescriptors` is changed.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">157</td>
-<td class="src"><pre><code class="objc">     </code></pre></td>
+<td class="src"><pre><code class="objc">	</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -929,7 +929,7 @@
 </tr>
 <tr class="never">
 <td class="num">184</td>
-<td class="src"><pre><code class="objc">     The `NSFetchedResultsController&lt;Entity&gt;` used to back the `CoreDataProvider`.</code></pre></td>
+<td class="src"><pre><code class="objc">     The `NSFetchedResultsController&lt;EntityType&gt;` used to back the `CoreDataProvider`.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -939,12 +939,12 @@
 </tr>
 <tr class="never">
 <td class="num">186</td>
-<td class="src"><pre><code class="objc">    open lazy var fetchedResultsController: NSFetchedResultsController&lt;Entity&gt; = {</code></pre></td>
+<td class="src"><pre><code class="objc">    open lazy var fetchedResultsController: NSFetchedResultsController&lt;EntityType&gt; = {</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
 <td class="num">187</td>
-<td class="src"><pre><code class="objc">        let fetchRequest = NSFetchRequest&lt;Entity&gt;()</code></pre></td>
+<td class="src"><pre><code class="objc">        let fetchRequest = NSFetchRequest&lt;EntityType&gt;()</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -1069,7 +1069,7 @@
 </tr>
 <tr class="never">
 <td class="num">212</td>
-<td class="src"><pre><code class="objc">     Instantiates a new `NSFetchedResultsController&lt;Entity&gt;`.</code></pre></td>
+<td class="src"><pre><code class="objc">     Instantiates a new `NSFetchedResultsController&lt;EntityType&gt;`.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -1079,7 +1079,7 @@
 </tr>
 <tr class="never">
 <td class="num">214</td>
-<td class="src"><pre><code class="objc">     - parameter fetchRequest: NSFetchRequest&lt;Entity&gt; used to request data.</code></pre></td>
+<td class="src"><pre><code class="objc">     - parameter fetchRequest: NSFetchRequest&lt;EntityType&gt; used to request data.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -1119,7 +1119,7 @@
 </tr>
 <tr class="never">
 <td class="num">222</td>
-<td class="src"><pre><code class="objc">    open func instantiateFetchedResultsController(_ fetchRequest: NSFetchRequest&lt;Entity&gt;,</code></pre></td>
+<td class="src"><pre><code class="objc">    open func instantiateFetchedResultsController(_ fetchRequest: NSFetchRequest&lt;EntityType&gt;,</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -1134,7 +1134,7 @@
 </tr>
 <tr class="covered">
 <td class="num">225</td>
-<td class="src"><pre><code class="objc">                                                  cacheName: String?) -&gt; NSFetchedResultsController&lt;Entity&gt; {</code></pre></td>
+<td class="src"><pre><code class="objc">                                                  cacheName: String?) -&gt; NSFetchedResultsController&lt;EntityType&gt; {</code></pre></td>
 <td class="coverage">9x</td>
 </tr>
 <tr class="covered">
@@ -1194,7 +1194,7 @@
 </tr>
 <tr class="never">
 <td class="num">237</td>
-<td class="src"><pre><code class="objc">     Returns the object of given `ValueType` at given `indexPath`, if exists.</code></pre></td>
+<td class="src"><pre><code class="objc">     Returns the object of given `EntityType` at given `indexPath`, if exists.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -1214,7 +1214,7 @@
 </tr>
 <tr class="never">
 <td class="num">241</td>
-<td class="src"><pre><code class="objc">     - returns `ValueType`.</code></pre></td>
+<td class="src"><pre><code class="objc">     - returns `EntityType`.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -1224,7 +1224,7 @@
 </tr>
 <tr class="never">
 <td class="num">243</td>
-<td class="src"><pre><code class="objc">    override public subscript(indexPath: IndexPath) -&gt; Entity? {</code></pre></td>
+<td class="src"><pre><code class="objc">    override public subscript(indexPath: IndexPath) -&gt; EntityType? {</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="covered">
@@ -1269,7 +1269,7 @@
 </tr>
 <tr class="never">
 <td class="num">252</td>
-<td class="src"><pre><code class="objc">     - parameter value: Object to search.</code></pre></td>
+<td class="src"><pre><code class="objc">     - parameter entity: Object to search.</code></pre></td>
 <td class="coverage"></td>
 </tr>
 <tr class="never">
@@ -1289,12 +1289,12 @@
 </tr>
 <tr class="covered">
 <td class="num">256</td>
-<td class="src"><pre><code class="objc">    override public func indexPath(for value: Entity) -&gt; IndexPath? {</code></pre></td>
+<td class="src"><pre><code class="objc">    override public func indexPath(for entity: EntityType) -&gt; IndexPath? {</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">
 <td class="num">257</td>
-<td class="src"><pre><code class="objc">        return self.fetchedResultsController.indexPath(forObject: value)</code></pre></td>
+<td class="src"><pre><code class="objc">        return self.fetchedResultsController.indexPath(forObject: entity)</code></pre></td>
 <td class="coverage">1x</td>
 </tr>
 <tr class="covered">

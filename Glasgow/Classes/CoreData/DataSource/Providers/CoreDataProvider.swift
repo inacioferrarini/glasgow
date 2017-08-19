@@ -26,16 +26,16 @@ import CoreData
 
 
 /**
- A `Core Data` `DataProvider`.
+ A `Core Data` `DataProvider` having NSManagedObjects of type `EntityType`.
  */
-open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>, NSFetchedResultsControllerDelegate, Refreshable {
+open class CoreDataProvider<EntityType: NSManagedObject>: ArrayDataProvider<EntityType>, NSFetchedResultsControllerDelegate, Refreshable {
     
     
     // MARK: - Properties
     
     /**
      The predicate to be applied to every data fetch operation.
-     After changing the value, the data must be fetched again, execute `refresh()` method.
+     After changing the entity, the data must be fetched again, execute `refresh()` method.
      */
     open var predicate: NSPredicate? {
         didSet {
@@ -45,7 +45,7 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     
     /**
      Limit to the amount of fetched objects.
-     After changing the value, the data must be fetched again, execute `refresh()` method.
+     After changing the entity, the data must be fetched again, execute `refresh()` method.
     */
     open var fetchLimit: NSInteger? {
         didSet {
@@ -57,7 +57,7 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     
     /**
      Result sorting.
-     After changing the value, the data must be fetched again, execute `refresh()` method.
+     After changing the entity, the data must be fetched again, execute `refresh()` method.
      */
     open var sortDescriptors: [NSSortDescriptor] {
         didSet {
@@ -67,13 +67,13 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     
     /**
      A Key Path used for categorization and group data using the given `keypath`.
-     This value cannot be changed.
+     This entity cannot be changed.
      */
     private(set) open var sectionNameKeyPath: String?
     
     /**
      Name for `Core Data` cache.
-     This value cannot be changed.
+     This entity cannot be changed.
      */
     private(set) open var cacheName: String?
     
@@ -86,7 +86,7 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
      The Entity name.
      */
     dynamic lazy var entityName: String = {
-        return Entity.simpleClassName()
+        return EntityType.simpleClassName()
     }()
     
     
@@ -123,7 +123,7 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
      
      - parameter predicate: `Core Data` predicate used to filter results.
      
-     - parameter fetchLimit: Used to limit the amount of returned values.
+     - parameter fetchLimit: Used to limit the amount of returned entities.
      
      - parameter sectionNameKeyPath: A Key Path used for categorization
             and group data using the given `keypath`.
@@ -152,9 +152,9 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     /**
      Fetchs data from `Core Data` storage.
      By default, it is not called by default when the `CoreDataProvider` is created.
-     
-     Also, this method must be called whenever `predicate`, `fetchLimit`, `sectionNameKeyPath` or `cacheName` changes.
-     
+	
+     Also, this method must be called whenever `predicate`, `fetchLimit` or `sortDescriptors` is changed.
+	
      Once executed, `objects` will return the fetched objects.
      
      
@@ -181,10 +181,10 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     // MARK: - Fetched results controller
     
     /**
-     The `NSFetchedResultsController<Entity>` used to back the `CoreDataProvider`.
+     The `NSFetchedResultsController<EntityType>` used to back the `CoreDataProvider`.
      */
-    open lazy var fetchedResultsController: NSFetchedResultsController<Entity> = {
-        let fetchRequest = NSFetchRequest<Entity>()
+    open lazy var fetchedResultsController: NSFetchedResultsController<EntityType> = {
+        let fetchRequest = NSFetchRequest<EntityType>()
         let entity = NSEntityDescription.entity(forEntityName: self.entityName, in: self.managedObjectContext)
         fetchRequest.entity = entity
         
@@ -209,9 +209,9 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     
     
     /**
-     Instantiates a new `NSFetchedResultsController<Entity>`.
+     Instantiates a new `NSFetchedResultsController<EntityType>`.
      
-     - parameter fetchRequest: NSFetchRequest<Entity> used to request data.
+     - parameter fetchRequest: NSFetchRequest<EntityType> used to request data.
      
      - parameter managedObjectContext: `Core Data` context.
      
@@ -219,10 +219,10 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
      
      - parameter cacheName: `Core Data` cache name.
      */
-    open func instantiateFetchedResultsController(_ fetchRequest: NSFetchRequest<Entity>,
+    open func instantiateFetchedResultsController(_ fetchRequest: NSFetchRequest<EntityType>,
                                                   managedObjectContext: NSManagedObjectContext,
                                                   sectionNameKeyPath: String?,
-                                                  cacheName: String?) -> NSFetchedResultsController<Entity> {
+                                                  cacheName: String?) -> NSFetchedResultsController<EntityType> {
         
         return NSFetchedResultsController(fetchRequest: fetchRequest,
                                           managedObjectContext: self.managedObjectContext,
@@ -234,13 +234,13 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     // MARK: - Data Provider Implementation
     
     /**
-     Returns the object of given `ValueType` at given `indexPath`, if exists.
+     Returns the object of given `EntityType` at given `indexPath`, if exists.
      
      - parameter indexPath: IndexPath to get object.
      
-     - returns `ValueType`.
+     - returns `EntityType`.
      */
-    override public subscript(indexPath: IndexPath) -> Entity? {
+    override public subscript(indexPath: IndexPath) -> EntityType? {
         get {
             return self.fetchedResultsController.object(at: indexPath)
         }
@@ -249,12 +249,12 @@ open class CoreDataProvider<Entity: NSManagedObject>: ArrayDataProvider<Entity>,
     /**
      Returns the IndexPath for the given object, if found.
 
-     - parameter value: Object to search.
+     - parameter entity: Object to search.
 
      - returns: IndexPath.
      */
-    override public func indexPath(for value: Entity) -> IndexPath? {
-        return self.fetchedResultsController.indexPath(forObject: value)
+    override public func indexPath(for entity: EntityType) -> IndexPath? {
+        return self.fetchedResultsController.indexPath(forObject: entity)
     }
     
     /**
