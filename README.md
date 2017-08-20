@@ -3,7 +3,7 @@
 [![Swift 3.1](https://img.shields.io/badge/Swift-3.1-green.svg?style=flat)](https://swift.org/)
 [![License](https://img.shields.io/cocoapods/l/Glasgow.svg?style=flat)](http://cocoapods.org/pods/Glasgow)
 [![codecov.io](https://codecov.io/github/inacioferrarini/Glasgow/coverage.svg?branch=master)](https://codecov.io/github/inacioferrarini/Glasgow)
-[![Documentation Coverage](https://github.com/inacioferrarini/glasgow/blob/master/docs/badge.svg)](https://github.com/realm/jazzy)
+[![Documentation Coverage](https://inacioferrarini.github.io/glasgow/0.1.5/badge.svg)](https://github.com/realm/jazzy)
 [![CI Status](http://img.shields.io/travis/inacioferrarini/Glasgow.svg?style=flat)](https://travis-ci.org/inacioferrarini/Glasgow)
 [![Platform](https://img.shields.io/cocoapods/p/Glasgow.svg?style=flat)](http://cocoapods.org/pods/Glasgow)
 
