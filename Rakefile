@@ -21,7 +21,8 @@ end
 
 desc "Generates Jazzy Report"
 task :docs do
-sh "jazzy --podspec Glasgow.podspec --swift-version 3.1 --author Inácio Ferrarini --github_url https://github.com/inacioferrarini/glasgow  --download-badge"
+@version = `cat Glasgow.podspec | grep 's.version' | head -n1 | grep -o '[0-9][0-9.]*[0-9]'`
+sh "jazzy --podspec Glasgow.podspec --swift-version 3.1 --author Inácio Ferrarini --github_url https://github.com/inacioferrarini/glasgow --download-badge --output docs/#{@version}"
 end
 
 desc "Generates Code Style Report."
