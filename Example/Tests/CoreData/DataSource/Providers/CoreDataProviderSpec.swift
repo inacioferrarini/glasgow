@@ -131,7 +131,7 @@ class CoreDataProviderSpec: QuickSpec {
                         fail("testEntity is nil")
                         return
                     }
-                    let indexPath = provider?.indexPath(for: testEntity)
+                    let indexPath = provider?.path(for: testEntity)
                     expect(indexPath?.section).to(equal(0))
                     expect(indexPath?.row).to(equal(0))
                 }
@@ -238,7 +238,11 @@ class CoreDataProviderSpec: QuickSpec {
                 }
                 
             }
-            
+			
+context("Single Section") {
+	
+}
+			
             context("Multiple Sections") {
             
                 beforeEach {
@@ -282,10 +286,19 @@ class CoreDataProviderSpec: QuickSpec {
                     expect(provider?.numberOfItems(in: 2)).to(equal(2))
                     expect(provider?.numberOfItems(in: 3)).to(equal(2))
                 }
-            }
-            
+				
+				it("must have correct section titles") {
+					expect(provider?.title(section: 0)).to(equal("group 1"))
+					expect(provider?.title(section: 1)).to(equal("group 2"))
+					expect(provider?.title(section: 2)).to(equal("group 3"))
+					expect(provider?.title(section: 3)).to(equal("group 4"))
+					expect(provider?.title(section: 4)).to(beNil())
+				}
+				
+			}
+			
         }
-    
+		
     }
-    
+	
 }

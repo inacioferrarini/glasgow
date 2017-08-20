@@ -42,7 +42,12 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
      Stored sections and rows.
      */
     var elements: [[ElementType]]
-    
+	
+	/**
+	 Section titles.
+     */
+	var titles: [String]?
+	
     
     // MARK: - Initialization
     
@@ -53,16 +58,45 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
 	 - parameter section: The section and its rows to be stored.
      */
     public convenience init(section: [ElementType]) {
-        self.init(sections: [section])
+		self.init(sections: [section])
     }
+	
+	/**
+	 Inits with given elements and its section title.
+	 Data will be handled as a single section array.
+	
+	 - parameter section: The section and its rows to be stored.
+	
+	 - parameter title: The title for the given section.
+	*/
+	public convenience init(section: [ElementType], title: String?) {
+		var titles: [String]?
+		if let title = title {
+			titles = [title]
+		}
+		self.init(sections: [section], titles: titles)
+	}
 	
 	/**
 	 Inits with given elements.
 	
 	 - parameter section: The sections and its rows to be stored.
 	*/
-	public init(sections: [[ElementType]]) {
+	public convenience init(sections: [[ElementType]]) {
+		self.init(sections: sections, titles: nil)
+	}
+	
+	/**
+	 Inits with given elements and its section titles.
+	
+	 - parameter section: The sections and its rows to be stored.
+	
+	 - parameter titles: The titles for the given sections. If defined,
+		must have the same length as sections.
+	*/
+	public init(sections: [[ElementType]], titles: [String]?) {
 		self.elements = sections
+		self.titles = titles
 	}
 	
 	
@@ -77,7 +111,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
 	
 	 - returns `ElementType`?.
      */
-    public subscript(indexPath: IndexPath) -> ElementType? {
+    public subscript(_ indexPath: IndexPath) -> ElementType? {
         get {
 			let section = indexPath.section
 			let row = indexPath.row
@@ -94,7 +128,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
      
      - returns: IndexPath.
      */
-	public func indexPath(for element: ValueType) -> IndexPath? {
+	public func path(for element: ValueType) -> IndexPath? {
 		var indexPath: IndexPath?
 		for section in 0..<numberOfSections() {
 			guard let row = self.elements[section].index(of: element) else { continue }
@@ -125,6 +159,19 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
 	public func numberOfItems(in section: Int) -> Int {
 		guard section < self.numberOfSections() else { return 0 }
 		return self.elements[section].count
+	}
+	
+	/**
+	 Returns the title for a given section.
+	
+	 - parameter section: Desired section. 
+	
+	 - returns: String?
+	*/
+	public func title(section: Int) -> String? {
+		guard section < self.numberOfSections() else { return nil }
+		guard section < self.titles?.count ?? 0 else { return nil }
+		return self.titles?[section]
 	}
 	
 }

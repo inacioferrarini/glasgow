@@ -97,7 +97,7 @@ open class CoreDataProvider<EntityType: NSManagedObject>: ArrayDataProvider<Enti
      The data will not be fetched after created.
      To fetch data, call `refresh()`.
      
-     - parameter sortDescriptors: Data sort.
+     - parameter sortDescriptors: Properties to sort the results, in order they are defined.
  
      - parameter context: `Core Data` Managed Object Context.
      */
@@ -117,7 +117,7 @@ open class CoreDataProvider<EntityType: NSManagedObject>: ArrayDataProvider<Enti
      The data will not be fetched after created.
      To fetch data, call `refresh()`.
      
-     - parameter sortDescriptors: Data sort.
+     - parameter sortDescriptors: Properties to sort the results, in order they are defined.
      
      - parameter context: `Core Data` Managed Object Context.
      
@@ -126,7 +126,8 @@ open class CoreDataProvider<EntityType: NSManagedObject>: ArrayDataProvider<Enti
      - parameter fetchLimit: Used to limit the amount of returned entities.
      
      - parameter sectionNameKeyPath: A Key Path used for categorization
-            and group data using the given `keypath`.
+            and group data using the given `keypath`. Note that, if defined
+			it must be the first element in the `sortDescriptors`.
      
      - cacheName: Name for `Core Data` cache.
      */
@@ -143,7 +144,7 @@ open class CoreDataProvider<EntityType: NSManagedObject>: ArrayDataProvider<Enti
         self.fetchLimit = fetchLimit
         self.sectionNameKeyPath = sectionNameKeyPath
         self.cacheName = cacheName
-        super.init(sections: [[]])
+		super.init(sections: [[]], titles: nil)
     }
     
     
@@ -253,7 +254,7 @@ open class CoreDataProvider<EntityType: NSManagedObject>: ArrayDataProvider<Enti
 
      - returns: IndexPath.
      */
-    override public func indexPath(for entity: EntityType) -> IndexPath? {
+    override public func path(for entity: EntityType) -> IndexPath? {
         return self.fetchedResultsController.indexPath(forObject: entity)
     }
     
@@ -282,5 +283,18 @@ open class CoreDataProvider<EntityType: NSManagedObject>: ArrayDataProvider<Enti
         guard let sections = self.fetchedResultsController.sections else { return 0 }
         return sections[section].numberOfObjects
     }
-    
+	
+	/**
+	 Returns the title for a given section.
+	
+	 - parameter section: Desired section.
+	
+	 - returns: String?
+	*/
+	override public func title(section: Int) -> String? {
+		guard let sections = self.fetchedResultsController.sections else { return nil }
+		guard section < sections.count else { return nil }
+		return sections[section].name
+	}
+	
 }
