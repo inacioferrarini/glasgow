@@ -201,9 +201,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS19responseTransformerq_7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
                     <a name="//apple_ref/swift/Method/get(_:responseTransformer:success:failure:retryAttempts:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">get(_:responseTransformer:success:failure:retryAttempts:)</a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS19responseTransformerq_7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">get(_:responseTransformer:success:failure:retryAttempts:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -226,7 +226,7 @@ If the request fails, the &lsquo;errorHandler&rsquo; block will be called instea
         <span class="nv">responseTransformer</span><span class="p">:</span> <span class="kt">TransformerType</span><span class="p">,</span>
         <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
         <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
-        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
+        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">IType</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">OType</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
 
                         </div>
                       </div>
@@ -304,9 +304,9 @@ from the request into the object the <code>completion</code> expects.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
                     <a name="//apple_ref/swift/Method/get(_:responseTransformer:parameters:headers:success:failure:retryAttempts:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">get(_:responseTransformer:parameters:headers:success:failure:retryAttempts:)</a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">get(_:responseTransformer:parameters:headers:success:failure:retryAttempts:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -331,7 +331,7 @@ If the request fails, the &lsquo;errorHandler&rsquo; block will be called instea
         <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?,</span>
         <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
         <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
-        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
+        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">IType</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">OType</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
 
                         </div>
                       </div>
@@ -433,9 +433,9 @@ from the request into the object the <code>completion</code> expects.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
                     <a name="//apple_ref/swift/Method/get(_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">get(_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)</a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi3getu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">get(_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -461,7 +461,7 @@ If the request fails, the &lsquo;errorHandler&rsquo; block will be called instea
         <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?,</span>
         <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
         <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
-        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
+        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">IType</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">OType</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
 
                         </div>
                       </div>
@@ -574,9 +574,9 @@ from the request into the object the <code>completion</code> expects.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS19responseTransformerq_7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
                     <a name="//apple_ref/swift/Method/post(_:responseTransformer:success:failure:retryAttempts:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">post(_:responseTransformer:success:failure:retryAttempts:)</a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS19responseTransformerq_7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">post(_:responseTransformer:success:failure:retryAttempts:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -599,7 +599,7 @@ If the request fails, the &lsquo;errorHandler&rsquo; block will be called instea
         <span class="nv">responseTransformer</span><span class="p">:</span> <span class="kt">TransformerType</span><span class="p">,</span>
         <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
         <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
-        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
+        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">IType</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">OType</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
 
                         </div>
                       </div>
@@ -677,9 +677,9 @@ from the request into the object the <code>completion</code> expects.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
                     <a name="//apple_ref/swift/Method/post(_:responseTransformer:parameters:headers:success:failure:retryAttempts:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">post(_:responseTransformer:parameters:headers:success:failure:retryAttempts:)</a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">post(_:responseTransformer:parameters:headers:success:failure:retryAttempts:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -704,7 +704,7 @@ If the request fails, the &lsquo;errorHandler&rsquo; block will be called instea
         <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?,</span>
         <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
         <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
-        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
+        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">IType</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">OType</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
 
                         </div>
                       </div>
@@ -806,9 +806,9 @@ from the request into the object the <code>completion</code> expects.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
                     <a name="//apple_ref/swift/Method/post(_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">post(_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)</a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi4postu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFTSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS5_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">post(_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -834,7 +834,7 @@ If the request fails, the &lsquo;errorHandler&rsquo; block will be called instea
         <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?,</span>
         <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
         <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
-        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
+        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">IType</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">OType</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
 
                         </div>
                       </div>
@@ -947,9 +947,9 @@ from the request into the object the <code>completion</code> expects.</p>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC7Glasgow10AppBaseApi14executeRequestu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFT10httpMethodOS_10HttpMethodSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS6_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
+                    <a name="/s:FC7Glasgow10AppBaseApi14executeRequestu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFT10httpMethodOS_10HttpMethodSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS6_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_"></a>
                     <a name="//apple_ref/swift/Method/executeRequest(httpMethod:_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi14executeRequestu0_R_S_11Transformerw_1TzGSqPs9AnyObject__w_1UzxrFT10httpMethodOS_10HttpMethodSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS6_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">executeRequest(httpMethod:_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)</a>
+                    <a class="token" href="#/s:FC7Glasgow10AppBaseApi14executeRequestu0_R_S_11Transformerw_5ITypezGSqPs9AnyObject__w_5OTypezxrFT10httpMethodOS_10HttpMethodSS9targetUrlSS19responseTransformerq_10parametersGSqGVs10DictionarySSP___7headersGSqGS6_SSSS__7successFxT_7failureFPs5Error_T_13retryAttemptsSi_T_">executeRequest(httpMethod:_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -976,7 +976,7 @@ If the request fails, the &lsquo;errorHandler&rsquo; block will be called instea
         <span class="nv">headers</span><span class="p">:</span> <span class="p">[</span><span class="kt">String</span> <span class="p">:</span> <span class="kt">String</span><span class="p">]?,</span>
         <span class="nv">success</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="k">Type</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
         <span class="nv">failure</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">Error</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">),</span>
-        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">T</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">U</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
+        <span class="nv">retryAttempts</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="k">where</span> <span class="kt">TransformerType</span> <span class="p">:</span> <span class="kt"><a href="../Protocols/Transformer.html">Transformer</a></span><span class="p">,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">IType</span> <span class="o">==</span> <span class="kt">AnyObject</span><span class="p">?,</span> <span class="kt">TransformerType</span><span class="o">.</span><span class="kt">OType</span> <span class="o">==</span> <span class="k">Type</span></code></pre>
 
                         </div>
                       </div>
@@ -1092,7 +1092,7 @@ from the request into the object the <code>completion</code> expects.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio</a>. All rights reserved. (Last updated: 2017-08-20)</p>
+          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio</a>. All rights reserved. (Last updated: 2017-08-21)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

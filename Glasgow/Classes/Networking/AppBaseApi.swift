@@ -94,6 +94,7 @@ open class AppBaseApi {
                  retryAttempts: retryAttempts)
     }
 
+	// swiftlint:disable function_parameter_count
     /**
      Performs a `HTTP GET` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -115,7 +116,6 @@ open class AppBaseApi {
      
      - parameter retryAttempts: How many tries before calling `errorHandler` block.
      */
-	// swiftlint:disable function_parameter_count
     open func get<Type, TransformerType>(
         _ targetUrl: String,
         responseTransformer: TransformerType,
@@ -136,6 +136,7 @@ open class AppBaseApi {
     }
 	// swiftlint:enable function_parameter_count
 
+	// swiftlint:disable function_parameter_count
     /**
      Performs a `HTTP GET` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -160,7 +161,6 @@ open class AppBaseApi {
      
      - parameter retryAttempts: How many tries before calling `errorHandler` block.
      */
-	// swiftlint:disable function_parameter_count
     open func get<Type, TransformerType>(
         _ endpointUrl: String,
         targetUrl: String,
@@ -219,6 +219,7 @@ open class AppBaseApi {
                  retryAttempts: retryAttempts)
     }
 
+	// swiftlint:disable function_parameter_count
     /**
      Performs a `HTTP POST` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -240,7 +241,6 @@ open class AppBaseApi {
      
      - parameter retryAttempts: How many tries before calling `errorHandler` block.
      */
-	// swiftlint:disable function_parameter_count
     open func post<Type, TransformerType>(
         _ targetUrl: String,
         responseTransformer: TransformerType,
@@ -261,6 +261,7 @@ open class AppBaseApi {
     }
 	// swiftlint:enable function_parameter_count
 
+	// swiftlint:disable function_parameter_count
     /**
      Performs a `HTTP POST` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -285,7 +286,6 @@ open class AppBaseApi {
      
      - parameter retryAttempts: How many tries before calling `errorHandler` block.
      */
-	// swiftlint:disable function_parameter_count
     open func post<Type, TransformerType>(
         _ endpointUrl: String,
         targetUrl: String,
@@ -311,6 +311,7 @@ open class AppBaseApi {
 
     // MARK: - Helper methods
 
+	// swiftlint:disable function_parameter_count
     /**
      Performs a httpMethod kind request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -337,7 +338,6 @@ open class AppBaseApi {
      
      - parameter retryAttempts: How many tries before calling `errorHandler` block.
      */
-	// swiftlint:disable function_parameter_count
     open func executeRequest<Type, TransformerType>(
         httpMethod: HttpMethod,
         _ endpointUrl: String,

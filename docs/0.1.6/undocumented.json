@@ -1,0 +1,75 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Networking/AppBaseApi.swift",
+      "line": 119,
+      "symbol": "AppBaseApi.get(_:responseTransformer:parameters:headers:success:failure:retryAttempts:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Networking/AppBaseApi.swift",
+      "line": 119,
+      "symbol": "AppBaseApi.get(_:responseTransformer:parameters:headers:success:failure:retryAttempts:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Networking/AppBaseApi.swift",
+      "line": 164,
+      "symbol": "AppBaseApi.get(_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Networking/AppBaseApi.swift",
+      "line": 164,
+      "symbol": "AppBaseApi.get(_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Networking/AppBaseApi.swift",
+      "line": 244,
+      "symbol": "AppBaseApi.post(_:responseTransformer:parameters:headers:success:failure:retryAttempts:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Networking/AppBaseApi.swift",
+      "line": 244,
+      "symbol": "AppBaseApi.post(_:responseTransformer:parameters:headers:success:failure:retryAttempts:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Networking/AppBaseApi.swift",
+      "line": 289,
+      "symbol": "AppBaseApi.post(_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Networking/AppBaseApi.swift",
+      "line": 289,
+      "symbol": "AppBaseApi.post(_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Networking/AppBaseApi.swift",
+      "line": 341,
+      "symbol": "AppBaseApi.executeRequest(httpMethod:_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow/Glasgow/Classes/Networking/AppBaseApi.swift",
+      "line": 341,
+      "symbol": "AppBaseApi.executeRequest(httpMethod:_:targetUrl:responseTransformer:parameters:headers:success:failure:retryAttempts:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/inacio.ferrarini/Developer/iOS/Pods/Glasgow"
+}
