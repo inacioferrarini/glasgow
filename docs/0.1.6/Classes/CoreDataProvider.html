@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CoreDataProvider Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/CoreDataProvider" class="dashAnchor"></a>
+    <a title="CoreDataProvider Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">Glasgow Docs</a> (96% documented)</p>
+        <p class="header-right"><a href="https://github.com/inacioferrarini/glasgow"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">Glasgow Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CoreDataProvider Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/AppBaseApi.html">AppBaseApi</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ArrayDataProvider.html">ArrayDataProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ArrayDataSource.html">ArrayDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ArrowArrayTransformer.html">ArrowArrayTransformer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/ArrowTransformer.html">ArrowTransformer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/BaseTableViewController.html">BaseTableViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CoreDataProvider.html">CoreDataProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/CoreDataStack.html">CoreDataStack</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DataBasedViewController.html">DataBasedViewController</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/PageLoaderTableViewDelegate.html">PageLoaderTableViewDelegate</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TableViewArrayDataSource.html">TableViewArrayDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/TableViewBlockDelegate.html">TableViewBlockDelegate</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/HttpMethod.html">HttpMethod</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSManagedObject.html">NSManagedObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSObject.html">NSObject</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/AppContextAware.html">AppContextAware</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Configurable.html">Configurable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/DataProvider.html">DataProvider</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/KeyPathTransformer.html">KeyPathTransformer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Refreshable.html">Refreshable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Transformer.html">Transformer</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CoreDataProvider</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">CoreDataProvider</span><span class="o">&lt;</span><span class="kt">EntityType</span><span class="p">:</span> <span class="kt">NSManagedObject</span><span class="o">&gt;</span><span class="p">:</span> <span class="kt"><a href="../Classes/ArrayDataProvider.html">ArrayDataProvider</a></span><span class="o">&lt;</span><span class="kt">EntityType</span><span class="o">&gt;</span><span class="p">,</span> <span class="kt">NSFetchedResultsControllerDelegate</span><span class="p">,</span> <span class="kt"><a href="../Protocols/Refreshable.html">Refreshable</a></span></code></pre>
+
+                </div>
+              </div>
+            <p>A <code>Core Data</code> <code><a href="../Protocols/DataProvider.html">DataProvider</a></code> having NSManagedObjects of type <code>EntityType</code>.</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Properties"></a>
+                <a name="//apple_ref/swift/Section/Properties" class="dashAnchor"></a>
+                <a href="#/Properties">
+                  <h3 class="section-name">Properties</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7Glasgow16CoreDataProvider9predicateGSqCSo11NSPredicate_"></a>
+                    <a name="//apple_ref/swift/Property/predicate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7Glasgow16CoreDataProvider9predicateGSqCSo11NSPredicate_">predicate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The predicate to be applied to every data fetch operation.
+After changing the entity, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a></code> method.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7Glasgow16CoreDataProvider10fetchLimitGSqSi_"></a>
+                    <a name="//apple_ref/swift/Property/fetchLimit" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7Glasgow16CoreDataProvider10fetchLimitGSqSi_">fetchLimit</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Limit to the amount of fetched objects.
+After changing the entity, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a></code> method.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">fetchLimit</span><span class="p">:</span> <span class="kt">NSInteger</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7Glasgow16CoreDataProvider15sortDescriptorsGSaCSo16NSSortDescriptor_"></a>
+                    <a name="//apple_ref/swift/Property/sortDescriptors" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7Glasgow16CoreDataProvider15sortDescriptorsGSaCSo16NSSortDescriptor_">sortDescriptors</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Result sorting.
+After changing the entity, the data must be fetched again, execute <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a></code> method.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">var</span> <span class="nv">sortDescriptors</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSSortDescriptor</span><span class="p">]</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7Glasgow16CoreDataProvider18sectionNameKeyPathGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/sectionNameKeyPath" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7Glasgow16CoreDataProvider18sectionNameKeyPathGSqSS_">sectionNameKeyPath</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Key Path used for categorization and group data using the given <code>keypath</code>.
+This entity cannot be changed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private(set)</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">sectionNameKeyPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7Glasgow16CoreDataProvider9cacheNameGSqSS_"></a>
+                    <a name="//apple_ref/swift/Property/cacheName" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7Glasgow16CoreDataProvider9cacheNameGSqSS_">cacheName</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Name for <code>Core Data</code> cache.
+This entity cannot be changed.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private(set)</span> <span class="n">open</span> <span class="k">var</span> <span class="nv">cacheName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7Glasgow16CoreDataProvider20managedObjectContextCSo22NSManagedObjectContext"></a>
+                    <a name="//apple_ref/swift/Property/managedObjectContext" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7Glasgow16CoreDataProvider20managedObjectContextCSo22NSManagedObjectContext">managedObjectContext</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Core Data Managed Object Context.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="k">let</span> <span class="nv">managedObjectContext</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Initialization"></a>
+                <a name="//apple_ref/swift/Section/Initialization" class="dashAnchor"></a>
+                <a href="#/Initialization">
+                  <h3 class="section-name">Initialization</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow16CoreDataProvidercFT15sortDescriptorsGSaCSo16NSSortDescriptor_20managedObjectContextCSo22NSManagedObjectContext_GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/init(sortDescriptors:managedObjectContext:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow16CoreDataProvidercFT15sortDescriptorsGSaCSo16NSSortDescriptor_20managedObjectContextCSo22NSManagedObjectContext_GS0_x_">init(sortDescriptors:managedObjectContext:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Inits the <code>Core Data Provider</code>.
+The data will not be fetched after created.
+To fetch data, call <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="n">convenience</span> <span class="nf">init</span><span class="p">(</span><span class="nv">sortDescriptors</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSSortDescriptor</span><span class="p">],</span>
+                            <span class="n"><a href="../Classes/CoreDataProvider.html#/s:vC7Glasgow16CoreDataProvider20managedObjectContextCSo22NSManagedObjectContext">managedObjectContext</a></span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sortDescriptors</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Properties to sort the results, in order they are defined.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>context</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Core Data</code> Managed Object Context.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow16CoreDataProvidercFT15sortDescriptorsGSaCSo16NSSortDescriptor_20managedObjectContextCSo22NSManagedObjectContext9predicateGSqCSo11NSPredicate_10fetchLimitGSqSi_18sectionNameKeyPathGSqSS_9cacheNameGSqSS__GS0_x_"></a>
+                    <a name="//apple_ref/swift/Method/init(sortDescriptors:managedObjectContext:predicate:fetchLimit:sectionNameKeyPath:cacheName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow16CoreDataProvidercFT15sortDescriptorsGSaCSo16NSSortDescriptor_20managedObjectContextCSo22NSManagedObjectContext9predicateGSqCSo11NSPredicate_10fetchLimitGSqSi_18sectionNameKeyPathGSqSS_9cacheNameGSqSS__GS0_x_">init(sortDescriptors:managedObjectContext:predicate:fetchLimit:sectionNameKeyPath:cacheName:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Inits the <code>Core Data Provider</code>.
+  The data will not be fetched after created.
+  To fetch data, call <code><a href="../Classes/CoreDataProvider.html#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a></code>.</p>
+
+<ul>
+<li><p>cacheName: Name for <code>Core Data</code> cache.</p></li>
+</ul>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">sortDescriptors</span><span class="p">:</span> <span class="p">[</span><span class="kt">NSSortDescriptor</span><span class="p">],</span>
+                <span class="n"><a href="../Classes/CoreDataProvider.html#/s:vC7Glasgow16CoreDataProvider20managedObjectContextCSo22NSManagedObjectContext">managedObjectContext</a></span> <span class="nv">context</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">,</span>
+                <span class="nv">predicate</span><span class="p">:</span> <span class="kt">NSPredicate</span><span class="p">?,</span>
+                <span class="nv">fetchLimit</span><span class="p">:</span> <span class="kt">NSInteger</span><span class="p">?,</span>
+                <span class="nv">sectionNameKeyPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+                <span class="nv">cacheName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sortDescriptors</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Properties to sort the results, in order they are defined.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>context</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Core Data</code> Managed Object Context.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>predicate</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Core Data</code> predicate used to filter results.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fetchLimit</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Used to limit the amount of returned entities.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sectionNameKeyPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>A Key Path used for categorization
+     and group data using the given <code>keypath</code>. Note that, if defined
+it must be the first element in the <code>sortDescriptors</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Public%20Methods"></a>
+                <a name="//apple_ref/swift/Section/Public Methods" class="dashAnchor"></a>
+                <a href="#/Public%20Methods">
+                  <h3 class="section-name">Public Methods</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_"></a>
+                    <a name="//apple_ref/swift/Method/refresh()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow16CoreDataProvider7refreshFzT_T_">refresh()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Fetchs data from <code>Core Data</code> storage.
+By default, it is not called by default when the <code>CoreDataProvider</code> is created.</p>
+
+<p>Also, this method must be called whenever <code><a href="../Classes/CoreDataProvider.html#/s:vC7Glasgow16CoreDataProvider9predicateGSqCSo11NSPredicate_">predicate</a></code>, <code><a href="../Classes/CoreDataProvider.html#/s:vC7Glasgow16CoreDataProvider10fetchLimitGSqSi_">fetchLimit</a></code> or <code><a href="../Classes/CoreDataProvider.html#/s:vC7Glasgow16CoreDataProvider15sortDescriptorsGSaCSo16NSSortDescriptor_">sortDescriptors</a></code> is changed.</p>
+
+<p>Once executed, <code>objects</code> will return the fetched objects.</p>
+<h3 id='if-you-do-not-want-to-handle-any-exception-that-may-happen-you-can-use' class='heading'>If you do not want to handle any exception that may happen, you can use:</h3>
+<pre class="highlight plaintext"><code>try? coreDataProvider.refresh()
+</code></pre>
+<h3 id='if-you-want-to-handle-any-exception-that-may-happen-you-can-use' class='heading'>If you want to handle any exception that may happen, you can use:</h3>
+<pre class="highlight plaintext"><code>do {
+   try coreDataProvider.refresh()
+} catch let error as NSError {
+   print("Error: \(error)")
+}
+</code></pre>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">refresh</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Fetched%20results%20controller"></a>
+                <a name="//apple_ref/swift/Section/Fetched results controller" class="dashAnchor"></a>
+                <a href="#/Fetched%20results%20controller">
+                  <h3 class="section-name">Fetched results controller</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:vC7Glasgow16CoreDataProvider24fetchedResultsControllerGCSo26NSFetchedResultsControllerx_"></a>
+                    <a name="//apple_ref/swift/Property/fetchedResultsController" class="dashAnchor"></a>
+                    <a class="token" href="#/s:vC7Glasgow16CoreDataProvider24fetchedResultsControllerGCSo26NSFetchedResultsControllerx_">fetchedResultsController</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The <code>NSFetchedResultsController&lt;EntityType&gt;</code> used to back the <code>CoreDataProvider</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">fetchedResultsController</span><span class="p">:</span> <span class="kt">NSFetchedResultsController</span><span class="o">&lt;</span><span class="kt">EntityType</span><span class="o">&gt;</span> <span class="o">=</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow16CoreDataProvider35instantiateFetchedResultsControllerFTGCSo14NSFetchRequestx_20managedObjectContextCSo22NSManagedObjectContext18sectionNameKeyPathGSqSS_9cacheNameGSqSS__GCSo26NSFetchedResultsControllerx_"></a>
+                    <a name="//apple_ref/swift/Method/instantiateFetchedResultsController(_:managedObjectContext:sectionNameKeyPath:cacheName:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow16CoreDataProvider35instantiateFetchedResultsControllerFTGCSo14NSFetchRequestx_20managedObjectContextCSo22NSManagedObjectContext18sectionNameKeyPathGSqSS_9cacheNameGSqSS__GCSo26NSFetchedResultsControllerx_">instantiateFetchedResultsController(_:managedObjectContext:sectionNameKeyPath:cacheName:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiates a new <code>NSFetchedResultsController&lt;EntityType&gt;</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">func</span> <span class="nf">instantiateFetchedResultsController</span><span class="p">(</span><span class="n">_</span> <span class="nv">fetchRequest</span><span class="p">:</span> <span class="kt">NSFetchRequest</span><span class="o">&lt;</span><span class="kt">EntityType</span><span class="o">&gt;</span><span class="p">,</span>
+                                                  <span class="nv">managedObjectContext</span><span class="p">:</span> <span class="kt">NSManagedObjectContext</span><span class="p">,</span>
+                                                  <span class="nv">sectionNameKeyPath</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
+                                                  <span class="nv">cacheName</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">NSFetchedResultsController</span><span class="o">&lt;</span><span class="kt">EntityType</span><span class="o">&gt;</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>fetchRequest</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>NSFetchRequest<EntityType> used to request data.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>managedObjectContext</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Core Data</code> context.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sectionNameKeyPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>keypath</code> for section categorization.</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>cacheName</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Core Data</code> cache name.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Data%20Provider%20Implementation"></a>
+                <a name="//apple_ref/swift/Section/Data Provider Implementation" class="dashAnchor"></a>
+                <a href="#/Data%20Provider%20Implementation">
+                  <h3 class="section-name">Data Provider Implementation</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:iC7Glasgow16CoreDataProvider9subscriptFV10Foundation9IndexPathGSqx_"></a>
+                    <a name="//apple_ref/swift/Method/subscript(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:iC7Glasgow16CoreDataProvider9subscriptFV10Foundation9IndexPathGSqx_">subscript(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the object of given <code>EntityType</code> at given <code>indexPath</code>, if exists.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">override</span> <span class="kd">public</span> <span class="nf">subscript</span><span class="p">(</span><span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">EntityType</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>indexPath</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>IndexPath to get object.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow16CoreDataProvider4pathFT3forx_GSqV10Foundation9IndexPath_"></a>
+                    <a name="//apple_ref/swift/Method/path(for:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow16CoreDataProvider4pathFT3forx_GSqV10Foundation9IndexPath_">path(for:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the IndexPath for the given object, if found.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">path</span><span class="p">(</span><span class="k">for</span> <span class="nv">entity</span><span class="p">:</span> <span class="kt">EntityType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">IndexPath</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>entity</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Object to search.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>IndexPath.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow16CoreDataProvider16numberOfSectionsFT_Si"></a>
+                    <a name="//apple_ref/swift/Method/numberOfSections()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow16CoreDataProvider16numberOfSectionsFT_Si">numberOfSections()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the numbers of provided sections.</p>
+
+<p>For one-dimentional arrays, will return 1.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">numberOfSections</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Int.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow16CoreDataProvider13numberOfItemsFT2inSi_Si"></a>
+                    <a name="//apple_ref/swift/Method/numberOfItems(in:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow16CoreDataProvider13numberOfItemsFT2inSi_Si">numberOfItems(in:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the number of objects in the given section.</p>
+
+<p>If given section does not exists, returns 0.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">numberOfItems</span><span class="p">(</span><span class="k">in</span> <span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>section</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The section to be inquired about how much provided objects it has.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>Int.</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:FC7Glasgow16CoreDataProvider5titleFT7sectionSi_GSqSS_"></a>
+                    <a name="//apple_ref/swift/Method/title(section:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:FC7Glasgow16CoreDataProvider5titleFT7sectionSi_GSqSS_">title(section:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Returns the title for a given section.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="k">override</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">title</span><span class="p">(</span><span class="nv">section</span><span class="p">:</span> <span class="kt">Int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>section</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>Desired section.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>String?</p>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/inacioferrarini/glasgow" target="_blank" rel="external">Inácio</a>. All rights reserved. (Last updated: 2017-08-21)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
