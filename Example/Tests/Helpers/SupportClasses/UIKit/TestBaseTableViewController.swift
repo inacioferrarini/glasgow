@@ -26,17 +26,20 @@ import UIKit
 
 class TestBaseTableViewController: BaseTableViewController {
 
-    var onSetupTableView: (() -> ())?
-    var onCreateDataSource: (() -> ())?
-    var onCreateDelegate: (() -> ())?
-    var onCreateRefreshControl: (() -> ())?
+    var onSetupTableView: (() -> Void)?
+    var onCreateDataSource: (() -> Void)?
+	// swiftlint:disable weak_delegate
+    var onCreateDelegate: (() -> Void)?
+	// swiftlint:enable weak_delegate
+
+    var onCreateRefreshControl: (() -> Void)?
     var createRefreshControlMethod: (() -> UIRefreshControl)?
-    
+
     override open func setupTableView() {
         self.onSetupTableView?()
         super.setupTableView()
     }
-    
+
     override open func createDataSource() -> UITableViewDataSource? {
         self.onCreateDataSource?()
         return super.createDataSource()
@@ -46,11 +49,11 @@ class TestBaseTableViewController: BaseTableViewController {
         self.onCreateDelegate?()
         return super.createDelegate()
     }
-    
+
     override open func createRefreshControl() -> UIRefreshControl? {
         self.onCreateRefreshControl?()
         _ = super.createRefreshControl()
         return createRefreshControlMethod?() ?? nil
     }
-    
+
 }

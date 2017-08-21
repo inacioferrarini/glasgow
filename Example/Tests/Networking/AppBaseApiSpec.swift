@@ -28,33 +28,36 @@ import OHHTTPStubs
 @testable import Glasgow
 
 class AppBaseApiSpec: QuickSpec {
-    
+
+	// swiftlint:disable function_body_length
+	// swiftlint:disable cyclomatic_complexity
+
     override func spec() {
-        
+
         describe("Base Api Request") {
-            
+
             context("GET", {
 
                 it("if request succeeds, must return valid object") {
                     // Given
-                    stub(condition: isHost("www.apiurl.com")) { request in
+                    stub(condition: isHost("www.apiurl.com")) { _ in
                         let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
                         let error = OHHTTPStubsResponse(error:notConnectedError)
                         guard let fixtureFile = OHPathForFile("ApiRequestResponseFixture.json", type(of: self)) else { return error }
-                        
+
                         return OHHTTPStubsResponse(
                             fileAtPath: fixtureFile,
                             statusCode: 200,
-                            headers: ["Content-Type" : "application/json"]
+                            headers: ["Content-Type": "application/json"]
                         )
                     }
-                    
-                    
+
+
                     var returnedPersonList: [Person]?
                     let api = AppBaseApi("https://www.apiurl.com")
                     let targetUrl = "/path"
                     let transformer = ApiResponseToPersonArrayTransformer()
-                    
+
                     // When
                     waitUntil { done in
                         api.get(targetUrl,
@@ -62,28 +65,28 @@ class AppBaseApiSpec: QuickSpec {
                                 success: { (persons) in
                                     returnedPersonList = persons
                                     done()
-                        }, failure: { (error) in
+                        }, failure: { _ in
                             fail("Mocked response returned error")
                             done()
                         }, retryAttempts: 30)
                     }
-                    
+
                     // Then
                     expect(returnedPersonList?.count).to(equal(3))
-                    
+
                     expect(returnedPersonList?[0].name).to(equal("Fulano da Silva"))
                     expect(returnedPersonList?[0].age).to(equal(35))
                     expect(returnedPersonList?[0].boolValue).to(equal(true))
-                    
+
                     expect(returnedPersonList?[1].name).to(equal("Sincrano"))
                     expect(returnedPersonList?[1].age).to(equal(40))
                     expect(returnedPersonList?[1].boolValue).to(equal(false))
-                    
+
                     expect(returnedPersonList?[2].name).to(equal("Beltrano"))
                     expect(returnedPersonList?[2].age).to(equal(37))
                     expect(returnedPersonList?[2].boolValue).to(equal(true))
                 }
-                
+
                 it("if request with body succeeds, must return valid object") {
                     // Given
                     stub(condition: isHost("www.apiurl.com")) { request in
@@ -93,28 +96,28 @@ class AppBaseApiSpec: QuickSpec {
                         guard let bodyInputStream = request.httpBodyStream else { return error }
                         let bodyData = Data(reading: bodyInputStream)
                         guard let body = try? JSONSerialization.jsonObject(with: bodyData, options: []) as? [String : String] else { return error }
-                        
+
                         guard body?["token"] == "value" else { return error }
                         guard request.allHTTPHeaderFields?["X-AUTH-TOKEN"] == "1234-ABCDEF-1234-UGH" else { return error }
-                        
+
                         return OHHTTPStubsResponse(
                             fileAtPath: fixtureFile,
                             statusCode: 200,
-                            headers: ["Content-Type" : "application/json"]
+                            headers: ["Content-Type": "application/json"]
                         )
                     }
-                    
-                    
+
+
                     var returnedPersonList: [Person]?
                     let api = AppBaseApi("https://www.apiurl.com")
                     let targetUrl = "/path"
                     let transformer = ApiResponseToPersonArrayTransformer()
-                    let params = ["token" : "value"]
-                    let headers = ["X-AUTH-TOKEN" : "1234-ABCDEF-1234-UGH"]
-                    
+                    let params = ["token": "value"]
+                    let headers = ["X-AUTH-TOKEN": "1234-ABCDEF-1234-UGH"]
+
                     // When
                     waitUntil { done in
-                        
+
                         api.get(targetUrl,
                                 responseTransformer: transformer,
                                 parameters: params,
@@ -122,40 +125,40 @@ class AppBaseApiSpec: QuickSpec {
                                 success: { (persons) in
                             returnedPersonList = persons
                             done()
-                        }, failure: { (error) in
+                        }, failure: { _ in
                             fail("Mocked response returned error")
                             done()
                         }, retryAttempts: 30)
                     }
-                    
+
                     // Then
                     expect(returnedPersonList?.count).to(equal(3))
-                    
+
                     expect(returnedPersonList?[0].name).to(equal("Fulano da Silva"))
                     expect(returnedPersonList?[0].age).to(equal(35))
                     expect(returnedPersonList?[0].boolValue).to(equal(true))
-                    
+
                     expect(returnedPersonList?[1].name).to(equal("Sincrano"))
                     expect(returnedPersonList?[1].age).to(equal(40))
                     expect(returnedPersonList?[1].boolValue).to(equal(false))
-                    
+
                     expect(returnedPersonList?[2].name).to(equal("Beltrano"))
                     expect(returnedPersonList?[2].age).to(equal(37))
                     expect(returnedPersonList?[2].boolValue).to(equal(true))
                 }
-                
+
                 it("if request fails, must execute failure block") {
                     // Given
-                    stub(condition: isHost("www.apiurl.com")) { request in
+                    stub(condition: isHost("www.apiurl.com")) { _ in
                         let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
                         return OHHTTPStubsResponse(error: notConnectedError)
                     }
-                    
+
                     var returnedPlaylists: [Person]?
                     let api = AppBaseApi("https://www.apiurl.com")
                     let targetUrl = "/path"
                     let transformer = ApiResponseToPersonArrayTransformer()
-                    
+
                     // When
                     waitUntil { done in
                         api.get(targetUrl,
@@ -164,41 +167,41 @@ class AppBaseApiSpec: QuickSpec {
                                     fail("Mocked response returned success")
                                     returnedPlaylists = playlists
                                     done()
-                        }, failure: { (error) in
+                        }, failure: { _ in
                             done()
                         }, retryAttempts: 30)
                     }
-                    
+
                     // Then
                     expect(returnedPlaylists).to(beNil())
                 }
-                
+
             })
-            
-            
-            
+
+
+
             context("POST", {
-                
+
                 it("if request succeeds, must return valid object") {
                     // Given
-                    stub(condition: isHost("www.apiurl.com")) { request in
+                    stub(condition: isHost("www.apiurl.com")) { _ in
                         let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
                         let error = OHHTTPStubsResponse(error:notConnectedError)
                         guard let fixtureFile = OHPathForFile("ApiRequestResponseFixture.json", type(of: self)) else { return error }
-                        
+
                         return OHHTTPStubsResponse(
                             fileAtPath: fixtureFile,
                             statusCode: 200,
-                            headers: ["Content-Type" : "application/json"]
+                            headers: ["Content-Type": "application/json"]
                         )
                     }
-                    
-                    
+
+
                     var returnedPersonList: [Person]?
                     let api = AppBaseApi("https://www.apiurl.com")
                     let targetUrl = "/path"
                     let transformer = ApiResponseToPersonArrayTransformer()
-                    
+
                     // When
                     waitUntil { done in
                         api.post(targetUrl,
@@ -206,28 +209,28 @@ class AppBaseApiSpec: QuickSpec {
                                  success: { (persons) in
                             returnedPersonList = persons
                             done()
-                        }, failure: { (error) in
+                        }, failure: { _ in
                             fail("Mocked response returned error")
                             done()
                         }, retryAttempts: 30)
                     }
-                    
+
                     // Then
                     expect(returnedPersonList?.count).to(equal(3))
-                    
+
                     expect(returnedPersonList?[0].name).to(equal("Fulano da Silva"))
                     expect(returnedPersonList?[0].age).to(equal(35))
                     expect(returnedPersonList?[0].boolValue).to(equal(true))
-                    
+
                     expect(returnedPersonList?[1].name).to(equal("Sincrano"))
                     expect(returnedPersonList?[1].age).to(equal(40))
                     expect(returnedPersonList?[1].boolValue).to(equal(false))
-                    
+
                     expect(returnedPersonList?[2].name).to(equal("Beltrano"))
                     expect(returnedPersonList?[2].age).to(equal(37))
                     expect(returnedPersonList?[2].boolValue).to(equal(true))
                 }
-                
+
                 it("if request with body succeeds, must return valid object") {
                     // Given
                     stub(condition: isHost("www.apiurl.com")) { request in
@@ -239,22 +242,22 @@ class AppBaseApiSpec: QuickSpec {
                         guard let body = try? JSONSerialization.jsonObject(with: bodyData, options: []) as? [String : String] else { return error }
                         guard body?["token"] == "value" else { return error }
                         guard request.allHTTPHeaderFields?["X-AUTH-TOKEN"] == "1234-ABCDEF-1234-UGH" else { return error }
-                        
+
                         return OHHTTPStubsResponse(
                             fileAtPath: fixtureFile,
                             statusCode: 200,
-                            headers: ["Content-Type" : "application/json"]
+                            headers: ["Content-Type": "application/json"]
                         )
                     }
-                    
-                    
+
+
                     var returnedPersonList: [Person]?
                     let api = AppBaseApi("https://www.apiurl.com")
                     let targetUrl = "/path"
                     let transformer = ApiResponseToPersonArrayTransformer()
-                    let params = ["token" : "value"]
-                    let headers = ["X-AUTH-TOKEN" : "1234-ABCDEF-1234-UGH"]
-                    
+                    let params = ["token": "value"]
+                    let headers = ["X-AUTH-TOKEN": "1234-ABCDEF-1234-UGH"]
+
                     // When
                     waitUntil { done in
                         api.post(targetUrl,
@@ -264,40 +267,40 @@ class AppBaseApiSpec: QuickSpec {
                                  success: { (persons) in
                             returnedPersonList = persons
                             done()
-                        }, failure: { (error) in
+                        }, failure: { _ in
                             fail("Mocked response returned error")
                             done()
                         }, retryAttempts: 30)
                     }
-                    
+
                     // Then
                     expect(returnedPersonList?.count).to(equal(3))
-                    
+
                     expect(returnedPersonList?[0].name).to(equal("Fulano da Silva"))
                     expect(returnedPersonList?[0].age).to(equal(35))
                     expect(returnedPersonList?[0].boolValue).to(equal(true))
-                    
+
                     expect(returnedPersonList?[1].name).to(equal("Sincrano"))
                     expect(returnedPersonList?[1].age).to(equal(40))
                     expect(returnedPersonList?[1].boolValue).to(equal(false))
-                    
+
                     expect(returnedPersonList?[2].name).to(equal("Beltrano"))
                     expect(returnedPersonList?[2].age).to(equal(37))
                     expect(returnedPersonList?[2].boolValue).to(equal(true))
                 }
-                
+
                 it("if request fails, must execute failure block") {
                     // Given
-                    stub(condition: isHost("www.apiurl.com")) { request in
+                    stub(condition: isHost("www.apiurl.com")) { _ in
                         let notConnectedError = NSError(domain:NSURLErrorDomain, code:Int(CFNetworkErrors.cfurlErrorNotConnectedToInternet.rawValue), userInfo:nil)
                         return OHHTTPStubsResponse(error: notConnectedError)
                     }
-                    
+
                     var returnedPlaylists: [Person]?
                     let api = AppBaseApi("https://www.apiurl.com")
                     let targetUrl = "/path"
                     let transformer = ApiResponseToPersonArrayTransformer()
-                    
+
                     // When
                     waitUntil { done in
                         api.post(targetUrl,
@@ -306,19 +309,22 @@ class AppBaseApiSpec: QuickSpec {
                             fail("Mocked response returned success")
                             returnedPlaylists = playlists
                             done()
-                        }, failure: { (error) in
+                        }, failure: { _ in
                             done()
                         }, retryAttempts: 30)
                     }
-                    
+
                     // Then
                     expect(returnedPlaylists).to(beNil())
                 }
-                
+
             })
-            
+
         }
-        
+
     }
-    
+
+	// swiftlint:enable cyclomatic_complexity
+	// swiftlint:enable body_length
+
 }

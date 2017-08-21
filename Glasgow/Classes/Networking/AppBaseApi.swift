@@ -29,7 +29,7 @@ import Foundation
 public enum HttpMethod: String {
     /** HTTP GET */
     case get = "GET"
-    
+
     /** HTTP POST */
     case post = "POST"
 }
@@ -40,15 +40,15 @@ public enum HttpMethod: String {
  Handles remote HTTP requests using Apple APIs.
  */
 open class AppBaseApi {
-    
-    
+
+
     // MARK: - Properties
-    
+
     let rootUrl: String
-    
-    
+
+
     // MARK: - Initialization
-    
+
     /**
      Inits the class using the given the root url.
      
@@ -57,10 +57,10 @@ open class AppBaseApi {
     public init(_ rootUrl: String) {
         self.rootUrl = rootUrl
     }
-    
-    
+
+
     // MARK: - Helper methods
-    
+
     /**
      Performs a `HTTP GET` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -83,8 +83,8 @@ open class AppBaseApi {
         responseTransformer: TransformerType,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
-        
+        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+
         self.get(targetUrl,
                  responseTransformer: responseTransformer,
                  parameters: nil,
@@ -93,7 +93,7 @@ open class AppBaseApi {
                  failure: failure,
                  retryAttempts: retryAttempts)
     }
-    
+
     /**
      Performs a `HTTP GET` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -115,6 +115,7 @@ open class AppBaseApi {
      
      - parameter retryAttempts: How many tries before calling `errorHandler` block.
      */
+	// swiftlint:disable function_parameter_count
     open func get<Type, TransformerType>(
         _ targetUrl: String,
         responseTransformer: TransformerType,
@@ -122,8 +123,8 @@ open class AppBaseApi {
         headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
-        
+        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+
         self.get(self.rootUrl,
                  targetUrl: targetUrl,
                  responseTransformer: responseTransformer,
@@ -133,7 +134,8 @@ open class AppBaseApi {
                  failure: failure,
                  retryAttempts: retryAttempts)
     }
-    
+	// swiftlint:enable function_parameter_count
+
     /**
      Performs a `HTTP GET` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -158,6 +160,7 @@ open class AppBaseApi {
      
      - parameter retryAttempts: How many tries before calling `errorHandler` block.
      */
+	// swiftlint:disable function_parameter_count
     open func get<Type, TransformerType>(
         _ endpointUrl: String,
         targetUrl: String,
@@ -166,8 +169,8 @@ open class AppBaseApi {
         headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
-        
+        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+
         self.executeRequest(httpMethod: .get,
                             endpointUrl,
                             targetUrl: targetUrl,
@@ -178,10 +181,11 @@ open class AppBaseApi {
                             failure: failure,
                             retryAttempts: retryAttempts)
     }
+	// swiftlint:enable function_parameter_count
 
 
     // MARK: - POST
-    
+
     /**
      Performs a `HTTP POST` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -204,8 +208,8 @@ open class AppBaseApi {
         responseTransformer: TransformerType,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
-        
+        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+
         self.post(targetUrl,
                  responseTransformer: responseTransformer,
                  parameters: nil,
@@ -214,7 +218,7 @@ open class AppBaseApi {
                  failure: failure,
                  retryAttempts: retryAttempts)
     }
-    
+
     /**
      Performs a `HTTP POST` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -236,6 +240,7 @@ open class AppBaseApi {
      
      - parameter retryAttempts: How many tries before calling `errorHandler` block.
      */
+	// swiftlint:disable function_parameter_count
     open func post<Type, TransformerType>(
         _ targetUrl: String,
         responseTransformer: TransformerType,
@@ -243,8 +248,8 @@ open class AppBaseApi {
         headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
-        
+        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+
         self.post(self.rootUrl,
                  targetUrl: targetUrl,
                  responseTransformer: responseTransformer,
@@ -254,7 +259,8 @@ open class AppBaseApi {
                  failure: failure,
                  retryAttempts: retryAttempts)
     }
-    
+	// swiftlint:enable function_parameter_count
+
     /**
      Performs a `HTTP POST` request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -279,6 +285,7 @@ open class AppBaseApi {
      
      - parameter retryAttempts: How many tries before calling `errorHandler` block.
      */
+	// swiftlint:disable function_parameter_count
     open func post<Type, TransformerType>(
         _ endpointUrl: String,
         targetUrl: String,
@@ -287,8 +294,8 @@ open class AppBaseApi {
         headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
-        
+        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+
         self.executeRequest(httpMethod: .post,
                             endpointUrl,
                             targetUrl: targetUrl,
@@ -299,10 +306,11 @@ open class AppBaseApi {
                             failure: failure,
                             retryAttempts: retryAttempts)
     }
+	// swiftlint:enable function_parameter_count
 
-    
+
     // MARK: - Helper methods
-    
+
     /**
      Performs a httpMethod kind request to the given path.
      If the requests succeeds, the `completion` block will be called after converting the result
@@ -329,6 +337,7 @@ open class AppBaseApi {
      
      - parameter retryAttempts: How many tries before calling `errorHandler` block.
      */
+	// swiftlint:disable function_parameter_count
     open func executeRequest<Type, TransformerType>(
         httpMethod: HttpMethod,
         _ endpointUrl: String,
@@ -338,23 +347,22 @@ open class AppBaseApi {
         headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.T == AnyObject?, TransformerType.U == Type {
-        
+        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+
         let urlString = endpointUrl + targetUrl
         let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
         guard let url = URL(string: urlString) else { return }
-        
+
         let request = self.request(httpMethod: httpMethod,
                                    url: url,
                                    parameters: parameters,
                                    headers: headers)
-        
+
         let dataTask = defaultSession.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 if retryAttempts <= 1 {
                     failure(error)
-                }
-                else {
+                } else {
                     self.executeRequest(httpMethod: httpMethod,
                                         endpointUrl,
                                         targetUrl: targetUrl,
@@ -365,20 +373,20 @@ open class AppBaseApi {
                                         failure: failure,
                                         retryAttempts: retryAttempts - 1)
                 }
-            }
-            else if let httpResponse = response as? HTTPURLResponse {
+            } else if let httpResponse = response as? HTTPURLResponse {
                 guard httpResponse.statusCode >= 200 && httpResponse.statusCode < 300 else { return }
                 guard let data = data else { return }
                 guard let jsonData = try? JSONSerialization.jsonObject(with: data, options: []) as AnyObject else { return }
-                
+
                 let transformedObject = responseTransformer.transform(jsonData)
                 success(transformedObject)
             }
         }
-        
+
         dataTask.resume()
     }
-    
+	// swiftlint:enable function_parameter_count
+
     /**
      Assembles a URLRequest using given values.
      
@@ -407,5 +415,5 @@ open class AppBaseApi {
         }
         return request
     }
-    
+
 }

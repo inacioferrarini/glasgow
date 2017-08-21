@@ -28,22 +28,24 @@ import Nimble
 @testable import Glasgow
 
 class CoreDataStackSpec: QuickSpec {
-    
+
+	// swiftlint:disable function_body_length
+
     override func spec() {
-        
+
         describe("Core Data Stack") {
-            
+
             let modelFileName = "GlasgowTests"
             let databaseFileName = "GlasgowTestsDB"
             let bundle = Bundle(for: type(of: self))
             var stack: CoreDataStack?
-            
+
             context("Initialization") {
-                
+
                 it("must create object") {
                     // When
                     stack = CoreDataStack(modelFileName: modelFileName, databaseFileName: databaseFileName, bundle: bundle)
-                    
+
                     // Then
                     expect(stack).toNot(beNil())
                 }
@@ -51,11 +53,11 @@ class CoreDataStackSpec: QuickSpec {
                 it("Convenience init must create object") {
                     // When
                     stack = CoreDataStack(modelFileName: modelFileName, databaseFileName: databaseFileName)
-                    
+
                     // Then
                     expect(stack).toNot(beNil())
                 }
-                
+
             }
 
             context("save method") {
@@ -64,12 +66,12 @@ class CoreDataStackSpec: QuickSpec {
                     // Given
                     stack = CoreDataStack(modelFileName: modelFileName, databaseFileName: databaseFileName, bundle: bundle)
                 }
-                
+
                 it("must not crash") {
                     // When
                     var exceptionWasThrown = false
                     var doCompleted = false
-                    
+
                     do {
                         if let context = stack?.managedObjectContext {
                             _ = TestEntity.testEntity(with: "test value", group: "group", in: context)
@@ -79,17 +81,17 @@ class CoreDataStackSpec: QuickSpec {
                     } catch {
                         exceptionWasThrown = true
                     }
-                    
+
                     // Then
                     expect(doCompleted).to(beTruthy())
                     expect(exceptionWasThrown).to(beFalsy())
                 }
-                
+
                 it("when exception happens, must throws exception") {
                     // When
                     var exceptionWasThrown = false
                     var doCompleted = false
-                    
+
                     do {
                         if let context = stack?.managedObjectContext {
                             _ = TestEntity.testEntity(with: nil, group: "group", in: context)
@@ -99,16 +101,18 @@ class CoreDataStackSpec: QuickSpec {
                     } catch {
                         exceptionWasThrown = true
                     }
-                    
+
                     // Then
                     expect(doCompleted).to(beFalsy())
                     expect(exceptionWasThrown).to(beTruthy())
                 }
-                
+
             }
-            
+
         }
-        
+
     }
-    
+
+	// swiftlint:enable body_length
+
 }

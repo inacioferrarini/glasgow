@@ -4,6 +4,7 @@ inhibit_all_warnings!
 
 target 'Glasgow_Tests' do
   pod 'Glasgow', :path => '../'
+  pod 'SwiftLint', '0.21.0'
   pod 'Quick', '~> 1.1.0'
   pod 'Nimble', '~> 6.0.0'
   pod 'OHHTTPStubs/Swift', '~> 6.0.0'

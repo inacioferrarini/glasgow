@@ -30,22 +30,22 @@ import Foundation
  allowing better compatibility among different kinds of data providers.
  */
 public protocol DataProvider {
-    
+
     /**
      The type of the provided object.
      */
     associatedtype ValueType
-	
+
 	/**
 	 The type for the index type.
      */
 	associatedtype IndexType
-	
+
 	/**
 	The type for the section title.
 	*/
 	associatedtype SectionTitleType
-	
+
     /**
      Returns the object of given `ValueType` at given `indexPath`, if exists.
      
@@ -54,8 +54,8 @@ public protocol DataProvider {
      - returns `ValueType`.
      */
     subscript(_ index: IndexType) -> ValueType? { get }
-    
-    
+
+
     /**
      Returns the IndexPath for the given object, if found.
      
@@ -64,7 +64,7 @@ public protocol DataProvider {
      - returns: IndexPath.
      */
     func path(for value: ValueType) -> IndexType?
-    
+
     /**
      Returns the numbers of provided sections.
      
@@ -73,7 +73,7 @@ public protocol DataProvider {
      - returns: Int.
      */
     func numberOfSections() -> Int
-	
+
     /**
      Returns the number of objects in the given section.
      
@@ -84,10 +84,10 @@ public protocol DataProvider {
      - returns: Int.
      */
     func numberOfItems(in section: Int) -> Int
-	
+
 	/**
 	 Returns the title for a given section.
 	 */
 	func title(section: Int) -> SectionTitleType?
-	
+
 }

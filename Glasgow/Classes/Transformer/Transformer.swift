@@ -29,16 +29,16 @@ import Foundation
 */
 public protocol Transformer {
 
-    associatedtype T
-    associatedtype U
+	associatedtype IType
+	associatedtype OType
 
     /**
-     Transforms the input type T and returns U as output.
+     Transforms the input type IType and returns OType as output.
      
      - parameter input: The object to be transformed.
      
-     - returns: Object of type U
+     - returns: Object of type OType
      */
-    func transform(_ input: T) -> U
-    
+    func transform(_ input: IType) -> OType
+
 }

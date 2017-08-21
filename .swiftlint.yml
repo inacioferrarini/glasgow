@@ -1,6 +1,0 @@
-# line_length: 180
-# function_parameter_count: 10
-excluded:
-  - Example
-included:
-  - Glasgow

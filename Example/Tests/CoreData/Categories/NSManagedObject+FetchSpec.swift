@@ -28,16 +28,16 @@ import Nimble
 @testable import Glasgow
 
 class NSManagedObjectFetchSpec: QuickSpec {
-    
+
     override func spec() {
-        
+
         describe("NSManagedObject Fetch Extensions") {
             let modelFileName = "GlasgowTests"
             let databaseFileName = "GlasgowTestsDB"
             let bundle = Bundle(for: type(of: self))
             let stack = CoreDataStack(modelFileName: modelFileName, databaseFileName: databaseFileName, bundle: bundle)
             let managedContext = stack.managedObjectContext
-            
+
             beforeEach {
                 if let context = managedContext {
                     TestEntity.removeAll(in: context)
@@ -46,9 +46,9 @@ class NSManagedObjectFetchSpec: QuickSpec {
                     try? stack.saveContext()
                 }
             }
-            
+
             context("lastObjectFromRequest method") {
-                
+
                 it("must return one object, if exists") {
                     guard let context = managedContext else {
                         fail("context is nil")
@@ -58,7 +58,7 @@ class NSManagedObjectFetchSpec: QuickSpec {
                     let entity = TestEntity.lastObject(from: request, in: context)
                     expect(entity).toNot(beNil())
                 }
-                
+
                 it("must return nil if an error happens") {
                     guard let context = managedContext else {
                         fail("context is nil")
@@ -69,25 +69,26 @@ class NSManagedObjectFetchSpec: QuickSpec {
                     let entity = TestEntity.lastObject(from: request, in: context)
                     expect(entity).to(beNil())
                 }
-                
+
             }
-            
+
             context("allObjectsFromRequest method") {
-            
+
                 it("must return fetched objects") {
                     guard let context = managedContext else {
                         fail("context is nil")
                         return
                     }
-                    let request: NSFetchRequest = NSFetchRequest<NSManagedObject>(entityName: TestEntity.simpleClassName())
+                    let request: NSFetchRequest = NSFetchRequest<NSManagedObject>(
+						entityName: TestEntity.simpleClassName())
                     let entities = TestEntity.allObjects(from: request, in: context)
                     expect(entities.count).to(equal(2))
                 }
-                
+
             }
-            
+
         }
-        
+
     }
-    
+
 }

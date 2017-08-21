@@ -36,13 +36,13 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
      TableView that owns this DataSource.
      */
     open let tableView: UITableView
-    
+
     /**
      Returns the Reuse Identifier for a Cell at the given `IndexPath`.
      */
     let reuseIdentifier: ((IndexPath) -> (String))
 
-    
+
     // MARK: - Initialization
 
     /**
@@ -61,7 +61,7 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
                   reuseIdentifier: reuseIdentifier,
                   with: dataProvider)
     }
-    
+
     /**
      Inits the DataSource providing a UITableView and its objects.
      
@@ -106,7 +106,7 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
     open func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.dataProvider.numberOfItems(in: section)
     }
-    
+
     /**
      Returns the number of rows in its only section. The number of rows always matches the number of contained objects.
      
@@ -119,13 +119,12 @@ open class TableViewArrayDataSource<CellType: UITableViewCell, Type: Equatable>:
     open func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let reuseIdentifier = self.reuseIdentifier(indexPath)
         guard var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? CellType else { return UITableViewCell() }
-        
+
         if let value = self.dataProvider[indexPath] as? CellType.ValueType {
             cell.setup(with: value)
         }
-        
+
         return cell
     }
-    
-}
 
+}

@@ -27,16 +27,18 @@ import Nimble
 @testable import Glasgow
 
 class BaseTableViewControllerSpec: QuickSpec {
-    
+
+	// swiftlint:disable function_body_length
+
     override func spec() {
-        
+
         var baseTableViewViewController: TestBaseTableViewController?
         var tableView: UITableView?
         var onSetupTableViewBlockWasCalled: Bool?
         var onCreateDataSourceBlockWasCalled: Bool?
         var onCreateDelegateBlockWasCalled: Bool?
         var onCreateRefreshControlBlockWasCalled: Bool?
-        
+
         describe("Initialiation with external datasource and delegate") {
 
             beforeEach {
@@ -44,56 +46,56 @@ class BaseTableViewControllerSpec: QuickSpec {
                 baseTableViewViewController = TestBaseTableViewController()
                 tableView = UITableView(frame: .zero, style: .plain)
                 baseTableViewViewController?.tableView = tableView
-                
+
                 onCreateDataSourceBlockWasCalled = false
                 onCreateDelegateBlockWasCalled = false
                 onCreateRefreshControlBlockWasCalled = false
-                
+
                 baseTableViewViewController?.onSetupTableView = nil
                 baseTableViewViewController?.onCreateDataSource = nil
                 baseTableViewViewController?.onCreateDelegate = nil
                 baseTableViewViewController?.onCreateRefreshControl = nil
             }
-            
+
             it("viewDidLoad must call setupTableView") {
                 // Given
                 baseTableViewViewController?.onSetupTableView = { _ in
                     onSetupTableViewBlockWasCalled = true
                 }
-                
+
                 // When
                 baseTableViewViewController?.viewDidLoad()
-                
+
                 // Then
                 expect(onSetupTableViewBlockWasCalled).to(beTruthy())
             }
-            
+
             it("viewDidLoad must create datasource") {
                 // Given
                 baseTableViewViewController?.onCreateDataSource = { _ in
                     onCreateDataSourceBlockWasCalled = true
                 }
-                
+
                 // When
                 baseTableViewViewController?.viewDidLoad()
-                
+
                 // Then
                 expect(onCreateDataSourceBlockWasCalled).to(beTruthy())
             }
-            
+
             it("viewDidLoad must create delegate") {
                 // Given
                 baseTableViewViewController?.onCreateDelegate = { _ in
                     onCreateDelegateBlockWasCalled = true
                 }
-                
+
                 // When
                 baseTableViewViewController?.viewDidLoad()
-                
+
                 // Then
                 expect(onCreateDelegateBlockWasCalled).to(beTruthy())
             }
-            
+
             it("viewDidLoad must create refreshControl") {
                 // Given
                 baseTableViewViewController?.onCreateRefreshControl = { _ in
@@ -102,75 +104,75 @@ class BaseTableViewControllerSpec: QuickSpec {
                 baseTableViewViewController?.createRefreshControlMethod = { _ in
                     return UIRefreshControl()
                 }
-                
+
                 // When
                 baseTableViewViewController?.viewDidLoad()
-                
+
                 // Then
                 expect(onCreateRefreshControlBlockWasCalled).to(beTruthy())
             }
-            
+
         }
-        
-        
-        
+
+
+
         describe("Initialiation with internal datasource and delegate") {
-            
+
             beforeEach {
                 // Given
                 baseTableViewViewController = TestBaseTableViewControllerWithDelegates()
                 tableView = UITableView(frame: .zero, style: .plain)
                 baseTableViewViewController?.tableView = tableView
-                
+
                 onCreateDataSourceBlockWasCalled = false
                 onCreateDelegateBlockWasCalled = false
                 onCreateRefreshControlBlockWasCalled = false
-                
+
                 baseTableViewViewController?.onSetupTableView = nil
                 baseTableViewViewController?.onCreateDataSource = nil
                 baseTableViewViewController?.onCreateDelegate = nil
                 baseTableViewViewController?.onCreateRefreshControl = nil
             }
-            
+
             it("viewDidLoad must call setupTableView") {
                 // Given
                 baseTableViewViewController?.onSetupTableView = { _ in
                     onSetupTableViewBlockWasCalled = true
                 }
-                
+
                 // When
                 baseTableViewViewController?.viewDidLoad()
-                
+
                 // Then
                 expect(onSetupTableViewBlockWasCalled).to(beTruthy())
             }
-            
+
             it("viewDidLoad must create datasource") {
                 // Given
                 baseTableViewViewController?.onCreateDataSource = { _ in
                     onCreateDataSourceBlockWasCalled = true
                 }
-                
+
                 // When
                 baseTableViewViewController?.viewDidLoad()
-                
+
                 // Then
                 expect(onCreateDataSourceBlockWasCalled).to(beFalsy())
             }
-            
+
             it("viewDidLoad must create delegate") {
                 // Given
                 baseTableViewViewController?.onCreateDelegate = { _ in
                     onCreateDelegateBlockWasCalled = true
                 }
-                
+
                 // When
                 baseTableViewViewController?.viewDidLoad()
-                
+
                 // Then
                 expect(onCreateDelegateBlockWasCalled).to(beFalsy())
             }
-            
+
             it("viewDidLoad must create refreshControl") {
                 // Given
                 baseTableViewViewController?.onCreateRefreshControl = { _ in
@@ -180,20 +182,20 @@ class BaseTableViewControllerSpec: QuickSpec {
                     return UIRefreshControl()
                 }
                 baseTableViewViewController?.viewDidLoad()
-                
+
                 // When
                 baseTableViewViewController?.viewDidLoad()
-                
+
                 // Then
                 expect(onCreateRefreshControlBlockWasCalled).to(beTruthy())
             }
-            
+
         }
 
         describe("viewWillDisappear") {
-            
+
             var deselectRowBlockWasCalled: Bool?
-            
+
             beforeEach {
                 // Given
                 baseTableViewViewController = TestBaseTableViewController()
@@ -204,7 +206,7 @@ class BaseTableViewControllerSpec: QuickSpec {
                     for: tableViewTest,
                     with: dataProvider)
                 tableViewTest.dataSource = dataSource
-                
+
                 tableViewTest.deselectRowBlock = { _ in
                     deselectRowBlockWasCalled = true
                 }
@@ -213,30 +215,30 @@ class BaseTableViewControllerSpec: QuickSpec {
                 baseTableViewViewController?.viewDidLoad()
                 tableView = tableViewTest
             }
-            
+
             it("must deselect selected current index path") {
                 // Given
                 let indexPath = IndexPath(row: 0, section: 0)
-                
+
                 // When
                 tableView?.selectRow(at: indexPath, animated: false, scrollPosition: .none)
                 baseTableViewViewController?.viewWillDisappear(false)
-                
+
                 // Then
                 expect(deselectRowBlockWasCalled).to(beTruthy())
             }
-            
+
         }
-        
+
         describe("Data Synchronization") {
-            
+
             beforeEach {
                 // Given
                 baseTableViewViewController = TestBaseTableViewController()
                 tableView = UITableView(frame: .zero, style: .plain)
                 baseTableViewViewController?.tableView = tableView
             }
-            
+
             it("didSyncData must stop spinner") {
                 // Given
                 baseTableViewViewController?.createRefreshControlMethod = { _ in
@@ -244,16 +246,18 @@ class BaseTableViewControllerSpec: QuickSpec {
                 }
                 baseTableViewViewController?.viewDidLoad()
                 baseTableViewViewController?.refreshControl?.beginRefreshing()
-                
+
                 // When
                 baseTableViewViewController?.didSyncData()
-                
+
                 // Then
                 expect(baseTableViewViewController?.refreshControl?.isRefreshing).to(beFalsy())
             }
-            
+
         }
-        
+
     }
-    
+
+	// swiftlint:enable body_length
+
 }

@@ -31,11 +31,11 @@ struct Person {
 }
 
 extension Person : ArrowParsable {
-    
+
     mutating func deserialize(_ json: JSON) {
         name <-- json["name"]
         age <-- json["age"]
         boolValue <-- json["boolValue"]
     }
-    
+
 }

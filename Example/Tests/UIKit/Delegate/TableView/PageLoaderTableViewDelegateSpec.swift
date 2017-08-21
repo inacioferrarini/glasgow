@@ -28,9 +28,9 @@ import OHHTTPStubs
 @testable import Glasgow
 
 class PageLoaderTableViewDelegateSpec: QuickSpec {
-    
+
     override func spec() {
-        
+
         describe("Page Loader Table View Delegate") {
             // Given
             let items = [10]
@@ -38,7 +38,7 @@ class PageLoaderTableViewDelegateSpec: QuickSpec {
             let dataProvider = ArrayDataProvider<Int>(section: items)
             let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
             var delegate: PageLoaderTableViewDelegate<NumberTableViewCell, Int>?
-            
+
             it("Initialization must create object") {
                 // When
                 let onSelected: ((Int) -> Void) = { _ in
@@ -46,50 +46,50 @@ class PageLoaderTableViewDelegateSpec: QuickSpec {
                 let shouldLoadNextPage: (() -> Bool) = { _ in
                     return true
                 }
-                let loadNextPage: (() -> ()) = { _ in
+                let loadNextPage: (() -> Void) = { _ in
                 }
-                
+
                 delegate = PageLoaderTableViewDelegate<NumberTableViewCell, Int>(with: dataSource,
                                                                                  onSelected: onSelected,
                                                                                  shouldLoadNextPage: shouldLoadNextPage,
                                                                                  loadNextPage: loadNextPage)
-                
+
                 // Then
                 expect(delegate).toNot(beNil())
             }
-            
+
             it("scrollViewDidEndDecelerating must call block") {
                 // Given
                 var blockWasCalled = false
-                
+
                 // When
                 let onSelected: ((Int) -> Void) = { _ in
                 }
                 let shouldLoadNextPage: (() -> Bool) = { _ in
                     return true
                 }
-                let loadNextPage: (() -> ()) = { _ in
+                let loadNextPage: (() -> Void) = { _ in
                     blockWasCalled = true
                 }
-                
+
                 delegate = PageLoaderTableViewDelegate<NumberTableViewCell, Int>(with: dataSource,
                                                                                  onSelected: onSelected,
                                                                                  shouldLoadNextPage: shouldLoadNextPage,
                                                                                  loadNextPage: loadNextPage)
-                
+
                 // Then
                 expect(delegate).toNot(beNil())
-                
+
                 let scrollView = UIScrollView(frame: CGRect(x: 0, y: 0, width: 200, height: 300))
                 scrollView.contentOffset.y = 350
-                
+
                 delegate?.scrollViewDidEndDecelerating(scrollView)
-                
+
                 expect(blockWasCalled).toEventually(beTruthy())
             }
-            
+
         }
-        
+
     }
-    
+
 }

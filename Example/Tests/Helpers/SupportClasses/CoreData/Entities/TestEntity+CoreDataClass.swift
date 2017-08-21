@@ -35,7 +35,7 @@ public class TestEntity: NSManagedObject {
         }
         return newTestEntity
     }
-    
+
     open class func removeAll(in context: NSManagedObjectContext) {
         let request: NSFetchRequest = NSFetchRequest<TestEntity>(entityName: self.simpleClassName())
         if let searchResults = try? context.fetch(request) {

@@ -27,28 +27,28 @@ import CoreData
  The `Core Data` stack.
  */
 open class CoreDataStack {
-    
-    
+
+
     // MARK: - Properties
-    
+
     /**
      Name of Core Data model file.
      */
     open let modelFileName: String
-    
+
     /**
      Name of Data Base file.
      */
     open let databaseFileName: String
-    
+
     /**
      Bundle where the model is located.
      */
     open let bundle: Bundle?
-    
-    
+
+
     // MARK: - Initialization
-    
+
     /**
      Convenience init.
      
@@ -74,15 +74,15 @@ open class CoreDataStack {
         self.databaseFileName = databaseFileName
         self.bundle = bundle
     }
-    
-    
+
+
     // MARK: - Lazy Helper Properties
-    
+
     lazy var applicationDocumentsDirectory: URL? = {
         let urls = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return urls.last
     }()
-    
+
     lazy var managedObjectModel: NSManagedObjectModel? = {
         var modelURL = Bundle.main.url(forResource: self.modelFileName, withExtension: "momd")
         if let bundle = self.bundle {
@@ -91,7 +91,7 @@ open class CoreDataStack {
         guard let url = modelURL else { return nil }
         return NSManagedObjectModel(contentsOf: url)
     }()
-    
+
     lazy var persistentStoreCoordinator: NSPersistentStoreCoordinator? = {
         guard let model = self.managedObjectModel else { return nil }
         let coordinator = NSPersistentStoreCoordinator(managedObjectModel: model)
@@ -103,7 +103,7 @@ open class CoreDataStack {
         _ = try? coordinator.addPersistentStore(ofType: storeType, configurationName: nil, at: url, options: nil)
         return coordinator
     }()
-    
+
     /**
      The `Core Data` `ManagedObjectContext`. 
      */
@@ -113,10 +113,10 @@ open class CoreDataStack {
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
-    
-    
+
+
     // MARK: - Core Data Saving support
-    
+
     /**
      Saves the `Core Data` context, if there is changes to be saved.
      
@@ -142,5 +142,5 @@ open class CoreDataStack {
             try managedObjectContext.save()
         }
     }
-    
+
 }

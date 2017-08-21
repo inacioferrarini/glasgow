@@ -1,0 +1,4 @@
+line_length: 180
+file_length: 450
+disabled_rules:
+- vertical_whitespace

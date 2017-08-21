@@ -26,29 +26,25 @@ import UIKit
 class TestTableView: UITableView {
 
     var onDequeueReusableCell: ((String, IndexPath) -> UITableViewCell)?
-    var onReloadData: (() -> ())?
+    var onReloadData: (() -> Void)?
 //    var indexPathForSelectedRowBlock: (() -> IndexPath?)?
-    var deselectRowBlock: ((IndexPath, Bool) -> ())?
-    
+    var deselectRowBlock: ((IndexPath, Bool) -> Void)?
+
     override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
         if let onDequeueReusableCell = self.onDequeueReusableCell {
             return onDequeueReusableCell(identifier, indexPath)
         }
         return UITableViewCell()
     }
-    
+
     override func reloadData() {
         if let onReloadData = self.onReloadData {
             onReloadData()
         }
     }
-    
-//    override open var indexPathForSelectedRow: IndexPath? {
-//        return self.indexPathForSelectedRowBlock?()
-//    }
-    
+
     override open func deselectRow(at indexPath: IndexPath, animated: Bool) {
         self.deselectRowBlock?(indexPath, animated)
     }
-    
+
 }

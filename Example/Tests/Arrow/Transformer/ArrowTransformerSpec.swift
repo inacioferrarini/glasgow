@@ -27,54 +27,54 @@ import Nimble
 @testable import Glasgow
 
 class ArrowTransformerSpec: QuickSpec {
-    
+
     override func spec() {
-        
+
         describe("Arrow Transformer Test") {
-            
+
             it("must parse Playlist data") {
                 // Given
                 let transformer = ArrowTransformer<Person>()
-                
+
                 // When
                 guard let fixtureData = FixtureHelper().objectFixture(using: "PersonFixture") else { fail("null fixture data"); return }
                 guard let parsedPerson = transformer.transform(fixtureData) else { fail("returned nil object"); return }
-                
+
                 // Then
                 expect(parsedPerson).toNot(beNil())
                 expect(parsedPerson.name).to(equal("Fulano da Silva"))
                 expect(parsedPerson.age).to(equal(35))
                 expect(parsedPerson.boolValue).to(equal(true))
             }
-            
+
             it("must parse composed Playlist data") {
                 // Given
                 let transformer = ArrowTransformer<Person>()
-                
+
                 // When
                 guard let fixtureData = FixtureHelper().objectFixture(using: "ComposedPersonFixture") else { fail("null fixture data"); return }
                 guard let parsedPerson = transformer.transform(fixtureData, keyPath: "data") else { fail("returned nil object"); return }
-                
+
                 // Then
                 expect(parsedPerson).toNot(beNil())
                 expect(parsedPerson.name).to(equal("Fulano da Silva"))
                 expect(parsedPerson.age).to(equal(35))
                 expect(parsedPerson.boolValue).to(equal(true))
             }
-            
+
             it("must return nil when uncapable o parse") {
                 // Given
                 let transformer = ArrowTransformer<Person>()
-                
+
                 // When
                 let nilParsedPerson = transformer.transform(nil)
-                
+
                 // Then
                 expect(nilParsedPerson).to(beNil())
             }
-            
+
         }
-        
+
     }
-    
+
 }

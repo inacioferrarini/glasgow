@@ -1,0 +1,7 @@
+line_length: 180
+excluded:
+  - Pods
+included:
+  - ../Glasgow/Classes
+disabled_rules:
+  - vertical_whitespace

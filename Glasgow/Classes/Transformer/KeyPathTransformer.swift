@@ -29,18 +29,18 @@ import Foundation
 */
 public protocol KeyPathTransformer {
 
-    associatedtype T
-    associatedtype U
+    associatedtype IType
+    associatedtype OType
 
     /**
-     Transforms the input type T and returns U as output.
+     Transforms the input type IType and returns OType as output.
      
      - parameter input: The object to be transformed.
      
      - parameter keyPath: If input type allows, use the given key path as the root object.
      
-     - returns: Object of type U
+     - returns: Object of type OType
      */
-    func transform(_ input: T, keyPath: String?) -> U
-    
+    func transform(_ input: IType, keyPath: String?) -> OType
+
 }

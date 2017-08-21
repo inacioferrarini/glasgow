@@ -35,22 +35,22 @@ import UIKit
  */
 open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
 
-    
+
     // MARK: - Properties
-    
+
     /**
      Stored sections and rows.
      */
     var elements: [[ElementType]]
-	
+
 	/**
 	 Section titles.
      */
 	var titles: [String]?
-	
-    
+
+
     // MARK: - Initialization
-    
+
     /**
 	 Inits with given elements.
      Data will be handled as a single section array.
@@ -60,7 +60,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
     public convenience init(section: [ElementType]) {
 		self.init(sections: [section])
     }
-	
+
 	/**
 	 Inits with given elements and its section title.
 	 Data will be handled as a single section array.
@@ -76,7 +76,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
 		}
 		self.init(sections: [section], titles: titles)
 	}
-	
+
 	/**
 	 Inits with given elements.
 	
@@ -85,7 +85,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
 	public convenience init(sections: [[ElementType]]) {
 		self.init(sections: sections, titles: nil)
 	}
-	
+
 	/**
 	 Inits with given elements and its section titles.
 	
@@ -98,10 +98,10 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
 		self.elements = sections
 		self.titles = titles
 	}
-	
-	
+
+
     // MARK: - Data Provider Implementation
-    
+
     /**
      Returns the element of given `ValueType` at given `indexPath`, if exists.
      
@@ -120,7 +120,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
             return self.elements[section][row]
         }
     }
-	
+
     /**
      Returns the IndexPath for the given element, if found.
      
@@ -137,7 +137,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
 		}
 		return indexPath
 	}
-	
+
     /**
      Returns the numbers of stored sections.
 	
@@ -146,7 +146,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
     public func numberOfSections() -> Int {
         return self.elements.count
     }
-	
+
     /**
      Returns the number of elements in the given section.
      
@@ -160,7 +160,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
 		guard section < self.numberOfSections() else { return 0 }
 		return self.elements[section].count
 	}
-	
+
 	/**
 	 Returns the title for a given section.
 	
@@ -173,5 +173,5 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
 		guard section < self.titles?.count ?? 0 else { return nil }
 		return self.titles?[section]
 	}
-	
+
 }

@@ -36,13 +36,13 @@ open class ArrayDataSource<Type: Equatable>: NSObject {
      As ArrayDataSource is array-based, the data provider is array-based as well.
      */
     open var dataProvider: ArrayDataProvider<Type>
-    
+
     /**
      Block to be called whenever `refresh()` method is called.
      */
-    open var onRefresh: (() -> ())?
+    open var onRefresh: (() -> Void)?
 
-    
+
     // MARK: - Initialization
 
     /**

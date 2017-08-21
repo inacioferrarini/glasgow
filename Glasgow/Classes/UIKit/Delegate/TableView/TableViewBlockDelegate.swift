@@ -28,23 +28,23 @@ import UIKit
  */
 open class TableViewBlockDelegate<CellType: UITableViewCell, Type: Equatable>: NSObject, UITableViewDelegate
     where CellType: Configurable {
-    
-    
+
+
     // MARK: - Properties
-    
+
     /**
      DataSource providing objects.
      */
     let dataSource: TableViewArrayDataSource<CellType, Type>
-    
+
     /**
      When a row is selected, its related model will be supplied.
      */
-    let onSelected: ((Type) -> ())
-    
-    
+    let onSelected: ((Type) -> Void)
+
+
     // MARK: - Initialization
-    
+
     /**
      Inits the Delegate.
      
@@ -53,15 +53,15 @@ open class TableViewBlockDelegate<CellType: UITableViewCell, Type: Equatable>: N
      - parameter onSelected: Logic to handle value selection.
      */
     public init(with dataSource: TableViewArrayDataSource<CellType, Type>,
-                onSelected: @escaping ((Type) -> ())) {
+                onSelected: @escaping ((Type) -> Void)) {
         self.dataSource = dataSource
         self.onSelected = onSelected
         super.init()
     }
-    
-    
+
+
     // MARK: - Row Selection
-    
+
     /**
      TableView selection method.
      
@@ -73,5 +73,5 @@ open class TableViewBlockDelegate<CellType: UITableViewCell, Type: Equatable>: N
         guard let selectedRowObject = self.dataSource.object(at: indexPath) else { return }
         self.onSelected(selectedRowObject)
     }
-    
+
 }

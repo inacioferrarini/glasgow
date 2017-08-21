@@ -25,35 +25,35 @@ import UIKit
 
 class TestDataBasedViewController: DataBasedViewController {
 
-    var onPerformDataSync: (() -> ())?
+    var onPerformDataSync: (() -> Void)?
     var onShouldSyncData: (() -> Bool)?
-    var onWillSyncData: (() -> ())?
-    var onSyncData: (() -> ())?
-    var onDidSyncData: (() -> ())?
-    
+    var onWillSyncData: (() -> Void)?
+    var onSyncData: (() -> Void)?
+    var onDidSyncData: (() -> Void)?
+
     override open func performDataSync() {
         self.onPerformDataSync?()
         super.performDataSync()
     }
-    
+
     override open func shouldSyncData() -> Bool {
         _ = super.shouldSyncData()
         return onShouldSyncData?() ?? false
     }
-    
+
     override open func willSyncData() {
         super.willSyncData()
         self.onWillSyncData?()
     }
-    
+
     override open func syncData() {
         super.syncData()
         self.onSyncData?()
     }
-    
+
     override open func didSyncData() {
         super.didSyncData()
         self.onDidSyncData?()
     }
-    
+
 }

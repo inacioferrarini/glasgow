@@ -28,12 +28,12 @@ import Arrow
  Uses `Arrow` to transform a given object of type AnyObject? into an object of target type, `Type`.
  */
 open class ArrowTransformer<Type: ArrowParsable>: Transformer, KeyPathTransformer {
-    
+
     /**
      Default Initialization.
      */
     public init() {}
-    
+
     /**
      Transforms the input type AnyObject? and returns `Type` as output.
      
@@ -41,10 +41,10 @@ open class ArrowTransformer<Type: ArrowParsable>: Transformer, KeyPathTransforme
      
      - returns: `Type`
      */
-    public func transform(_ input: T) -> U {
+    public func transform(_ input: IType) -> OType {
         return self.transform(input, keyPath: nil)
     }
-    
+
     /**
      Transforms the input type AnyObject? and returns `Type` as output.
      
@@ -56,7 +56,7 @@ open class ArrowTransformer<Type: ArrowParsable>: Transformer, KeyPathTransforme
      */
     open func transform(_ input: AnyObject?, keyPath: String?) -> Type? {
         guard let json = JSON(input) else { return nil }
-        
+
         var value = Type.init()
         if let keyPath = keyPath, keyPath.characters.count > 0, let json = json[keyPath] {
             value.deserialize(json)
@@ -65,5 +65,5 @@ open class ArrowTransformer<Type: ArrowParsable>: Transformer, KeyPathTransforme
         }
         return value
     }
-    
+
 }

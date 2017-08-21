@@ -11,10 +11,10 @@ import UIKit
 
 class RefreshableDataProvider<Type: Equatable>: ArrayDataProvider<Type>, Refreshable {
 
-    open var onRefresh: (() -> ())?
-    
+    open var onRefresh: (() -> Void)?
+
     func refresh() {
         self.onRefresh?()
     }
-    
+
 }

@@ -18,7 +18,7 @@ public extension Data {
     public init(reading input: InputStream) {
         self.init()
         input.open()
-        
+
         let bufferSize = 1024
         let buffer = UnsafeMutablePointer<UInt8>.allocate(capacity: bufferSize)
         while input.hasBytesAvailable {
@@ -28,5 +28,5 @@ public extension Data {
         buffer.deallocate(capacity: bufferSize)
         input.close()
     }
-    
+
 }

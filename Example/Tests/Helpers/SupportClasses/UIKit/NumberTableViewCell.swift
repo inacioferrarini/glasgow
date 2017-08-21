@@ -25,9 +25,9 @@ import UIKit
 @testable import Glasgow
 
 class NumberTableViewCell: UITableViewCell, Configurable {
-    
+
     var setup: ((Int) -> Void)?
-    
+
     func setup(with value: Int) {
         if let setup = self.setup {
             setup(value)

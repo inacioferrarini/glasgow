@@ -28,7 +28,7 @@ import CoreData
  NSManagedObject extension that adds useful generic methods.
  */
 public extension NSManagedObject {
-   
+
     /**
      Returns the last object from given `NSFetchRequest`.
      
@@ -61,5 +61,5 @@ public extension NSManagedObject {
         }
         return results
     }
-    
+
 }
