@@ -39,6 +39,7 @@
 		BBAD2BA11F368B6B00CFE30B /* CoreDataStackSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA01F368B6B00CFE30B /* CoreDataStackSpec.swift */; };
 		BBAD2BA31F368B8400CFE30B /* CoreDataProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA21F368B8400CFE30B /* CoreDataProviderSpec.swift */; };
 		BBAD2BA71F368E0800CFE30B /* GlasgowTests.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BBAD2BA51F368E0800CFE30B /* GlasgowTests.xcdatamodeld */; };
+		BBF812DF1F4A699400B67B17 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = BBF812DE1F4A699400B67B17 /* .swiftlint.yml */; };
 		E649C4D33977630E2DCE1732 /* Pods_Glasgow_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB862BD32528441553DD219A /* Pods_Glasgow_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +83,7 @@
 		BBAD2BA01F368B6B00CFE30B /* CoreDataStackSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStackSpec.swift; sourceTree = "<group>"; };
 		BBAD2BA21F368B8400CFE30B /* CoreDataProviderSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataProviderSpec.swift; sourceTree = "<group>"; };
 		BBAD2BA61F368E0800CFE30B /* GlasgowTests.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GlasgowTests.xcdatamodel; sourceTree = "<group>"; };
+		BBF812DE1F4A699400B67B17 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F609D5511A761F7F0AD043D0 /* Pods-Glasgow_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Glasgow_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Glasgow_Tests/Pods-Glasgow_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				BBF812DE1F4A699400B67B17 /* .swiftlint.yml */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
@@ -464,6 +467,7 @@
 			buildPhases = (
 				C358B89A59DC7D0DD11E8CF3 /* [CP] Check Pods Manifest.lock */,
 				607FACE11AFB9204008FA782 /* Sources */,
+				BBF812DD1F4A690200B67B17 /* Swift Lint */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
 				C4F70E265BEA5B8DC7CF82FF /* [CP] Embed Pods Frameworks */,
@@ -519,6 +523,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBF812DF1F4A699400B67B17 /* .swiftlint.yml in Resources */,
 				76E71F201F1014450032EA08 /* PersonFixture.json in Resources */,
 				76E71F211F1014450032EA08 /* PersonsFixture.json in Resources */,
 				76E71F1F1F1014450032EA08 /* ComposedPersonsFixture.json in Resources */,
@@ -530,6 +535,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		BBF812DD1F4A690200B67B17 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"";
+		};
 		C358B89A59DC7D0DD11E8CF3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
