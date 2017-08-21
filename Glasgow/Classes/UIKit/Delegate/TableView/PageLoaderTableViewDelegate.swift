@@ -29,23 +29,23 @@ import UIKit
  */
 open class PageLoaderTableViewDelegate<CellType: UITableViewCell, Type: Equatable>: TableViewBlockDelegate<CellType, Type>
     where CellType: Configurable {
-    
-    
+
+
     // MARK: - Properties
-    
+
     /**
      Returns if the `loadNextPage` should be called.
      */
     let shouldLoadNextPage: (() -> Bool)
-    
+
     /**
      Loads the next page
      */
-    let loadNextPage: (() -> ())
-    
-    
+    let loadNextPage: (() -> Void)
+
+
     // MARK: - Initialization
-    
+
     /**
      Inits the Delegate.
      
@@ -58,18 +58,18 @@ open class PageLoaderTableViewDelegate<CellType: UITableViewCell, Type: Equatabl
      - parameter loadNextPage: Logic to load next page.
      */
     public required init(with dataSource: TableViewArrayDataSource<CellType, Type>,
-                         onSelected: @escaping ((Type) -> ()),
+                         onSelected: @escaping ((Type) -> Void),
                          shouldLoadNextPage: @escaping (() -> Bool),
-                         loadNextPage: @escaping (() -> ())) {
+                         loadNextPage: @escaping (() -> Void)) {
         self.shouldLoadNextPage = shouldLoadNextPage
         self.loadNextPage = loadNextPage
         super.init(with: dataSource,
                    onSelected: onSelected)
     }
-    
-    
+
+
     // MARK: - Pagination
-    
+
     /**
      UIScrollView Delegate method. Called when the scrolling ends.
      
@@ -85,5 +85,5 @@ open class PageLoaderTableViewDelegate<CellType: UITableViewCell, Type: Equatabl
             }
         }
     }
-    
+
 }

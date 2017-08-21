@@ -1,8 +1,7 @@
 line_length: 180
-# function_parameter_count: 10
 excluded:
   - Pods
-#included:
-#  - Glasgow
+included:
+  - ../Glasgow/Classes
 disabled_rules:
-- vertical_whitespace
+  - vertical_whitespace

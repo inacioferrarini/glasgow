@@ -27,12 +27,12 @@ import Foundation
  Adds the capability to handle the App's AppContext, which is the shared app wide data.
  */
 public protocol AppContextAware {
-    
+
     associatedtype AppContextType
-    
+
     /**
      The app's AppContext. Shared app wide data.
      */
     var appContext: AppContextType? { get set }
-    
+
 }

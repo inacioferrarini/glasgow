@@ -27,7 +27,7 @@ import Foundation
  Adds useful capabilities to NSObject.
  */
 extension NSObject {
-    
+
     /**
      Extracts the simple class name of a given type.
      As in Swift the types names are composed with the modules they are located,
@@ -45,5 +45,5 @@ extension NSObject {
         let classNameComponents = fullClassName.characters.split {$0 == "."}.map(String.init)
         return classNameComponents.last!
     }
-    
+
 }

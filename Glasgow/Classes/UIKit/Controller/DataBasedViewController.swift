@@ -27,18 +27,18 @@ import UIKit
  Provides a basic ViewController capable of perform data synchronization operations.
  */
 open class DataBasedViewController: UIViewController {
-    
-    
+
+
     // MARK: - Properties
-    
+
     /**
      A view to be displayed as a courting, covering entire view, when fetching data.
      */
     @IBOutlet open weak var courtainView: UIView?
-    
-    
+
+
     // MARK: - Initialization
-    
+
     /**
      Prepares the ViewController to become visible.
      Checks if any data operation must be executed.
@@ -49,10 +49,10 @@ open class DataBasedViewController: UIViewController {
         super.viewWillAppear(animated)
         self.performDataSync()
     }
-    
-    
+
+
     // MARK: - Data Syncrhonization
-    
+
     /**
      Performs data synchronization if `shouldSyncData()` validates.
      
@@ -72,7 +72,7 @@ open class DataBasedViewController: UIViewController {
             self.didSyncData()
         }
     }
-    
+
     /**
      If `courtainView` is defined, makes it visible.
      */
@@ -94,10 +94,10 @@ open class DataBasedViewController: UIViewController {
             }
         }
     }
-    
-    
+
+
     // MARK: - Child classes are expected to override these methods
-    
+
     /**
      Validates if data synchronization must be executed.
      
@@ -106,7 +106,7 @@ open class DataBasedViewController: UIViewController {
     open func shouldSyncData() -> Bool {
         return true
     }
-    
+
     /**
      Data synchronization will be executed.
      
@@ -115,7 +115,7 @@ open class DataBasedViewController: UIViewController {
     open func willSyncData() {
         self.showCourtainView()
     }
-    
+
     /**
      Executes data synchronization.
      
@@ -126,7 +126,7 @@ open class DataBasedViewController: UIViewController {
      */
     open func syncData() {
     }
-    
+
     /**
      Data synchronization was completed.
      
@@ -135,5 +135,5 @@ open class DataBasedViewController: UIViewController {
     open func didSyncData() {
         self.hideCourtainView()
     }
-    
+
 }

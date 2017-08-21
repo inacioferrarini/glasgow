@@ -27,10 +27,10 @@ import UIKit
  Provides a basic TableViewController capable of perform data synchronization operations.
  */
 open class BaseTableViewController: DataBasedViewController {
-    
-    
+
+
     // MARK: - Properties
-    
+
     /**
      Refresh control used to provide user feedback.
      Can be created by overriding `createRefreshControl()`.
@@ -46,15 +46,18 @@ open class BaseTableViewController: DataBasedViewController {
      Can be created by overriding `createDataSource()`.
      */
     open var dataSource: UITableViewDataSource?
+
+	// swiftlint:disable weak_delegate
     /**
      TableView's DataSource.
      Can be created by overriding `createDelegate()`.
      */
     open var delegate: UITableViewDelegate?
-    
-    
+	// swiftlint:enable weak_delegate
+
+
     // MARK: - Initialization
-    
+
     /**
      Called when view is loaded.
      If tableView is defined, setups it by calling `setupTableView()`.
@@ -69,24 +72,24 @@ open class BaseTableViewController: DataBasedViewController {
      */
     override open func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if let tableView = self.tableView {
             self.setupTableView()
-            
+
             if let selfAsDataSource = self as? UITableViewDataSource {
                 tableView.dataSource = selfAsDataSource
             } else {
                 self.dataSource = self.createDataSource()
                 tableView.dataSource = self.dataSource
             }
-            
+
             if let selfAsDelegate = self as? UITableViewDelegate {
                 tableView.delegate = selfAsDelegate
             } else {
                 self.delegate = self.createDelegate()
                 tableView.delegate = self.delegate
             }
-            
+
             if let refreshControl = self.createRefreshControl() {
                 self.refreshControl = refreshControl
                 refreshControl.addTarget(self, action: #selector(self.performDataSync), for: .valueChanged)
@@ -95,7 +98,7 @@ open class BaseTableViewController: DataBasedViewController {
             }
         }
     }
-    
+
     /**
      Called when view is will become not visible.
      Deselect's selected tableview's row.
@@ -107,10 +110,10 @@ open class BaseTableViewController: DataBasedViewController {
         }
         super.viewWillDisappear(animated)
     }
-    
-    
+
+
     // MARK: - Data Syncrhonization
-    
+
     /**
      Data synchronization was completed.
      
@@ -122,10 +125,10 @@ open class BaseTableViewController: DataBasedViewController {
         }
         super.didSyncData()
     }
-    
-    
+
+
     // MARK: - Child classes are expected to override these methods
-    
+
     /**
      Setups the TableView (manually register cells, etc).
      By default, does nothing.
@@ -149,7 +152,7 @@ open class BaseTableViewController: DataBasedViewController {
      - returns the UITableViewDelegate to be used by the tableView.
      */
     open func createDelegate() -> UITableViewDelegate? { return nil }
-    
+
     /**
      Creates the refresh control to be used by the TableView.
      
@@ -158,5 +161,5 @@ open class BaseTableViewController: DataBasedViewController {
      - returns the UIRefreshControl to be used by the tableView.
      */
     open func createRefreshControl() -> UIRefreshControl? { return nil }
-    
+
 }
