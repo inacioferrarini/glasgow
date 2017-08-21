@@ -26,7 +26,7 @@ import Arrow
 @testable import Glasgow
 
 class ApiResponseToPersonArrayTransformer: Transformer {
-    
+
     func transform(_ input: AnyObject?) -> [Person]? {
         return ArrowArrayTransformer<Person>().transform(input, keyPath: "data")
     }

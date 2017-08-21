@@ -24,7 +24,7 @@
 import UIKit
 
 class FixtureHelper {
-    
+
     func objectFixture(using fixtureFile: String) -> NSDictionary? {
         let bundle = Bundle(for: type(of: self))
         guard let resourceUrl = bundle.url(forResource: fixtureFile, withExtension: "json") else { return nil }
@@ -32,7 +32,7 @@ class FixtureHelper {
         guard let parsedData = try? JSONSerialization.jsonObject(with: fileContent, options: []) else { return nil }
         return parsedData as? NSDictionary
     }
-    
+
     func arrayFixture(using fixtureFile: String) -> NSArray? {
         let bundle = Bundle(for: type(of: self))
         guard let resourceUrl = bundle.url(forResource: fixtureFile, withExtension: "json") else { return nil }
@@ -40,5 +40,5 @@ class FixtureHelper {
         guard let parsedData = try? JSONSerialization.jsonObject(with: fileContent, options: []) else { return nil }
         return parsedData as? NSArray
     }
-    
+
 }

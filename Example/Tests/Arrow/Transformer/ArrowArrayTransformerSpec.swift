@@ -27,27 +27,27 @@ import Nimble
 @testable import Glasgow
 
 class ArrowArrayTransformerSpec: QuickSpec {
-    
+
     override func spec() {
-        
+
         describe("Arrow Transformer Test") {
-  
+
             it("must parse Persons data") {
                 // Given
                 let transformer = ArrowArrayTransformer<Person>()
-                
+
                 // When
                 guard let fixtureData = FixtureHelper().arrayFixture(using: "PersonsFixture") else { fail("null fixture data"); return }
                 guard let parsedPersonArray = transformer.transform(fixtureData) else { fail("returned nil object"); return }
-                
+
                 // Then
                 expect(parsedPersonArray).toNot(beNil())
                 expect(parsedPersonArray.count).to(equal(3))
-    
+
                 expect(parsedPersonArray[0].name).to(equal("Fulano da Silva"))
                 expect(parsedPersonArray[0].age).to(equal(35))
                 expect(parsedPersonArray[0].boolValue).to(beTruthy())
-                
+
                 expect(parsedPersonArray[1].name).to(equal("Sincrano"))
                 expect(parsedPersonArray[1].age).to(equal(40))
                 expect(parsedPersonArray[1].boolValue).to(beFalsy())
@@ -56,15 +56,15 @@ class ArrowArrayTransformerSpec: QuickSpec {
                 expect(parsedPersonArray[2].age).to(equal(37))
                 expect(parsedPersonArray[2].boolValue).to(beTruthy())
             }
-            
+
             it("must parse composed Persons data") {
                 // Given
                 let transformer = ArrowArrayTransformer<Person>()
-                
+
                 // When
                 guard let fixtureData = FixtureHelper().objectFixture(using: "ComposedPersonsFixture") else { fail("null fixture data"); return }
                 guard let parsedPersonArray = transformer.transform(fixtureData, keyPath: "data") else { fail("returned nil object"); return }
-                
+
                 // Then
                 expect(parsedPersonArray).toNot(beNil())
                 expect(parsedPersonArray.count).to(equal(3))
@@ -72,29 +72,29 @@ class ArrowArrayTransformerSpec: QuickSpec {
                 expect(parsedPersonArray[0].name).to(equal("Fulano da Silva"))
                 expect(parsedPersonArray[0].age).to(equal(35))
                 expect(parsedPersonArray[0].boolValue).to(beTruthy())
-                
+
                 expect(parsedPersonArray[1].name).to(equal("Sincrano"))
                 expect(parsedPersonArray[1].age).to(equal(40))
                 expect(parsedPersonArray[1].boolValue).to(beFalsy())
-                
+
                 expect(parsedPersonArray[2].name).to(equal("Beltrano"))
                 expect(parsedPersonArray[2].age).to(equal(37))
                 expect(parsedPersonArray[2].boolValue).to(beTruthy())
             }
-            
+
             it("must return nil when uncapable o parse") {
                 // Given
                 let transformer = ArrowArrayTransformer<Person>()
-                
+
                 // When
                 let nilParsedPersonArray = transformer.transform(nil)
-                
+
                 // Then
                 expect(nilParsedPersonArray).to(beNil())
             }
-            
+
         }
-        
+
     }
-    
+
 }

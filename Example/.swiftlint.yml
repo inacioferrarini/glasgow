@@ -1,6 +1,8 @@
-# line_length: 180
+line_length: 180
 # function_parameter_count: 10
 excluded:
   - Pods
 #included:
 #  - Glasgow
+disabled_rules:
+- vertical_whitespace

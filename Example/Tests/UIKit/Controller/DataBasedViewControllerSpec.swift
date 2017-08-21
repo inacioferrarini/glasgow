@@ -27,21 +27,23 @@ import Nimble
 @testable import Glasgow
 
 class DataBasedViewControllerSpec: QuickSpec {
-    
+
+	// swiftlint:disable function_body_length
+
     override func spec() {
-        
+
         var dataBasedViewController: TestDataBasedViewController?
         var onPerformDataSyncBlockWasCalled: Bool?
         var onWillSyncDataBlockWasCalled: Bool?
         var onSyncDataBlockWasCalled: Bool?
         var onDidSyncDataBlockWasCalled: Bool?
         var courtainView: UIView?
-        
-        
+
+
         describe("Initialiation") {
-            
+
             var onPerformDataSyncBlockWasCalled = false
-            
+
             beforeEach {
                 // Given
                 dataBasedViewController = TestDataBasedViewController()
@@ -49,27 +51,27 @@ class DataBasedViewControllerSpec: QuickSpec {
                     onPerformDataSyncBlockWasCalled = true
                 }
             }
-            
+
             it("viewWillAppear must call performDataSync") {
                 // When
                 dataBasedViewController?.viewWillAppear(false)
-                
+
                 // Then
                 expect(onPerformDataSyncBlockWasCalled).to(beTruthy())
             }
         }
-        
-        
-        
+
+
+
         describe("Data Synchronization") {
-            
+
             beforeEach {
                 // Given
                 onPerformDataSyncBlockWasCalled = false
                 onWillSyncDataBlockWasCalled = false
                 onSyncDataBlockWasCalled = false
                 onDidSyncDataBlockWasCalled = false
-                
+
                 dataBasedViewController = TestDataBasedViewController()
                 dataBasedViewController?.onPerformDataSync = { _ in
                     onPerformDataSyncBlockWasCalled = true
@@ -84,32 +86,32 @@ class DataBasedViewControllerSpec: QuickSpec {
                     onDidSyncDataBlockWasCalled = true
                 }
             }
-            
+
             it("performDataSync, when shouldSyncData is true, must call all methods ") {
                 // Given
                 dataBasedViewController?.onShouldSyncData = { _ in
                     return true
                 }
-                
+
                 // When
                 dataBasedViewController?.performDataSync()
-                
+
                 // Then
                 expect(onPerformDataSyncBlockWasCalled).to(beTruthy())
                 expect(onWillSyncDataBlockWasCalled).toEventually(beTruthy())
                 expect(onSyncDataBlockWasCalled).to(beTruthy())
                 expect(onDidSyncDataBlockWasCalled).to(beTruthy())
             }
-            
+
             it("performDataSync, when shouldSyncData is false, must call only didSyncData") {
                 // Given
                 dataBasedViewController?.onShouldSyncData = { _ in
                     return false
                 }
-                
+
                 // When
                 dataBasedViewController?.performDataSync()
-                
+
                 // Then
                 expect(onPerformDataSyncBlockWasCalled).to(beTruthy())
                 expect(onWillSyncDataBlockWasCalled).to(beFalsy())
@@ -117,9 +119,9 @@ class DataBasedViewControllerSpec: QuickSpec {
                 expect(onDidSyncDataBlockWasCalled).to(beTruthy())
             }
         }
-        
-        
-        
+
+
+
         describe("Courtain Methods") {
             beforeEach {
                 // Given
@@ -127,31 +129,32 @@ class DataBasedViewControllerSpec: QuickSpec {
                 dataBasedViewController = TestDataBasedViewController()
                 dataBasedViewController?.courtainView = courtainView
             }
-            
+
             it("showCourtainView must show courtain") {
                 // Given
                 courtainView?.isHidden = true
-                
+
                 // When
                 dataBasedViewController?.showCourtainView()
-                
+
                 // Then
                 expect(courtainView?.isHidden).toEventually(beFalsy())
             }
-            
+
             it("hideCourtainView must hide courtain") {
                 // Given
                 courtainView?.isHidden = false
-                
+
                 // When
                 dataBasedViewController?.hideCourtainView()
-                
+
                 // Then
                 expect(courtainView?.isHidden).toEventually(beTruthy())
             }
         }
-        
-    }
-    
-}
 
+    }
+
+	// swiftlint:enable body_length
+
+}

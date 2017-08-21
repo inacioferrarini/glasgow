@@ -28,15 +28,15 @@ import OHHTTPStubs
 @testable import Glasgow
 
 class ArrayDataSourceSpec: QuickSpec {
-    
+
     override func spec() {
-        
+
         describe("Array Data Source") {
 
             var items = [Int]()
             let dataProvider = RefreshableDataProvider<Int>(section: items)
             var dataSource = ArrayDataSource<Int>(with: dataProvider)
-            
+
             beforeEach {
                 // Given
                 items = [10, 20, 30]
@@ -44,38 +44,38 @@ class ArrayDataSourceSpec: QuickSpec {
                 dataSource = ArrayDataSource<Int>(with: dataProvider)
                 dataSource.onRefresh = nil
             }
-            
+
             it("Initialization must have given objects") {
                 // Then
                 expect(dataSource.dataProvider).toNot(beNil())
             }
 
             describe("objectAtIndexPath") {
-                
+
                 it("must return object at given path") {
                     // When
                     let indexPath = IndexPath(row: 0, section: 0)
                     let value = dataSource.object(at: indexPath)
-                    
+
                     // Then
                     expect(value).to(equal(10))
                 }
-                
+
                 it("must return object at given path again") {
                     // When
                     let indexPath = IndexPath(row: 2, section: 0)
                     let value = dataSource.object(at: indexPath)
-                    
+
                     // Then
                     expect(value).to(equal(30))
                 }
-                
+
             }
-            
+
             describe("refresh method") {
-                
+
                 var blockWasCalled = false
-                
+
                 beforeEach {
                     // Given
                     blockWasCalled = false
@@ -83,19 +83,19 @@ class ArrayDataSourceSpec: QuickSpec {
                         blockWasCalled = true
                     }
                 }
-                
+
                 it("must do nothing") {
                     // When
                     dataSource.refresh()
-                    
+
                     // Then
                     expect(blockWasCalled).to(beTruthy())
                 }
 
             }
-            
+
         }
-    
+
     }
 
 }

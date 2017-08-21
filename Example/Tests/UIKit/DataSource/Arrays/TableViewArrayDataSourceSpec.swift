@@ -28,13 +28,15 @@ import OHHTTPStubs
 @testable import Glasgow
 
 class TableViewArrayDataSourceSpec: QuickSpec {
-    
+
+	// swiftlint:disable function_body_length
+
     override func spec() {
-        
+
         describe("Array Table View Data Source") {
-            
+
             describe("Initialization") {
-                
+
                 it("convenience init must set default block ") {
                     // Given
                     let items = [10]
@@ -45,7 +47,7 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                     // When
                     let indexPath = IndexPath(row: 0, section: 0)
                     let className = dataSource.reuseIdentifier(indexPath)
-                    
+
                     // Then
                     expect(dataSource.dataProvider).toNot(beNil())
                     expect(dataSource.dataProvider.numberOfSections()).to(equal(1))
@@ -53,7 +55,7 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                     expect(dataSource.reuseIdentifier).toNot(beNil())
                     expect(className).to(equal("NumberTableViewCell"))
                 }
-                
+
                 it("regular init must set given values") {
                     // Given
                     let items = [10]
@@ -65,11 +67,11 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                     let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView,
                                                                                         reuseIdentifier: reuseIdentifier,
                                                                                         with: dataProvider)
-                    
+
                     // When
                     let indexPath = IndexPath(row: 0, section: 0)
                     let className = dataSource.reuseIdentifier(indexPath)
-                    
+
                     // Then
                     expect(dataSource.dataProvider).toNot(beNil())
                     expect(dataSource.dataProvider.numberOfSections()).to(equal(1))
@@ -77,13 +79,13 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                     expect(dataSource.reuseIdentifier).toNot(beNil())
                     expect(className).to(equal(""))
                 }
-                
+
             }
-            
+
         }
-        
+
         describe("refresh") {
-            
+
             it("must refresh tableview") {
                 // Given
                 var blockWasCalled = false
@@ -96,16 +98,16 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                 let dataProvider = ArrayDataProvider<Int>(section: items)
                 let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
                 tableView.dataSource = dataSource
-                
+
                 // When
                 dataSource.refresh()
-                
+
                 // Then
                 expect(blockWasCalled).to(beTruthy())
             }
-            
+
         }
-        
+
         it("numberOfRowsInSection must return 3") {
             // Given
             let items = [10, 20, 30]
@@ -115,13 +117,13 @@ class TableViewArrayDataSourceSpec: QuickSpec {
 
             // When
             let rows = dataSource.tableView(tableView, numberOfRowsInSection: 0)
-            
+
             // Then
             expect(rows).to(equal(3))
         }
-        
+
         describe("cellForRowAt") {
-            
+
             it("must setup cell and return it") {
                 // Given
                 var blockWasCalled = false
@@ -133,10 +135,10 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                     for: tableView,
                     with: dataProvider)
                 tableView.dataSource = dataSource
-                
+
                 let indexPath = IndexPath(row: 0, section: 0)
-                
-                
+
+
                 let numberCell = NumberTableViewCell()
                 numberCell.setup = { (value) -> Void in
                     blockWasCalled = true
@@ -147,15 +149,16 @@ class TableViewArrayDataSourceSpec: QuickSpec {
 
                 // When
                 let cell = dataSource.tableView(tableView, cellForRowAt: indexPath)
-                
+
                 // Then
                 expect(cell).toNot(beNil())
                 expect(blockWasCalled).to(beTruthy())
             }
-            
-        }
-        
-    }
-    
-}
 
+        }
+
+    }
+
+	// swiftlint:enable body_length
+
+}

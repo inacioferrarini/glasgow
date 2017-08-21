@@ -28,9 +28,9 @@ import OHHTTPStubs
 @testable import Glasgow
 
 class TableViewBlockDelegateSpec: QuickSpec {
-    
+
     override func spec() {
-        
+
         describe("Table View Block Delegate") {
             // Given
             let items = [10]
@@ -38,43 +38,38 @@ class TableViewBlockDelegateSpec: QuickSpec {
             let dataProvider = ArrayDataProvider<Int>(section: items)
             let dataSource = TableViewArrayDataSource<NumberTableViewCell, Int>(for: tableView, with: dataProvider)
             var delegate: TableViewBlockDelegate<NumberTableViewCell, Int>?
-            
+
             it("Initialization must create object") {
                 // When
-                let onSelected:((Int) -> Void) = { _ in
+                let onSelected: ((Int) -> Void) = { _ in
                 }
                 delegate = TableViewBlockDelegate<NumberTableViewCell, Int>(with: dataSource, onSelected: onSelected)
-                
+
                 // Then
                 expect(delegate).toNot(beNil())
             }
-            
+
             it("Selection must call onSelected block") {
                 // Given
                 var blockWasCalled = false
-                
+
                 // When
-                let onSelected:((Int) -> Void) = { _ in
+                let onSelected: ((Int) -> Void) = { _ in
                     blockWasCalled = true
                 }
                 delegate = TableViewBlockDelegate<NumberTableViewCell, Int>(with: dataSource, onSelected: onSelected)
-                
+
                 // Then
                 expect(delegate).toNot(beNil())
-                
+
                 let indexPath = IndexPath(row: 0, section: 0)
                 delegate?.tableView(tableView, didSelectRowAt: indexPath)
-                
+
                 expect(blockWasCalled).to(equal(true))
             }
-            
+
         }
-        
+
     }
-    
+
 }
-
-
-
-
-
