@@ -2,7 +2,7 @@
 [![Version](https://img.shields.io/cocoapods/v/Glasgow.svg?style=flat)](http://cocoapods.org/pods/Glasgow)
 [![Swift 3.1](https://img.shields.io/badge/Swift-3.1-green.svg?style=flat)](https://swift.org/)
 [![License](https://img.shields.io/cocoapods/l/Glasgow.svg?style=flat)](http://cocoapods.org/pods/Glasgow)
-[![Documentation](https://inacioferrarini.github.io/glasgow/latest/badge.svg)](https://inacioferrarini.github.io/glasgow/latest)
+[![Documentation](https://inacioferrarini.github.io/glasgow-docs/latest/badge.svg)](https://inacioferrarini.github.io/glasgow-docs/latest)
 [![Platform](https://img.shields.io/cocoapods/p/Glasgow.svg?style=flat)](http://cocoapods.org/pods/Glasgow)
 
 

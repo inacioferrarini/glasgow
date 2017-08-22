@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Glasgow'
-  s.version          = '0.1.6'
+  s.version          = '0.1.7'
   s.summary          = 'Foundation classes used to eliminate boiler-plate code and provide an accelerated startup time.'
   s.homepage         = 'https://github.com/inacioferrarini/glasgow'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/inacioferrarini/glasgow.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
   
-  s.documentation_url = "https://inacioferrarini.github.io/glasgow/#{s.version}"
+  s.documentation_url = "https://inacioferrarini.github.io/glasgow-docs/#{s.version}"
 
   s.subspec "Core" do |core|
     core.source_files = "Glasgow/Classes/Core/**/*.swift"
