@@ -21,12 +21,13 @@ end
 
 desc "Generates Jazzy Report"
 task :docs do
-@version = `cat Glasgow.podspec | grep 's.version' | head -n1 | grep -o '[0-9][0-9.]*[0-9]'`
-sh "jazzy --podspec Glasgow.podspec --swift-version 3.1 --author Inácio Ferrarini --github_url https://github.com/inacioferrarini/glasgow --download-badge --output docs/latest"
+sh "git submodule init || true"
+sh "git submodule update || true"
+sh "cd docs; git checkout master; git pull; cd .."
+sh "rm -rf docs/latest || true"
+@version = `cat Glasgow.podspec | grep 's.version' | head -n1 | grep -o '[0-9][0-9.]*[0-9]'`.delete!("\n")
+sh "rm -rf docs/#{@version} || true"
+sh "jazzy --podspec Glasgow.podspec --swift-version 3.1 --author \"Inácio Ferrarini\" --github_url https://github.com/inacioferrarini/glasgow --download-badge --output docs/latest"
 sh "cp -rf docs/latest docs/#{@version}"
-end
-
-desc "Generates Code Style Report."
-task :oclint do
-sh "echo oclint ... "
+sh "cd docs; git add .; git commit -m \"Auto generated documentation for version #{@version}\"; git push; cd .."
 end

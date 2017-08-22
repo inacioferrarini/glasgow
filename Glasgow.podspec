@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/inacioferrarini/glasgow.git', :tag => s.version.to_s }
   s.ios.deployment_target = '8.0'
   
-  s.documentation_url = "https://inacioferrarini.github.io/glasgow/#{s.version}"
+  s.documentation_url = "https://inacioferrarini.github.io/glasgow-docs/#{s.version}"
 
   s.subspec "Core" do |core|
     core.source_files = "Glasgow/Classes/Core/**/*.swift"
