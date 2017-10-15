@@ -3,9 +3,10 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'Glasgow_Tests' do
+  platform :ios, '9.0'
   pod 'Glasgow', :path => '../'
-  pod 'SwiftLint', '0.21.0'
-  pod 'Quick', '~> 1.1.0'
-  pod 'Nimble', '~> 6.0.0'
+  pod 'SwiftLint', '0.23.0'
+  pod 'Quick', '~> 1.2.0'
+  pod 'Nimble', '~> 7.0.2'
   pod 'OHHTTPStubs/Swift', '~> 6.0.0'
 end

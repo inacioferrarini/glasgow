@@ -1,24 +1,24 @@
 PODS:
   - Arrow (3.0.5)
-  - Glasgow (0.1.5):
-    - Glasgow/Arrow (= 0.1.5)
-    - Glasgow/Core (= 0.1.5)
-    - Glasgow/CoreData (= 0.1.5)
-    - Glasgow/Networking (= 0.1.5)
-    - Glasgow/Transformer (= 0.1.5)
-    - Glasgow/UIKit (= 0.1.5)
-  - Glasgow/Arrow (0.1.5):
+  - Glasgow (0.1.7):
+    - Glasgow/Arrow (= 0.1.7)
+    - Glasgow/Core (= 0.1.7)
+    - Glasgow/CoreData (= 0.1.7)
+    - Glasgow/Networking (= 0.1.7)
+    - Glasgow/Transformer (= 0.1.7)
+    - Glasgow/UIKit (= 0.1.7)
+  - Glasgow/Arrow (0.1.7):
     - Arrow (= 3.0.5)
     - Glasgow/Transformer
-  - Glasgow/Core (0.1.5)
-  - Glasgow/CoreData (0.1.5):
+  - Glasgow/Core (0.1.7)
+  - Glasgow/CoreData (0.1.7):
     - Glasgow/Core
-  - Glasgow/Networking (0.1.5):
+  - Glasgow/Networking (0.1.7):
     - Glasgow/Transformer
-  - Glasgow/Transformer (0.1.5)
-  - Glasgow/UIKit (0.1.5):
+  - Glasgow/Transformer (0.1.7)
+  - Glasgow/UIKit (0.1.7):
     - Glasgow/Core
-  - Nimble (6.0.1)
+  - Nimble (7.0.2)
   - OHHTTPStubs/Core (6.0.0)
   - OHHTTPStubs/Default (6.0.0):
     - OHHTTPStubs/Core
@@ -32,15 +32,15 @@ PODS:
   - OHHTTPStubs/OHPathHelpers (6.0.0)
   - OHHTTPStubs/Swift (6.0.0):
     - OHHTTPStubs/Default
-  - Quick (1.1.0)
-  - SwiftLint (0.21.0)
+  - Quick (1.2.0)
+  - SwiftLint (0.23.0)
 
 DEPENDENCIES:
   - Glasgow (from `../`)
-  - Nimble (~> 6.0.0)
+  - Nimble (~> 7.0.2)
   - OHHTTPStubs/Swift (~> 6.0.0)
-  - Quick (~> 1.1.0)
-  - SwiftLint (= 0.21.0)
+  - Quick (~> 1.2.0)
+  - SwiftLint (= 0.23.0)
 
 EXTERNAL SOURCES:
   Glasgow:
@@ -48,12 +48,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Arrow: b696d6173296da330d1a995019db42f693249cd6
-  Glasgow: f40410e114aeb6650e7d516bbca1ed9a95837a19
-  Nimble: 1527fd1bd2b4cf0636251a36bc8ab37e81da8347
+  Glasgow: 6b8620cd35050f40b04da10e08e7c6af08ef47ba
+  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
   OHHTTPStubs: 752f9b11fd810a15162d50f11c06ff94f8e012eb
-  Quick: dafc587e21eed9f4cab3249b9f9015b0b7a7f71d
-  SwiftLint: 6de8b2d15f43c482bdec2953b8cfd696faa876e8
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  SwiftLint: 6ddf7d305644c2239cb768a11d97cce804816691
 
-PODFILE CHECKSUM: 3b2b9b106eb70b363f05f4c172c9d01b616a5f59
+PODFILE CHECKSUM: c72d16da28729c0108f0654f97a6d819da5637aa
 
 COCOAPODS: 1.2.1
