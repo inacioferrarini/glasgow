@@ -41,7 +41,8 @@ extension NSObject {
      ````
      */
     open class func simpleClassName() -> String {
-        let fullClassName: String = NSStringFromClass(object_getClass(self))
+		guard let className = object_getClass(self) else { return "" }
+        let fullClassName: String = NSStringFromClass(className)
         let classNameComponents = fullClassName.characters.split {$0 == "."}.map(String.init)
         return classNameComponents.last!
     }

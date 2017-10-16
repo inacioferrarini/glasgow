@@ -3,7 +3,7 @@ use_frameworks!
 inhibit_all_warnings!
 
 target 'Glasgow_Tests' do
-  platform :ios, '9.0'
+  platform :ios, '8.0'
   pod 'Glasgow', :path => '../'
   pod 'SwiftLint', '0.23.0'
   pod 'Quick', '~> 1.2.0'

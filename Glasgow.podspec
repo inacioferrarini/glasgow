@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Inácio Ferrarini' => 'inacio.ferrarini@gmail.com' }
   s.source           = { :git => 'https://github.com/inacioferrarini/glasgow.git', :tag => s.version.to_s }
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
   
   s.documentation_url = "https://inacioferrarini.github.io/glasgow-docs/#{s.version}"
 

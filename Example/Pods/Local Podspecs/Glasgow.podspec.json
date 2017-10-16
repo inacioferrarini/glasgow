@@ -15,7 +15,7 @@
     "tag": "0.1.7"
   },
   "platforms": {
-    "ios": "9.0"
+    "ios": "8.0"
   },
   "documentation_url": "https://inacioferrarini.github.io/glasgow-docs/0.1.7",
   "subspecs": [

@@ -47,7 +47,7 @@ class DataBasedViewControllerSpec: QuickSpec {
             beforeEach {
                 // Given
                 dataBasedViewController = TestDataBasedViewController()
-                dataBasedViewController?.onPerformDataSync = { _ in
+                dataBasedViewController?.onPerformDataSync = {
                     onPerformDataSyncBlockWasCalled = true
                 }
             }
@@ -73,23 +73,23 @@ class DataBasedViewControllerSpec: QuickSpec {
                 onDidSyncDataBlockWasCalled = false
 
                 dataBasedViewController = TestDataBasedViewController()
-                dataBasedViewController?.onPerformDataSync = { _ in
+                dataBasedViewController?.onPerformDataSync = {
                     onPerformDataSyncBlockWasCalled = true
                 }
-                dataBasedViewController?.onWillSyncData = { _ in
+                dataBasedViewController?.onWillSyncData = {
                     onWillSyncDataBlockWasCalled = true
                 }
-                dataBasedViewController?.onSyncData = { _ in
+                dataBasedViewController?.onSyncData = {
                     onSyncDataBlockWasCalled = true
                 }
-                dataBasedViewController?.onDidSyncData = { _ in
+                dataBasedViewController?.onDidSyncData = {
                     onDidSyncDataBlockWasCalled = true
                 }
             }
 
             it("performDataSync, when shouldSyncData is true, must call all methods ") {
                 // Given
-                dataBasedViewController?.onShouldSyncData = { _ in
+                dataBasedViewController?.onShouldSyncData = {
                     return true
                 }
 
@@ -105,7 +105,7 @@ class DataBasedViewControllerSpec: QuickSpec {
 
             it("performDataSync, when shouldSyncData is false, must call only didSyncData") {
                 // Given
-                dataBasedViewController?.onShouldSyncData = { _ in
+                dataBasedViewController?.onShouldSyncData = {
                     return false
                 }
 
