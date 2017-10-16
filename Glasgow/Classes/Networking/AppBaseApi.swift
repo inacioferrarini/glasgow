@@ -83,7 +83,7 @@ open class AppBaseApi {
         responseTransformer: TransformerType,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+        retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
 
         self.get(targetUrl,
                  responseTransformer: responseTransformer,
@@ -119,11 +119,11 @@ open class AppBaseApi {
     open func get<Type, TransformerType>(
         _ targetUrl: String,
         responseTransformer: TransformerType,
-        parameters: [String : Any]?,
+        parameters: [String: Any]?,
         headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+        retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
 
         self.get(self.rootUrl,
                  targetUrl: targetUrl,
@@ -165,11 +165,11 @@ open class AppBaseApi {
         _ endpointUrl: String,
         targetUrl: String,
         responseTransformer: TransformerType,
-        parameters: [String : Any]?,
+        parameters: [String: Any]?,
         headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+        retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
 
         self.executeRequest(httpMethod: .get,
                             endpointUrl,
@@ -208,7 +208,7 @@ open class AppBaseApi {
         responseTransformer: TransformerType,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+        retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
 
         self.post(targetUrl,
                  responseTransformer: responseTransformer,
@@ -244,11 +244,11 @@ open class AppBaseApi {
     open func post<Type, TransformerType>(
         _ targetUrl: String,
         responseTransformer: TransformerType,
-        parameters: [String : Any]?,
+        parameters: [String: Any]?,
         headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+        retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
 
         self.post(self.rootUrl,
                  targetUrl: targetUrl,
@@ -290,11 +290,11 @@ open class AppBaseApi {
         _ endpointUrl: String,
         targetUrl: String,
         responseTransformer: TransformerType,
-        parameters: [String : Any]?,
+        parameters: [String: Any]?,
         headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+        retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
 
         self.executeRequest(httpMethod: .post,
                             endpointUrl,
@@ -343,11 +343,11 @@ open class AppBaseApi {
         _ endpointUrl: String,
         targetUrl: String,
         responseTransformer: TransformerType,
-        parameters: [String : Any]?,
+        parameters: [String: Any]?,
         headers: [String : String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
-        retryAttempts: Int) where TransformerType : Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
+        retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
 
         let urlString = endpointUrl + targetUrl
         let defaultSession = URLSession(configuration: URLSessionConfiguration.default)
@@ -400,8 +400,8 @@ open class AppBaseApi {
      */
     func request(httpMethod: HttpMethod,
                  url: URL,
-                 parameters: [String : Any]?,
-                 headers: [String : String]?) -> URLRequest {
+                 parameters: [String: Any]?,
+                 headers: [String: String]?) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = httpMethod.rawValue
         if let parameters = parameters {
