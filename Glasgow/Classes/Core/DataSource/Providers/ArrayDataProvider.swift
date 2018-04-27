@@ -103,7 +103,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
     // MARK: - Data Provider Implementation
 
     /**
-     Returns the element of given `ValueType` at given `indexPath`, if exists.
+     Returns the element of given `ElementType` at given `indexPath`, if exists.
      
 	 - parameter indexPath: IndexPath to get object. If the given `indexPath.section`
 		is greater than the amount of stored sections, or if the given `indexPath.row`
@@ -128,7 +128,7 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
      
      - returns: IndexPath.
      */
-	public func path(for element: ValueType) -> IndexPath? {
+	public func path(for element: ElementType) -> IndexPath? {
 		var indexPath: IndexPath?
 		for section in 0..<numberOfSections() {
 			guard let row = self.elements[section].index(of: element) else { continue }

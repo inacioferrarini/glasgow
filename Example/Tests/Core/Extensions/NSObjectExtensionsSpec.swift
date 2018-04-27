@@ -31,8 +31,8 @@ class NSObjectExtensions: QuickSpec {
     override func spec() {
 
         it("simpleClassName must return class name") {
-            let name = String.simpleClassName()
-            expect(name).to(equal("NSString"))
+            let name = NSNumber.simpleClassName()
+            expect(name).to(equal("NSNumber"))
         }
 
     }
