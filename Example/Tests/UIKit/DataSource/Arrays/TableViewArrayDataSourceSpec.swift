@@ -92,7 +92,7 @@ class TableViewArrayDataSourceSpec: QuickSpec {
                 let items = [10]
                 let tableView = TestTableView()
                 tableView.register(NumberTableViewCell.self, forCellReuseIdentifier: "NumberTableViewCell")
-                tableView.onReloadData = { _ in
+                tableView.onReloadData = {
                     blockWasCalled = true
                 }
                 let dataProvider = ArrayDataProvider<Int>(section: items)

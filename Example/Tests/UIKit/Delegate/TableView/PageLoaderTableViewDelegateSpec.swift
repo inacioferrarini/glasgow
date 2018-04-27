@@ -43,10 +43,10 @@ class PageLoaderTableViewDelegateSpec: QuickSpec {
                 // When
                 let onSelected: ((Int) -> Void) = { _ in
                 }
-                let shouldLoadNextPage: (() -> Bool) = { _ in
+                let shouldLoadNextPage: (() -> Bool) = { 
                     return true
                 }
-                let loadNextPage: (() -> Void) = { _ in
+                let loadNextPage: (() -> Void) = { 
                 }
 
                 delegate = PageLoaderTableViewDelegate<NumberTableViewCell, Int>(with: dataSource,
@@ -65,10 +65,10 @@ class PageLoaderTableViewDelegateSpec: QuickSpec {
                 // When
                 let onSelected: ((Int) -> Void) = { _ in
                 }
-                let shouldLoadNextPage: (() -> Bool) = { _ in
+                let shouldLoadNextPage: (() -> Bool) = { 
                     return true
                 }
-                let loadNextPage: (() -> Void) = { _ in
+                let loadNextPage: (() -> Void) = { 
                     blockWasCalled = true
                 }
 

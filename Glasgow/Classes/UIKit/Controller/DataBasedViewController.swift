@@ -60,7 +60,7 @@ open class DataBasedViewController: UIViewController {
      
      If not data synchronization is performed, only `didSyncData()` is called.
      */
-    open func performDataSync() {
+    @objc open func performDataSync() {
         if self.shouldSyncData() {
             let queue = DispatchQueue(label: type(of: self).simpleClassName(), attributes: [])
             queue.async(execute: {

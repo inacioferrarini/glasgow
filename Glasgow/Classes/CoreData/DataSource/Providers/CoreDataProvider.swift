@@ -85,7 +85,7 @@ open class CoreDataProvider<EntityType: NSManagedObject>: ArrayDataProvider<Enti
     /**
      The Entity name.
      */
-    dynamic lazy var entityName: String = {
+    @objc dynamic lazy var entityName: String = {
         return EntityType.simpleClassName()
     }()
 

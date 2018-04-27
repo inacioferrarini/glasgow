@@ -59,7 +59,7 @@ class BaseTableViewControllerSpec: QuickSpec {
 
             it("viewDidLoad must call setupTableView") {
                 // Given
-                baseTableViewViewController?.onSetupTableView = { _ in
+                baseTableViewViewController?.onSetupTableView = {
                     onSetupTableViewBlockWasCalled = true
                 }
 
@@ -72,7 +72,7 @@ class BaseTableViewControllerSpec: QuickSpec {
 
             it("viewDidLoad must create datasource") {
                 // Given
-                baseTableViewViewController?.onCreateDataSource = { _ in
+                baseTableViewViewController?.onCreateDataSource = {
                     onCreateDataSourceBlockWasCalled = true
                 }
 
@@ -85,7 +85,7 @@ class BaseTableViewControllerSpec: QuickSpec {
 
             it("viewDidLoad must create delegate") {
                 // Given
-                baseTableViewViewController?.onCreateDelegate = { _ in
+                baseTableViewViewController?.onCreateDelegate = {
                     onCreateDelegateBlockWasCalled = true
                 }
 
@@ -98,10 +98,10 @@ class BaseTableViewControllerSpec: QuickSpec {
 
             it("viewDidLoad must create refreshControl") {
                 // Given
-                baseTableViewViewController?.onCreateRefreshControl = { _ in
+                baseTableViewViewController?.onCreateRefreshControl = {
                     onCreateRefreshControlBlockWasCalled = true
                 }
-                baseTableViewViewController?.createRefreshControlMethod = { _ in
+                baseTableViewViewController?.createRefreshControlMethod = {
                     return UIRefreshControl()
                 }
 
@@ -136,7 +136,7 @@ class BaseTableViewControllerSpec: QuickSpec {
 
             it("viewDidLoad must call setupTableView") {
                 // Given
-                baseTableViewViewController?.onSetupTableView = { _ in
+                baseTableViewViewController?.onSetupTableView = {
                     onSetupTableViewBlockWasCalled = true
                 }
 
@@ -149,7 +149,7 @@ class BaseTableViewControllerSpec: QuickSpec {
 
             it("viewDidLoad must create datasource") {
                 // Given
-                baseTableViewViewController?.onCreateDataSource = { _ in
+                baseTableViewViewController?.onCreateDataSource = {
                     onCreateDataSourceBlockWasCalled = true
                 }
 
@@ -162,7 +162,7 @@ class BaseTableViewControllerSpec: QuickSpec {
 
             it("viewDidLoad must create delegate") {
                 // Given
-                baseTableViewViewController?.onCreateDelegate = { _ in
+                baseTableViewViewController?.onCreateDelegate = {
                     onCreateDelegateBlockWasCalled = true
                 }
 
@@ -175,10 +175,10 @@ class BaseTableViewControllerSpec: QuickSpec {
 
             it("viewDidLoad must create refreshControl") {
                 // Given
-                baseTableViewViewController?.onCreateRefreshControl = { _ in
+                baseTableViewViewController?.onCreateRefreshControl = {
                     onCreateRefreshControlBlockWasCalled = true
                 }
-                baseTableViewViewController?.createRefreshControlMethod = { _ in
+                baseTableViewViewController?.createRefreshControlMethod = {
                     return UIRefreshControl()
                 }
                 baseTableViewViewController?.viewDidLoad()
@@ -207,7 +207,7 @@ class BaseTableViewControllerSpec: QuickSpec {
                     with: dataProvider)
                 tableViewTest.dataSource = dataSource
 
-                tableViewTest.deselectRowBlock = { _ in
+                tableViewTest.deselectRowBlock = { (IndexPath, Bool) -> Void in
                     deselectRowBlockWasCalled = true
                 }
                 deselectRowBlockWasCalled = false
@@ -241,7 +241,7 @@ class BaseTableViewControllerSpec: QuickSpec {
 
             it("didSyncData must stop spinner") {
                 // Given
-                baseTableViewViewController?.createRefreshControlMethod = { _ in
+                baseTableViewViewController?.createRefreshControlMethod = {
                     return UIRefreshControl()
                 }
                 baseTableViewViewController?.viewDidLoad()

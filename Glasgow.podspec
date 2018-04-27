@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'Glasgow'
-  s.version          = '0.1.7'
+  s.version          = '0.1.8'
   s.summary          = 'Foundation classes used to eliminate boiler-plate code and provide an accelerated startup time.'
   s.homepage         = 'https://github.com/inacioferrarini/glasgow'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.subspec "Arrow" do |arrow|
     arrow.source_files = "Glasgow/Classes/Arrow/**/*.swift"
     arrow.dependency 'Glasgow/Transformer'
-    arrow.dependency 'Arrow' , '3.0.5'
+    arrow.dependency 'Arrow' , '4.0.0'
   end
 
   s.subspec "CoreData" do |cd|
