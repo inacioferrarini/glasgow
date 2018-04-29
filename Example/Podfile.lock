@@ -42,13 +42,21 @@ DEPENDENCIES:
   - Quick (~> 1.2.0)
   - SwiftLint (= 0.23.0)
 
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Arrow
+    - Nimble
+    - OHHTTPStubs
+    - Quick
+    - SwiftLint
+
 EXTERNAL SOURCES:
   Glasgow:
     :path: "../"
 
 SPEC CHECKSUMS:
   Arrow: 9c0d368a688c24d86c245ad884ba0ac426c4a391
-  Glasgow: '09c21c1e82ac5ef20d51842e45ecd6f6022fdd86'
+  Glasgow: 686baa83b669ceada377c76e6f8169412f00f196
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   OHHTTPStubs: 752f9b11fd810a15162d50f11c06ff94f8e012eb
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
@@ -56,4 +64,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 5a49e9fd460cde303e99e5663830e5e87c0810c3
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.5.0
