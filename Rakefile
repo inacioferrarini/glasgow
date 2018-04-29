@@ -11,10 +11,10 @@ end
 
 desc "Generates Slather Code Coverage Report."
 task :slather do
-sh "rm -rf ~/Library/Developer/Xcode/DerivedData/* || true"
-sh "rm -rf ~/Library/Developer/CoreSimulator/* || true"
-sh "rm -rf slather-report || true"
-sh "xcodebuild clean build -workspace Example/Glasgow.xcworkspace -scheme Glasgow-Example -destination 'platform=iOS Simulator,name=iPhone X' VALID_ARCHS=x86_64 test | xcpretty"
+#sh "rm -rf ~/Library/Developer/Xcode/DerivedData/* || true"
+#sh "rm -rf ~/Library/Developer/CoreSimulator/* || true"
+#sh "rm -rf slather-report || true"
+#sh "xcodebuild clean build -workspace Example/Glasgow.xcworkspace -scheme Glasgow-Example -destination 'platform=iOS Simulator,name=iPhone X' VALID_ARCHS=x86_64 test | xcpretty"
 sh "bundle exec slather > /dev/null"
 sh "open slather-report/index.html > /dev/null"
 end

@@ -62,22 +62,6 @@ open class ArrayDataProvider<ElementType: Equatable>: NSObject, DataProvider {
     }
 
 	/**
-	 Inits with given elements and its section title.
-	 Data will be handled as a single section array.
-	
-	 - parameter section: The section and its rows to be stored.
-	
-	 - parameter title: The title for the given section.
-	*/
-	public convenience init(section: [ElementType], title: String?) {
-		var titles: [String]?
-		if let title = title {
-			titles = [title]
-		}
-		self.init(sections: [section], titles: titles)
-	}
-
-	/**
 	 Inits with given elements.
 	
 	 - parameter section: The sections and its rows to be stored.
