@@ -120,7 +120,7 @@ open class AppBaseApi {
         _ targetUrl: String,
         responseTransformer: TransformerType,
         parameters: [String: Any]?,
-        headers: [String : String]?,
+        headers: [String: String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
@@ -166,7 +166,7 @@ open class AppBaseApi {
         targetUrl: String,
         responseTransformer: TransformerType,
         parameters: [String: Any]?,
-        headers: [String : String]?,
+        headers: [String: String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
@@ -245,7 +245,7 @@ open class AppBaseApi {
         _ targetUrl: String,
         responseTransformer: TransformerType,
         parameters: [String: Any]?,
-        headers: [String : String]?,
+        headers: [String: String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
@@ -291,7 +291,7 @@ open class AppBaseApi {
         targetUrl: String,
         responseTransformer: TransformerType,
         parameters: [String: Any]?,
-        headers: [String : String]?,
+        headers: [String: String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
@@ -344,7 +344,7 @@ open class AppBaseApi {
         targetUrl: String,
         responseTransformer: TransformerType,
         parameters: [String: Any]?,
-        headers: [String : String]?,
+        headers: [String: String]?,
         success: @escaping ((Type) -> Void),
         failure: @escaping ((Error) -> Void),
         retryAttempts: Int) where TransformerType: Transformer, TransformerType.IType == AnyObject?, TransformerType.OType == Type {
