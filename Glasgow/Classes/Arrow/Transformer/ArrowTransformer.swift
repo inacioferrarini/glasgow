@@ -58,7 +58,7 @@ open class ArrowTransformer<Type: ArrowParsable>: Transformer, KeyPathTransforme
         guard let json = JSON(input) else { return nil }
 
         var value = Type.init()
-        if let keyPath = keyPath, keyPath.characters.count > 0, let json = json[keyPath] {
+        if let keyPath = keyPath, keyPath.count > 0, let json = json[keyPath] {
             value.deserialize(json)
         } else {
             value.deserialize(json)
