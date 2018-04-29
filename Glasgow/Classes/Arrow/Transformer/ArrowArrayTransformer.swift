@@ -57,7 +57,7 @@ open class ArrowArrayTransformer<Type: ArrowParsable>: Transformer, KeyPathTrans
     open func transform(_ input: AnyObject?, keyPath: String?) -> [Type]? {
         guard let json = JSON(input) else { return nil }
 
-        if let keyPath = keyPath, keyPath.characters.count > 0, let json = json[keyPath] {
+        if let keyPath = keyPath, keyPath.count > 0, let json = json[keyPath] {
             return self.transformArray(json)
         }
 

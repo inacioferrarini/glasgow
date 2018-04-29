@@ -31,7 +31,7 @@ Pod::Spec.new do |s|
   s.subspec "Arrow" do |arrow|
     arrow.source_files = "Glasgow/Classes/Arrow/**/*.swift"
     arrow.dependency 'Glasgow/Transformer'
-    arrow.dependency 'Arrow' , '4.0.0'
+    arrow.dependency 'Arrow' , '4.1.0'
   end
 
   s.subspec "CoreData" do |cd|

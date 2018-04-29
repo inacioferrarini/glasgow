@@ -43,7 +43,7 @@ extension NSObject {
     open class func simpleClassName() -> String {
 		guard let className = object_getClass(self) else { return "" }
         let fullClassName: String = NSStringFromClass(className)
-        let classNameComponents = fullClassName.characters.split {$0 == "."}.map(String.init)
+        let classNameComponents = fullClassName.split {$0 == "."}.map(String.init)
         return classNameComponents.last!
     }
 

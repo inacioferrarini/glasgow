@@ -1,5 +1,5 @@
 PODS:
-  - Arrow (4.0.0)
+  - Arrow (4.1.0)
   - Glasgow (0.1.8):
     - Glasgow/Arrow (= 0.1.8)
     - Glasgow/Core (= 0.1.8)
@@ -8,7 +8,7 @@ PODS:
     - Glasgow/Transformer (= 0.1.8)
     - Glasgow/UIKit (= 0.1.8)
   - Glasgow/Arrow (0.1.8):
-    - Arrow (= 4.0.0)
+    - Arrow (= 4.1.0)
     - Glasgow/Transformer
   - Glasgow/Core (0.1.8)
   - Glasgow/CoreData (0.1.8):
@@ -47,8 +47,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  Arrow: cc300fcca7dc409e0d47c27df1be7c0bcc909f9f
-  Glasgow: 9aea9bef144447b3b1f14f498b25d8fcb8d926f2
+  Arrow: 9c0d368a688c24d86c245ad884ba0ac426c4a391
+  Glasgow: '09c21c1e82ac5ef20d51842e45ecd6f6022fdd86'
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   OHHTTPStubs: 752f9b11fd810a15162d50f11c06ff94f8e012eb
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
